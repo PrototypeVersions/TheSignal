@@ -391,7 +391,7 @@ def edition_trace(ed, threads, prefix, mini=False):
 # --------------------------------------------------------------------------- page shell
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800"
-         "&family=Schibsted+Grotesk:wght@400..800&display=swap")
+         "&family=Schibsted+Grotesk:wght@400..800&family=DM+Sans:wght@400;500&display=swap")
 
 
 

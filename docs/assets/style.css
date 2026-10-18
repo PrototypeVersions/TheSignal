@@ -416,3 +416,7 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
   border-radius: 0 4px 4px 0; font-family: var(--sans); font-size: .92rem; line-height: 1.5; display: grid; gap: .5rem; }
 .up-t { font-weight: 700; color: var(--up); margin-right: .25rem; }
 .updates .sources { margin-top: .2rem; font-size: .8rem; }
+
+/* wordmark in DM Sans, widely spaced */
+.brand span, .foot-brand { font-family: "DM Sans", var(--sans); font-weight: 400; letter-spacing: .15em; }
+.brand span { font-size: 1.55rem; }
