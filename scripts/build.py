@@ -415,7 +415,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <footer class="foot">
   <div class="wrap foot-in">
     <p class="foot-brand">The Signal</p>
-    <p>Read <a href="{prefix}about/">how it works</a>, follow by <a href="{prefix}feed.xml">RSS</a>, or browse the <a href="{prefix}archive/">archive</a>.</p>
+    <p>Read <a href="{prefix}about/">how it works</a> or browse the <a href="{prefix}archive/">archive</a>.</p>
     <p class="small">Forecasts are our own estimates, not financial or betting advice.</p>
   </div>
 </footer>
@@ -836,8 +836,6 @@ def about_page(prefix):
   <p>Momentum says which way the situation is moving: <span class="mom mom-up">{momentum_icon("up")}Intensifying</span>, <span class="mom mom-steady">{momentum_icon("steady")}Holding</span> or <span class="mom mom-down">{momentum_icon("down")}Easing</span>. We use words rather than scores on purpose; a score like 7.8 implies a precision nobody has.</p>
   <h2>Forecasts</h2>
   <p>We keep a small set of questions with exact resolution rules and give our odds. When evidence moves, the odds move, with the reason logged. Past numbers are never edited, and when a question resolves it is scored, so you can judge whether we are any good.</p>
-  <h2>Follow along</h2>
-  <p>Subscribe with any feed reader using the <a href="{prefix}feed.xml">RSS feed</a>, or bookmark the <a href="{prefix}">front page</a>; it changes once a day.</p>
 </div>
 """
 
