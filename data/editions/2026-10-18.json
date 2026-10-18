@@ -33,7 +33,34 @@
           "title": "France protests: 1,800 arrested after violent clashes, looting",
           "url": "https://www.theweek.in/news/world/2026/10/18/france-protests-more-than-1800-arrested-after-violent-clashes-looting-students-call-for-concrete-measures-ahead-of-macron-s-address.html"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "FRA"
+        ],
+        "points": [
+          {
+            "name": "Paris",
+            "lat": 48.86,
+            "lon": 2.35
+          },
+          {
+            "name": "Lyon",
+            "lat": 45.76,
+            "lon": 4.84
+          },
+          {
+            "name": "Marseille",
+            "lat": 43.3,
+            "lon": 5.37
+          },
+          {
+            "name": "Limoges",
+            "lat": 45.83,
+            "lon": 1.26
+          }
+        ]
+      }
     },
     {
       "thread": "ukraine-war",
@@ -58,7 +85,38 @@
           "title": "Trump waives Graham Act sanctions on Russia before they take effect",
           "url": "https://www.rferl.org/a/trump-waives-graham-act-sanctions-on-russia/33878335.html"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "UKR"
+        ],
+        "points": [
+          {
+            "name": "St. Petersburg",
+            "lat": 59.94,
+            "lon": 30.31
+          },
+          {
+            "name": "Zaporizhzhia",
+            "lat": 47.84,
+            "lon": 35.14
+          },
+          {
+            "name": "Kyiv",
+            "lat": 50.45,
+            "lon": 30.52
+          }
+        ],
+        "view": [
+          18,
+          43,
+          48,
+          63
+        ],
+        "related": [
+          "RUS"
+        ]
+      }
     },
     {
       "thread": "gulf-war",
@@ -88,7 +146,39 @@
           "title": "Iran calls U.S. response \"insufficient\" amid stalled talks to end the war",
           "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-elections-saudi-arabia-yemen-houthis/"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "SAU",
+          "YEM"
+        ],
+        "points": [
+          {
+            "name": "Riyadh",
+            "lat": 24.71,
+            "lon": 46.68
+          },
+          {
+            "name": "Strait of Hormuz",
+            "lat": 26.57,
+            "lon": 56.25
+          },
+          {
+            "name": "Yanbu",
+            "lat": 24.09,
+            "lon": 38.06
+          }
+        ],
+        "view": [
+          33,
+          11,
+          62,
+          36
+        ],
+        "related": [
+          "IRN"
+        ]
+      }
     },
     {
       "thread": "ebola-east-africa",
@@ -113,7 +203,28 @@
           "title": "Kenya's Ebola cases rise to 7, including health workers who cared for the first patient",
           "url": "https://abcnews.com/Health/wireStory/kenyas-ebola-cases-rise-7-including-health-workers-137348256"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "KEN"
+        ],
+        "points": [
+          {
+            "name": "Nairobi",
+            "lat": -1.29,
+            "lon": 36.82
+          }
+        ],
+        "view": [
+          11,
+          -14,
+          47,
+          8
+        ],
+        "related": [
+          "COD"
+        ]
+      }
     },
     {
       "thread": "alberta-referendum",
@@ -138,7 +249,30 @@
           "title": "World in brief: October 18, 2026",
           "url": "https://morningstaronline.co.uk/article/world-brief-october-18-2026"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "CAN"
+        ],
+        "points": [
+          {
+            "name": "Edmonton",
+            "lat": 53.55,
+            "lon": -113.49
+          },
+          {
+            "name": "Calgary",
+            "lat": 51.05,
+            "lon": -114.07
+          }
+        ],
+        "view": [
+          -135,
+          42,
+          -95,
+          62
+        ]
+      }
     },
     {
       "thread": "us-midterms",
@@ -157,7 +291,25 @@
           "title": "Trump approval hits record low as midterms near: poll",
           "url": "https://www.livenowfox.com/news/trump-approval-hits-record-low-midterms-near-poll"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "USA"
+        ],
+        "points": [
+          {
+            "name": "Washington",
+            "lat": 38.9,
+            "lon": -77.04
+          }
+        ],
+        "view": [
+          -126,
+          23,
+          -66,
+          50
+        ]
+      }
     },
     {
       "thread": "brazil-election",
@@ -176,7 +328,19 @@
           "title": "Latest poll shows Bolsonaro maintaining edge over Lula in Brazil run-off",
           "url": "https://www.aljazeera.com/news/2026/10/16/latest-poll-shows-bolsonaro-maintaining-edge-over-lula-in-brazil-run-off"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "BRA"
+        ],
+        "points": [
+          {
+            "name": "Brasília",
+            "lat": -15.79,
+            "lon": -47.88
+          }
+        ]
+      }
     },
     {
       "thread": "west-bank",
@@ -201,7 +365,28 @@
           "title": "US wants Israel to 'crack down' on settler violence in West Bank, Rubio says",
           "url": "https://www.usnews.com/news/world/articles/2026-10-17/us-wants-israel-to-crack-down-on-settler-violence-in-west-bank-rubio-says"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "PSE"
+        ],
+        "points": [
+          {
+            "name": "Taybeh",
+            "lat": 31.95,
+            "lon": 35.3
+          }
+        ],
+        "view": [
+          33.6,
+          29.6,
+          37.4,
+          33.6
+        ],
+        "related": [
+          "ISR"
+        ]
+      }
     },
     {
       "thread": "pakistan-afghanistan",
@@ -226,7 +411,27 @@
           "title": "Taliban-Pakistan border clashes continue after Moscow talks end without agreement",
           "url": "https://www.longwarjournal.org/archives/2026/10/taliban-pakistan-border-clashes-continue-after-moscow-talks-end-without-agreement.php"
         }
-      ]
+      ],
+      "places": {
+        "countries": [
+          "PAK"
+        ],
+        "points": [
+          {
+            "name": "Kurram",
+            "lat": 33.75,
+            "lon": 70.1
+          },
+          {
+            "name": "Islamabad",
+            "lat": 33.68,
+            "lon": 73.05
+          }
+        ],
+        "related": [
+          "AFG"
+        ]
+      }
     }
   ],
   "ai": [

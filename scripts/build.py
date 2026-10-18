@@ -15,6 +15,8 @@ import shutil
 import sys
 from pathlib import Path
 
+import maps
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SRC = ROOT / "site"
@@ -103,6 +105,7 @@ def validate(threads, editions, forecasts):
                 if not isinstance(s.get("body", []), list):
                     errs.append(f"{where}: body must be a list of paragraphs")
                 errs += check_sources(s.get("sources", []), where)
+                errs += maps.validate_places(s.get("places"), where)
         if len(ed.get("stories", [])) < 3:
             errs.append(f"edition {d}: needs at least 3 stories")
         regions = [p.get("region") for p in ed.get("pulse", [])]
@@ -283,7 +286,11 @@ def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
         inner = f"{dot}{lab}"
         if p.get("href"):
             hw = 40 * k
-            inner = (f'<a href="{e(p["href"])}" class="tk"><title>{e(p.get("title", p["label"]))}</title>'
+            data = ""
+            if p.get("thread"):
+                data = (f' data-thread="{e(p["thread"])}" data-h="{e(p.get("headline", ""))}"'
+                        f' data-l="{e(p.get("title", ""))}" data-m="{e(p["mom"])}"')
+            inner = (f'<a href="{e(p["href"])}" class="tk"{data}><title>{e(p.get("title", p["label"]))}</title>'
                      f'<rect x="{px - hw:.0f}" y="0" width="{2 * hw:.0f}" height="{H}" class="hit"/>{inner}</a>')
         marks.append(inner)
     dividers = []
@@ -298,7 +305,7 @@ def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
             f'<g class="marks">{"".join(marks)}</g></svg>')
 
 
-def edition_trace(ed, threads, prefix):
+def edition_trace(ed, threads, prefix, mini=False):
     world = ed["stories"]
     ai = ed.get("ai", [])
     n = len(world) + len(ai)
@@ -314,16 +321,27 @@ def edition_trace(ed, threads, prefix):
             "label": t.get("short", t["title"]), "href": f"#{s['thread']}",
             "title": f'{t["title"]}: {CHANGE[s["change"]][0]}, {MOMENTUM[s["momentum"]].lower()}',
             "divider": bool(ai) and i == len(world), "gapw": 0.9 * (gap / 2 + 0.5) / slots,
+            "thread": s["thread"], "headline": s["headline"],
         })
     aria = "Today's trace: one spike per story, taller for bigger changes."
+    if mini:
+        return trace_svg(pts, seed=ed["date"], aria="", W=2400, height=60, labels=False, cls="trace-mini")
     return (trace_svg(pts, seed=ed["date"], aria=aria, height=170, cls="trace-wide") +
             trace_svg(pts, seed=ed["date"], aria=aria, W=420, height=130, labels=False, cls="trace-narrow"))
 
 
 # --------------------------------------------------------------------------- page shell
 
-FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;"
-         "0,6..72,600;1,6..72,400;1,6..72,500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap")
+FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800"
+         "&family=Schibsted+Grotesk:wght@400..800&display=swap")
+
+THEME_INIT = ("<script>try{var t=localStorage.getItem('signal-theme');"
+              "if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>")
+THEME_BUTTON = ('<button class="theme" type="button" aria-label="Switch between light and dark">'
+                '<svg viewBox="0 0 24 24" aria-hidden="true" class="i-moon"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>'
+                '<svg viewBox="0 0 24 24" aria-hidden="true" class="i-sun"><circle cx="12" cy="12" r="4"/>'
+                '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+                '</button>')
 
 
 def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_head=""):
@@ -356,6 +374,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
 <link rel="stylesheet" href="{prefix}assets/style.css">
+{THEME_INIT}
 {extra_head}
 </head>
 <body>
@@ -366,7 +385,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
       <svg viewBox="0 0 64 24" aria-hidden="true"><path d="M1 16 H18 L22 13 L26 20 L31 3 L36 22 L40 11 L44 16 H63" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>The Signal</span>
     </a>
-    <nav class="nav" aria-label="Sections">{nav_html}</nav>
+    <div class="mast-r"><nav class="nav" aria-label="Sections">{nav_html}</nav>{THEME_BUTTON}</div>
   </div>
 </header>
 <main id="main">
@@ -379,6 +398,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
     <p class="small">Forecasts are our own estimates, not financial or betting advice.</p>
   </div>
 </footer>
+<script src="{prefix}assets/signal.js" defer></script>
 </body>
 </html>
 """
@@ -399,6 +419,53 @@ def story_html(s, threads, prefix, ed_date, kind="world"):
     return (f'<article class="story story-{kind}" id="{e(s["thread"])}">{meta}'
             f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
             f'<div class="body">{paras(s["body"])}</div>{extra}{sources_block(s["sources"])}</article>')
+
+
+def story_meta(s, threads, prefix):
+    t = threads[s["thread"]]
+    return (f'<div class="meta">{badges(s)}'
+            f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
+
+
+def so_block(s):
+    return (f'<div class="so"><div><h3>Why it matters</h3><p>{e(s["why"])}</p></div>'
+            f'<div><h3>What to watch</h3><p>{e(s["watch"])}</p></div></div>')
+
+
+def place_caption(s):
+    pts = [p["name"] for p in s.get("places", {}).get("points", [])]
+    return f'<figcaption>{e(", ".join(pts))}</figcaption>' if pts else ""
+
+
+def story_lead(s, threads, prefix):
+    m = maps.map_svg(s.get("places"), 560, 420, labels=True, cls="map-lead")
+    fig = f'<figure class="lead-map">{m}{place_caption(s)}</figure>' if m else ""
+    return (f'<article class="story story-lead" id="{e(s["thread"])}"><div class="lead-text">{story_meta(s, threads, prefix)}'
+            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
+            f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</div>{fig}</article>')
+
+
+def story_second(s, threads, prefix):
+    m = maps.map_svg(s.get("places"), 520, 250, labels=True, cls="map-second")
+    fig = f'<figure class="second-map">{m}</figure>' if m else ""
+    return (f'<article class="story story-second" id="{e(s["thread"])}">{fig}{story_meta(s, threads, prefix)}'
+            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
+            f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</article>')
+
+
+def story_compact(s, threads, prefix):
+    m = maps.map_svg(s.get("places"), 160, 160, labels=False, cls="map-thumb")
+    thumb = f'<div class="thumb">{m}</div>' if m else ""
+    return (f'<article class="story story-compact" id="{e(s["thread"])}">{thumb}<div class="c-text">'
+            f'{story_meta(s, threads, prefix)}<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
+            f'<details class="more-story"><summary>Read the full story</summary>'
+            f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</details></div></article>')
+
+
+def date_weight(ed):
+    items = ed["stories"] + ed.get("ai", [])
+    avg = sum(CHANGE[s["change"]][1] for s in items) / max(len(items), 1)
+    return round(220 + 580 * min(max((avg - 0.18) / 0.82, 0), 1))
 
 
 def forecast_rail(forecasts, ed_date, prefix):
@@ -447,7 +514,10 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
         nav.append(f'<a href="{prefix}editions/{next_ed["date"]}/">Next edition, {e(day_month(next_ed["date"]))}</a>')
     elif not is_today:
         nav.append(f'<a href="{prefix}">Today\'s edition</a>')
-    world = "".join(story_html(s, threads, prefix, ed["date"]) for s in ed["stories"])
+    st = ed["stories"]
+    lead = story_lead(st[0], threads, prefix)
+    second = "".join(story_second(x, threads, prefix) for x in st[1:3])
+    rest = "".join(story_compact(x, threads, prefix) for x in st[3:])
     ai = "".join(story_html(s, threads, prefix, ed["date"], kind="ai") for s in ed.get("ai", []))
     note = f'<p class="launch">{e(ed["launch_note"])}</p>' if ed.get("launch_note") else ""
     corr = ""
@@ -459,24 +529,35 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
     for s in ed["stories"] + ed.get("ai", []):
         counts[s["change"]] = counts.get(s["change"], 0) + 1
     summary = ", ".join(f'{n} {CHANGE[k][0].lower()}' for k, n in sorted(counts.items(), key=lambda kv: -CHANGE[kv[0]][1]))
+    d = pdate(ed["date"])
+    wgt = date_weight(ed)
     return f"""
-<section class="hero">
+<section class="hero hero-ed">
   <div class="wrap">
     <div class="dateline">
-      <h1><span class="sr">The Signal, </span>{e(long_date(ed["date"]))}</h1>
-      <p>Edition {ed.get("number", "")}. {len(ed["stories"])} world stories and {len(ed.get("ai", []))} on AI: {e(summary)}.</p>
+      <h1 class="bigdate" style="--w:{wgt}"><span class="sr">The Signal, </span><span class="dow">{e(d.strftime("%A"))}</span><span class="dm">{d.day} {e(d.strftime("%B"))}</span></h1>
+      <div class="ed-meta">
+        <p>Edition {ed.get("number", "")}, {d.year}</p>
+        <p>{len(ed["stories"])} world stories, {len(ed.get("ai", []))} on AI: {e(summary)}.</p>
+        <p class="wkey">The date's weight tracks the day: light when little changed, heavy when a lot did.</p>
+      </div>
     </div>
     <figure class="trace-fig">
-      {edition_trace(ed, threads, prefix)}
+      <div class="trace-box">{edition_trace(ed, threads, prefix)}<div class="tip" role="status" hidden></div></div>
       <figcaption>One spike per story. Height shows how much our picture changed; the dot shows whether the situation is <span class="k k-up">intensifying</span>, <span class="k k-steady">holding</span> or <span class="k k-down">easing</span>.</figcaption>
     </figure>
+    <div class="lede-row"><p class="lede">{e(ed["lede"])}</p>{note}</div>
   </div>
 </section>
+<div class="mini-bar" aria-hidden="true" inert><div class="wrap"><span class="mini-date">{d.day} {e(d.strftime("%b"))}</span>{edition_trace(ed, threads, prefix, mini=True)}</div></div>
+<div class="wrap">
+  <section aria-label="Top story" class="lead-wrap">{lead}</section>
+  <section aria-label="Also major today" class="second-wrap">{second}</section>
+</div>
 <div class="wrap layout">
   <div class="col-main">
-    <p class="lede">{e(ed["lede"])}</p>
-    {note}
-    <section aria-label="World stories" class="stories">{world}</section>
+    <h2 class="sec-h">More that changed</h2>
+    <section aria-label="More world stories" class="stories">{rest}</section>
   </div>
   <aside class="col-rail">
     {forecast_rail(forecasts, ed["date"], prefix)}
