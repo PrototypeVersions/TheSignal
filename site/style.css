@@ -400,3 +400,16 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 
 .story-lead.nomap { grid-template-columns: 1fr; }
 .story-lead.nomap .lead-text { max-width: 52rem; }
+
+/* vertical trace on phones */
+.trace-v .vl { font-family: var(--sans); font-size: 14px; font-weight: 600; fill: var(--ink); }
+.trace-v .vc { font-family: var(--sans); font-size: 11.5px; font-weight: 500; fill: var(--ink-3); }
+.trace-v .dl { font-size: 12px; }
+.trace-v .tk:active .vl, .trace-v .tk:focus-visible .vl { fill: var(--trace); }
+.trace-v .tk:active .hit { fill: color-mix(in srgb, var(--trace) 8%, transparent); }
+@media (max-width: 719px) {
+  .trace-fig figcaption { margin-top: .6rem; }
+}
+
+.cap-tap { display: none; }
+@media (max-width: 719px) { .cap-tap { display: inline; } }

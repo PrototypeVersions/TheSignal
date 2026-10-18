@@ -343,13 +343,59 @@ def edition_trace(ed, threads, prefix, mini=False):
             "label": t.get("short", t["title"]), "href": f"#{s['thread']}",
             "title": f'{t["title"]}: {CHANGE[s["change"]][0]}, {MOMENTUM[s["momentum"]].lower()}',
             "divider": bool(ai) and i == len(world), "gapw": 0.9 * (gap / 2 + 0.5) / slots,
-            "thread": s["thread"], "headline": s["headline"],
+            "thread": s["thread"], "headline": s["headline"], "change": s["change"],
         })
     aria = "Today's trace: one spike per story, taller for bigger changes."
     if mini:
         return trace_svg(pts, seed=ed["date"], aria="", W=2400, height=60, labels=False, cls="trace-mini")
     return (trace_svg(pts, seed=ed["date"], aria=aria, height=170, cls="trace-wide") +
-            trace_svg(pts, seed=ed["date"], aria=aria, W=420, height=130, labels=False, cls="trace-narrow"))
+            vtrace_svg(pts, seed=ed["date"], aria=aria + " Tap a row to jump to that story."))
+
+
+def vtrace_svg(points, seed, aria=""):
+    """Phone version: the line runs down the screen, spikes point right, labels sit on the left."""
+    W, row, top = 360, 40, 10
+    x0, maxamp = 136, 118
+    rows, y = [], top
+    for p in points:
+        if p.get("divider"):
+            y += 30
+        rows.append((p, y + row / 2))
+        y += row
+    H = y + top
+    rng = random.Random(seed + "v")
+    path = [f"M{x0} 0"]
+    yy = 0.0
+    for p, cy in rows:
+        while yy < cy - 22:
+            yy += 7 + rng.uniform(-2, 2)
+            path.append(f"L{x0 + rng.uniform(-1.6, 1.6):.1f} {min(yy, cy - 22):.1f}")
+        amp = p["amp"] * maxamp
+        for dy, f in ((-14, 0.06), (-7, -0.2), (0, 1.0), (5, -0.55), (10, 0.3), (15, -0.1), (21, 0.03)):
+            dx = amp * f if f > 0 else max(amp * f * 0.25, -7)
+            path.append(f"L{x0 + dx:.1f} {cy + dy:.1f}")
+        yy = cy + 21
+    while yy < H:
+        yy += 7 + rng.uniform(-2, 2)
+        path.append(f"L{x0 + rng.uniform(-1.6, 1.6):.1f} {min(yy, H):.1f}")
+    grid = "".join(f'<line x1="{gx}" y1="0" x2="{gx}" y2="{H}" class="g"/>' for gx in range(x0, W + 1, 40))
+    marks, divs = [], []
+    for p, cy in rows:
+        if p.get("divider"):
+            dy = cy - row / 2 - 15
+            divs.append(f'<line x1="0" y1="{dy}" x2="{W}" y2="{dy}" class="div"/>'
+                        f'<text x="{x0 - 12}" y="{dy - 6}" text-anchor="end" class="dl">Frontiers</text>')
+        tip = x0 + p["amp"] * maxamp
+        word = CHANGE[p.get("change", "developing")][0]
+        marks.append(
+            f'<a href="{e(p["href"])}" class="tk vk" data-thread="{e(p["thread"])}"><title>{e(p.get("title", p["label"]))}</title>'
+            f'<rect x="0" y="{cy - row / 2:.0f}" width="{W}" height="{row}" class="hit"/>'
+            f'<text x="{x0 - 14}" y="{cy + 5:.0f}" text-anchor="end" class="vl">{e(p["label"])}</text>'
+            f'<circle cx="{tip:.1f}" cy="{cy:.0f}" r="5.5" class="pk pk-{p["mom"]}"/>'
+            f'<text x="{tip + 11:.1f}" y="{cy + 4:.0f}" class="vc">{e(word)}</text></a>')
+    return (f'<svg class="trace trace-narrow trace-v" viewBox="0 0 {W} {H}" role="img" aria-label="{e(aria)}">'
+            f'<g class="grid">{grid}</g>{"".join(divs)}<path class="line" d="{" ".join(path)}" pathLength="1"/>'
+            f'<g class="marks">{"".join(marks)}</g></svg>')
 
 
 # --------------------------------------------------------------------------- page shell
@@ -596,7 +642,7 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
     </div>
     <figure class="trace-fig">
       <div class="trace-box">{edition_trace(ed, threads, prefix)}<div class="tip" role="status" hidden></div></div>
-      <figcaption>One spike per story. Height shows how much our picture changed; the dot shows whether the situation is <span class="k k-up">intensifying</span>, <span class="k k-steady">holding</span> or <span class="k k-down">easing</span>.</figcaption>
+      <figcaption><span class="cap-tap">Tap a story to jump to it. </span>One spike per story. The bigger the spike, the more our picture changed; the dot shows whether the situation is <span class="k k-up">intensifying</span>, <span class="k k-steady">holding</span> or <span class="k k-down">easing</span>.</figcaption>
     </figure>
     {markets_strip(ed.get("markets"))}
     <div class="lede-row"><p class="lede">{e(ed["lede"])}</p>{note}</div>
