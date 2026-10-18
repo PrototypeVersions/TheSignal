@@ -391,7 +391,7 @@ def edition_trace(ed, threads, prefix, mini=False):
 # --------------------------------------------------------------------------- page shell
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800"
-         "&family=Schibsted+Grotesk:wght@400..800&display=swap")
+         "&family=DM+Sans:opsz,wght@9..40,400..700&display=swap")
 
 
 
@@ -417,7 +417,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <meta property="og:url" content="{e(canon)}">
 <meta property="og:site_name" content="{SITE_NAME}">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#0D1626">
+<meta name="theme-color" content="#09131D">
 <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="{SITE_NAME}" href="{prefix}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
