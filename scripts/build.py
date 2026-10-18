@@ -513,12 +513,6 @@ def markets_strip(m):
             f'<ul>{"".join(cells)}</ul>{sources_block(m.get("sources", []))}</section>')
 
 
-def date_weight(ed):
-    items = ed["stories"] + ed.get("frontiers", [])
-    avg = sum(CHANGE[s["change"]][1] for s in items) / max(len(items), 1)
-    return round(220 + 580 * min(max((avg - 0.18) / 0.82, 0), 1))
-
-
 def forecast_rail(forecasts, ed_date, prefix):
     rows = []
     open_f = [f for f in forecasts if f["status"] == "open"]
@@ -583,16 +577,14 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
         counts[s["change"]] = counts.get(s["change"], 0) + 1
     summary = ", ".join(f'{n} {CHANGE[k][0].lower()}' for k, n in sorted(counts.items(), key=lambda kv: -CHANGE[kv[0]][1]))
     d = pdate(ed["date"])
-    wgt = date_weight(ed)
     return f"""
 <section class="hero hero-ed">
   <div class="wrap">
     <div class="dateline">
-      <h1 class="bigdate" style="--w:{wgt}"><span class="sr">The Signal, </span><span class="dow">{e(d.strftime("%A"))}</span><span class="dm">{d.day} {e(d.strftime("%B"))}</span></h1>
+      <h1 class="bigdate"><span class="sr">The Signal, </span><span class="dow">{e(d.strftime("%A"))}</span><span class="dm">{d.day} {e(d.strftime("%B"))}</span></h1>
       <div class="ed-meta">
         <p>Edition {ed.get("number", "")}, {d.year}</p>
         <p>{len(ed["stories"])} world stories, {len(ed.get("frontiers", []))} from the frontiers: {e(summary)}.</p>
-        <p class="wkey">The date's weight tracks the day: light when little changed, heavy when a lot did.</p>
       </div>
     </div>
     <figure class="trace-fig">

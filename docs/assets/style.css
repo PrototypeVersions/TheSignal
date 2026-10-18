@@ -277,13 +277,12 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 /* the big, weighted date */
 .hero-ed { padding-top: 2.2rem; }
 .hero-ed .dateline { align-items: end; margin-bottom: 1.2rem; gap: 1rem 3rem; }
-.bigdate { font-family: var(--serif); font-weight: var(--w, 500); font-variation-settings: "wght" var(--w, 500), "opsz" 72;
+.bigdate { font-family: var(--serif); font-weight: 600; font-variation-settings: "opsz" 72;
   display: flex; flex-direction: column; line-height: .9; letter-spacing: -0.035em; }
 .bigdate .dow { font-family: var(--sans); font-size: 1rem; font-weight: 600; letter-spacing: 0.01em; color: var(--trace); margin-bottom: .5rem; font-variation-settings: normal; }
 .bigdate .dm { font-size: clamp(3.4rem, 2rem + 6vw, 7.5rem); }
 .ed-meta { font-family: var(--sans); font-size: .9rem; color: var(--ink-2); max-width: 22rem; }
 .ed-meta p { margin: 0 0 .25rem; }
-.ed-meta .wkey { color: var(--ink-3); font-size: .8rem; margin-top: .6rem; }
 .lede-row { display: grid; gap: .8rem; margin-top: 2rem; padding-top: 1.6rem; border-top: 2px solid var(--ink); }
 .lede-row .lede { max-width: 52rem; font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.85rem); }
 .lede-row .launch { margin: 0; }
