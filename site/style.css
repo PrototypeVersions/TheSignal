@@ -406,3 +406,7 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
   .hero-ed .trace-fig figcaption { display: none; }
   .hero-ed .trace-fig { margin-bottom: .5rem; }
 }
+/* phones: just the line and grid, no markers or labels */
+@media (max-width: 719px) {
+  .trace-narrow .marks, .trace-narrow .div, .trace-narrow .dl { display: none; }
+}
