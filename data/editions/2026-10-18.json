@@ -2,7 +2,7 @@
   "date": "2026-10-18",
   "number": 1,
   "published_at": "2026-10-18T12:00:00-05:00",
-  "lede": "France woke to the cost of its worst unrest in years, and Macron speaks tonight. Ukraine sent more than a thousand drones into Russia hours after Washington waived the sanctions meant to squeeze Moscow's oil money. Brent crude sits near $110 as the Saudi–Houthi war widens, and Ebola is spreading person to person in Kenya for the first time. Two votes are close: Alberta decides tomorrow whether to start down the road out of Canada, and Brazil picks a president next Sunday.",
+  "lede": "France counted the cost of its worst unrest in years, and Macron answered with a promise of accountability and local protest bans. Ukraine sent more than a thousand drones into Russia hours after Washington waived the sanctions meant to squeeze Moscow's oil money. Brent crude sits near $110 as the Saudi–Houthi war widens, and Ebola is spreading person to person in Kenya for the first time. Two votes are close: Alberta decides tomorrow whether to start down the road out of Canada, and Brazil picks a president next Sunday.",
   "launch_note": "This is our first edition. The Frontiers section covers the past week rather than the past day.",
   "stories": [
     {
@@ -60,7 +60,25 @@
             "lon": 1.26
           }
         ]
-      }
+      },
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "Macron addressed the nation on Sunday evening, blaming far-left groups joined by criminals and saying looters will pay for the damage. He told prefects to work with mayors to protect public buildings and shops, including banning gatherings where needed, and asked parties and unions to condemn the violence. Arrests now total nearly 2,400, according to the Interior Ministry.",
+          "sources": [
+            {
+              "outlet": "AP via PBS NewsHour",
+              "title": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide protests",
+              "url": "https://www.pbs.org/newshour/world/frances-macron-vows-to-hold-accountable-those-who-sought-to-bring-down-the-republic"
+            },
+            {
+              "outlet": "Eastern Herald",
+              "title": "Macron: Protesters' Demands 'Legitimate', Looters 'Will Have to Pay'",
+              "url": "https://easternherald.com/2026/10/18/macron-address-prefects-ban-gatherings/"
+            }
+          ]
+        }
+      ]
     },
     {
       "thread": "ukraine-war",
@@ -116,7 +134,25 @@
         "related": [
           "RUS"
         ]
-      }
+      },
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "Zelenskyy said Kyiv is done with the energy ceasefire Trump announced, accusing Russia of trying to cause a blackout. Russian strikes across Ukraine killed at least 10 civilians and injured 73 over the past day, regional authorities said, most of the dead in Donetsk region. Secretary of State Rubio described the sanctions waiver as a 60-day pause to study its economic effects.",
+          "sources": [
+            {
+              "outlet": "Al Jazeera",
+              "title": "Ukrainian drone attack on Russia's St Petersburg kills 1, hits energy sites",
+              "url": "https://www.aljazeera.com/news/2026/10/18/ukrainian-drone-attack-on-russias-st-petersburg-kills-1-hits-energy-sites"
+            },
+            {
+              "outlet": "Kyiv Independent",
+              "title": "Russian drones hit western Ukraine as nationwide attacks kill 10, injure 73",
+              "url": "https://kyivindependent.com/russian-drones-hit-western-ukraine-as-nationwide-attacks-kill-10-injure-73/"
+            }
+          ]
+        }
+      ]
     },
     {
       "thread": "gulf-war",
@@ -178,7 +214,25 @@
         "related": [
           "IRN"
         ]
-      }
+      },
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "The six-nation Gulf Cooperation Council said an attack on any member is an attack on all and urged countries to designate the Houthis a terrorist organization; the Saudi-led coalition said it downed drones near Riyadh and in the Eastern Province early on Sunday. Iran's foreign minister, Abbas Araqchi, said Tehran's offer to reopen Hormuz within six days still stands and that it is reviewing Washington's reply.",
+          "sources": [
+            {
+              "outlet": "Al Jazeera",
+              "title": "GCC condemns Houthi attacks on Saudi Arabia as Yemen fighting intensifies",
+              "url": "https://www.aljazeera.com/news/2026/10/18/gcc-condemns-houthi-attacks-on-saudi-arabia-as-yemen-fighting-intensifies"
+            },
+            {
+              "outlet": "The New Arab",
+              "title": "Iran urges US to accept proposal to reopen Strait of Hormuz",
+              "url": "https://www.newarab.com/news/iran-urges-us-accept-proposal-reopen-strait-hormuz"
+            }
+          ]
+        }
+      ]
     },
     {
       "thread": "ebola-east-africa",
@@ -224,7 +278,25 @@
         "related": [
           "COD"
         ]
-      }
+      },
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "Kenya confirmed an eighth case: a 49-year-old attendant who cared for the first patient and tested positive in quarantine after developing symptoms. Health officials say there is still no community transmission and that the other six living patients are stable.",
+          "sources": [
+            {
+              "outlet": "AP via KIRO 7",
+              "title": "Ebola cases in Kenya rise to 8 after another person tests positive",
+              "url": "https://www.kiro7.com/news/health/kenyas-ebola-cases/7B3A552OZYZ3NCEH2NIHIB74NE/"
+            },
+            {
+              "outlet": "AP via WSLS",
+              "title": "Kenya's Ebola cases hit 8, with no community transmission yet",
+              "url": "https://www.wsls.com/health/2026/10/18/kenyas-ebola-cases-hit-8-with-no-community-transmission-yet/"
+            }
+          ]
+        }
+      ]
     },
     {
       "thread": "alberta-referendum",
@@ -386,7 +458,25 @@
         "related": [
           "ISR"
         ]
-      }
+      },
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "As of Sunday afternoon there were still no arrests over the Taybeh attack or the assault on Heidi Levine. The EU demanded full accountability, Belgium said it would keep pushing for EU sanctions on violent settlers, and Israeli police say the European missions have not yet handed over the evidence investigators requested.",
+          "sources": [
+            {
+              "outlet": "Times of Israel",
+              "title": "EU demands 'full accountability' after settler attack on diplomats in West Bank",
+              "url": "https://www.timesofisrael.com/eu-demands-full-accountability-after-settler-attack-on-diplomats-in-west-bank/amp/"
+            },
+            {
+              "outlet": "Ynet",
+              "title": "No arrests after West Bank settler attack; police accuse European diplomats of not cooperating",
+              "url": "https://www.ynetnews.com/article/rkenikm2mx"
+            }
+          ]
+        }
+      ]
     },
     {
       "thread": "pakistan-afghanistan",
@@ -500,7 +590,20 @@
           "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
         }
       ],
-      "field": "AI"
+      "field": "AI",
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "Microsoft has pulled out as anchor tenant of Nscale's planned data center in Loughton, England, the Telegraph reports; the site may not get a grid connection until the 2030s. Nscale, which is preparing a stock listing and says Microsoft and Anthropic make up about 85% of its contracts, says the relationship remains strong.",
+          "sources": [
+            {
+              "outlet": "Reuters via Investing.com",
+              "title": "Microsoft pulls out of UK data centre deal with Nscale, Telegraph reports",
+              "url": "https://www.investing.com/news/economy-news/microsoft-pulls-out-of-uk-data-centre-deal-with-nscale-telegraph-reports-4955855"
+            }
+          ]
+        }
+      ]
     },
     {
       "thread": "ai-and-work",
@@ -519,7 +622,20 @@
           "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
         }
       ],
-      "field": "AI"
+      "field": "AI",
+      "updates": [
+        {
+          "at": "2026-10-18T17:58:07-05:00",
+          "text": "Anthropic said on Sunday it will put 5% of its shares into a public benefit fund, adding 2% for every 50% rise in its value, citing the pace of AI progress. Ideas include large nonprofit grants or direct payments to specific groups; governance details are due in the coming months.",
+          "sources": [
+            {
+              "outlet": "TechCrunch",
+              "title": "Anthropic says it's committing 5% of its shares to a 'public benefit fund'",
+              "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund"
+            }
+          ]
+        }
+      ]
     }
   ],
   "frontier_note": "Science, medicine, space and energy: nothing cleared our bar this week. Coming up: full Phase 3 results for the first personalized mRNA cancer vaccine, from Merck and Moderna, at the ESMO congress in Madrid (23–27 October).",
@@ -666,5 +782,6 @@
       "title": "Merck showcases first-time pivotal Phase 3 results from oncology pipeline at ESMO 2026",
       "url": "https://www.merck.com/news/merck-showcases-first-time-pivotal-phase-3-results-from-oncology-pipeline-and-continued-innovative-potential-of-existing-portfolio-at-esmo-2026/"
     }
-  ]
+  ],
+  "updated_at": "2026-10-18T17:58:07-05:00"
 }
