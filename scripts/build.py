@@ -358,13 +358,6 @@ def edition_trace(ed, threads, prefix, mini=False):
 FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800"
          "&family=Schibsted+Grotesk:wght@400..800&display=swap")
 
-THEME_INIT = ("<script>try{var t=localStorage.getItem('signal-theme');"
-              "if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>")
-THEME_BUTTON = ('<button class="theme" type="button" aria-label="Switch between light and dark">'
-                '<svg viewBox="0 0 24 24" aria-hidden="true" class="i-moon"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>'
-                '<svg viewBox="0 0 24 24" aria-hidden="true" class="i-sun"><circle cx="12" cy="12" r="4"/>'
-                '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
-                '</button>')
 
 
 def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_head=""):
@@ -396,7 +389,6 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
 <link rel="stylesheet" href="{prefix}assets/style.css">
-{THEME_INIT}
 {extra_head}
 </head>
 <body>
@@ -407,7 +399,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
       <svg viewBox="0 0 64 24" aria-hidden="true"><path d="M1 16 H18 L22 13 L26 20 L31 3 L36 22 L40 11 L44 16 H63" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>The Signal</span>
     </a>
-    <div class="mast-r"><nav class="nav" aria-label="Sections">{nav_html}</nav>{THEME_BUTTON}</div>
+    <div class="mast-r"><nav class="nav" aria-label="Sections">{nav_html}</nav></div>
   </div>
 </header>
 <main id="main">

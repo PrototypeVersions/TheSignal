@@ -1,19 +1,6 @@
-/* The Signal: theme switch, live trace (pen, tooltips, scroll highlight). No dependencies. */
+/* The Signal: live trace (pen, tooltips, scroll highlight). No dependencies. */
 (function () {
   var root = document.documentElement;
-
-  // ---- theme toggle
-  var btn = document.querySelector('.theme');
-  function current() {
-    return root.dataset.theme === 'dark' ? 'dark' : 'light';
-  }
-  if (btn) {
-    btn.addEventListener('click', function () {
-      var next = current() === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try { localStorage.setItem('signal-theme', next); } catch (e) {}
-    });
-  }
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
