@@ -243,7 +243,7 @@ def short_title(t):
 
 # --------------------------------------------------------------------------- the trace
 
-def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
+def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls="", deco=False):
     """points: list of dicts {x: 0..1, amp: 0..1, mom, label, href, group}.
     Draws a seismograph-like line with a spike at each point."""
     H = height
@@ -306,7 +306,7 @@ def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
             lab = f'{tick}<text x="{px}" y="{ly}" text-anchor="{anchor}" class="tl">{e(p["label"])}</text>'
         dot = f'<circle cx="{px}" cy="{py:.1f}" r="5.5" class="pk pk-{p["mom"]}"/>'
         inner = f"{dot}{lab}"
-        if p.get("href"):
+        if p.get("href") and not deco:
             hw = 40 * k
             data = ""
             if p.get("thread"):
@@ -321,7 +321,8 @@ def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
             px = round(p["x"] * W - p.get("gapw", 0.03) * W)
             dividers.append(f'<line x1="{px}" y1="{top}" x2="{px}" y2="{base + 6}" class="div"/>'
                             f'<text x="{px + 6}" y="{top + 10}" class="dl">Frontiers</text>')
-    return (f'<svg class="trace {cls}" viewBox="0 0 {W} {H}" role="img" aria-label="{e(aria)}">'
+    a11y = 'aria-hidden="true" focusable="false"' if deco else f'role="img" aria-label="{e(aria)}"'
+    return (f'<svg class="trace {cls}" viewBox="0 0 {W} {H}" {a11y}>'
             f'<g class="grid">{"".join(grid)}</g>{"".join(dividers)}'
             f'<path class="line" d="{d}" pathLength="1"/>'
             f'<g class="marks">{"".join(marks)}</g></svg>')
@@ -349,7 +350,7 @@ def edition_trace(ed, threads, prefix, mini=False):
     if mini:
         return trace_svg(pts, seed=ed["date"], aria="", W=2400, height=60, labels=False, cls="trace-mini")
     return (trace_svg(pts, seed=ed["date"], aria=aria, height=170, cls="trace-wide") +
-            trace_svg(pts, seed=ed["date"], aria=aria, W=420, height=130, labels=False, cls="trace-narrow"))
+            trace_svg(pts, seed=ed["date"], aria=aria, W=420, height=120, labels=False, cls="trace-narrow", deco=True))
 
 
 # --------------------------------------------------------------------------- page shell
@@ -375,7 +376,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
         f'<a href="{prefix}{href}"{" aria-current=\"page\"" if key == active else ""}>{e(lbl)}</a>'
         for lbl, href, key in nav)
     return f"""<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -388,7 +389,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <meta property="og:url" content="{e(canon)}">
 <meta property="og:site_name" content="{SITE_NAME}">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#F2F4F6">
+<meta name="theme-color" content="#0D1626">
 <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="{SITE_NAME}" href="{prefix}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -400,3 +400,10 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 
 .story-lead.nomap { grid-template-columns: 1fr; }
 .story-lead.nomap .lead-text { max-width: 52rem; }
+
+/* phones: the trace is a full-bleed decorative band */
+@media (max-width: 719px) {
+  .trace-narrow { width: calc(100% + 2rem); max-width: none; margin-left: -1rem; }
+  .hero-ed .trace-fig figcaption { display: none; }
+  .hero-ed .trace-fig { margin-bottom: .5rem; }
+}
