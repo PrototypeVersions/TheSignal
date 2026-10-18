@@ -1,0 +1,402 @@
+{
+  "date": "2026-10-18",
+  "number": 1,
+  "published_at": "2026-10-18T12:00:00-05:00",
+  "lede": "France woke to the cost of its worst unrest in years, and Macron speaks tonight. Ukraine sent more than a thousand drones into Russia hours after Washington waived the sanctions meant to squeeze Moscow's oil money. Brent crude sits near $110 as the Saudi–Houthi war widens, and Ebola is spreading person to person in Kenya for the first time. Two votes are close: Alberta decides tomorrow whether to start down the road out of Canada, and Brazil picks a president next Sunday.",
+  "launch_note": "This is our first edition. The AI section covers the past week rather than the past day.",
+  "stories": [
+    {
+      "thread": "france-unrest",
+      "change": "major",
+      "momentum": "up",
+      "headline": "France counts the damage, and waits for Macron",
+      "dek": "The toll from Saturday's national protest day roughly doubled overnight: at least 1,800 arrests and more than 500 police, gendarmes and firefighters hurt.",
+      "body": [
+        "Authorities put Saturday's turnout at about 550,000; organizers said 800,000. Most marchers were peaceful, but masked groups looted businesses in Paris, Marseille, Lyon, Bordeaux, Nice, Limoges and other cities. Limoges's 19th-century city hall was set on fire and its roof collapsed, a Marseille police station was damaged, and Lyon's tourist office burned. Paris police alone made 855 arrests.",
+        "A man died after collapsing on the Paris march route; police say he suffered cardiac arrest, and prosecutors are investigating. In Saint-Étienne, a 17-year-old lost a hand. The government blames radical far-left groups for starting the violence and opportunistic looters for spreading it. The mayors of Paris, Marseille and Lyon have asked to meet the prime minister."
+      ],
+      "why": "Saturday was a planned national march. The open question is whether disorder now sustains itself without one. What Macron offers tonight — concessions, a crackdown or both — sets the direction.",
+      "watch": "Macron's televised address at 8pm Paris time (1pm US Central). Whether unions or student groups call another national day of action.",
+      "sources": [
+        {
+          "outlet": "AP via Christian Science Monitor",
+          "title": "French police arrest 1,800 after violent clashes and looting mar protests",
+          "url": "https://www.csmonitor.com/World/2026/1018/france-protests-arrests"
+        },
+        {
+          "outlet": "Proto Thema",
+          "title": "Macron to address France tonight after chaos, protester's death and looting",
+          "url": "https://en.protothema.gr/2026/10/18/macron-to-address-france-tonight-after-chaos-protesters-death-and-looting/"
+        },
+        {
+          "outlet": "The Week",
+          "title": "France protests: 1,800 arrested after violent clashes, looting",
+          "url": "https://www.theweek.in/news/world/2026/10/18/france-protests-more-than-1800-arrested-after-violent-clashes-looting-students-call-for-concrete-measures-ahead-of-macron-s-address.html"
+        }
+      ]
+    },
+    {
+      "thread": "ukraine-war",
+      "change": "major",
+      "momentum": "up",
+      "headline": "Ukraine sends 1,000 drones into Russia as Washington waives sanctions",
+      "dek": "Russia says it downed 1,015 drones over 15 regions, and St. Petersburg's oil terminal caught fire. Hours earlier, Trump waived nearly all of the new US penalties on Russian energy.",
+      "body": [
+        "Fires broke out at the Petersburg Oil Terminal and the city's Ruchi depot; a logistics hub for the retailer Ozon and a VK data center were also hit. St. Petersburg's governor reported one dead and five wounded. Russia struck Zaporizhzhia overnight, and Zelenskyy said attacks on energy sites in four regions left tens of thousands of families without power.",
+        "The 'energy ceasefire' Trump announced on 11 October has not held. Kyiv counts 76 Russian attacks on its energy, oil and gas sectors since then, and Ukraine resumed strikes on Russian oil on Thursday. On Friday, a day before they were due to take effect, Trump signed an order waiving almost all of the Graham Act's measures, including tariffs of up to 100% on major buyers of Russian oil. Zelenskyy called it a gift to Putin, and lawmakers from both parties objected."
+      ],
+      "why": "Washington's main lever on Moscow's oil revenue has been set aside with no end date, while both sides escalate against each other's energy systems going into winter. Diplomacy is weaker, and the energy war stronger, than a week ago.",
+      "watch": "Whether Congress moves to block the waiver or the separate Russian diesel deal. Russia's response to the St. Petersburg strikes.",
+      "sources": [
+        {
+          "outlet": "AP via ABC News",
+          "title": "Blaze at St Petersburg oil sites as Kyiv launches more than 1,000 drones at Russia",
+          "url": "https://abcnews.com/International/wireStory/blaze-st-petersburg-oil-sites-kyiv-launches-1000-137358485"
+        },
+        {
+          "outlet": "RFE/RL",
+          "title": "Trump waives Graham Act sanctions on Russia before they take effect",
+          "url": "https://www.rferl.org/a/trump-waives-graham-act-sanctions-on-russia/33878335.html"
+        }
+      ]
+    },
+    {
+      "thread": "gulf-war",
+      "change": "developing",
+      "momentum": "up",
+      "headline": "Oil nears $110 as the Saudi–Houthi war widens",
+      "dek": "Brent settled at $109.86 on Friday, its highest since May. Houthi missiles and drones keep hitting Saudi Arabia, and Riyadh's main airport is still closed.",
+      "body": [
+        "Since a Houthi strike on Riyadh's King Khalid airport on 10 October killed at least 12 people, Saudi-led forces have been intercepting near-daily drone and missile salvos aimed at Riyadh, the Eastern Province and Yanbu, and hitting launchers inside Yemen. Trump has said the US may join the fight; Egypt says it would defend Saudi Arabia if asked.",
+        "The wider US–Iran war, now in its eighth month, has no working ceasefire, and talks stalled after Tehran called the latest US offer insufficient. Accounts of the Strait of Hormuz conflict: Iran's Revolutionary Guards say the strait is closed and that tankers have hit mines, while US officials say escorted routes are open and trade data show volumes recovering. Trump has said the US will not attack Iran before the 3 November midterms."
+      ],
+      "why": "Crude is up more than 75% this year, and Eurasia Group has raised its odds of a wider conflict to 65% from 35%. Fuel prices are now a live political issue in the US, Europe and Asia.",
+      "watch": "A US decision on joining strikes against the Houthis. Whether Riyadh's airport reopens. Monday's oil open.",
+      "sources": [
+        {
+          "outlet": "Rigzone",
+          "title": "Brent oil hits $110 as supply risks mount",
+          "url": "https://www.rigzone.com/news/wire/brent_oil_hits_110_as_supply_risks_mount-16-oct-2026-184870-article/"
+        },
+        {
+          "outlet": "Gulf News",
+          "title": "Saudi Arabia intercepts Houthi drones amid rising Middle East tensions",
+          "url": "https://gulfnews.com/world/mena/middle-east-conflict-trump-lifts-russia-energy-sanctions-saudi-arabia-intercepts-missiles-1.500713832"
+        },
+        {
+          "outlet": "CBS News",
+          "title": "Iran calls U.S. response \"insufficient\" amid stalled talks to end the war",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-elections-saudi-arabia-yemen-houthis/"
+        }
+      ]
+    },
+    {
+      "thread": "ebola-east-africa",
+      "change": "major",
+      "momentum": "up",
+      "headline": "Ebola is now spreading inside Kenya",
+      "dek": "Three health workers and a relative of Kenya's first patient have tested positive, bringing the total to seven. They are the first infections passed on within the country.",
+      "body": [
+        "The first patient had been ill in the Democratic Republic of Congo for a month before flying to Nairobi on 3 October; he died two days later. Health officials say 128 of his 130 known contacts are in quarantine and that there is no sign of community spread.",
+        "The strain is Bundibugyo, for which there is no approved vaccine or treatment; some candidate vaccines are in early human trials. Congo's outbreak, detected in May, has passed 9,000 cases and 4,300 deaths."
+      ],
+      "why": "Infections among the doctors and nurses who treated the first patient are an early warning that hospital infection control is under strain, in a regional travel hub, with no vaccine to fall back on.",
+      "watch": "Any case outside the known contact list, which would mean community spread.",
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Kenya confirms four more Ebola cases, bringing total to seven",
+          "url": "https://www.aljazeera.com/news/2026/10/17/kenya-confirms-four-more-ebola-cases-bringing-total-to-seven"
+        },
+        {
+          "outlet": "AP via ABC News",
+          "title": "Kenya's Ebola cases rise to 7, including health workers who cared for the first patient",
+          "url": "https://abcnews.com/Health/wireStory/kenyas-ebola-cases-rise-7-including-health-workers-137348256"
+        }
+      ]
+    },
+    {
+      "thread": "alberta-referendum",
+      "change": "new",
+      "momentum": "up",
+      "headline": "Alberta votes tomorrow on starting the road out of Canada",
+      "dek": "The last of ten questions on Monday's ballot asks whether to begin a process toward a binding separation referendum. Polls show staying in Canada far ahead.",
+      "body": [
+        "Angus Reid's final survey, taken 13–15 October, has 66% backing remaining a province and 34% for starting the separation process. Officials expect turnout above 80% of nearly three million registered voters, far higher than recent provincial elections.",
+        "Most supporters of the separation option tell pollsters they mainly want to send Ottawa a message. Premier Danielle Smith has said there will be no further separation vote if this one fails; separatist organizers say their movement continues whatever the result."
+      ],
+      "why": "A lopsided loss would blunt the movement. A closer-than-polled result would keep a national-unity question alive into Alberta's 2027 election.",
+      "watch": "Results Monday night, and how the separation vote compares with the polls.",
+      "sources": [
+        {
+          "outlet": "Angus Reid Institute",
+          "title": "Alberta referendum: 'Remain' continues to lead by a wide margin",
+          "url": "https://angusreid.org/alberta-referendum-remain-continues-to-lead-by-a-wide-margin-but-few-believe-separation-issue-will-end-on-oct-19/"
+        },
+        {
+          "outlet": "Morning Star",
+          "title": "World in brief: October 18, 2026",
+          "url": "https://morningstaronline.co.uk/article/world-brief-october-18-2026"
+        }
+      ]
+    },
+    {
+      "thread": "us-midterms",
+      "change": "developing",
+      "momentum": "steady",
+      "headline": "Trump's approval hits a record low with 16 days to go",
+      "dek": "A Washington Post–ABC–Ipsos poll puts his approval at 33% among all adults and 38% among likely voters.",
+      "body": [
+        "Approval is down four points since July and eight from a year ago. Only 28% approve of his handling of the economy, and about three in four disapprove of how he has handled inflation and the cost of living. Democrats lead by eight points on which party Americans want running the House, up five since July."
+      ],
+      "why": "It is one poll, but it lands as fuel prices climb toward election day, and the economy, usually a Republican strength, is now the president's weakest number.",
+      "watch": "Early-vote turnout, and whether other high-quality polls show the same drop.",
+      "sources": [
+        {
+          "outlet": "LiveNOW from FOX",
+          "title": "Trump approval hits record low as midterms near: poll",
+          "url": "https://www.livenowfox.com/news/trump-approval-hits-record-low-midterms-near-poll"
+        }
+      ]
+    },
+    {
+      "thread": "brazil-election",
+      "change": "developing",
+      "momentum": "steady",
+      "headline": "Brazil's runoff is a coin toss, one week out",
+      "dek": "Three polls give Senator Flávio Bolsonaro a one- to two-point edge over President Lula, inside every margin of error.",
+      "body": [
+        "Flávio, 42, is the son of former president Jair Bolsonaro, who is under house arrest and barred from office until 2030. He led the 4 October first round with about 56.1 million votes to Lula's 53.9 million. The latest runoff polls: CNT/MDA 46.8% to 45.9%, Quaest 46% to 44%, Datafolha 47% to 45%."
+      ],
+      "why": "The vote sets the direction of Latin America's largest economy. With a margin this thin, the days after the vote may matter as much as the vote itself.",
+      "watch": "Final polls and debates this week; the vote on 25 October.",
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Latest poll shows Bolsonaro maintaining edge over Lula in Brazil run-off",
+          "url": "https://www.aljazeera.com/news/2026/10/16/latest-poll-shows-bolsonaro-maintaining-edge-over-lula-in-brazil-run-off"
+        }
+      ]
+    },
+    {
+      "thread": "west-bank",
+      "change": "developing",
+      "momentum": "up",
+      "headline": "Settlers attack European diplomats as Washington tells Israel to crack down",
+      "dek": "Masked men with metal bars attacked a delegation including Belgium's consul general and French and Polish diplomats in the West Bank village of Taybeh on Saturday.",
+      "body": [
+        "The attack came a day after a Washington Post photographer, Heidi Levine, was seriously injured in another assault. The Palestinian Health Ministry says at least four people have been killed and more than 100 injured since the olive harvest began this month.",
+        "Israel's army called the attack a severe act of violence and police opened an investigation; Foreign Minister Gideon Saar condemned it, while Netanyahu's office warned against premature conclusions. Secretary of State Marco Rubio said he was very disturbed by the violence and wants Israel to crack down."
+      ],
+      "why": "Attacks on Western diplomats and journalists, together with open US criticism, raise the diplomatic cost for Israel less than two weeks before a closely fought Israeli election.",
+      "watch": "Arrests in the Taybeh and Levine cases; any European move toward sanctions on violent settlers.",
+      "sources": [
+        {
+          "outlet": "AP via PBS NewsHour",
+          "title": "Masked settlers attack European diplomats in the occupied West Bank",
+          "url": "https://www.pbs.org/newshour/world/masked-settlers-attack-european-diplomats-in-the-occupied-west-bank"
+        },
+        {
+          "outlet": "Reuters via US News",
+          "title": "US wants Israel to 'crack down' on settler violence in West Bank, Rubio says",
+          "url": "https://www.usnews.com/news/world/articles/2026-10-17/us-wants-israel-to-crack-down-on-settler-violence-in-west-bank-rubio-says"
+        }
+      ]
+    },
+    {
+      "thread": "pakistan-afghanistan",
+      "change": "developing",
+      "momentum": "up",
+      "headline": "Pakistan and the Taliban keep trading fire on the border",
+      "dek": "Pakistani officials say artillery-backed troops destroyed Afghan Taliban posts on Saturday, as clashes that began two weeks ago show no sign of stopping.",
+      "body": [
+        "Fighting has flared on and off since 5 October, when regional talks in Moscow ended without a joint statement. Islamabad accuses the Taliban of sheltering the Pakistani Taliban and other militant groups; a suicide bombing in the northwest in September killed 31 people.",
+        "At home, President Zardari declared an emergency in Khyber Pakhtunkhwa on 11 October and suspended its provincial government, which is led by Imran Khan's party."
+      ],
+      "why": "A slow-burning border war is merging with a political crisis in Pakistan's most volatile province.",
+      "watch": "Whether strikes move beyond border posts, and how Imran Khan's party responds to losing its provincial government.",
+      "sources": [
+        {
+          "outlet": "Morning Star",
+          "title": "World in brief: October 18, 2026",
+          "url": "https://morningstaronline.co.uk/article/world-brief-october-18-2026"
+        },
+        {
+          "outlet": "FDD's Long War Journal",
+          "title": "Taliban-Pakistan border clashes continue after Moscow talks end without agreement",
+          "url": "https://www.longwarjournal.org/archives/2026/10/taliban-pakistan-border-clashes-continue-after-moscow-talks-end-without-agreement.php"
+        }
+      ]
+    }
+  ],
+  "ai": [
+    {
+      "thread": "ai-self-replication",
+      "change": "new",
+      "momentum": "up",
+      "headline": "Anthropic says self-copying AI may be months away",
+      "dek": "Its red team got an AI system to copy itself, with no human help, across 15 cheap smart-TV boxes.",
+      "body": [
+        "In a post on 12 October, Anthropic said small models could become able to replicate onto poorly secured consumer devices — TV boxes and smart appliances now, cameras and conferencing units with AI chips later — possibly by the end of 2026. A model too large for one device could split into pieces running on several machines. Anthropic expects such replicators to spread slowly, and says defenders should harden devices and plan for them sticking around."
+      ],
+      "picture": "Most loss-of-control debate assumes a runaway AI needs a data center. This moves the plausible threat onto cheap hardware nobody patches, turning an AI-safety question into an everyday cybersecurity problem on a timescale of months.",
+      "sources": [
+        {
+          "outlet": "ABC News",
+          "title": "Anthropic warns AI models could soon copy themselves in small devices",
+          "url": "https://abcnews.com/US/anthropic-warns-ai-models-copy-small-devices/story?id=137220664"
+        },
+        {
+          "outlet": "Reuters via US News",
+          "title": "AI models may soon self-replicate without access to data centers, Anthropic warns",
+          "url": "https://money.usnews.com/investing/news/articles/2026-10-13/ai-models-may-soon-self-replicate-without-access-to-data-centers-anthropic-warns"
+        }
+      ]
+    },
+    {
+      "thread": "frontier-models",
+      "change": "new",
+      "momentum": "up",
+      "headline": "Google ships Gemini 4 Argon, with an unguarded edition for cyber defenders",
+      "dek": "The model targets long, multistep work in code, finance, law, security and science.",
+      "body": [
+        "Google released Argon on 13 October after weeks of security testing and delays. It says internal teams using it produced more than 35% more AI-assisted code with nearly a third fewer rollbacks. Introductory API pricing is $2 per million input tokens and $10 per million output tokens, doubling after 30 November. Vetted defenders in its Fairwind Program get a version without the standard cyber guardrails, and in a separate DeepMind paper four Argon agents beat Minecraft's final boss in a single 27-hour run."
+      ],
+      "picture": "Frontier labs are now formally splitting capability by trust level: one model for the public, a less restricted one for vetted security partners. Expect that two-tier release to become the norm for models with serious hacking ability.",
+      "sources": [
+        {
+          "outlet": "American Bazaar",
+          "title": "Google releases Gemini 4 Argon AI model to public",
+          "url": "https://americanbazaaronline.com/2026/10/14/google-releases-gemini-4-argon-ai-model-490048/"
+        },
+        {
+          "outlet": "FourWeekMBA",
+          "title": "AI Daily roundup, 17 October 2026",
+          "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
+        }
+      ]
+    },
+    {
+      "thread": "ai-financing",
+      "change": "developing",
+      "momentum": "up",
+      "headline": "The AI build-out is running on more expensive debt",
+      "dek": "Anthropic has offered a 10% coupon on $9 billion of junior debt, and OpenAI's ad business looks set to miss its target.",
+      "body": [
+        "According to the Financial Times, Anthropic offered Blackstone 10% on $9 billion of junior debt within a $60 billion financing for Google-designed chips; four months ago it borrowed about $4.4 billion at 8.5%. The Information reports that OpenAI told investors to expect $2.4 billion in advertising revenue this year and is likely to fall short."
+      ],
+      "picture": "Frontier compute is now financed like power plants, at rising rates each round. That ties the pace of AI progress to credit markets and to revenue, not only to research.",
+      "sources": [
+        {
+          "outlet": "FourWeekMBA (citing FT and The Information)",
+          "title": "AI Daily: Anthropic's 10% debt offer and OpenAI's ad target",
+          "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
+        }
+      ]
+    },
+    {
+      "thread": "ai-and-work",
+      "change": "new",
+      "momentum": "up",
+      "headline": "At one AI lab, junior hiring has collapsed",
+      "dek": "Anthropic says junior roles fell from 27% to 9% of its technical hires.",
+      "body": [
+        "The company's own report adds that by August, AI agents directed by individual employees were logging six times as many working hours as the people directing them."
+      ],
+      "picture": "It is one company, and an AI lab at that. But it is an early, measured case of the pattern economists worry about most: AI absorbing entry-level work first, and with it the usual path into a profession.",
+      "sources": [
+        {
+          "outlet": "FourWeekMBA",
+          "title": "AI Daily roundup, 17 October 2026",
+          "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
+        }
+      ]
+    }
+  ],
+  "pulse": [
+    {
+      "region": "North America",
+      "status": "moved",
+      "text": "Record-low approval for Trump 16 days before the midterms. Alberta votes Monday on whether to start a separation process.",
+      "threads": [
+        "us-midterms",
+        "alberta-referendum"
+      ],
+      "sources": []
+    },
+    {
+      "region": "Latin America",
+      "status": "moved",
+      "text": "Brazil's 25 October runoff is inside the margin of error. Nothing else in the region cleared our bar today.",
+      "threads": [
+        "brazil-election"
+      ],
+      "sources": []
+    },
+    {
+      "region": "Europe",
+      "status": "moved",
+      "text": "France counts the cost of Saturday's unrest. In Czechia, pro-Western opposition parties held the Senate, a first electoral setback for Prime Minister Babiš.",
+      "threads": [
+        "france-unrest",
+        "ukraine-war"
+      ],
+      "sources": [
+        {
+          "outlet": "Morning Star",
+          "title": "World in brief: October 18, 2026",
+          "url": "https://morningstaronline.co.uk/article/world-brief-october-18-2026"
+        }
+      ]
+    },
+    {
+      "region": "Africa",
+      "status": "moved",
+      "text": "Ebola spreads within Kenya. In Sudan, the UN Security Council met on 16 October as drone strikes spread and 20 million people face acute hunger.",
+      "threads": [
+        "ebola-east-africa"
+      ],
+      "sources": [
+        {
+          "outlet": "UN News",
+          "title": "Security Council: Sudan's war spreads as drones and hunger take a deadly toll",
+          "url": "https://news.un.org/en/story/2026/10/1168612"
+        }
+      ]
+    },
+    {
+      "region": "Middle East",
+      "status": "moved",
+      "text": "Saudi–Houthi fighting and contested Hormuz shipping keep oil near $110; US–Iran talks are stalled. Settler violence draws rare US criticism.",
+      "threads": [
+        "gulf-war",
+        "west-bank"
+      ],
+      "sources": []
+    },
+    {
+      "region": "Asia",
+      "status": "moved",
+      "text": "Pakistan–Taliban border clashes continue. China's third-quarter growth figures, due this week, are expected to come in below target for a second straight quarter.",
+      "threads": [
+        "pakistan-afghanistan"
+      ],
+      "sources": [
+        {
+          "outlet": "Bloomberg",
+          "title": "China set for second straight quarter of growth below target as stimulus lags",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-16/tardy-china-stimulus-sets-up-second-quarter-of-sub-target-growth"
+        }
+      ]
+    },
+    {
+      "region": "Oceania",
+      "status": "quiet",
+      "text": "No development cleared our bar today.",
+      "threads": [],
+      "sources": []
+    }
+  ],
+  "forecast_notes": [],
+  "corrections": []
+}

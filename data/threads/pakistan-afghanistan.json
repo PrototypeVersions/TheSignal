@@ -1,0 +1,21 @@
+{
+  "id": "pakistan-afghanistan",
+  "title": "Pakistan–Afghanistan border",
+  "short": "Pakistan",
+  "section": "world",
+  "region": "Asia",
+  "started": "2026-10-05",
+  "started_label": "5 October 2026",
+  "status": "active",
+  "summary": "Intermittent fighting between Pakistani forces and the Afghan Taliban, alongside an emergency declared in Khyber Pakhtunkhwa.",
+  "background": [
+    {
+      "date": "2026-10-05",
+      "text": "Moscow-format talks end without a joint statement; clashes begin."
+    },
+    {
+      "date": "2026-10-11",
+      "text": "Emergency declared in Khyber Pakhtunkhwa; provincial government suspended."
+    }
+  ]
+}

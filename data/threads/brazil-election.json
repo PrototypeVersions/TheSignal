@@ -1,0 +1,17 @@
+{
+  "id": "brazil-election",
+  "title": "Brazil's presidential election",
+  "short": "Brazil",
+  "section": "world",
+  "region": "Latin America",
+  "started": "2026-10-04",
+  "started_label": "First round 4 October 2026",
+  "status": "active",
+  "summary": "Senator Flávio Bolsonaro and President Lula face a runoff on 25 October that polls show as a toss-up.",
+  "background": [
+    {
+      "date": "2026-10-04",
+      "text": "First round: Flávio Bolsonaro about 56.1 million votes, Lula about 53.9 million."
+    }
+  ]
+}

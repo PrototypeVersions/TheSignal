@@ -1,0 +1,21 @@
+{
+  "id": "france-unrest",
+  "title": "France unrest",
+  "short": "France",
+  "section": "world",
+  "region": "Europe",
+  "started": "2026-10-17",
+  "started_label": "17 October 2026",
+  "status": "active",
+  "summary": "A cost-of-living and schools protest movement that turned into France's worst unrest in years on 17 October. The question now is whether disorder continues without large organized marches.",
+  "background": [
+    {
+      "date": "2026-09",
+      "text": "Weeks of student protests over school conditions, with thousands of arrests and attacks on schools."
+    },
+    {
+      "date": "2026-10-17",
+      "text": "National day of action over living costs and schools: 550,000–800,000 march, with looting and arson in many cities and more than 1,200 arrests reported that night."
+    }
+  ]
+}

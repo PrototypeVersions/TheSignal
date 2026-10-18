@@ -1,0 +1,12 @@
+{
+  "id": "ai-financing",
+  "title": "Paying for AI",
+  "short": "AI debt",
+  "section": "ai",
+  "region": "AI",
+  "started": "2026-10-17",
+  "started_label": "Following since 17 October 2026",
+  "status": "active",
+  "summary": "How the compute build-out is financed and whether AI revenue is keeping pace.",
+  "background": []
+}

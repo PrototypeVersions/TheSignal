@@ -1,0 +1,162 @@
+[
+  {
+    "id": "alberta-separation-vote",
+    "question": "Will the separation option win a majority in Alberta's 19 October referendum?",
+    "criteria": "YES if the official or preliminary count from Elections Alberta shows the option to begin a separation process with more than 50% of valid votes on that question.",
+    "category": "North America",
+    "threads": [
+      "alberta-referendum"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-10-20",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 5,
+        "note": "Final Angus Reid poll has remaining a province ahead 66–34. Unusual turnout is the main way the polls could miss."
+      }
+    ]
+  },
+  {
+    "id": "brazil-flavio-wins",
+    "question": "Will Flávio Bolsonaro win Brazil's presidential runoff on 25 October?",
+    "criteria": "YES if Brazil's electoral court (TSE) declares Flávio Bolsonaro the winner of the 25 October 2026 runoff.",
+    "category": "Latin America",
+    "threads": [
+      "brazil-election"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-10-26",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 55,
+        "note": "Three polls show him 1–2 points ahead, all within the margin of error. He led the first round by about 2.2 million votes."
+      }
+    ]
+  },
+  {
+    "id": "us-house-democrats",
+    "question": "Will Democrats win a majority of US House seats in the 3 November midterms?",
+    "criteria": "YES when the Associated Press projects Democrats to hold at least 218 seats; NO when it projects Republicans to hold at least 218.",
+    "category": "North America",
+    "threads": [
+      "us-midterms"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-12-31",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 78,
+        "note": "Democrats lead by 8 points on House preference in the Post–ABC–Ipsos poll, with the president at 33% approval."
+      }
+    ]
+  },
+  {
+    "id": "france-state-of-emergency",
+    "question": "Will France declare a state of emergency over civil unrest by 30 November 2026?",
+    "criteria": "YES if a decree under France's 1955 state-of-emergency law covering all or part of metropolitan France is issued in response to unrest, on or before 30 November 2026.",
+    "category": "Europe",
+    "threads": [
+      "france-unrest"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-11-30",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 12,
+        "note": "None declared so far. France used the measure during the 2005 riots after more than a week of nightly violence. Sunday has so far been calmer than Saturday."
+      }
+    ]
+  },
+  {
+    "id": "brent-above-120",
+    "question": "Will Brent crude settle above $120 a barrel on any trading day before 31 December 2026?",
+    "criteria": "YES if the front-month ICE Brent futures contract settles above $120.00 on any trading day from 19 October to 31 December 2026.",
+    "category": "Economy",
+    "threads": [
+      "gulf-war"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-12-31",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 30,
+        "note": "Settled at $109.86 on 16 October, the highest since May. Gulf escalation pushes up; a US reserve release and recovering Hormuz flows push down."
+      }
+    ]
+  },
+  {
+    "id": "kenya-ebola-25-cases",
+    "question": "Will Kenya report more than 25 confirmed Ebola cases by 30 November 2026?",
+    "criteria": "YES if Kenya's Ministry of Health or the WHO reports more than 25 cumulative confirmed cases in Kenya on or before 30 November 2026.",
+    "category": "Africa",
+    "threads": [
+      "ebola-east-africa"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-11-30",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 22,
+        "note": "Seven cases, all linked to one patient, and 98.5% of contacts quarantined. Health-worker infections are the warning sign."
+      }
+    ]
+  },
+  {
+    "id": "us-strikes-houthis",
+    "question": "Will the US military strike Houthi targets in Yemen by 30 November 2026?",
+    "criteria": "YES if the US government confirms that US forces carried out offensive strikes on Houthi targets inside Yemen (interceptions alone do not count) on or before 30 November 2026.",
+    "category": "Middle East",
+    "threads": [
+      "gulf-war"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2026-11-30",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 35,
+        "note": "Trump says the US may join Saudi Arabia's fight, but has also said he will not attack Iran before the midterms. The Houthis threaten the US if it joins."
+      }
+    ]
+  },
+  {
+    "id": "ai-replication-in-the-wild",
+    "question": "Will an AI system be credibly reported copying itself across devices outside a sanctioned test by 30 June 2027?",
+    "criteria": "YES if a frontier AI lab, a national cybersecurity agency or a major security firm confirms an incident in which an AI model drove its own spread to other devices outside an authorized experiment. Ordinary worm code without a model directing it does not count.",
+    "category": "AI",
+    "threads": [
+      "ai-self-replication"
+    ],
+    "opened": "2026-10-18",
+    "closes": "2027-06-30",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-18",
+        "p": 12,
+        "note": "Anthropic showed it on 15 TV boxes in a controlled test and says the capability may arrive by late 2026. Attackers actually deploying it is a further step."
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "gulf-war",
+  "title": "Iran war and the Gulf",
+  "short": "Gulf",
+  "section": "world",
+  "region": "Middle East",
+  "started": "2026-02-28",
+  "started_label": "28 February 2026",
+  "status": "active",
+  "summary": "The US–Iran war has run since late February, with a spring ceasefire that collapsed in July. Shipping through Hormuz is contested and Houthi strikes on Saudi Arabia have opened a second front.",
+  "background": [
+    {
+      "date": "2026-02-28",
+      "text": "War begins; Iran ends international inspectors' access."
+    },
+    {
+      "date": "2026-04-08",
+      "text": "A Pakistan-brokered ceasefire takes effect."
+    },
+    {
+      "date": "2026-07",
+      "text": "The ceasefire collapses."
+    },
+    {
+      "date": "2026-10-10",
+      "text": "A Houthi strike on Riyadh's King Khalid airport kills at least 12 people."
+    }
+  ]
+}

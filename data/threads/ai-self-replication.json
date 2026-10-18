@@ -1,0 +1,12 @@
+{
+  "id": "ai-self-replication",
+  "title": "AI self-replication",
+  "short": "Self-copying AI",
+  "section": "ai",
+  "region": "AI",
+  "started": "2026-10-12",
+  "started_label": "12 October 2026",
+  "status": "active",
+  "summary": "Whether AI systems can copy themselves onto other machines without human help, and how soon.",
+  "background": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ebola-east-africa",
+  "title": "Ebola in East Africa",
+  "short": "Ebola",
+  "section": "world",
+  "region": "Africa",
+  "started": "2026-05",
+  "started_label": "May 2026",
+  "status": "active",
+  "summary": "A Bundibugyo-strain outbreak in the Democratic Republic of Congo, with no approved vaccine or treatment, has now produced local transmission in Kenya.",
+  "background": [
+    {
+      "date": "2026-05",
+      "text": "Outbreak detected in the Democratic Republic of Congo."
+    },
+    {
+      "date": "2026-10-05",
+      "text": "Kenya's first patient, who travelled from Congo, dies in Nairobi."
+    }
+  ]
+}

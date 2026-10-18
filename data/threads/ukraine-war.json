@@ -1,0 +1,21 @@
+{
+  "id": "ukraine-war",
+  "title": "Russia–Ukraine war",
+  "short": "Ukraine",
+  "section": "world",
+  "region": "Europe",
+  "started": "2022-02-24",
+  "started_label": "24 February 2022",
+  "status": "active",
+  "summary": "The full-scale war is in its fifth year. Both sides are escalating long-range strikes on energy infrastructure while a US-announced energy ceasefire has failed to hold.",
+  "background": [
+    {
+      "date": "2026-10-11",
+      "text": "Trump announces an 'energy ceasefire' between Russia and Ukraine without published terms."
+    },
+    {
+      "date": "2026-10-16",
+      "text": "Trump waives nearly all measures in the Graham Act, a day before they were to take effect."
+    }
+  ]
+}
