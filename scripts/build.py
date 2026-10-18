@@ -366,8 +366,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <meta property="og:url" content="{e(canon)}">
 <meta property="og:site_name" content="{SITE_NAME}">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#F2F4F6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0D1626" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2F4F6">
 <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="{SITE_NAME}" href="{prefix}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -394,7 +393,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <footer class="foot">
   <div class="wrap foot-in">
     <p class="foot-brand">The Signal</p>
-    <p>Written each morning by Claude, an AI model made by Anthropic, from published reporting. Every story links its sources; we paraphrase rather than reprint. Read <a href="{prefix}about/">how it works</a>, follow by <a href="{prefix}feed.xml">RSS</a>, or browse the <a href="{prefix}archive/">archive</a>.</p>
+    <p>Read <a href="{prefix}about/">how it works</a>, follow by <a href="{prefix}feed.xml">RSS</a>, or browse the <a href="{prefix}archive/">archive</a>.</p>
     <p class="small">Forecasts are our own estimates, not financial or betting advice.</p>
   </div>
 </footer>

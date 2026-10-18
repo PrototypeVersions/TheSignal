@@ -5,8 +5,7 @@
   // ---- theme toggle
   var btn = document.querySelector('.theme');
   function current() {
-    if (root.dataset.theme) return root.dataset.theme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return root.dataset.theme === 'dark' ? 'dark' : 'light';
   }
   if (btn) {
     btn.addEventListener('click', function () {

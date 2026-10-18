@@ -18,15 +18,7 @@
   --measure: 40rem;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0D1626; --paper-2: #121E33; --card: #15233B;
-    --ink: #E5EBF3; --ink-2: #A8B4C6; --ink-3: #8592A6;
-    --grid: #1F2C44; --grid-2: #2B3B58;
-    --trace: #86A2FF; --up: #FF8B7B; --steady: #9AA8BA; --down: #52D3B2; --focus: #86A2FF;
-    color-scheme: dark;
-  }
-}
+/* Light is the default; dark applies only when the reader picks it. */
 :root[data-theme="dark"] {
   --paper: #0D1626; --paper-2: #121E33; --card: #15233B;
   --ink: #E5EBF3; --ink-2: #A8B4C6; --ink-3: #8592A6;
@@ -281,7 +273,6 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .theme svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; grid-area: 1 / 1; }
 .theme .i-sun { display: none; }
 :root[data-theme="dark"] .theme .i-sun { display: block; } :root[data-theme="dark"] .theme .i-moon { display: none; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme .i-sun { display: block; } :root:not([data-theme="light"]) .theme .i-moon { display: none; } }
 
 /* the big, weighted date */
 .hero-ed { padding-top: 2.2rem; }
@@ -301,7 +292,6 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 /* live trace */
 .trace-box { position: relative; }
 :root[data-theme="dark"] .trace .line { filter: drop-shadow(0 0 3px var(--trace)) drop-shadow(0 0 10px color-mix(in srgb, var(--trace) 45%, transparent)); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .trace .line { filter: drop-shadow(0 0 3px var(--trace)) drop-shadow(0 0 10px color-mix(in srgb, var(--trace) 45%, transparent)); } }
 .trace .pen { fill: var(--trace); stroke: var(--paper); stroke-width: 2; transition: opacity .6s .3s; }
 .trace .pen.done { opacity: 0; }
 .trace .pk { transition: r .2s; transform-box: fill-box; transform-origin: center; }

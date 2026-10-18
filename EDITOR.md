@@ -39,7 +39,7 @@ Prefer original reporting and official sources over aggregators. When figures di
 - **AI frontier: 3–5.** Only items that could change where AI is heading. Skip routine product updates.
 - Each story belongs to exactly one thread. If a story starts a new thread, create `data/threads/<id>.json` (see section 5).
 - Never use the same thread twice in one edition.
-- Order world stories by importance of the change, biggest first.
+- Order world stories by importance of the change, biggest first. The order sets the front page: story 1 is the large lead with a big map, stories 2–3 sit side by side, and the rest form a compact list. Put the day's single most important change first.
 
 ### Change labels (pick one)
 
@@ -74,9 +74,23 @@ Judge momentum against the previous entry in the same thread. Do not keep a thre
   "body": ["Paragraph one.", "Optional paragraph two."],
   "why": "Why this change matters, in one to three sentences.",
   "watch": "What would tell us where this goes next. Concrete events or dates.",
-  "sources": [{"outlet": "AP via ABC News", "title": "Article title", "url": "https://..."}]
+  "sources": [{"outlet": "AP via ABC News", "title": "Article title", "url": "https://..."}],
+  "places": {
+    "countries": ["FRA"],
+    "related": ["DEU"],
+    "points": [{"name": "Paris", "lat": 48.86, "lon": 2.35}],
+    "view": [-6, 41, 10, 52]
+  }
 }
 ```
+
+**`places` draws the story's locator map. Every world story should have one.**
+- `countries`: the main country or countries, as ISO 3166 alpha-3 codes (FRA, UKR, USA, KEN…). Drawn highlighted.
+- `related`: optional, other countries directly involved, drawn lighter (for example RUS on a story about strikes inside Ukraine, IRN behind the Houthis).
+- `points`: two to four key cities or sites with accurate coordinates. The first point is drawn largest. Avoid two points so close that their labels overlap.
+- `view`: optional framing box `[west longitude, south latitude, east longitude, north latitude]`. Leave it out for most stories; the map frames the countries and points automatically. Set it when a country is huge or has far-off territories (Russia, the US, Canada, France with overseas territories) or when the story is about one small area.
+- The West Bank is `PSE`. Codes the map does not know will fail the build check; use a neighboring country or just points instead.
+- AI frontier items have no map.
 
 AI frontier items use the same shape but replace `why` and `watch` with `picture`: one to three sentences completing "This changes the picture because…".
 
@@ -143,7 +157,7 @@ If research shows an earlier edition got something wrong, add an entry to **that
 2. Check that nothing is copied word-for-word from a source beyond a short attributed quote.
 3. Run `python3 scripts/build.py --check` and fix every error it reports.
 4. Run `python3 scripts/build.py` to regenerate `docs/`.
-5. Open `docs/index.html` and skim it: correct date, all sections present.
+5. Open `docs/index.html` and skim it: correct date, all sections present, every map shows the right place.
 
 ## 8. Publish
 
