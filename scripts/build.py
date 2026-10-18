@@ -111,7 +111,13 @@ def validate(threads, editions, forecasts):
                     errs.append(f"{where}: body must be a list of paragraphs")
                 errs += check_sources(s.get("sources", []), where)
                 errs += maps.validate_places(s.get("places"), where)
+                errs += check_updates(s, where)
         errs += check_markets(ed.get("markets"), f"edition {d} markets")
+        if ed.get("updated_at"):
+            try:
+                dt.datetime.fromisoformat(ed["updated_at"])
+            except ValueError:
+                errs.append(f"edition {d}: updated_at must be an ISO time")
         errs += check_sources(ed.get("frontier_note_sources", []), f"edition {d} frontier_note", allow_empty=True)
         if len(ed.get("stories", [])) < 3:
             errs.append(f"edition {d}: needs at least 3 stories")
@@ -148,6 +154,35 @@ def validate(threads, editions, forecasts):
                 errs.append(f"forecast {fid}: unknown thread '{tid}'")
     if errs:
         raise BuildError("Validation failed:\n  - " + "\n  - ".join(errs))
+
+
+def check_updates(s, where):
+    errs = []
+    for u in s.get("updates", []):
+        if not u.get("text") or not u.get("at"):
+            errs.append(f"{where}: each update needs 'at' (ISO time) and 'text'")
+        else:
+            try:
+                dt.datetime.fromisoformat(u["at"])
+            except ValueError:
+                errs.append(f"{where}: update 'at' must be an ISO time like 2026-10-18T17:55:00-05:00")
+        errs += check_sources(u.get("sources", []), where, allow_empty=True)
+    return errs
+
+
+def clock(iso):
+    t = dt.datetime.fromisoformat(iso)
+    h = t.hour % 12 or 12
+    return f"{h}:{t.minute:02d}{'am' if t.hour < 12 else 'pm'} CT"
+
+
+def updates_block(s):
+    ups = s.get("updates", [])
+    if not ups:
+        return ""
+    items = "".join(f'<li><span class="up-t">Update, {e(clock(u["at"]))}</span> {e(u["text"])}'
+                    f'{sources_block(u.get("sources", []))}</li>' for u in ups)
+    return f'<ul class="updates">{items}</ul>'
 
 
 def check_markets(m, where):
@@ -455,7 +490,7 @@ def story_lead(s, threads, prefix):
     m = maps.map_svg(s.get("places"), 560, 420, labels=True, cls="map-lead")
     fig = f'<figure class="lead-map">{m}{place_caption(s)}</figure>' if m else ""
     return (f'<article class="story story-lead{"" if m else " nomap"}" id="{e(s["thread"])}"><div class="lead-text">{story_meta(s, threads, prefix)}'
-            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
+            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>{updates_block(s)}'
             f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</div>{fig}</article>')
 
 
@@ -463,7 +498,7 @@ def story_second(s, threads, prefix):
     m = maps.map_svg(s.get("places"), 520, 250, labels=True, cls="map-second")
     fig = f'<figure class="second-map">{m}</figure>' if m else ""
     return (f'<article class="story story-second" id="{e(s["thread"])}">{fig}{story_meta(s, threads, prefix)}'
-            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
+            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>{updates_block(s)}'
             f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</article>')
 
 
@@ -471,7 +506,7 @@ def story_compact(s, threads, prefix):
     m = maps.map_svg(s.get("places"), 160, 160, labels=False, cls="map-thumb")
     thumb = f'<div class="thumb">{m}</div>' if m else ""
     return (f'<article class="story story-compact" id="{e(s["thread"])}">{thumb}<div class="c-text">'
-            f'{story_meta(s, threads, prefix)}<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
+            f'{story_meta(s, threads, prefix)}<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>{updates_block(s)}'
             f'<details class="more-story"><summary>Read the full story</summary>'
             f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</details></div></article>')
 
@@ -482,7 +517,7 @@ def story_frontier(s, threads, prefix):
             f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
     return (f'<article class="story story-frontier" id="{e(s["thread"])}">{meta}'
             f'<h2>{e(s["headline"])}</h2>'
-            f'<div class="picture"><h3>This changes the picture because</h3><p>{e(s["picture"])}</p></div>'
+            f'<div class="picture"><h3>This changes the picture because</h3><p>{e(s["picture"])}</p></div>{updates_block(s)}'
             f'<details class="more-story"><summary>Read more</summary><p class="dek">{e(s["dek"])}</p>'
             f'<div class="body">{paras(s["body"])}</div>{sources_block(s["sources"])}</details></article>')
 
@@ -575,7 +610,7 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
     <div class="dateline">
       <h1 class="bigdate"><span class="sr">The Signal, </span><span class="dow">{e(d.strftime("%A"))}</span><span class="dm">{d.day} {e(d.strftime("%B"))}</span></h1>
       <div class="ed-meta">
-        <p>Edition {ed.get("number", "")}, {d.year}</p>
+        <p>Edition {ed.get("number", "")}, {d.year}{f'. Updated {e(clock(ed["updated_at"]))}' if ed.get("updated_at") else ""}</p>
         <p>{len(ed["stories"])} world stories, {len(ed.get("frontiers", []))} from the frontiers: {e(summary)}.</p>
       </div>
     </div>
@@ -653,7 +688,7 @@ def thread_page(t, entries, forecasts, prefix):
     for d, s in reversed(entries):
         tl.append(f'<li id="e-{d}"><div class="tl-date"><a href="{prefix}editions/{d}/#{t["id"]}">{e(long_date(d))}</a></div>'
                   f'<div class="tl-body"><div class="meta">{badges(s)}</div><h3>{e(s["headline"])}</h3>'
-                  f'<p class="dek">{e(s["dek"])}</p>{paras(s["body"])}'
+                  f'<p class="dek">{e(s["dek"])}</p>{updates_block(s)}{paras(s["body"])}'
                   + (f'<p class="wm"><strong>Why it matters.</strong> {e(s["why"])}</p>' if s.get("why") else "")
                   + (f'<p class="wm"><strong>This changes the picture because</strong> {e(s["picture"])}</p>' if s.get("picture") else "")
                   + f'{sources_block(s["sources"])}</div></li>')

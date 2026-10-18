@@ -1,6 +1,11 @@
 # The Signal — daily editor's runbook
 
-This file is the complete instruction set for producing one edition. The daily scheduled task follows it from top to bottom. A person can follow it too.
+This file is the complete instruction set for The Signal. Two scheduled tasks follow it each day:
+
+- **Morning edition** (about 5:53am Central): sections 0–9 below, producing the day's edition.
+- **Evening update** (about 5:52pm Central): section 10, which updates that same edition with what changed since morning.
+
+A person can follow it too.
 
 The Signal answers one question each morning: **what changed in the world since the last edition that changes our picture of it?** It is not a summary of all the news.
 
@@ -12,7 +17,10 @@ The Signal answers one question each morning: **what changed in the world since 
    - If it is not present, attach it with push access and clone it.
    - `git pull --rebase origin main`
 2. Work out today's date in **America/Chicago**. That is the edition date.
-3. If `data/editions/<today>.json` already exists, stop: today's edition is done. Report that and end.
+3. If `data/editions/<today>.json` already exists:
+   - on a **morning** run, stop: today's edition is done. Report that and end.
+   - on an **evening** run, go to section 10.
+   If it does not exist on an evening run (the morning run failed), produce a full edition by following sections 1–9, and say in `launch_note` that today's edition was published in the evening.
 4. Read, in full:
    - the latest edition in `data/editions/` (and skim the one before it),
    - every file in `data/threads/`,
@@ -212,3 +220,27 @@ If the push is rejected, `git pull --rebase origin main`, rebuild, and push agai
 ## 9. Report
 
 Finish with a short message: the edition number and date, the three biggest changes, any forecast moves or resolutions, anything you could not verify and left out, and any problem the owner should know about.
+
+## 10. Evening update
+
+The evening update keeps the morning edition current. It does **not** create a second edition and does not rewrite the morning's work. Readers should be able to see what is new since morning at a glance.
+
+1. Read today's edition, its threads and `data/forecasts.json`.
+2. Research what happened since the morning edition was published (`published_at`), with the same care as section 1: every story in today's edition, every scheduled event named in a "What to watch", the forecasts, and a sweep of world and frontier headlines for anything major and new.
+3. For each story where something material happened, append an entry to that story's `updates` list:
+   ```json
+   "updates": [{"at": "2026-10-18T17:55:00-05:00", "text": "One to three sentences on what changed since this morning.", "sources": [{"outlet": "...", "title": "...", "url": "https://..."}]}]
+   ```
+   - Do not edit the morning's headline, dek, body, why or watch, except to fix an outright error (then also add a correction, section 6). The update block is where the new information goes.
+   - You may change a story's `momentum` if the evening's news clearly changed the direction. Leave `change` as it was.
+   - Skip stories where nothing material happened. Most evenings, only a few stories get updates.
+4. If something **major and new** happened that is not in the edition, you may add up to two new stories (world or frontier) in the normal format, with an `updates`-free body and a new thread if needed. Put a world story where its importance belongs in the order; moving it to first place makes it the lead.
+5. Refresh `markets` with that day's closing values if markets traded today (set `label`, for example "Monday's close").
+6. Update forecasts as in section 4 if the evidence moved, appending history entries dated today.
+7. Rewrite the `lede` only if the day's picture changed; otherwise leave it.
+8. Set `"updated_at"` on the edition to the current time (ISO 8601 with offset). The site shows "Updated 5:55pm CT".
+9. Check (section 7), build, and publish with the commit message `Edition <N> evening update: <YYYY-MM-DD>`.
+10. Report: which stories got updates, any new stories, forecast moves, and anything left out because it could not be verified.
+
+If nothing material happened since morning, still refresh the markets and set `updated_at`, and say so in the report.
+
