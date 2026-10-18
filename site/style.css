@@ -370,3 +370,33 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
   .mast-r .theme { position: absolute; top: .75rem; right: 1rem; }
   .lead-map { order: -1; position: static; }
 }
+
+/* ===================================================================== frontiers + markets */
+.f-grid { display: grid; gap: 0 3rem; }
+@media (min-width: 760px) { .f-grid { grid-template-columns: 1fr 1fr; } }
+.f-grid .story-frontier { border-top: 1px solid var(--grid-2); padding: 1.6rem 0 1.4rem; }
+.story-frontier h2 { font-size: clamp(1.3rem, 1.1rem + .7vw, 1.6rem); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: .2rem; }
+.story-frontier .picture { margin: .8rem 0 .7rem; }
+.story-frontier .more-story[open] .dek { margin-top: .2rem; }
+.field { display: inline-block; font-family: var(--sans); font-size: .75rem; font-weight: 700; letter-spacing: .02em; margin: 0;
+  padding: .1rem .55rem; border-radius: 999px; background: var(--ink); color: var(--paper); }
+.field-science { background: #2F6B3F; color: #fff; } .field-medicine { background: #8A2F5B; color: #fff; }
+.field-space { background: #3B3A8F; color: #fff; } .field-energy { background: #9A5B12; color: #fff; } .field-climate { background: #1F6E75; color: #fff; }
+.f-note { margin: .4rem 0 1rem; padding: 1rem 1.2rem; border-top: 1px solid var(--grid-2); font-family: var(--sans); font-size: .92rem; color: var(--ink-2); }
+.f-note p { margin: 0 0 .3rem; max-width: 52rem; }
+
+.markets { margin-top: 1.6rem; font-family: var(--sans); }
+.mk-h { font-size: .8rem; font-weight: 700; color: var(--ink-2); margin: 0 0 .5rem; }
+.markets ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  border-top: 1px solid var(--grid-2); border-bottom: 1px solid var(--grid-2); }
+.markets li { display: grid; gap: .1rem; padding: .7rem .9rem .7rem 0; }
+.markets li + li { padding-left: .9rem; border-left: 1px solid var(--grid); }
+@media (max-width: 600px) { .markets ul { grid-template-columns: 1fr 1fr; } .markets li { padding-left: .9rem; border-left: 1px solid var(--grid); } .markets li:nth-child(odd) { border-left: 0; padding-left: 0; } }
+.mk-n { font-size: .78rem; color: var(--ink-3); }
+.mk-v { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.mk-d { font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.mk-up { color: var(--down); } .mk-down { color: var(--up); } .mk-flat { color: var(--steady); }
+.markets .sources { margin-top: .4rem; font-size: .78rem; }
+
+.story-lead.nomap { grid-template-columns: 1fr; }
+.story-lead.nomap .lead-text { max-width: 52rem; }

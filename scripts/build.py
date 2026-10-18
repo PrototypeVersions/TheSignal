@@ -35,6 +35,7 @@ CHANGE = {
     "quiet": ("Quiet", 0.18),
 }
 MOMENTUM = {"up": "Intensifying", "steady": "Holding", "down": "Easing"}
+FIELDS = ["AI", "Science", "Medicine", "Space", "Energy", "Climate"]
 REGIONS = ["North America", "Latin America", "Europe", "Africa", "Middle East", "Asia", "Oceania"]
 
 e = html.escape
@@ -73,8 +74,8 @@ def validate(threads, editions, forecasts):
         for k in ("id", "title", "section", "region", "started_label", "status", "summary"):
             if not t.get(k):
                 errs.append(f"thread {t.get('id')}: missing '{k}'")
-        if t.get("section") not in ("world", "ai"):
-            errs.append(f"thread {t['id']}: section must be 'world' or 'ai'")
+        if t.get("section") not in ("world", "frontier"):
+            errs.append(f"thread {t['id']}: section must be 'world' or 'frontier'")
     seen = set()
     for ed in editions:
         d = ed.get("date", "?")
@@ -85,7 +86,9 @@ def validate(threads, editions, forecasts):
         seen.add(d)
         if not ed.get("lede"):
             errs.append(f"edition {d}: missing lede")
-        for group in ("stories", "ai"):
+        if "ai" in ed:
+            errs.append(f"edition {d}: the 'ai' list is now called 'frontiers'")
+        for group in ("stories", "frontiers"):
             ids = set()
             for i, s in enumerate(ed.get(group, [])):
                 where = f"edition {d} {group}[{i}]"
@@ -99,6 +102,8 @@ def validate(threads, editions, forecasts):
                 if s.get("momentum") not in MOMENTUM:
                     errs.append(f"{where}: momentum must be one of {list(MOMENTUM)}")
                 need = ["headline", "dek", "body", "sources"] + (["why", "watch"] if group == "stories" else ["picture"])
+                if group == "frontiers" and s.get("field") not in FIELDS:
+                    errs.append(f"{where}: field must be one of {FIELDS}")
                 for k in need:
                     if not s.get(k):
                         errs.append(f"{where}: missing '{k}'")
@@ -106,6 +111,8 @@ def validate(threads, editions, forecasts):
                     errs.append(f"{where}: body must be a list of paragraphs")
                 errs += check_sources(s.get("sources", []), where)
                 errs += maps.validate_places(s.get("places"), where)
+        errs += check_markets(ed.get("markets"), f"edition {d} markets")
+        errs += check_sources(ed.get("frontier_note_sources", []), f"edition {d} frontier_note", allow_empty=True)
         if len(ed.get("stories", [])) < 3:
             errs.append(f"edition {d}: needs at least 3 stories")
         regions = [p.get("region") for p in ed.get("pulse", [])]
@@ -141,6 +148,21 @@ def validate(threads, editions, forecasts):
                 errs.append(f"forecast {fid}: unknown thread '{tid}'")
     if errs:
         raise BuildError("Validation failed:\n  - " + "\n  - ".join(errs))
+
+
+def check_markets(m, where):
+    if not m:
+        return []
+    errs = []
+    if not m.get("label") or not m.get("items"):
+        errs.append(f"{where}: needs label and items")
+    for it in m.get("items", []):
+        if not it.get("name") or not it.get("value"):
+            errs.append(f"{where}: each item needs name and value")
+        if it.get("change") is not None and not isinstance(it["change"], (int, float)):
+            errs.append(f"{where}: change must be a number (percent) or null")
+    errs += check_sources(m.get("sources", []), where)
+    return errs
 
 
 def check_sources(sources, where, allow_empty=False):
@@ -298,7 +320,7 @@ def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
         if p.get("divider"):
             px = round(p["x"] * W - p.get("gapw", 0.03) * W)
             dividers.append(f'<line x1="{px}" y1="{top}" x2="{px}" y2="{base + 6}" class="div"/>'
-                            f'<text x="{px + 6}" y="{top + 10}" class="dl">AI</text>')
+                            f'<text x="{px + 6}" y="{top + 10}" class="dl">Frontiers</text>')
     return (f'<svg class="trace {cls}" viewBox="0 0 {W} {H}" role="img" aria-label="{e(aria)}">'
             f'<g class="grid">{"".join(grid)}</g>{"".join(dividers)}'
             f'<path class="line" d="{d}" pathLength="1"/>'
@@ -307,7 +329,7 @@ def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls=""):
 
 def edition_trace(ed, threads, prefix, mini=False):
     world = ed["stories"]
-    ai = ed.get("ai", [])
+    ai = ed.get("frontiers", [])
     n = len(world) + len(ai)
     gap = 0.6 if ai else 0
     slots = n + gap
@@ -439,7 +461,7 @@ def place_caption(s):
 def story_lead(s, threads, prefix):
     m = maps.map_svg(s.get("places"), 560, 420, labels=True, cls="map-lead")
     fig = f'<figure class="lead-map">{m}{place_caption(s)}</figure>' if m else ""
-    return (f'<article class="story story-lead" id="{e(s["thread"])}"><div class="lead-text">{story_meta(s, threads, prefix)}'
+    return (f'<article class="story story-lead{"" if m else " nomap"}" id="{e(s["thread"])}"><div class="lead-text">{story_meta(s, threads, prefix)}'
             f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
             f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</div>{fig}</article>')
 
@@ -461,8 +483,37 @@ def story_compact(s, threads, prefix):
             f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</details></div></article>')
 
 
+def story_frontier(s, threads, prefix):
+    t = threads[s["thread"]]
+    meta = (f'<div class="meta"><span class="field field-{e(s["field"].lower())}">{e(s["field"])}</span>{badges(s)}'
+            f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
+    return (f'<article class="story story-frontier" id="{e(s["thread"])}">{meta}'
+            f'<h2>{e(s["headline"])}</h2>'
+            f'<div class="picture"><h3>This changes the picture because</h3><p>{e(s["picture"])}</p></div>'
+            f'<details class="more-story"><summary>Read more</summary><p class="dek">{e(s["dek"])}</p>'
+            f'<div class="body">{paras(s["body"])}</div>{sources_block(s["sources"])}</details></article>')
+
+
+def markets_strip(m):
+    if not m:
+        return ""
+    cells = []
+    for it in m["items"]:
+        ch = it.get("change")
+        if ch is None:
+            delta = '<span class="mk-d">&nbsp;</span>'
+        else:
+            cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
+            sign = "+" if ch > 0 else "−" if ch < 0 else ""
+            delta = f'<span class="mk-d mk-{cls}">{sign}{abs(ch):g}%</span>'
+        approx = "≈" if it.get("approx") else ""
+        cells.append(f'<li><span class="mk-n">{e(it["name"])}</span><span class="mk-v">{approx}{e(it["value"])}</span>{delta}</li>')
+    return (f'<section class="markets" aria-label="Markets"><p class="mk-h">Markets, {e(m["label"])}</p>'
+            f'<ul>{"".join(cells)}</ul>{sources_block(m.get("sources", []))}</section>')
+
+
 def date_weight(ed):
-    items = ed["stories"] + ed.get("ai", [])
+    items = ed["stories"] + ed.get("frontiers", [])
     avg = sum(CHANGE[s["change"]][1] for s in items) / max(len(items), 1)
     return round(220 + 580 * min(max((avg - 0.18) / 0.82, 0), 1))
 
@@ -517,7 +568,9 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
     lead = story_lead(st[0], threads, prefix)
     second = "".join(story_second(x, threads, prefix) for x in st[1:3])
     rest = "".join(story_compact(x, threads, prefix) for x in st[3:])
-    ai = "".join(story_html(s, threads, prefix, ed["date"], kind="ai") for s in ed.get("ai", []))
+    fronts = "".join(story_frontier(s, threads, prefix) for s in ed.get("frontiers", []))
+    fnote = (f'<div class="f-note"><p>{e(ed["frontier_note"])}</p>{sources_block(ed.get("frontier_note_sources", []))}</div>'
+             if ed.get("frontier_note") else "")
     note = f'<p class="launch">{e(ed["launch_note"])}</p>' if ed.get("launch_note") else ""
     corr = ""
     if ed.get("corrections"):
@@ -525,7 +578,7 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
                 "".join(f'<li><strong>{e(short_date(c["date"]))}.</strong> {e(c["text"])}</li>' for c in ed["corrections"]) +
                 "</ul></section>")
     counts = {}
-    for s in ed["stories"] + ed.get("ai", []):
+    for s in ed["stories"] + ed.get("frontiers", []):
         counts[s["change"]] = counts.get(s["change"], 0) + 1
     summary = ", ".join(f'{n} {CHANGE[k][0].lower()}' for k, n in sorted(counts.items(), key=lambda kv: -CHANGE[kv[0]][1]))
     d = pdate(ed["date"])
@@ -537,7 +590,7 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
       <h1 class="bigdate" style="--w:{wgt}"><span class="sr">The Signal, </span><span class="dow">{e(d.strftime("%A"))}</span><span class="dm">{d.day} {e(d.strftime("%B"))}</span></h1>
       <div class="ed-meta">
         <p>Edition {ed.get("number", "")}, {d.year}</p>
-        <p>{len(ed["stories"])} world stories, {len(ed.get("ai", []))} on AI: {e(summary)}.</p>
+        <p>{len(ed["stories"])} world stories, {len(ed.get("frontiers", []))} from the frontiers: {e(summary)}.</p>
         <p class="wkey">The date's weight tracks the day: light when little changed, heavy when a lot did.</p>
       </div>
     </div>
@@ -545,6 +598,7 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
       <div class="trace-box">{edition_trace(ed, threads, prefix)}<div class="tip" role="status" hidden></div></div>
       <figcaption>One spike per story. Height shows how much our picture changed; the dot shows whether the situation is <span class="k k-up">intensifying</span>, <span class="k k-steady">holding</span> or <span class="k k-down">easing</span>.</figcaption>
     </figure>
+    {markets_strip(ed.get("markets"))}
     <div class="lede-row"><p class="lede">{e(ed["lede"])}</p>{note}</div>
   </div>
 </section>
@@ -566,10 +620,11 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
 <section class="ai-band" aria-labelledby="ai-h">
   <div class="wrap">
     <header class="ai-head">
-      <h2 id="ai-h">AI frontier</h2>
-      <p>Only developments that could change where AI is heading, each with a plain answer to why.</p>
+      <h2 id="ai-h">Frontiers</h2>
+      <p>AI, science, medicine, space and energy: only what could change where the future is heading.</p>
     </header>
-    <div class="ai-grid">{ai}</div>
+    <div class="f-grid">{fronts}</div>
+    {fnote}
   </div>
 </section>
 <div class="wrap">{corr}<nav class="ed-nav" aria-label="Editions">{"".join(nav)}</nav></div>
@@ -581,7 +636,7 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
 def thread_entries(threads, editions):
     out = {tid: [] for tid in threads}
     for ed in editions:
-        for kind in ("stories", "ai"):
+        for kind in ("stories", "frontiers"):
             for s in ed.get(kind, []):
                 out[s["thread"]].append((ed["date"], s))
     return out
@@ -651,7 +706,7 @@ def threads_index(threads, entries, prefix):
     groups = {}
     for t in threads.values():
         groups.setdefault(t["region"], []).append(t)
-    order = REGIONS + ["AI"]
+    order = REGIONS + ["Frontiers"]
     secs = []
     for region in order:
         ts = groups.get(region, [])
@@ -665,7 +720,7 @@ def threads_index(threads, entries, prefix):
             lis.append(f'<li><a href="{prefix}threads/{t["id"]}/"><span class="tt">{e(t["title"])}</span>'
                        + (f'<span class="meta">{badges(last[1])}<span class="asof">{e(day_month(last[0]))}</span></span>' if last else "")
                        + f'<span class="ts">{e(t["summary"])}</span></a></li>')
-        secs.append(f'<section class="tgroup"><h2>{e(region if region != "AI" else "AI frontier")}</h2><ul>{"".join(lis)}</ul></section>')
+        secs.append(f'<section class="tgroup"><h2>{e(region)}</h2><ul>{"".join(lis)}</ul></section>')
     return f"""
 <section class="hero hero-plain"><div class="wrap">
   <h1 class="page-title">Threads</h1>
@@ -772,7 +827,7 @@ def about_page(prefix):
 </div></section>
 <div class="wrap prose">
   <h2>One edition a day, and then it stops</h2>
-  <p>There is no feed and no breaking-news banner. Each morning we publish around ten world stories, a short AI frontier section and a pulse check on every region. If nothing important happened somewhere, we say so.</p>
+  <p>There is no feed and no breaking-news banner. Each morning we publish around ten world stories, a short Frontiers section on AI and science and a pulse check on every region. If nothing important happened somewhere, we say so.</p>
   <h2>Stories belong to threads</h2>
   <p>A thread is a situation we keep following: an election, a war, an outbreak. Each day's story is the latest entry in its thread, so you can see how a situation got here. Thread pages keep the whole timeline.</p>
   <h2>Change and momentum</h2>

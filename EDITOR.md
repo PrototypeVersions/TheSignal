@@ -27,16 +27,18 @@ Cover, in this order:
 1. **Every active thread.** For each, find what happened since the last edition. Most threads will have something; many will not have anything that changes the picture.
 2. **New developments** that are not yet threads. Sweep world headlines from wire services and major outlets (AP, Reuters, AFP, BBC, Al Jazeera, NPR, Guardian, FT, WSJ, Bloomberg) for the past 24–36 hours.
 3. **Every region**: North America, Latin America, Europe, Africa, Middle East, Asia, Oceania. Search each one explicitly so quiet regions are judged, not forgotten.
-4. **AI frontier**: frontier labs (Anthropic, OpenAI, Google DeepMind, Meta, xAI, DeepSeek and others), model releases, safety and security research, AI science results, regulation, major money and compute deals, labor-market evidence.
-5. **Forecast evidence**: anything bearing on each open forecast, and whether any forecast has resolved.
-6. **Markets and economy** where they moved meaningfully (oil, major indices, central banks, key data releases).
+4. **Frontiers — AI**: frontier labs (Anthropic, OpenAI, Google DeepMind, Meta, xAI, DeepSeek and others), model releases, safety and security research, AI science results, regulation, major money and compute deals, labor-market evidence.
+5. **Frontiers — science**: major results in science, medicine (pivotal trial results, major approvals), space, energy and climate. Check Nature, Science, NEJM, The Lancet, NASA, ESA, the FDA and EMA, and science desks (AP, Reuters, Nature News, Science News, STAT).
+6. **Forecast evidence**: anything bearing on each open forecast, and whether any forecast has resolved.
+7. **Markets**: the latest closing values for the markets strip (section 3), plus any big moves in oil, indices, central banks or key data releases.
 
 Prefer original reporting and official sources over aggregators. When figures disagree between sources, use the most recent figure from a named, credible source and say that figures differ.
 
 ## 2. Choose the edition
 
 - **World stories: 8–12.** Pick by how much the picture changed, not by how loud the coverage is. A big story with nothing new today can be left out.
-- **AI frontier: 3–5.** Only items that could change where AI is heading. Skip routine product updates.
+- **Frontiers: 3–6.** Usually 3–4 AI items plus 0–2 from science, medicine, space, energy or climate, but only when something truly clears the bar. Never add a science item to fill space. When no science item qualifies, say so in `frontier_note` and, if useful, name a coming result worth watching. Skip routine product updates and incremental studies.
+- **Frontier stories can lead.** If an AI or science development is the single biggest change of the day, put it first in `stories` (as a world story with `why` and `watch`, without `places`) instead of in `frontiers`. Use this rarely.
 - Each story belongs to exactly one thread. If a story starts a new thread, create `data/threads/<id>.json` (see section 5).
 - Never use the same thread twice in one edition.
 - Order world stories by importance of the change, biggest first. The order sets the front page: story 1 is the large lead with a big map, stories 2–3 sit side by side, and the rest form a compact list. Put the day's single most important change first.
@@ -90,9 +92,47 @@ Judge momentum against the previous entry in the same thread. Do not keep a thre
 - `points`: two to four key cities or sites with accurate coordinates. The first point is drawn largest. Avoid two points so close that their labels overlap.
 - `view`: optional framing box `[west longitude, south latitude, east longitude, north latitude]`. Leave it out for most stories; the map frames the countries and points automatically. Set it when a country is huge or has far-off territories (Russia, the US, Canada, France with overseas territories) or when the story is about one small area.
 - The West Bank is `PSE`. Codes the map does not know will fail the build check; use a neighboring country or just points instead.
-- AI frontier items have no map.
+- Frontier items have no map.
 
-AI frontier items use the same shape but replace `why` and `watch` with `picture`: one to three sentences completing "This changes the picture because…".
+### Frontier items (`frontiers` list)
+
+Same shape as world stories, but with `field` and `picture` instead of `why`, `watch` and `places`:
+
+```json
+{
+  "thread": "thread-id",
+  "field": "AI|Science|Medicine|Space|Energy|Climate",
+  "change": "...", "momentum": "...",
+  "headline": "...", "dek": "...", "body": ["..."],
+  "picture": "One to three sentences completing 'This changes the picture because…'. This line is what readers see first, so make it the sharpest sentence in the item.",
+  "sources": [...]
+}
+```
+
+Optional `frontier_note` (one or two sentences, shown under the section) with `frontier_note_sources`.
+
+### Markets strip (`markets`)
+
+```json
+"markets": {
+  "label": "Friday's close",
+  "as_of": "YYYY-MM-DD",
+  "items": [
+    {"name": "S&P 500", "value": "7,659", "change": -1.09},
+    {"name": "Nasdaq", "value": "26,140", "change": -2.14},
+    {"name": "10-yr Treasury", "value": "5.10%", "change": null, "approx": true},
+    {"name": "Brent crude", "value": "$109.86", "change": 3.7},
+    {"name": "Gold", "value": "$4,181", "change": 0.3},
+    {"name": "Bitcoin", "value": "$81,800", "change": null}
+  ],
+  "sources": [...]
+}
+```
+
+- Use the most recent completed trading session. `label` says which (for example "Friday's close", "Monday's close"); on weekends that is Friday.
+- `change` is the percent change for that session as a number, or `null` if no reliable figure was found. Never estimate it.
+- Mark a value `"approx": true` when sources give it only roughly. Take every number from a named source and list the sources.
+- Keep the same six items every day, in the same order, so readers can compare day to day.
 
 ### Writing rules
 
@@ -119,7 +159,7 @@ Save as `data/editions/<YYYY-MM-DD>.json`.
 
 ## 4. Forecasts (`data/forecasts.json`)
 
-- Keep **6–10 open forecasts** at any time, spread across regions and including at least one AI question.
+- Keep **6–10 open forecasts** at any time, spread across regions and including at least one AI or science question.
 - **Never edit or delete an existing history entry.** Only append.
 - Append `{"date": "<today>", "p": <1–99>, "note": "<why it moved>"}` only when the evidence moved your estimate. A move of 1–2 points is noise; don't log it.
 - Resolving: when a question's outcome is known, set `"status": "resolved"`, `"resolution": "yes"|"no"|"void"`, `"resolved_on": "<date>"`, and `"resolution_note"` with the evidence and a source URL. Leave the history alone. The site scores resolved forecasts automatically.
@@ -133,8 +173,8 @@ Save as `data/editions/<YYYY-MM-DD>.json`.
   "id": "kebab-case-id",
   "title": "Short title",
   "short": "1–2 word label for the trace",
-  "section": "world|ai",
-  "region": "North America|Latin America|Europe|Africa|Middle East|Asia|Oceania|AI",
+  "section": "world|frontier",
+  "region": "North America|Latin America|Europe|Africa|Middle East|Asia|Oceania|Frontiers",
   "started": "YYYY-MM-DD or YYYY-MM",
   "started_label": "Human-readable start, e.g. 17 October 2026",
   "status": "active|dormant|closed",

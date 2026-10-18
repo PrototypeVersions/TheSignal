@@ -3,7 +3,7 @@
   "number": 1,
   "published_at": "2026-10-18T12:00:00-05:00",
   "lede": "France woke to the cost of its worst unrest in years, and Macron speaks tonight. Ukraine sent more than a thousand drones into Russia hours after Washington waived the sanctions meant to squeeze Moscow's oil money. Brent crude sits near $110 as the Saudi–Houthi war widens, and Ebola is spreading person to person in Kenya for the first time. Two votes are close: Alberta decides tomorrow whether to start down the road out of Canada, and Brazil picks a president next Sunday.",
-  "launch_note": "This is our first edition. The AI section covers the past week rather than the past day.",
+  "launch_note": "This is our first edition. The Frontiers section covers the past week rather than the past day.",
   "stories": [
     {
       "thread": "france-unrest",
@@ -434,7 +434,7 @@
       }
     }
   ],
-  "ai": [
+  "frontiers": [
     {
       "thread": "ai-self-replication",
       "change": "new",
@@ -456,7 +456,8 @@
           "title": "AI models may soon self-replicate without access to data centers, Anthropic warns",
           "url": "https://money.usnews.com/investing/news/articles/2026-10-13/ai-models-may-soon-self-replicate-without-access-to-data-centers-anthropic-warns"
         }
-      ]
+      ],
+      "field": "AI"
     },
     {
       "thread": "frontier-models",
@@ -479,7 +480,8 @@
           "title": "AI Daily roundup, 17 October 2026",
           "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
         }
-      ]
+      ],
+      "field": "AI"
     },
     {
       "thread": "ai-financing",
@@ -497,7 +499,8 @@
           "title": "AI Daily: Anthropic's 10% debt offer and OpenAI's ad target",
           "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
         }
-      ]
+      ],
+      "field": "AI"
     },
     {
       "thread": "ai-and-work",
@@ -515,9 +518,11 @@
           "title": "AI Daily roundup, 17 October 2026",
           "url": "https://fourweekmba.com/ai-daily-roundup-17-oct-2026-anthropic-debt-openai-ads"
         }
-      ]
+      ],
+      "field": "AI"
     }
   ],
+  "frontier_note": "Science, medicine, space and energy: nothing cleared our bar this week. Coming up: full Phase 3 results for the first personalized mRNA cancer vaccine, from Merck and Moderna, at the ESMO congress in Madrid (23–27 October).",
   "pulse": [
     {
       "region": "North America",
@@ -603,5 +608,63 @@
     }
   ],
   "forecast_notes": [],
-  "corrections": []
+  "corrections": [],
+  "markets": {
+    "label": "Friday's close",
+    "as_of": "2026-10-16",
+    "items": [
+      {
+        "name": "S&P 500",
+        "value": "7,659",
+        "change": -1.09
+      },
+      {
+        "name": "Nasdaq",
+        "value": "26,140",
+        "change": -2.14
+      },
+      {
+        "name": "10-yr Treasury",
+        "value": "5.10%",
+        "change": null,
+        "approx": true
+      },
+      {
+        "name": "Brent crude",
+        "value": "$109.86",
+        "change": 3.7
+      },
+      {
+        "name": "Gold",
+        "value": "$4,181",
+        "change": 0.3,
+        "approx": true
+      },
+      {
+        "name": "Bitcoin",
+        "value": "$81,800",
+        "change": null,
+        "approx": true
+      }
+    ],
+    "sources": [
+      {
+        "outlet": "Yahoo Finance",
+        "title": "Markets news, Oct. 16, 2026: Nasdaq, S&P 500 end lower, post weekly losses",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-oct-16-2026-103800633.html"
+      },
+      {
+        "outlet": "Rigzone",
+        "title": "Brent oil hits $110 as supply risks mount",
+        "url": "https://www.rigzone.com/news/wire/brent_oil_hits_110_as_supply_risks_mount-16-oct-2026-184870-article/"
+      }
+    ]
+  },
+  "frontier_note_sources": [
+    {
+      "outlet": "Merck",
+      "title": "Merck showcases first-time pivotal Phase 3 results from oncology pipeline at ESMO 2026",
+      "url": "https://www.merck.com/news/merck-showcases-first-time-pivotal-phase-3-results-from-oncology-pipeline-and-continued-innovative-potential-of-existing-portfolio-at-esmo-2026/"
+    }
+  ]
 }
