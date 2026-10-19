@@ -661,3 +661,6 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 :root { --up: #A65F00; }
 :root[data-theme="dark"] { --up: #F2B44E; }
 .updates { border-left-color: var(--trace); background: color-mix(in srgb, var(--trace) 8%, transparent); }
+/* city dots on story maps stay red */
+:root { --pin: #B42318; } :root[data-theme="dark"] { --pin: #FF8B7B; }
+.map .mp, .map .mp0 { fill: var(--pin); }

@@ -32,7 +32,6 @@ CHANGE = {
     "developing": ("Developing", 0.5),
     "quiet": ("Quiet", 0.18),
 }
-MOMENTUM = {"up": "Intensifying", "steady": "Holding", "down": "Easing"}
 FIELDS = ["AI", "Science", "Medicine", "Space", "Energy", "Climate"]
 REGIONS = ["North America", "Latin America", "Europe", "Africa", "Middle East", "Asia", "Oceania"]
 # where each region's numbered marker sits on the world map (lon, lat)
@@ -106,8 +105,6 @@ def validate(threads, editions):
                 ids.add(s.get("thread"))
                 if s.get("change") not in CHANGE:
                     errs.append(f"{where}: change must be one of {list(CHANGE)}")
-                if s.get("momentum") not in MOMENTUM:
-                    errs.append(f"{where}: momentum must be one of {list(MOMENTUM)}")
                 need = ["headline", "dek", "sources"] + (["why", "watch"] if group == "stories" else ["picture"])
                 if group == "frontiers" and s.get("field") not in FIELDS:
                     errs.append(f"{where}: field must be one of {FIELDS}")
@@ -154,9 +151,8 @@ def validate(threads, editions):
             for b in p.get("briefs", []):
                 if not b.get("headline") or not b.get("text"):
                     errs.append(f"{where}: each brief needs a headline and text")
-                if (d >= FULL_REPORTS_FROM or "change" in b or "momentum" in b) and \
-                        (b.get("change") not in CHANGE or b.get("momentum") not in MOMENTUM):
-                    errs.append(f"{where} brief '{b.get('headline', '')[:40]}': needs change ({'/'.join(CHANGE)}) and momentum ({'/'.join(MOMENTUM)})")
+                if (d >= FULL_REPORTS_FROM or "change" in b) and b.get("change") not in CHANGE:
+                    errs.append(f"{where} brief '{b.get('headline', '')[:40]}': needs change ({'/'.join(CHANGE)})")
                 errs += check_sources(b.get("sources", []), f"{where} brief")
     if errs:
         raise BuildError("Validation failed:\n  - " + "\n  - ".join(errs))
@@ -253,21 +249,9 @@ def clock(iso):
     return f"{h}:{t.minute:02d}{'am' if t.hour < 12 else 'pm'} CT"
 
 
-def momentum_icon(m):
-    paths = {
-        "up": "M2 11 L8 4 L14 11",
-        "steady": "M2 8 H14 M10 4 L14 8 L10 12",
-        "down": "M2 5 L8 12 L14 5",
-    }
-    return (f'<svg class="mom-icon" viewBox="0 0 16 16" aria-hidden="true">'
-            f'<path d="{paths[m]}" fill="none" stroke="currentColor" stroke-width="2" '
-            f'stroke-linecap="round" stroke-linejoin="round"/></svg>')
-
-
 def badges(s):
     label = CHANGE[s["change"]][0]
-    return (f'<span class="chg chg-{s["change"]}">{e(label)}</span>'
-            f'<span class="mom mom-{s["momentum"]}">{momentum_icon(s["momentum"])}{e(MOMENTUM[s["momentum"]])}</span>')
+    return f'<span class="chg chg-{s["change"]}">{e(label)}</span>'
 
 
 def sources_block(sources, label="Sources"):
@@ -455,7 +439,7 @@ def glance_bar(ed):
     including the regional briefs on the map."""
     allst = ed["stories"] + ed.get("frontiers", [])
     briefs = [b for p in ed.get("pulse", []) for b in p.get("briefs", [])]
-    rated = allst + [b for b in briefs if b.get("change") in CHANGE and b.get("momentum") in MOMENTUM]
+    rated = allst + [b for b in briefs if b.get("change") in CHANGE]
 
     def split(parts):
         """Largest group as the big figure, the others beneath it."""
@@ -466,7 +450,6 @@ def glance_bar(ed):
         return f"{top[0]} {top[1]}", " · ".join(f"{v} {lbl}" for v, lbl in parts if (v, lbl) != top)
 
     ch = {k: sum(1 for s in rated if s["change"] == k) for k in CHANGE}
-    mo = {k: sum(1 for s in rated if s["momentum"] == k) for k in MOMENTUM}
     moved = sum(1 for p in ed.get("pulse", []) if p.get("status") == "moved")
     full = (sum(len(x.split()) for s in allst for sec in s.get("report", []) for x in sec["paragraphs"]) or
             sum(len(x.split()) for s in allst for x in s.get("body", []))) + sum(len(b["text"].split()) for b in briefs)
@@ -476,7 +459,6 @@ def glance_bar(ed):
     cells = [
         ("In the edition", f'{len(ed["stories"])} · {len(ed.get("frontiers", []))} · {len(briefs)}', "world · frontiers · regional"),
         ("How much changed", *split([(v, CHANGE[k][0].lower()) for k, v in ch.items()])),
-        ("Direction", *split([(mo[k], lbl) for k, lbl in (("up", "intensifying"), ("steady", "holding"), ("down", "easing"))])),
         ("Regions", f'{moved} of {len(REGIONS)} moved',
          f'<a href="#regions">{len(briefs)} more on the map ↓</a>' if briefs else '<a href="#regions">See the map ↓</a>'),
         ("Full reports", f'≈ {max(1, round(full / 230))} min', "to read every story in full"),
@@ -571,7 +553,7 @@ def region_page(r, ed, threads, prefix, others):
         f'<p class="dek">{e(s["dek"])}</p><a class="read-full" href="{story_url(ed["date"], s, prefix)}">Read the full story <span aria-hidden="true">→</span></a></article>'
         for s in r["stories"]) or f'<p class="empty">No {e(r["name"])} story made this edition.</p>'
     briefs = "".join(
-        f'<article class="rbrief" id="brief-{i}">{f"<div class=\"meta\">{badges(b)}</div>" if b.get("change") in CHANGE and b.get("momentum") in MOMENTUM else ""}<h3>{e(b["headline"])}</h3>{paras([b["text"]])}{sources_block(b["sources"])}</article>'
+        f'<article class="rbrief" id="brief-{i}">{f"<div class=\"meta\">{badges(b)}</div>" if b.get("change") in CHANGE else ""}<h3>{e(b["headline"])}</h3>{paras([b["text"]])}{sources_block(b["sources"])}</article>'
         for i, b in enumerate(r["briefs"], 1)) or '<p class="empty">No further development cleared our bar today.</p>'
     switch = "".join(f'<a href="../{o["slug"]}/"{" aria-current=\"page\"" if o["slug"] == r["slug"] else ""}><span>{o["n"]:02}</span>{e(o["name"])}</a>' for o in others)
     summary = f'<p class="lede">{e(r["pulse"].get("text", ""))}</p>' if r["pulse"].get("text") else ""
@@ -827,15 +809,15 @@ def about_page(prefix):
   <h2>One edition a day</h2>
   <p>There is no endless feed and no breaking-news banner. Each morning we publish around ten world stories, a short Frontiers section on AI and science, and extra news for every region, and each evening we add what has changed since. Every story fits in a few lines on the front page; its full report, with key facts, background, what to watch and every source, is one click away.</p>
   <h2>The day at a glance</h2>
-  <p>Under the day's summary, the At a glance bar counts everything in the edition, including the regional stories on the map: how many stories there are of each kind, how much changed, which way things are moving, how many regions saw news, and how long it takes to read every full report.</p>
+  <p>Under the day's summary, the At a glance bar counts everything in the edition, including the regional stories on the map: how many stories there are of each kind, how much changed, how many regions saw news, and how long it takes to read every full report.</p>
   <h2>Every region, every day</h2>
   <p>The region map covers North America, Latin America, Europe, Africa, the Middle East, Asia and Oceania. Choose a region to see its stories from the edition plus news that did not make the main page, each with a short summary and its sources. If nothing important happened somewhere, we say so.</p>
   <h2>Stories belong to threads</h2>
   <p>A thread is a situation we keep following: an election, a war, an outbreak. Each day's story is the latest entry in its thread, so you can see how a situation got here. Thread pages keep the whole timeline.</p>
-  <h2>Change and momentum</h2>
-  <p>Every story, including the regional ones, carries two labels. Change says how much today's news altered the picture:</p>
+  <h2>How much changed</h2>
+  <p>Every story, including the regional ones, carries a label saying how much today's news altered the picture:</p>
   <table class="rubric"><tbody>{rows}</tbody></table>
-  <p>Momentum says which way the situation is moving: <span class="mom mom-up">{momentum_icon("up")}Intensifying</span>, <span class="mom mom-steady">{momentum_icon("steady")}Holding</span> or <span class="mom mom-down">{momentum_icon("down")}Easing</span>. We use words rather than scores on purpose; a score like 7.8 implies a precision nobody has.</p>
+  <p>We use words rather than scores on purpose; a score like 7.8 implies a precision nobody has.</p>
   <h2>Illustrations and maps</h2>
   <p>Maps show where a story is happening. The pictures in Frontiers are simple original illustrations of the idea behind each story; they are not photographs and are not evidence for the reporting.</p>
   <h2>Sources and corrections</h2>

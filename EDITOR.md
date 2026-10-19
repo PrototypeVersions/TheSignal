@@ -58,16 +58,6 @@ Prefer original reporting and official sources over aggregators. When figures di
 | `developing` | Real movement, but in the direction already expected. |
 | `quiet` | Important but little changed. Normally leave these out of the edition and mention them in the pulse. |
 
-### Momentum (pick one)
-
-| value | meaning |
-|---|---|
-| `up` | Intensifying: escalating, spreading, accelerating, or rising in stakes. |
-| `steady` | Holding: no clear direction change. |
-| `down` | Easing: de-escalating, contained, resolved or fading. |
-
-Judge momentum against the previous entry in the same thread. Do not keep a thread at `up` out of habit.
-
 ## 3. Write
 
 ### How stories appear
@@ -80,7 +70,6 @@ The front page is short on purpose. Each story shows its labels, headline and `d
 {
   "thread": "thread-id",
   "change": "major|new|developing|quiet",
-  "momentum": "up|steady|down",
   "headline": "Sentence case, specific, under ~80 characters",
   "dek": "One or two sentences (under ~40 words) with the single most important new fact. Shown on the front page.",
   "key_facts": ["Three to five short, sourced facts a reader could quote: numbers, dates, names."],
@@ -119,7 +108,7 @@ Same shape as world stories, but with `field`, `picture` and `image` instead of 
 {
   "thread": "thread-id",
   "field": "AI|Science|Medicine|Space|Energy|Climate",
-  "change": "...", "momentum": "...",
+  "change": "...",
   "headline": "...", "dek": "...", "key_facts": ["..."], "report": [...],
   "picture": "One to three sentences on why it matters. Shown as 'Why it matters' on the story page. Keep it proportionate: say plainly when something is a modest step.",
   "image": {"asset": "images/YYYY-MM-DD/<thread-id>.svg", "alt": "What the picture shows and how it connects to the story.", "credit": "Illustration"},
@@ -151,7 +140,7 @@ Optional `frontier_note` (one or two sentences, shown under the section) with `f
 - `pulse`: exactly seven entries, one per region (`North America`, `Latin America`, `Europe`, `Africa`, `Middle East`, `Asia`, `Oceania`). Together they drive the front page's region map and the seven region pages.
   - `status` is `moved` or `quiet`; `text` is a two- or three-sentence summary of the region today. When nothing cleared the bar, say "No development cleared our bar today."
   - `threads` lists thread ids mentioned. A story appears under a region when its thread's `region` matches, or when its thread is listed here (use this for stories that span regions, for example a US decision about Russia).
-  - `briefs`: one to three extra developments that are not main stories, each `{"headline": "...", "text": "One or two sentences.", "change": "new", "momentum": "steady", "sources": [...]}`. Rate `change` and `momentum` exactly as for a main story; they feed the At a glance bar, which counts every story on the map. Open and read every source; prefer the last 48 hours; do not repeat a main story. Leave the list empty when nothing qualifies; the site says so. Never pad.
+  - `briefs`: one to three extra developments that are not main stories, each `{"headline": "...", "text": "One or two sentences.", "change": "new", "sources": [...]}`. Rate `change` exactly as for a main story; they feed the At a glance bar, which counts every story on the map. Open and read every source; prefer the last 48 hours; do not repeat a main story. Leave the list empty when nothing qualifies; the site says so. Never pad.
   - `sources` supports any fact in `text` that is not already sourced in a story or brief.
 - `corrections`: usually empty. See section 6.
 
@@ -224,7 +213,7 @@ The evening update keeps the morning edition current. It does **not** create a s
    "updates": [{"at": "2026-10-18T17:55:00-05:00", "text": "One to three sentences on what changed since this morning.", "sources": [{"outlet": "...", "title": "...", "url": "https://..."}]}]
    ```
    - Do not edit the morning's headline, dek, report, why or watch, except to fix an outright error (then also add a correction, section 6). The update block is where the new information goes; the front page shows an "Updated" tag on the story and the update itself appears at the top of the story's page.
-   - You may change a story's `momentum` if the evening's news clearly changed the direction. Leave `change` as it was.
+   - Leave `change` as it was.
    - Skip stories where nothing material happened. Most evenings, only a few stories get updates.
 4. If something **major and new** happened that is not in the edition, you may add up to two new stories (world or frontier) in the full normal format (including `key_facts`, `report`, and for Frontiers an illustration), and a new thread if needed. Put a world story where its importance belongs in the order; moving it to first place makes it the lead.
 5. Add a region brief (in `pulse`) for any major regional development that does not warrant a main story, and refresh a region's `text` if its picture changed.
