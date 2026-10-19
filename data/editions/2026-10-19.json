@@ -2,7 +2,7 @@
   "date": "2026-10-19",
   "number": 2,
   "published_at": "2026-10-19T06:40:00-05:00",
-  "lede": "Russia answered Ukraine's weekend drone raid with an overnight strike on the grid that cut power to 550,000 homes, while US sanctions on Moscow stay paused. In Yemen, Houthi missiles killed at least 18 soldiers at an army camp even as Riyadh's airport reopened and oil eased toward $108. France's prime minister asked towns to impose curfews, and cost-of-living clashes spread to Milan. Albertans finish voting today on whether to start down the road out of Canada, and Israel's election, eight days off, is deadlocked.",
+  "lede": "Russia answered Ukraine's weekend drone raid with an overnight strike on the grid that cut power to 550,000 homes, while US sanctions on Moscow stay paused. In Yemen, a Houthi missile strike on an army camp killed at least 53 recruits, officials said by evening, and Saudi Arabia put off its flagship investment conference to 2027. France's prime minister asked towns to impose curfews, and cost-of-living clashes spread to Milan. Albertans finish voting today on whether to start down the road out of Canada, and Israel's election, eight days off, is deadlocked. This afternoon Japan launched MMX, a mission to bring back the first soil from a moon of Mars.",
   "stories": [
     {
       "thread": "ukraine-war",
@@ -107,6 +107,19 @@
           "heading": "What comes next",
           "paragraphs": [
             "The first test is this week's power-cut schedules in Ukraine, which will show how much of the damage can be repaired quickly. Beyond that, watch whether Ukraine hits Russian refineries or ports again, and whether a reported Putin proposal for a summit with Trump and Xi Jinping next month takes shape."
+          ]
+        }
+      ],
+      "updates": [
+        {
+          "at": "2026-10-19T18:05:00-05:00",
+          "text": "Zelenskyy says Ukraine got no early warning from partner countries before the overnight strike, which damaged 28 substations, and that Patriot air defence is in short supply. US and Russian officials say talks continue on a Trump–Putin–Xi meeting at next month's APEC summit in China without Ukraine; Kyiv rejects the idea, and the Kremlin says no substantive proposals have been made.",
+          "sources": [
+            {
+              "outlet": "AP via Korea Times",
+              "title": "Zelenskyy says Ukraine got no early warning from partners as Russia hits power grid again",
+              "url": "https://www.koreatimes.co.kr/world/20261020/zelenskyy-says-ukraine-got-no-early-warning-from-partners-as-russia-hits-power-grid-again"
+            }
           ]
         }
       ]
@@ -226,6 +239,44 @@
             "Markets, for now, are looking past the fighting. Brent crude traded near $108 early on Monday, down about 2%, after the US paused its Russia sanctions and Energy Secretary Chris Wright said Gulf crude shipments are back to about four-fifths of pre-war levels. Iran's foreign minister says Tehran's offer to reopen the Strait of Hormuz within six days of a deal still stands; no new US reply has been reported."
           ]
         }
+      ],
+      "updates": [
+        {
+          "at": "2026-10-19T18:05:00-05:00",
+          "text": "The toll at the Shabwa camp has risen to 53 killed and about 200 wounded, according to Yemeni officials, and the Houthis have claimed the attack. They also claimed strikes on an Aramco site in Yanbu, the Shaybah oilfield and the Riyadh and Abha airports, which Saudi Arabia has not confirmed; Riyadh postponed its 26–29 October Future Investment Initiative conference to 2027. Iran's Revolutionary Guards say a tanker hit a mine south of Hormuz, and Brent settled at $109.55, down 0.3%.",
+          "sources": [
+            {
+              "outlet": "Al Jazeera",
+              "title": "Houthi attack on Yemen army camp in Shabwa kills at least 53: reports",
+              "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa"
+            },
+            {
+              "outlet": "AP via PBS NewsHour",
+              "title": "Iran-backed Houthi rebels strike Yemen's government forces with ballistic missiles, killing at least 53",
+              "url": "https://www.pbs.org/newshour/world/iran-backed-houthi-rebels-strike-yemens-government-forces-with-ballistic-missiles-killing-at-least-53"
+            },
+            {
+              "outlet": "Business Recorder (Reuters)",
+              "title": "Yemen's Houthis claim attacks on Saudi Aramco site, airports and military targets",
+              "url": "https://www.brecorder.com/news/40444962/yemens-houthis-claim-attacks-on-saudi-aramco-site-airports-and-military-targets"
+            },
+            {
+              "outlet": "Al-Monitor",
+              "title": "Saudi Arabia postpones 'Davos in the Desert' until 2027 amid Houthi attacks",
+              "url": "https://www.al-monitor.com/originals/2026/10/saudi-arabia-postpones-davos-desert-until-2027-amid-houthi-attacks"
+            },
+            {
+              "outlet": "Korea Times (Yonhap/AFP)",
+              "title": "Oil tanker on fire after hitting mine in Hormuz: Iran's Guards",
+              "url": "https://www.koreatimes.co.kr/world/20261019/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards"
+            },
+            {
+              "outlet": "Yahoo Finance (Reuters)",
+              "title": "Brent crude edges lower, even after Houthi attacks on Saudi infrastructure",
+              "url": "https://finance.yahoo.com/energy/articles/oil-slips-trumps-sanction-waiver-222256196.html"
+            }
+          ]
+        }
       ]
     },
     {
@@ -320,6 +371,19 @@
           "heading": "Beyond France",
           "paragraphs": [
             "Cost-of-living anger is spreading. In Milan, police have arrested more than 200 people after two days of street clashes, and Prime Minister Giorgia Meloni called a security meeting. Watch which French towns impose curfews and whether nights stay calm, the prime minister's talks with unions and students, and any new national protest date."
+          ]
+        }
+      ],
+      "updates": [
+        {
+          "at": "2026-10-19T18:05:00-05:00",
+          "text": "Curfews are now named: around Place de la République and Les Halles in Paris from 11pm to 6am, with gatherings banned citywide from 8pm, plus Lyon, Nice, Coulaines and Lille, some for minors only. Macron refused Interior Minister Laurent Nuñez's offer to resign, and Lecornu said a state of emergency could follow if needed. The yellow vests have called new protests for Saturday.",
+          "sources": [
+            {
+              "outlet": "Al Jazeera",
+              "title": "France announces curfews in aftermath of violent protests",
+              "url": "https://www.aljazeera.com/news/2026/10/19/frances-macron-declines-ministers-resignation-after-violent-protests"
+            }
           ]
         }
       ]
@@ -684,6 +748,24 @@
             "Philippine forecasters expect Champi to enter the country's area of responsibility on Tuesday, where it will be named Rosal, and say it may re-intensify into a super typhoon; northern Luzon could see wind warnings. Taiwan's weather agency says it could issue a sea warning as early as Wednesday night, with the heaviest impact on Friday and Saturday, though forecast models still disagree on whether the storm turns north before reaching the island."
           ]
         }
+      ],
+      "updates": [
+        {
+          "at": "2026-10-19T18:05:00-05:00",
+          "text": "Champi regained super typhoon strength on Monday afternoon, with winds of 185 km/h, and is due to enter the Philippine area on Tuesday as Rosal. Taiwan's weather agency now expects it to turn north earlier, near Japan's Ishigaki Island, sparing Taiwan a direct hit but bringing heavy rain to the north on Friday and Saturday.",
+          "sources": [
+            {
+              "outlet": "Manila Times",
+              "title": "'Champi' re-intensifies into super typhoon",
+              "url": "https://www.manilatimes.net/2026/10/19/news/national/champi-re-intensifies-into-super-typhoon/2448726"
+            },
+            {
+              "outlet": "Taipei Times",
+              "title": "Typhoon Champi to turn away from Taiwan, will still bring heavy rain",
+              "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/10/20/2003866289"
+            }
+          ]
+        }
       ]
     },
     {
@@ -986,15 +1068,70 @@
         "alt": "A dotted path that goes up and around a striped barrier to reach a data store on the other side.",
         "credit": "Illustration"
       }
+    },
+    {
+      "thread": "mmx-phobos",
+      "field": "Space",
+      "change": "new",
+      "momentum": "up",
+      "headline": "Japan launches MMX to bring back the first soil from a Mars moon",
+      "dek": "An H3 rocket sent the probe toward Mars on Monday afternoon. It is due to land twice on Phobos and return about 10 grams of soil to Earth in 2031.",
+      "key_facts": [
+        "The H3 rocket lifted off from Tanegashima at 2:41pm Central on 19 October (4:41am on 20 October in Japan).",
+        "The probe separated about 70 minutes after launch, as planned, Kyodo reports.",
+        "MMX is due to reach Mars in August 2027, land twice on Phobos and return about 10 grams of material in 2031.",
+        "NASA supplied a spectrometer and a sampler and has invested about $87 million; it will receive at least 15% of the sample."
+      ],
+      "report": [
+        {
+          "heading": "What happened",
+          "paragraphs": [
+            "Japan's space agency, JAXA, launched its Martian Moons eXploration probe, MMX, on Monday. The tenth H3 rocket, flying in its most powerful configuration with four solid boosters, lifted off from the Tanegashima Space Center at 3:41pm Eastern (2:41pm Central), which was 4:41am on Tuesday in Japan.",
+            "The rocket's second stage made a final burn to send the probe out of Earth orbit, and the spacecraft separated about 70 minutes after liftoff, as planned, Kyodo News reports. Staff at the launch site applauded when separation was confirmed. Kyodo says the rocket gave the probe a speed of about 11.15 km a second, the fastest of any H3 launch so far."
+          ]
+        },
+        {
+          "heading": "The plan",
+          "paragraphs": [
+            "MMX is due to reach Mars in August 2027 and spend about three years there. It will enter a looping orbit around Phobos, the larger of the planet's two moons, map it to choose landing sites, then touch down twice to collect about 10 grams of surface material. A small rover built by the French and German space agencies, IDEFIX, is due to be dropped onto the surface in late 2028 or early 2029. The probe will also fly past the smaller moon, Deimos, before leaving for Earth in 2030; the sample capsule is due to land in Australia in 2031.",
+            "It is an international effort. NASA supplied a gamma-ray and neutron spectrometer and a pneumatic sampler, provides deep-space communications and has invested about $87 million; at least 15% of the sample will go to NASA's Johnson Space Center. ESA, the French agency CNES and the German agency DLR are also partners."
+          ]
+        },
+        {
+          "heading": "Why Phobos",
+          "paragraphs": [
+            "Scientists still do not know where Mars's moons came from. Their near-circular orbits above the equator suggest they formed from debris after a giant impact on Mars, much as Earth's Moon is thought to have formed. Their lumpy shapes and their colour in telescope readings look more like captured asteroids. Comparing Phobos soil with Martian rocks and meteorites should settle the question, and could also show how water and organic material moved around the early solar system.",
+            "If MMX succeeds, it will be the first mission to bring back material from the Mars system. The only previous attempt, Russia's Phobos-Grunt, never left Earth orbit after its launch in 2011. MMX builds on JAXA's Hayabusa and Hayabusa2 missions, which returned samples from asteroids."
+          ]
+        }
+      ],
+      "picture": "A clean launch is only the first step of a five-year round trip, but it puts Japan on course to return the first samples from the Mars system, possibly before any from Mars itself. The soil should answer a long-running question about how Mars's moons formed.",
+      "image": {
+        "asset": "images/2026-10-19/mmx-phobos.svg",
+        "alt": "A spacecraft with its sampler arm out approaches a small, cratered moon in front of a red planet, with a faint path showing a capsule heading home.",
+        "credit": "Illustration"
+      },
+      "sources": [
+        {
+          "outlet": "Space.com",
+          "title": "Japan launches historic MMX sample-return mission to Mars' moon Phobos",
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/japan-launches-historic-mmx-sample-return-mission-to-mars-moon-phobos"
+        },
+        {
+          "outlet": "Kyodo via SmartNews",
+          "title": "JAXA's H3 rocket separates Mars moons probe as planned",
+          "url": "https://www.smartnews.com/news/article/5003069737006018232-JAXA%E3%81%8CH3%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E3%81%A7%E7%81%AB%E6%98%9F%E8%A1%9B%E6%98%9F%E6%8E%A2%E6%9F%BB%E6%A9%9F%E5%88%86%E9%9B%A2%E3%81%AB%E6%88%90%E5%8A%9F"
+        },
+        {
+          "outlet": "Mynavi News",
+          "title": "H3 rocket No. 10 launch succeeds; Mars moons probe MMX begins its journey",
+          "url": "https://news.mynavi.jp/techplus/article/20261020-5156160/"
+        }
+      ]
     }
   ],
-  "frontier_note": "Science, medicine, space and energy: nothing cleared our bar today. Watch Japan's MMX mission, due to launch for Mars's moon Phobos on an H3 rocket at 2:41pm Central today to bring samples home in 2031, and the ESMO cancer congress in Madrid from 23 October.",
+  "frontier_note": "Medicine and energy: nothing else cleared our bar today. Watch the ESMO cancer congress in Madrid from 23 October, where several pivotal trial results are due.",
   "frontier_note_sources": [
-    {
-      "outlet": "Tech-Insider",
-      "title": "JAXA's H3 Rocket Set to Launch MMX for 10g of Phobos",
-      "url": "https://tech-insider.org/jaxa-h3-rocket-mmx-phobos-launch-2026/"
-    },
     {
       "outlet": "Merck",
       "title": "Merck showcases first-time pivotal Phase 3 results from oncology pipeline at ESMO 2026",
@@ -1054,7 +1191,7 @@
     {
       "region": "Latin America",
       "status": "moved",
-      "text": "Brazil's runoff narrows. Hurricane Trudy, a Category 2 storm, brought heavy rain to Mexico's Pacific coast before weakening; warnings have been lifted.",
+      "text": "Brazil's runoff narrows. Hurricane Trudy, a Category 2 storm, brought heavy rain to Mexico's Pacific coast before weakening; warnings have been lifted. In Guatemala, the killing of a former tax chief is unsolved after a judge freed two suspects.",
       "threads": [
         "brazil-election"
       ],
@@ -1089,6 +1226,19 @@
               "outlet": "Emol",
               "title": "Kast and Paz meet in La Paz (16 October 2026)",
               "url": "https://www.emol.com/noticias/Nacional/2026/10/16/1214352/kast-paz-chile-bolivia.html"
+            }
+          ]
+        },
+        {
+          "headline": "Guatemala's former tax chief is shot dead; two suspects freed",
+          "text": "Juan Francisco Solórzano Foppa, a former head of the tax agency SAT known for anti-corruption work, was killed with another man at a Guatemala City sports complex on 17 October. A judge on 18 October freed two brothers arrested by police, citing insufficient grounds; prosecutors say the investigation continues.",
+          "change": "new",
+          "momentum": "steady",
+          "sources": [
+            {
+              "outlet": "Prensa Libre",
+              "title": "Caso Solórzano Foppa: jueza deja libres por falta de mérito a dos hermanos capturados por la PNC",
+              "url": "https://www.prensalibre.com/guatemala/justicia/caso-solorzano-foppa-jueza-deja-libres-por-falta-de-merito-a-dos-hermanos-capturados-por-la-pnc-breaking/"
             }
           ]
         }
@@ -1159,7 +1309,7 @@
     {
       "region": "Africa",
       "status": "moved",
-      "text": "Ebola reaches an eighth Congolese province. In Sudan, an RSF attack on a displacement site in West Darfur killed at least 11 people, the region's health minister says.",
+      "text": "Ebola reaches an eighth Congolese province. In Sudan, an RSF attack on a displacement site in West Darfur killed at least 11 people, the region's health minister says. In Kenya, cult leader Paul Mackenzie was convicted of 191 murders.",
       "threads": [
         "ebola-east-africa"
       ],
@@ -1209,13 +1359,31 @@
               "url": "https://www.aljazeera.com/news/2026/10/16/ethiopia-announces-instalment-of-interim-government-in-tigray"
             }
           ]
+        },
+        {
+          "headline": "Kenyan court convicts cult leader Paul Mackenzie of 191 murders",
+          "text": "On Monday the High Court found Mackenzie and his co-accused guilty over the deaths of 191 people, mostly children, in the Shakahola forest, where followers were urged to starve. Sentencing has not been scheduled publicly.",
+          "change": "new",
+          "momentum": "steady",
+          "sources": [
+            {
+              "outlet": "TRT World",
+              "title": "Kenyan court convicts cult leader Paul Mackenzie over Shakahola massacre",
+              "url": "https://www.trtworld.com/article/e858f2ef9b56"
+            },
+            {
+              "outlet": "People Daily",
+              "title": "Court finds Paul Mackenzie guilty of 191 murders in Shakahola tragedy",
+              "url": "https://peopledaily.digital/news/court-finds-paul-mackenzie-guilty-of-191-murders-in-shakahola-tragedy"
+            }
+          ]
         }
       ]
     },
     {
       "region": "Middle East",
       "status": "moved",
-      "text": "Houthi missiles kill at least 18 soldiers in Yemen as Riyadh's airport reopens. Israel's election is deadlocked, and there are still no arrests over settler attacks on diplomats and a journalist.",
+      "text": "The Houthi strike on a Yemeni army camp killed at least 53, and Saudi Arabia postponed its flagship investment conference to 2027. Israel's election is deadlocked, and there are still no arrests over settler attacks on diplomats and a journalist.",
       "threads": [
         "gulf-war",
         "israel-election",
@@ -1233,6 +1401,19 @@
               "outlet": "Al Jazeera",
               "title": "Gaza families fear food shortages as Israel halts commercial shipments",
               "url": "https://www.aljazeera.com/news/2026/10/18/gaza-families-fear-food-shortages-as-israel-halts-commercial-shipments"
+            }
+          ]
+        },
+        {
+          "headline": "Saudi Arabia postpones 'Davos in the Desert' to 2027",
+          "text": "Organisers of the Future Investment Initiative, due in Riyadh on 26–29 October, put it off until next year after Houthi attacks on the kingdom, including on Riyadh's airport.",
+          "change": "new",
+          "momentum": "up",
+          "sources": [
+            {
+              "outlet": "Al-Monitor",
+              "title": "Saudi Arabia postpones 'Davos in the Desert' until 2027 amid Houthi attacks",
+              "url": "https://www.al-monitor.com/originals/2026/10/saudi-arabia-postpones-davos-desert-until-2027-amid-houthi-attacks"
             }
           ]
         }
@@ -1430,5 +1611,6 @@
         "url": "https://www.brecorder.com/news/40444886/asian-stocks-slip-wall-st-and-bonds-benefit-from-oil-skid"
       }
     ]
-  }
+  },
+  "updated_at": "2026-10-19T18:05:21-05:00"
 }

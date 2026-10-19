@@ -1,0 +1,14 @@
+{
+  "id": "mmx-phobos",
+  "title": "Japan's MMX mission to Mars's moons",
+  "short": "MMX",
+  "section": "frontier",
+  "region": "Frontiers",
+  "started": "2026-10-19",
+  "started_label": "19 October 2026",
+  "status": "active",
+  "summary": "JAXA's MMX probe launched on 19 October and is bound for Mars, arriving in August 2027. It is due to land twice on Phobos and return about 10 grams of soil to Earth in 2031, aiming to settle whether Mars's moons are captured asteroids or debris from a giant impact.",
+  "background": [
+    {"date": "2011-11", "text": "Russia's Phobos-Grunt, the only earlier attempt to bring back Phobos soil, launches but never leaves Earth orbit."}
+  ]
+}
