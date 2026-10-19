@@ -656,3 +656,8 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .up-tag { color: var(--trace); border-color: color-mix(in srgb, var(--trace) 70%, transparent); }
 .up-tag:hover { color: var(--trace); background: color-mix(in srgb, var(--trace) 12%, transparent); }
 .up-t { color: var(--trace); }
+
+/* Intensifying in warm amber rather than red */
+:root { --up: #A65F00; }
+:root[data-theme="dark"] { --up: #F2B44E; }
+.updates { border-left-color: var(--trace); background: color-mix(in srgb, var(--trace) 8%, transparent); }
