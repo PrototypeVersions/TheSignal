@@ -651,3 +651,8 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
   .mast .nav .nav-about { display: none; }   /* still linked in the footer */
 }
 .ed-facts .dotsep { font-style: normal; }
+
+/* Updated tag in the site's violet-blue rather than red */
+.up-tag { color: var(--trace); border-color: color-mix(in srgb, var(--trace) 70%, transparent); }
+.up-tag:hover { color: var(--trace); background: color-mix(in srgb, var(--trace) 12%, transparent); }
+.up-t { color: var(--trace); }
