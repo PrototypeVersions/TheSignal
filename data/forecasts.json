@@ -36,6 +36,11 @@
         "date": "2026-10-18",
         "p": 55,
         "note": "Three polls show him 1–2 points ahead, all within the margin of error. He led the first round by about 2.2 million votes."
+      },
+      {
+        "date": "2026-10-19",
+        "p": 52,
+        "note": "Four polls since 17 October put the race within about two points, one with Lula ahead (Rio Times tracker). Still a slight edge from the first-round lead."
       }
     ]
   },
@@ -96,6 +101,11 @@
         "date": "2026-10-18",
         "p": 30,
         "note": "Settled at $109.86 on 16 October, the highest since May. Gulf escalation pushes up; a US reserve release and recovering Hormuz flows push down."
+      },
+      {
+        "date": "2026-10-19",
+        "p": 26,
+        "note": "Brent fell toward $108 on Monday after the US paused Russia sanctions and the US energy secretary said Gulf crude shipments are back to about four-fifths of pre-war levels. Yemen escalation keeps upside risk."
       }
     ]
   },
@@ -156,6 +166,26 @@
         "date": "2026-10-18",
         "p": 12,
         "note": "Anthropic showed it on 15 TV boxes in a controlled test and says the capability may arrive by late 2026. Attackers actually deploying it is a further step."
+      }
+    ]
+  },
+  {
+    "id": "israel-netanyahu-61",
+    "question": "Will Netanyahu's bloc win at least 61 Knesset seats in Israel's 27 October election?",
+    "criteria": "YES if the final official results published by Israel's Central Elections Committee give Likud and the parties of the current governing coalition a combined 61 or more of the 120 seats. NO otherwise.",
+    "category": "Middle East",
+    "threads": [
+      "israel-election"
+    ],
+    "opened": "2026-10-19",
+    "closes": "2026-11-10",
+    "status": "open",
+    "resolution": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "p": 15,
+        "note": "Four polls published 18 October give the bloc 49–53 seats; reaching 61 would need a polling miss of about eight seats, which is rare in Israeli elections."
       }
     ]
   }

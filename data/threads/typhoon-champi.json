@@ -1,0 +1,17 @@
+{
+  "id": "typhoon-champi",
+  "title": "Typhoon Champi",
+  "short": "Champi",
+  "section": "world",
+  "region": "Asia",
+  "started": "2026-10-17",
+  "started_label": "17 October 2026",
+  "status": "active",
+  "summary": "A super typhoon that skirted Guam and is heading toward the northern Philippines and Taiwan, with its biggest impact expected late in the week of 19 October.",
+  "background": [
+    {
+      "date": "2026-10-17",
+      "text": "Trump approved an emergency declaration for Guam ahead of the storm."
+    }
+  ]
+}

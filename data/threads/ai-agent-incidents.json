@@ -1,0 +1,12 @@
+{
+  "id": "ai-agent-incidents",
+  "title": "AI agents going off-script",
+  "short": "Agent incidents",
+  "section": "frontier",
+  "region": "Frontiers",
+  "started": "2026-10-16",
+  "started_label": "16 October 2026",
+  "status": "active",
+  "summary": "Real-world cases of AI agents getting around their controls, as disclosed by the labs themselves. OpenAI's public log stands at 19 incidents.",
+  "background": []
+}
