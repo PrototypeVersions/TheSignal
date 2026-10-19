@@ -1,18 +1,18 @@
 # The Signal
 
-A once-a-day briefing on what changed in the world, with a Frontiers section on AI and science, a markets strip, a pulse check on every region, and running forecasts with a public track record.
+A daily briefing on what changed in the world, with a Frontiers section on AI and science, a markets strip and a map of every region. The front page stays short; every story has its own page with a full report, key facts and sources.
 
 Live site: https://prototypeversions.github.io/TheSignal/
 
 ## How it works
 
-- **Editions** (`data/editions/YYYY-MM-DD.json`): one per day, about ten world stories, three to six Frontiers items (AI and science), a markets strip, and a seven-region pulse.
+- **Editions** (`data/editions/YYYY-MM-DD.json`): one per day, about ten world stories, three to six Frontiers items (AI and science), a markets strip, and a seven-region pulse with extra regional news. Every story carries a short `dek` for the front page and a full `report` for its own page.
 - **Threads** (`data/threads/*.json`): each story belongs to a situation we keep following. Thread pages show the full timeline, built from the editions.
-- **Forecasts** (`data/forecasts.json`): yes/no questions with exact resolution rules. History is append-only; resolved questions are scored.
-- **Build** (`scripts/build.py`): standard-library Python that validates the data and writes the static site to `docs/`, which GitHub Pages serves.
-- **Design** (`site/`): stylesheet and favicon, copied into `docs/assets/`.
+- **Illustrations** (`images/YYYY-MM-DD/*.svg`): simple original pictures for Frontiers items.
+- **Build** (`scripts/build.py`): standard-library Python that validates the data and writes the static site to `docs/`, which GitHub Pages serves. It creates the front page, a page per story (`editions/<date>/<thread>/`), a page per region (`regions/<region>/`), thread pages, the archive and the feed.
+- **Design** (`site/`): stylesheet, script and favicon, copied into `docs/assets/`.
 
-Each morning a scheduled Claude task follows [`EDITOR.md`](EDITOR.md): research, write the edition, update threads and forecasts, validate, build, and push.
+Each morning a scheduled Claude task follows [`EDITOR.md`](EDITOR.md): research, write the edition, update threads, validate, build, and push. Each evening a second task adds updates to that day's edition.
 
 ## Running locally
 

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#16243D"/><stop offset="1" stop-color="#0B1422"/></radialGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#23365A"/><stop offset="1" stop-color="#16243D"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <g stroke="#1F2C44" stroke-width="1">
+    <path d="M0 200H1200M0 330H1200M0 460H1200M0 590H1200M200 0V800M400 0V800M600 0V800M800 0V800M1000 0V800"/>
+  </g>
+  <!-- falling price line -->
+  <polyline points="90,190 210,230 300,215 390,300 470,280 560,390 650,370 740,470 830,455 930,560 1030,545 1110,650" fill="none" stroke="#FF8B7B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  <circle cx="1110" cy="650" r="14" fill="#FF8B7B"/>
+  <!-- the chip -->
+  <g transform="translate(600 410)">
+    <g stroke="#86A2FF" stroke-width="10" stroke-linecap="round">
+      <path d="M-120 -175V-205M-60 -175V-205M0 -175V-205M60 -175V-205M120 -175V-205"/>
+      <path d="M-120 175V205M-60 175V205M0 175V205M60 175V205M120 175V205"/>
+      <path d="M-175 -120H-205M-175 -60H-205M-175 0H-205M-175 60H-205M-175 120H-205"/>
+      <path d="M175 -120H205M175 -60H205M175 0H205M175 60H205M175 120H205"/>
+    </g>
+    <rect x="-175" y="-175" width="350" height="350" rx="26" fill="url(#chip)" stroke="#86A2FF" stroke-width="6"/>
+    <rect x="-95" y="-95" width="190" height="190" rx="14" fill="#0D1626" stroke="#4E66B8" stroke-width="4"/>
+    <path d="M-55 -40H55M-55 0H25M-55 40H45" stroke="#86A2FF" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+  </g>
+</svg>

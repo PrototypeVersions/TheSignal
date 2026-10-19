@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs><radialGradient id="g" cx="45%" cy="45%" r="70%"><stop offset="0" stop-color="#16243D"/><stop offset="1" stop-color="#0B1422"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <!-- the company's shares: a pie with one slice lifted out -->
+  <g transform="translate(470 400)">
+    <circle r="230" fill="#1A2943" stroke="#2F4163" stroke-width="4"/>
+    <path d="M0 0 L230 0 A230 230 0 1 1 222.4 -58.6 Z" fill="#23365A" stroke="#4E66B8" stroke-width="4"/>
+    <g transform="translate(70 -38)">
+      <path d="M0 0 L230 0 A230 230 0 0 0 222.4 -58.6 Z" fill="#86A2FF" stroke="#C8D4FF" stroke-width="4"/>
+    </g>
+  </g>
+  <!-- the slice travels to a worker's hard hat -->
+  <path d="M790 330 C 860 280, 930 300, 960 380" fill="none" stroke="#86A2FF" stroke-width="6" stroke-dasharray="4 18" stroke-linecap="round"/>
+  <g transform="translate(985 500)">
+    <path d="M-150 40 C -150 -70, -80 -130, 0 -130 C 80 -130, 150 -70, 150 40 Z" fill="#E9B44C"/>
+    <path d="M-28 -128 C -28 -100, -26 -40, -24 40 L24 40 C 26 -40, 28 -100, 28 -128 Z" fill="#F5CD72"/>
+    <rect x="-185" y="40" width="370" height="34" rx="17" fill="#D79E35"/>
+  </g>
+</svg>

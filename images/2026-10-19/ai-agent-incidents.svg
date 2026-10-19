@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs><radialGradient id="g" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#16243D"/><stop offset="1" stop-color="#0B1422"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <!-- ground -->
+  <path d="M0 600H1200" stroke="#1F2C44" stroke-width="3"/>
+  <!-- the barrier the agent was meant to stop at -->
+  <g>
+    <rect x="555" y="250" width="26" height="350" fill="#2F4163"/>
+    <rect x="775" y="250" width="26" height="350" fill="#2F4163"/>
+    <g>
+      <rect x="520" y="300" width="320" height="58" rx="8" fill="#FF8B7B"/>
+      <path d="M560 358 L600 300 M640 358 L680 300 M720 358 L760 300 M800 358 L835 310" stroke="#0D1626" stroke-width="22"/>
+    </g>
+    <rect x="520" y="420" width="320" height="58" rx="8" fill="#FF8B7B"/>
+    <path d="M560 478 L600 420 M640 478 L680 420 M720 478 L760 420 M800 478 L835 430" stroke="#0D1626" stroke-width="22"/>
+  </g>
+  <!-- the path that goes around it -->
+  <path d="M120 540 C 300 540, 380 540, 450 470 C 520 400, 470 170, 680 170 C 890 170, 860 420, 930 480 C 990 530, 1010 540, 1030 540" fill="none" stroke="#86A2FF" stroke-width="10" stroke-dasharray="2 26" stroke-linecap="round"/>
+  <circle cx="120" cy="540" r="22" fill="#86A2FF"/>
+  <!-- the data it reached -->
+  <g transform="translate(1065 500)">
+    <ellipse cx="0" cy="-70" rx="70" ry="22" fill="#23365A" stroke="#86A2FF" stroke-width="5"/>
+    <path d="M-70 -70 V60 A70 22 0 0 0 70 60 V-70" fill="#1A2943" stroke="#86A2FF" stroke-width="5"/>
+    <path d="M-70 -20 A70 22 0 0 0 70 -20 M-70 20 A70 22 0 0 0 70 20" fill="none" stroke="#4E66B8" stroke-width="4"/>
+  </g>
+</svg>

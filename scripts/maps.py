@@ -146,3 +146,40 @@ def map_svg(places, width=400, height=300, labels=True, cls=""):
             f'<path d="{"".join(grat)}" class="grat"/>'
             f'<path d="{"".join(land)}" class="land"/><path d="{"".join(soft)}" class="rel"/><path d="{"".join(mark)}" class="hl"/>'
             f'{"".join(pts)}</g></svg>')
+
+
+# --------------------------------------------------------------------------- world overview
+
+WORLD_W, WORLD_H = 1000, 470
+WORLD_N, WORLD_S = 84.0, -58.0
+
+
+def world_xy(lon, lat):
+    """Equirectangular position on the world overview."""
+    return (lon + 180) / 360 * WORLD_W, (WORLD_N - lat) / (WORLD_N - WORLD_S) * WORLD_H
+
+
+def world_svg_file():
+    """A standalone world map (Natural Earth outlines) in the site's dark colours, used as a backdrop."""
+    land = []
+    for c in world().values():
+        for ring in c["rings"]:
+            d, prev = [], None
+            for lon, lat in ring:
+                if lat < WORLD_S - 2:
+                    lat = WORLD_S - 2
+                x, y = world_xy(lon, lat)
+                cmd = "M" if prev is None or abs(lon - prev) > 180 else "L"
+                d.append(f"{cmd}{x:.1f} {y:.1f}")
+                prev = lon
+            land.append("".join(d) + "Z")
+    grat = []
+    for lon in range(-150, 180, 30):
+        x, _ = world_xy(lon, 0)
+        grat.append(f"M{x:.1f} 0V{WORLD_H}")
+    for lat in range(-30, 84, 30):
+        _, y = world_xy(0, lat)
+        grat.append(f"M0 {y:.1f}H{WORLD_W}")
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WORLD_W} {WORLD_H}">'
+            f'<path d="{"".join(grat)}" fill="none" stroke="#1F2C44" stroke-width="1"/>'
+            f'<path d="{"".join(land)}" fill="#1A2943" stroke="#2F4163" stroke-width=".7" stroke-linejoin="round"/></svg>')

@@ -8,8 +8,6 @@ Usage: python3 scripts/build.py          (validate + build)
 import datetime as dt
 import html
 import json
-import math
-import random
 import re
 import shutil
 import sys
@@ -25,8 +23,8 @@ OUT = ROOT / "docs"
 SITE_NAME = "The Signal"
 SITE_URL = "https://prototypeversions.github.io/TheSignal"
 TAGLINE = "What changed in the world today"
-DESCRIPTION = ("A finite daily briefing: the handful of developments that changed the picture today, "
-               "with sources, momentum and running forecasts.")
+DESCRIPTION = ("A daily briefing on the handful of developments that changed the picture today, "
+               "with maps, full reports and sources.")
 
 CHANGE = {
     "major": ("Major shift", 1.0),
@@ -37,8 +35,19 @@ CHANGE = {
 MOMENTUM = {"up": "Intensifying", "steady": "Holding", "down": "Easing"}
 FIELDS = ["AI", "Science", "Medicine", "Space", "Energy", "Climate"]
 REGIONS = ["North America", "Latin America", "Europe", "Africa", "Middle East", "Asia", "Oceania"]
+# where each region's numbered marker sits on the world map (lon, lat)
+REGION_PINS = {
+    "North America": (-101, 47), "Latin America": (-62, -12), "Europe": (15, 51), "Africa": (20, 4),
+    "Middle East": (47, 28), "Asia": (97, 40), "Oceania": (140, -25),
+}
+# editions from this date on must carry a full report for every story
+FULL_REPORTS_FROM = "2026-10-19"
 
 e = html.escape
+
+
+def slug(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
 # --------------------------------------------------------------------------- data
@@ -63,11 +72,10 @@ def load():
         threads[t["id"]] = t
     editions = [load_json(p) for p in sorted((DATA / "editions").glob("*.json"))]
     editions.sort(key=lambda x: x["date"])
-    forecasts = load_json(DATA / "forecasts.json")
-    return threads, editions, forecasts
+    return threads, editions
 
 
-def validate(threads, editions, forecasts):
+def validate(threads, editions):
     errs = []
     date_re = re.compile(r"^\d{4}-\d{2}-\d{2}$")
     for t in threads.values():
@@ -79,6 +87,7 @@ def validate(threads, editions, forecasts):
     seen = set()
     for ed in editions:
         d = ed.get("date", "?")
+        strict = d >= FULL_REPORTS_FROM
         if not date_re.match(d):
             errs.append(f"edition {d}: bad date")
         if d in seen:
@@ -86,8 +95,6 @@ def validate(threads, editions, forecasts):
         seen.add(d)
         if not ed.get("lede"):
             errs.append(f"edition {d}: missing lede")
-        if "ai" in ed:
-            errs.append(f"edition {d}: the 'ai' list is now called 'frontiers'")
         for group in ("stories", "frontiers"):
             ids = set()
             for i, s in enumerate(ed.get(group, [])):
@@ -101,13 +108,27 @@ def validate(threads, editions, forecasts):
                     errs.append(f"{where}: change must be one of {list(CHANGE)}")
                 if s.get("momentum") not in MOMENTUM:
                     errs.append(f"{where}: momentum must be one of {list(MOMENTUM)}")
-                need = ["headline", "dek", "body", "sources"] + (["why", "watch"] if group == "stories" else ["picture"])
+                need = ["headline", "dek", "sources"] + (["why", "watch"] if group == "stories" else ["picture"])
                 if group == "frontiers" and s.get("field") not in FIELDS:
                     errs.append(f"{where}: field must be one of {FIELDS}")
                 for k in need:
                     if not s.get(k):
                         errs.append(f"{where}: missing '{k}'")
-                if not isinstance(s.get("body", []), list):
+                if not s.get("report") and not s.get("body"):
+                    errs.append(f"{where}: needs a 'report' (the full story)")
+                if strict and not s.get("report"):
+                    errs.append(f"{where}: needs a 'report' (two to five sections of the full story)")
+                if strict and not s.get("key_facts"):
+                    errs.append(f"{where}: needs 'key_facts' (three to five short facts)")
+                errs += check_report(s, where)
+                img = s.get("image")
+                if img:
+                    asset = str(img.get("asset", ""))
+                    if not re.fullmatch(r"images/\d{4}-\d{2}-\d{2}/[a-z0-9-]+\.(svg|png|jpg|jpeg|webp)", asset) or not (ROOT / asset).is_file():
+                        errs.append(f"{where}: image asset must be an existing file under images/YYYY-MM-DD/ ({asset})")
+                    if not img.get("alt"):
+                        errs.append(f"{where}: image needs alt text")
+                if "body" in s and not isinstance(s["body"], list):
                     errs.append(f"{where}: body must be a list of paragraphs")
                 errs += check_sources(s.get("sources", []), where)
                 errs += maps.validate_places(s.get("places"), where)
@@ -125,35 +146,33 @@ def validate(threads, editions, forecasts):
         if sorted(regions) != sorted(REGIONS):
             errs.append(f"edition {d}: pulse must cover exactly {REGIONS}")
         for p in ed.get("pulse", []):
+            where = f"edition {d} pulse {p.get('region')}"
             for tid in p.get("threads", []):
                 if tid not in threads:
-                    errs.append(f"edition {d} pulse {p.get('region')}: unknown thread '{tid}'")
-            errs += check_sources(p.get("sources", []), f"edition {d} pulse {p.get('region')}", allow_empty=True)
-    fids = set()
-    for f in forecasts:
-        fid = f.get("id")
-        if fid in fids:
-            errs.append(f"forecast {fid}: duplicate id")
-        fids.add(fid)
-        for k in ("question", "criteria", "category", "opened", "closes", "status", "history"):
-            if not f.get(k):
-                errs.append(f"forecast {fid}: missing '{k}'")
-        last = ""
-        for h in f.get("history", []):
-            if not (1 <= h.get("p", -1) <= 99):
-                errs.append(f"forecast {fid}: probability {h.get('p')} must be 1–99")
-            if h.get("date", "") < last:
-                errs.append(f"forecast {fid}: history must be in date order (never rewrite past entries)")
-            last = h.get("date", "")
-            if not h.get("note"):
-                errs.append(f"forecast {fid}: every history entry needs a note saying why")
-        if f.get("status") == "resolved" and f.get("resolution") not in ("yes", "no", "void"):
-            errs.append(f"forecast {fid}: resolved forecasts need resolution yes/no/void")
-        for tid in f.get("threads", []):
-            if tid not in threads:
-                errs.append(f"forecast {fid}: unknown thread '{tid}'")
+                    errs.append(f"{where}: unknown thread '{tid}'")
+            errs += check_sources(p.get("sources", []), where, allow_empty=True)
+            for b in p.get("briefs", []):
+                if not b.get("headline") or not b.get("text"):
+                    errs.append(f"{where}: each brief needs a headline and text")
+                errs += check_sources(b.get("sources", []), f"{where} brief")
     if errs:
         raise BuildError("Validation failed:\n  - " + "\n  - ".join(errs))
+
+
+def check_report(s, where):
+    errs = []
+    kf = s.get("key_facts")
+    if kf is not None and (not isinstance(kf, list) or not 2 <= len(kf) <= 6 or not all(isinstance(x, str) and x.strip() for x in kf)):
+        errs.append(f"{where}: key_facts must be a list of 2 to 6 short sentences")
+    rep = s.get("report")
+    if rep is not None:
+        if not isinstance(rep, list) or not rep:
+            errs.append(f"{where}: report must be a list of sections")
+        else:
+            for sec in rep:
+                if not sec.get("heading") or not isinstance(sec.get("paragraphs"), list) or not sec["paragraphs"]:
+                    errs.append(f"{where}: each report section needs a heading and a list of paragraphs")
+    return errs
 
 
 def check_updates(s, where):
@@ -168,21 +187,6 @@ def check_updates(s, where):
                 errs.append(f"{where}: update 'at' must be an ISO time like 2026-10-18T17:55:00-05:00")
         errs += check_sources(u.get("sources", []), where, allow_empty=True)
     return errs
-
-
-def clock(iso):
-    t = dt.datetime.fromisoformat(iso)
-    h = t.hour % 12 or 12
-    return f"{h}:{t.minute:02d}{'am' if t.hour < 12 else 'pm'} CT"
-
-
-def updates_block(s):
-    ups = s.get("updates", [])
-    if not ups:
-        return ""
-    items = "".join(f'<li><span class="up-t">Update, {e(clock(u["at"]))}</span> {e(u["text"])}'
-                    f'{sources_block(u.get("sources", []))}</li>' for u in ups)
-    return f'<ul class="updates">{items}</ul>'
 
 
 def check_markets(m, where):
@@ -236,9 +240,14 @@ def day_month(s):
 def flex_date(s):
     """Background dates may be YYYY-MM or YYYY-MM-DD."""
     if re.match(r"^\d{4}-\d{2}$", s):
-        d = dt.date.fromisoformat(s + "-01")
-        return d.strftime("%B %Y")
+        return dt.date.fromisoformat(s + "-01").strftime("%B %Y")
     return short_date(s)
+
+
+def clock(iso):
+    t = dt.datetime.fromisoformat(iso)
+    h = t.hour % 12 or 12
+    return f"{h}:{t.minute:02d}{'am' if t.hour < 12 else 'pm'} CT"
 
 
 def momentum_icon(m):
@@ -268,124 +277,38 @@ def sources_block(sources, label="Sources"):
             f'<ul>{items}</ul></details>')
 
 
+def sources_list(sources):
+    items = "".join(
+        f'<li><a href="{e(s["url"])}" rel="noopener" target="_blank">{e(s["title"])}</a>'
+        f'<span class="outlet">{e(s["outlet"])}</span></li>' for s in sources)
+    return f'<ul class="src-list">{items}</ul>'
+
+
 def paras(body):
     return "".join(f"<p>{e(p)}</p>" for p in body)
 
 
-def short_title(t):
-    return t["title"]
+def story_url(ed_date, s, prefix):
+    return f'{prefix}editions/{ed_date}/{s["thread"]}/'
 
 
-# --------------------------------------------------------------------------- the trace
-
-def trace_svg(points, seed, labels=True, height=150, aria="", W=1000, cls="", deco=False):
-    """points: list of dicts {x: 0..1, amp: 0..1, mom, label, href, group}.
-    Draws a seismograph-like line with a spike at each point."""
-    H = height
-    k = max(W / 1000, 0.45)
-    base = H - (52 if labels else 14)
-    top = 14
-    rng = random.Random(seed)
-    xs = sorted(points, key=lambda p: p["x"])
-    segs = []
-    x = 0.0
-    path = [f"M0 {base:.1f}"]
-    step = 7
-    spikes = {round(p["x"] * W): p for p in xs}
-    spike_xs = sorted(spikes)
-    done = set()
-    i = 0
-    while x <= W:
-        near = None
-        for sx in spike_xs:
-            if sx not in done and abs(sx - x) < 26 * k:
-                near = sx
-                break
-        if near is not None:
-            p = spikes[near]
-            amp = p["amp"] * (base - top)
-            # sharp up-down-up wiggle centered on the spike
-            for dx, f in ((-16, 0.08), (-8, -0.2), (0, 1.0), (6, -0.55), (12, 0.3), (18, -0.1), (24, 0.03)):
-                px = near + dx * k
-                dy = amp * f if f > 0 else max(amp * f * 0.22, -11)
-                path.append(f"L{px:.1f} {base - dy:.1f}")
-            done.add(near)
-            x = near + 26 * k
-            continue
-        jitter = rng.uniform(-2.2, 2.2)
-        path.append(f"L{x:.1f} {base + jitter:.1f}")
-        x += step + rng.uniform(-2, 2)
-        i += 1
-    path.append(f"L{W} {base:.1f}")
-    d = " ".join(path)
-
-    grid = []
-    for gx in range(0, W + 1, 50 if W >= 600 else 40):
-        grid.append(f'<line x1="{gx}" y1="0" x2="{gx}" y2="{H}" class="g{" gm" if gx % 250 == 0 and W >= 600 else ""}"/>')
-    for gy in range(int(base) % 20, H + 1, 20):
-        grid.append(f'<line x1="0" y1="{gy}" x2="{W}" y2="{gy}" class="g"/>')
-
-    marks = []
-    for n, p in enumerate(xs):
-        px = round(p["x"] * W)
-        py = base - p["amp"] * (base - top)
-        lab = ""
-        if labels:
-            anchor = "middle"
-            if px < 60:
-                anchor = "start"
-            elif px > W - 60:
-                anchor = "end"
-            ly = base + (24 if n % 2 == 0 else 42)
-            tick = f'<line x1="{px}" y1="{base + 6}" x2="{px}" y2="{ly - 13}" class="tick"/>'
-            lab = f'{tick}<text x="{px}" y="{ly}" text-anchor="{anchor}" class="tl">{e(p["label"])}</text>'
-        dot = f'<circle cx="{px}" cy="{py:.1f}" r="5.5" class="pk pk-{p["mom"]}"/>'
-        inner = f"{dot}{lab}"
-        if p.get("href") and not deco:
-            hw = 40 * k
-            data = ""
-            if p.get("thread"):
-                data = (f' data-thread="{e(p["thread"])}" data-h="{e(p.get("headline", ""))}"'
-                        f' data-l="{e(p.get("title", ""))}" data-m="{e(p["mom"])}"')
-            inner = (f'<a href="{e(p["href"])}" class="tk"{data}><title>{e(p.get("title", p["label"]))}</title>'
-                     f'<rect x="{px - hw:.0f}" y="0" width="{2 * hw:.0f}" height="{H}" class="hit"/>{inner}</a>')
-        marks.append(inner)
-    dividers = []
-    for p in xs:
-        if p.get("divider"):
-            px = round(p["x"] * W - p.get("gapw", 0.03) * W)
-            dividers.append(f'<line x1="{px}" y1="{top}" x2="{px}" y2="{base + 6}" class="div"/>'
-                            f'<text x="{px + 6}" y="{top + 10}" class="dl">Frontiers</text>')
-    a11y = 'aria-hidden="true" focusable="false"' if deco else f'role="img" aria-label="{e(aria)}"'
-    return (f'<svg class="trace {cls}" viewBox="0 0 {W} {H}" {a11y}>'
-            f'<g class="grid">{"".join(grid)}</g>{"".join(dividers)}'
-            f'<path class="line" d="{d}" pathLength="1"/>'
-            f'<g class="marks">{"".join(marks)}</g></svg>')
+def updated_tag(s, url):
+    ups = s.get("updates", [])
+    if not ups:
+        return ""
+    return f'<a class="up-tag" href="{url}#updates">Updated {e(clock(ups[-1]["at"]))}</a>'
 
 
-def edition_trace(ed, threads, prefix, mini=False):
-    world = ed["stories"]
-    ai = ed.get("frontiers", [])
-    n = len(world) + len(ai)
-    gap = 0.6 if ai else 0
-    slots = n + gap
-    pts = []
-    for i, s in enumerate(world + ai):
-        pos = i + (gap if i >= len(world) else 0)
-        x = 0.05 + 0.9 * (pos + 0.5) / slots
-        t = threads[s["thread"]]
-        pts.append({
-            "x": x, "amp": CHANGE[s["change"]][1], "mom": s["momentum"],
-            "label": t.get("short", t["title"]), "href": f"#{s['thread']}",
-            "title": f'{t["title"]}: {CHANGE[s["change"]][0]}, {MOMENTUM[s["momentum"]].lower()}',
-            "divider": bool(ai) and i == len(world), "gapw": 0.9 * (gap / 2 + 0.5) / slots,
-            "thread": s["thread"], "headline": s["headline"],
-        })
-    aria = "Today's trace: one spike per story, taller for bigger changes."
-    if mini:
-        return trace_svg(pts, seed=ed["date"], aria="", W=2400, height=60, labels=False, cls="trace-mini")
-    return (trace_svg(pts, seed=ed["date"], aria=aria, height=170, cls="trace-wide") +
-            trace_svg(pts, seed=ed["date"], aria=aria, W=420, height=120, labels=False, cls="trace-narrow", deco=True))
+def story_meta(s, threads, prefix, field=False):
+    t = threads[s["thread"]]
+    f = f'<span class="field field-{e(s["field"].lower())}">{e(s["field"])}</span>' if field and s.get("field") else ""
+    return (f'<div class="meta">{f}{badges(s)}'
+            f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
+
+
+def place_caption(s):
+    pts = [p["name"] for p in s.get("places", {}).get("points", [])]
+    return f'<figcaption>{e(", ".join(pts))}</figcaption>' if pts else ""
 
 
 # --------------------------------------------------------------------------- page shell
@@ -394,12 +317,11 @@ FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6
          "&family=Schibsted+Grotesk:wght@400..800&family=DM+Sans:wght@400;500&display=swap")
 
 
-
-def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_head=""):
+def page(title, body, prefix, path, active="", description=DESCRIPTION):
     full_title = f"{title} — {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME}: {TAGLINE.lower()}"
     canon = f"{SITE_URL}/{path}"
-    nav = [("Today", "", "today"), ("Threads", "threads/", "threads"),
-           ("Forecasts", "forecasts/", "forecasts"), ("Archive", "archive/", "archive"), ("How it works", "about/", "about")]
+    nav = [("Today", "", "today"), ("Regions", "#regions", "regions"), ("Threads", "threads/", "threads"),
+           ("Archive", "archive/", "archive"), ("How it works", "about/", "about")]
     nav_html = "".join(
         f'<a href="{prefix}{href}"{" aria-current=\"page\"" if key == active else ""}>{e(lbl)}</a>'
         for lbl, href, key in nav)
@@ -424,7 +346,6 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
 <link rel="stylesheet" href="{prefix}assets/style.css">
-{extra_head}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -444,7 +365,6 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
   <div class="wrap foot-in">
     <p class="foot-brand">The Signal</p>
     <p>Read <a href="{prefix}about/">how it works</a> or browse the <a href="{prefix}archive/">archive</a>.</p>
-    <p class="small">Forecasts are our own estimates, not financial or betting advice.</p>
   </div>
 </footer>
 <script src="{prefix}assets/signal.js" defer></script>
@@ -453,73 +373,50 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION, extra_he
 """
 
 
-# --------------------------------------------------------------------------- edition page
+# --------------------------------------------------------------------------- front page
 
-def story_html(s, threads, prefix, ed_date, kind="world"):
-    t = threads[s["thread"]]
-    meta = (f'<div class="meta">{badges(s)}'
-            f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
-    extra = ""
-    if kind == "world":
-        extra = (f'<div class="so"><div><h3>Why it matters</h3><p>{e(s["why"])}</p></div>'
-                 f'<div><h3>What to watch</h3><p>{e(s["watch"])}</p></div></div>')
-    else:
-        extra = f'<div class="picture"><h3>This changes the picture because</h3><p>{e(s["picture"])}</p></div>'
-    return (f'<article class="story story-{kind}" id="{e(s["thread"])}">{meta}'
-            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>'
-            f'<div class="body">{paras(s["body"])}</div>{extra}{sources_block(s["sources"])}</article>')
+def report_button(url, label="Full report"):
+    return f'<a class="report-btn" href="{url}">{e(label)} <span aria-hidden="true">→</span></a>'
 
 
-def story_meta(s, threads, prefix):
-    t = threads[s["thread"]]
-    return (f'<div class="meta">{badges(s)}'
-            f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
-
-
-def so_block(s):
-    return (f'<div class="so"><div><h3>Why it matters</h3><p>{e(s["why"])}</p></div>'
-            f'<div><h3>What to watch</h3><p>{e(s["watch"])}</p></div></div>')
-
-
-def place_caption(s):
-    pts = [p["name"] for p in s.get("places", {}).get("points", [])]
-    return f'<figcaption>{e(", ".join(pts))}</figcaption>' if pts else ""
-
-
-def story_lead(s, threads, prefix):
+def story_lead(s, threads, prefix, ed_date):
+    url = story_url(ed_date, s, prefix)
     m = maps.map_svg(s.get("places"), 560, 420, labels=True, cls="map-lead")
     fig = f'<figure class="lead-map">{m}{place_caption(s)}</figure>' if m else ""
-    return (f'<article class="story story-lead{"" if m else " nomap"}" id="{e(s["thread"])}"><div class="lead-text">{story_meta(s, threads, prefix)}'
-            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>{updates_block(s)}'
-            f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</div>{fig}</article>')
+    return (f'<article class="story story-lead{"" if m else " nomap"}" id="{e(s["thread"])}"><div class="lead-text">'
+            f'{story_meta(s, threads, prefix)}<h2><a href="{url}">{e(s["headline"])}</a></h2><p class="dek">{e(s["dek"])}</p>'
+            f'<div class="why"><h3>Why it matters</h3><p>{e(s["why"])}</p></div>'
+            f'<div class="actions">{report_button(url)}{updated_tag(s, url)}</div></div>{fig}</article>')
 
 
-def story_second(s, threads, prefix):
+def story_second(s, threads, prefix, ed_date):
+    url = story_url(ed_date, s, prefix)
     m = maps.map_svg(s.get("places"), 520, 250, labels=True, cls="map-second")
-    fig = f'<figure class="second-map">{m}</figure>' if m else ""
+    fig = f'<figure class="second-map"><a href="{url}" tabindex="-1" aria-hidden="true">{m}</a></figure>' if m else ""
     return (f'<article class="story story-second" id="{e(s["thread"])}">{fig}{story_meta(s, threads, prefix)}'
-            f'<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>{updates_block(s)}'
-            f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</article>')
+            f'<h2><a href="{url}">{e(s["headline"])}</a></h2><p class="dek">{e(s["dek"])}</p>'
+            f'<div class="actions">{report_button(url)}{updated_tag(s, url)}</div></article>')
 
 
-def story_compact(s, threads, prefix):
-    m = maps.map_svg(s.get("places"), 160, 160, labels=False, cls="map-thumb")
-    thumb = f'<div class="thumb">{m}</div>' if m else ""
-    return (f'<article class="story story-compact" id="{e(s["thread"])}">{thumb}<div class="c-text">'
-            f'{story_meta(s, threads, prefix)}<h2>{e(s["headline"])}</h2><p class="dek">{e(s["dek"])}</p>{updates_block(s)}'
-            f'<details class="more-story"><summary>Read the full story</summary>'
-            f'<div class="body">{paras(s["body"])}</div>{so_block(s)}{sources_block(s["sources"])}</details></div></article>')
+def story_art(s, prefix, url=None):
+    img = s.get("image")
+    if not img:
+        return ""
+    tag = f'<img src="{prefix}{e(img["asset"])}" alt="{e(img["alt"])}" width="1200" height="800" loading="lazy" decoding="async">'
+    if url:
+        tag = f'<a href="{url}" tabindex="-1" aria-hidden="true">{tag}</a>'
+    return f'<figure class="f-art">{tag}<figcaption>{e(img.get("credit", "Illustration"))}</figcaption></figure>'
 
 
-def story_frontier(s, threads, prefix):
-    t = threads[s["thread"]]
-    meta = (f'<div class="meta"><span class="field field-{e(s["field"].lower())}">{e(s["field"])}</span>{badges(s)}'
-            f'<a class="thread" href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></div>')
-    return (f'<article class="story story-frontier" id="{e(s["thread"])}">{meta}'
-            f'<h2>{e(s["headline"])}</h2>'
-            f'<div class="picture"><h3>This changes the picture because</h3><p>{e(s["picture"])}</p></div>{updates_block(s)}'
-            f'<details class="more-story"><summary>Read more</summary><p class="dek">{e(s["dek"])}</p>'
-            f'<div class="body">{paras(s["body"])}</div>{sources_block(s["sources"])}</details></article>')
+def story_compact(s, threads, prefix, ed_date, frontier=False):
+    url = story_url(ed_date, s, prefix)
+    thumb = story_art(s, prefix, url) if frontier else ""
+    if not frontier:
+        m = maps.map_svg(s.get("places"), 160, 160, labels=False, cls="map-thumb")
+        thumb = f'<a class="thumb" href="{url}" tabindex="-1" aria-hidden="true">{m}</a>' if m else ""
+    return (f'<article class="story story-compact{" story-frontier" if frontier else ""}" id="{e(s["thread"])}">{thumb}<div class="c-text">'
+            f'{story_meta(s, threads, prefix, field=frontier)}<h2><a href="{url}">{e(s["headline"])}</a></h2><p class="dek">{e(s["dek"])}</p>'
+            f'<div class="actions"><a class="read-full" href="{url}">Read the full story <span aria-hidden="true">→</span></a>{updated_tag(s, url)}</div></div></article>')
 
 
 def markets_strip(m):
@@ -540,45 +437,100 @@ def markets_strip(m):
             f'<ul>{"".join(cells)}</ul>{sources_block(m.get("sources", []))}</section>')
 
 
-def forecast_rail(forecasts, ed_date, prefix):
-    rows = []
-    open_f = [f for f in forecasts if f["status"] == "open"]
-    for f in open_f:
-        hist = [h for h in f["history"] if h["date"] <= ed_date]
-        if not hist:
-            continue
-        cur = hist[-1]["p"]
-        prev = hist[-2]["p"] if len(hist) > 1 else None
-        if prev is None:
-            delta = '<span class="delta new">Opened</span>' if hist[-1]["date"] == ed_date else ""
-        elif cur == prev:
-            delta = '<span class="delta">No change</span>'
-        else:
-            sign = "up" if cur > prev else "down"
-            delta = f'<span class="delta d-{sign}">{"+" if cur > prev else "−"}{abs(cur - prev)} from {prev}%</span>'
-        rows.append(f'<li><a href="{prefix}forecasts/#{f["id"]}"><span class="fq">{e(f["question"])}</span>'
-                    f'<span class="fp"><span class="pct">{cur}%</span>{delta}</span>'
-                    f'<span class="bar" aria-hidden="true"><span style="width:{cur}%"></span></span></a></li>')
-    return (f'<section class="rail-block" aria-labelledby="rf"><h2 id="rf">Forecasts</h2>'
-            f'<p class="rail-note">Our running odds. Every change is logged with a reason.</p>'
-            f'<ul class="flist">{"".join(rows)}</ul>'
-            f'<a class="more" href="{prefix}forecasts/">All forecasts and the track record</a></section>')
+# --------------------------------------------------------------------------- regions
+
+def region_items(ed, threads):
+    """For each region: its pulse entry, the edition's stories that belong to it, and its extra briefs."""
+    pulse = {p["region"]: p for p in ed.get("pulse", [])}
+    out = []
+    for n, region in enumerate(REGIONS, 1):
+        p = pulse.get(region, {})
+        linked = set(p.get("threads", []))
+        stories = [s for s in ed["stories"] if threads[s["thread"]]["region"] == region or s["thread"] in linked]
+        out.append({"name": region, "slug": slug(region), "n": n, "pulse": p, "stories": stories,
+                    "briefs": p.get("briefs", [])})
+    return out
 
 
-def pulse_html(ed, threads, prefix):
-    order = {r: i for i, r in enumerate(REGIONS)}
-    items = []
-    for p in sorted(ed["pulse"], key=lambda x: order[x["region"]]):
-        links = " ".join(f'<a href="{prefix}threads/{tid}/">{e(threads[tid]["title"])}</a>' for tid in p.get("threads", []))
-        src = sources_block(p.get("sources", []))
-        items.append(f'<li class="pulse-{p["status"]}"><h3>{e(p["region"])}</h3><p>{e(p["text"])}</p>'
-                     f'{f"<p class=pl>{links}</p>" if links else ""}{src}</li>')
-    return (f'<section class="pulse" aria-labelledby="wp"><h2 id="wp">World pulse</h2>'
-            f'<p class="rail-note">Every region, every day, even when the answer is nothing.</p>'
-            f'<ul>{"".join(items)}</ul></section>')
+def count_label(r):
+    k = len(r["stories"]) + len(r["briefs"])
+    return f'{k} item{"" if k == 1 else "s"}'
 
 
-def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
+def region_panel(r, ed, prefix, base, active):
+    stories = "".join(f'<li><a href="{story_url(ed["date"], s, prefix)}">{e(s["headline"])}</a></li>' for s in r["stories"]) \
+        or f'<li class="empty">No {e(r["name"])} story made today’s edition.</li>'
+    briefs = "".join(f'<li><a href="{base}regions/{r["slug"]}/#brief-{i}">{e(b["headline"])}'
+                     f'<span class="outlet">{e(b["sources"][0]["outlet"])}</span></a></li>' for i, b in enumerate(r["briefs"], 1)) \
+        or '<li class="empty">No further development cleared our bar today.</li>'
+    summary = f'<p class="rp-sum">{e(r["pulse"].get("text", ""))}</p>' if r["pulse"].get("text") else ""
+    return (f'<div class="reg-panel" id="region-panel-{r["slug"]}" data-panel="{r["slug"]}"{"" if active else " hidden"}>'
+            f'<p class="rp-k">Region {r["n"]:02} · {count_label(r)}</p><h3>{e(r["name"])}</h3>{summary}'
+            f'<h4>In today’s edition</h4><ul class="rp-list">{stories}</ul>'
+            f'<h4>More from {e(r["name"])}</h4><ul class="rp-list rp-briefs">{briefs}</ul>'
+            + report_button(base + "regions/" + r["slug"] + "/", "All " + r["name"] + " news") + '</div>')
+
+
+def regions_section(ed, threads, prefix, base):
+    regions = region_items(ed, threads)
+    pins = ""
+    for r in regions:
+        x, y = maps.world_xy(*REGION_PINS[r["name"]])
+        k = len(r["stories"]) + len(r["briefs"])
+        pins += (f'<a href="{base}regions/{r["slug"]}/" class="rpin" data-region="{r["slug"]}" aria-label="{e(r["name"])}: {count_label(r)}">'
+                 f'<circle class="halo" cx="{x:.1f}" cy="{y:.1f}" r="36"/><circle class="dot" cx="{x:.1f}" cy="{y:.1f}" r="25"/>'
+                 f'<text x="{x:.1f}" y="{y + 7:.1f}" text-anchor="middle">{r["n"]:02}</text>'
+                 f'<text class="rname" x="{x:.1f}" y="{y + 54:.1f}" text-anchor="middle">{e(r["name"])} · {k}</text></a>')
+    chips = "".join(f'<a href="{base}regions/{r["slug"]}/" class="rchip" data-region="{r["slug"]}"><span>{r["n"]:02}</span>{e(r["name"])}'
+                    f'<small>{len(r["stories"]) + len(r["briefs"])}</small></a>' for r in regions)
+    panels = "".join(region_panel(r, ed, prefix, base, i == 0) for i, r in enumerate(regions))
+    W, H = maps.WORLD_W, maps.WORLD_H
+    return f"""
+<section class="regions" id="regions" aria-labelledby="rg-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="rg-h" class="sec-h">The world, by region</h2>
+      <p class="sec-note">Every region, every day, even when the answer is nothing. Choose a region for its stories today, plus news that didn’t make the edition.</p></header>
+    <div class="reg-layout">
+      <div class="reg-map">
+        <svg viewBox="0 -14 {W} {H + 28}" role="group" aria-label="World map with seven numbered regions">
+          <image href="{prefix}assets/world.svg" width="{W}" height="{H}"/>{pins}
+        </svg>
+        <nav class="rchips" aria-label="Regions">{chips}</nav>
+      </div>
+      <aside class="reg-side" aria-live="polite">{panels}</aside>
+    </div>
+  </div>
+</section>"""
+
+
+def region_page(r, ed, threads, prefix, others):
+    stories = "".join(
+        f'<article class="rstory">{story_meta(s, threads, prefix)}<h3><a href="{story_url(ed["date"], s, prefix)}">{e(s["headline"])}</a></h3>'
+        f'<p class="dek">{e(s["dek"])}</p><a class="read-full" href="{story_url(ed["date"], s, prefix)}">Read the full story <span aria-hidden="true">→</span></a></article>'
+        for s in r["stories"]) or f'<p class="empty">No {e(r["name"])} story made this edition.</p>'
+    briefs = "".join(
+        f'<article class="rbrief" id="brief-{i}"><h3>{e(b["headline"])}</h3>{paras([b["text"]])}{sources_block(b["sources"])}</article>'
+        for i, b in enumerate(r["briefs"], 1)) or '<p class="empty">No further development cleared our bar today.</p>'
+    switch = "".join(f'<a href="../{o["slug"]}/"{" aria-current=\"page\"" if o["slug"] == r["slug"] else ""}><span>{o["n"]:02}</span>{e(o["name"])}</a>' for o in others)
+    summary = f'<p class="lede">{e(r["pulse"].get("text", ""))}</p>' if r["pulse"].get("text") else ""
+    return f"""
+<section class="hero hero-plain"><div class="wrap narrow">
+  <p class="crumb"><a href="{prefix}editions/{ed["date"]}/#regions">Edition {ed.get("number", "")}, {e(long_date(ed["date"]))}</a> / Region {r["n"]:02}</p>
+  <h1 class="page-title">{e(r["name"])}</h1>
+  {summary}
+  <nav class="rswitch" aria-label="Other regions">{switch}</nav>
+</div></section>
+<div class="wrap narrow region-body">
+  <h2 class="sec-h">In today’s edition</h2>{stories}
+  <h2 class="sec-h">More from {e(r["name"])}</h2>
+  <p class="sec-note">These developments did not make the main edition. Each is summarized from the linked reporting.</p>{briefs}
+</div>
+"""
+
+
+# --------------------------------------------------------------------------- edition page
+
+def edition_body(ed, threads, prefix, is_today, prev_ed, next_ed):
     nav = []
     if prev_ed:
         nav.append(f'<a href="{prefix}editions/{prev_ed["date"]}/">Previous edition, {e(day_month(prev_ed["date"]))}</a>')
@@ -586,11 +538,13 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
         nav.append(f'<a href="{prefix}editions/{next_ed["date"]}/">Next edition, {e(day_month(next_ed["date"]))}</a>')
     elif not is_today:
         nav.append(f'<a href="{prefix}">Today\'s edition</a>')
+    d = ed["date"]
+    base = prefix if is_today else f"{prefix}editions/{d}/"
     st = ed["stories"]
-    lead = story_lead(st[0], threads, prefix)
-    second = "".join(story_second(x, threads, prefix) for x in st[1:3])
-    rest = "".join(story_compact(x, threads, prefix) for x in st[3:])
-    fronts = "".join(story_frontier(s, threads, prefix) for s in ed.get("frontiers", []))
+    lead = story_lead(st[0], threads, prefix, d)
+    second = "".join(story_second(x, threads, prefix, d) for x in st[1:3])
+    rest = "".join(story_compact(x, threads, prefix, d) for x in st[3:])
+    fronts = "".join(story_compact(s, threads, prefix, d, frontier=True) for s in ed.get("frontiers", []))
     fnote = (f'<div class="f-note"><p>{e(ed["frontier_note"])}</p>{sources_block(ed.get("frontier_note_sources", []))}</div>'
              if ed.get("frontier_note") else "")
     note = f'<p class="launch">{e(ed["launch_note"])}</p>' if ed.get("launch_note") else ""
@@ -603,40 +557,32 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
     for s in ed["stories"] + ed.get("frontiers", []):
         counts[s["change"]] = counts.get(s["change"], 0) + 1
     summary = ", ".join(f'{n} {CHANGE[k][0].lower()}' for k, n in sorted(counts.items(), key=lambda kv: -CHANGE[kv[0]][1]))
-    d = pdate(ed["date"])
+    dd = pdate(d)
+    more = f"""
+<div class="wrap more-wrap">
+  <h2 class="sec-h">More that changed</h2>
+  <section aria-label="More world stories" class="stories">{rest}</section>
+</div>""" if rest else ""
     return f"""
 <section class="hero hero-ed">
   <div class="wrap">
     <div class="dateline">
-      <h1 class="bigdate"><span class="sr">The Signal, </span><span class="dow">{e(d.strftime("%A"))}</span><span class="dm">{d.day} {e(d.strftime("%B"))}</span></h1>
+      <h1 class="bigdate"><span class="sr">The Signal, </span><span class="dow">{e(dd.strftime("%A"))}</span><span class="dm">{dd.day} {e(dd.strftime("%B"))}</span></h1>
       <div class="ed-meta">
-        <p>Edition {ed.get("number", "")}, {d.year}{f'. Updated {e(clock(ed["updated_at"]))}' if ed.get("updated_at") else ""}</p>
+        <p>Edition {ed.get("number", "")}, {dd.year}{f'. Updated {e(clock(ed["updated_at"]))}' if ed.get("updated_at") else ""}</p>
         <p>{len(ed["stories"])} world stories, {len(ed.get("frontiers", []))} from the frontiers: {e(summary)}.</p>
       </div>
     </div>
-    <figure class="trace-fig">
-      <div class="trace-box">{edition_trace(ed, threads, prefix)}<div class="tip" role="status" hidden></div></div>
-      <figcaption>One spike per story. Height shows how much our picture changed; the dot shows whether the situation is <span class="k k-up">intensifying</span>, <span class="k k-steady">holding</span> or <span class="k k-down">easing</span>.</figcaption>
-    </figure>
     {markets_strip(ed.get("markets"))}
     <div class="lede-row"><p class="lede">{e(ed["lede"])}</p>{note}</div>
   </div>
 </section>
-<div class="mini-bar" aria-hidden="true" inert><div class="wrap"><span class="mini-date">{d.day} {e(d.strftime("%b"))}</span>{edition_trace(ed, threads, prefix, mini=True)}</div></div>
 <div class="wrap">
   <section aria-label="Top story" class="lead-wrap">{lead}</section>
   <section aria-label="Also major today" class="second-wrap">{second}</section>
 </div>
-<div class="wrap layout">
-  <div class="col-main">
-    <h2 class="sec-h">More that changed</h2>
-    <section aria-label="More world stories" class="stories">{rest}</section>
-  </div>
-  <aside class="col-rail">
-    {forecast_rail(forecasts, ed["date"], prefix)}
-    {pulse_html(ed, threads, prefix)}
-  </aside>
-</div>
+{more}
+{regions_section(ed, threads, prefix, base)}
 <section class="ai-band" aria-labelledby="ai-h">
   <div class="wrap">
     <header class="ai-head">
@@ -651,6 +597,66 @@ def edition_body(ed, threads, forecasts, prefix, is_today, prev_ed, next_ed):
 """
 
 
+# --------------------------------------------------------------------------- story pages
+
+def full_story(s):
+    facts = ""
+    if s.get("key_facts"):
+        facts = ('<aside class="key-facts"><h2>Key facts</h2><ul>' +
+                 "".join(f"<li>{e(x)}</li>" for x in s["key_facts"]) + "</ul></aside>")
+    if s.get("report"):
+        body = "".join(f'<h2>{e(sec["heading"])}</h2>{paras(sec["paragraphs"])}' for sec in s["report"])
+    else:
+        body = paras(s.get("body", []))
+    return facts + f'<div class="report">{body}</div>'
+
+
+def story_updates(s):
+    ups = s.get("updates", [])
+    if not ups:
+        return ""
+    items = "".join(f'<li><span class="up-t">Update, {e(clock(u["at"]))}</span><p>{e(u["text"])}</p>'
+                    f'{sources_block(u.get("sources", []))}</li>' for u in ups)
+    return f'<section class="story-updates" id="updates"><h2>Since this morning</h2><ul>{items}</ul></section>'
+
+
+def story_page(s, ed, threads, entries, prefix, frontier=False):
+    t = threads[s["thread"]]
+    d = ed["date"]
+    m = "" if frontier else maps.map_svg(s.get("places"), 760, 420, labels=True, cls="map-story")
+    fig = f'<figure class="story-map">{m}{place_caption(s)}</figure>' if m else story_art(s, prefix)
+    if frontier:
+        assess = f'<section class="assess"><div><h2>Why it matters</h2><p>{e(s["picture"])}</p></div></section>'
+    else:
+        assess = (f'<section class="assess"><div><h2>Why it matters</h2><p>{e(s["why"])}</p></div>'
+                  f'<div><h2>What to watch</h2><p>{e(s["watch"])}</p></div></section>')
+    earlier = [(dd, x) for dd, x in entries if dd < d]
+    hist = ""
+    if earlier:
+        rows = "".join(f'<li><a href="{prefix}editions/{dd}/{x["thread"]}/"><span class="hd">{e(long_date(dd))}</span>'
+                       f'<span class="hh">{e(x["headline"])}</span></a></li>' for dd, x in reversed(earlier[-8:]))
+        hist = (f'<section class="earlier"><h2>Earlier in this story</h2><ul>{rows}</ul>'
+                f'<a class="read-full" href="{prefix}threads/{t["id"]}/">The whole timeline <span aria-hidden="true">→</span></a></section>')
+    upd = f' · Updated {e(clock(s["updates"][-1]["at"]))}' if s.get("updates") else ""
+    return f"""
+<article class="story-page">
+<section class="hero hero-plain"><div class="wrap narrow">
+  <p class="crumb"><a href="{prefix}editions/{d}/#{e(s["thread"])}">Edition {ed.get("number", "")}, {e(long_date(d))}</a> / <a href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></p>
+  {story_meta(s, threads, prefix, field=frontier)}
+  <h1 class="story-title">{e(s["headline"])}</h1>
+  <p class="lede">{e(s["dek"])}</p>
+  <p class="byline">The Signal · {e(long_date(d))}{upd}</p>
+</div></section>
+<div class="wrap narrow story-body">
+  {fig}{story_updates(s)}{full_story(s)}{assess}
+  <section class="story-sources"><h2>Sources</h2>{sources_list(s["sources"])}</section>
+  {hist}
+  <p class="back"><a href="{prefix}editions/{d}/">← Back to the {e(day_month(d))} edition</a></p>
+</div>
+</article>
+"""
+
+
 # --------------------------------------------------------------------------- threads
 
 def thread_entries(threads, editions):
@@ -662,63 +668,34 @@ def thread_entries(threads, editions):
     return out
 
 
-def thread_trace(entries, seed):
-    if not entries:
-        return ""
-    dates = [pdate(d) for d, _ in entries]
-    lo, hi = min(dates), max(dates)
-    span = max((hi - lo).days, 6)
-    pts = []
-    for d, s in entries:
-        x = 0.06 + 0.88 * ((pdate(d) - lo).days / span)
-        pts.append({"x": x, "amp": CHANGE[s["change"]][1], "mom": s["momentum"],
-                    "label": day_month(d), "href": f"#e-{d}", "title": s["headline"]})
-    aria = "This thread's trace over time."
-    return (trace_svg(pts, seed=seed, aria=aria, height=150, cls="trace-wide") +
-            trace_svg(pts, seed=seed, aria=aria, W=420, height=110, labels=False, cls="trace-narrow"))
-
-
-def thread_page(t, entries, forecasts, prefix):
-    rel_f = [f for f in forecasts if t["id"] in f.get("threads", [])]
+def thread_page(t, entries, prefix):
     latest = entries[-1][1] if entries else None
     status = ""
     if latest:
         status = f'<div class="meta">{badges(latest)}<span class="asof">as of {e(short_date(entries[-1][0]))}</span></div>'
     tl = []
     for d, s in reversed(entries):
+        url = f"{prefix}editions/{d}/{s['thread']}/"
         tl.append(f'<li id="e-{d}"><div class="tl-date"><a href="{prefix}editions/{d}/#{t["id"]}">{e(long_date(d))}</a></div>'
-                  f'<div class="tl-body"><div class="meta">{badges(s)}</div><h3>{e(s["headline"])}</h3>'
-                  f'<p class="dek">{e(s["dek"])}</p>{updates_block(s)}{paras(s["body"])}'
-                  + (f'<p class="wm"><strong>Why it matters.</strong> {e(s["why"])}</p>' if s.get("why") else "")
-                  + (f'<p class="wm"><strong>This changes the picture because</strong> {e(s["picture"])}</p>' if s.get("picture") else "")
-                  + f'{sources_block(s["sources"])}</div></li>')
+                  f'<div class="tl-body"><div class="meta">{badges(s)}</div><h3><a href="{url}">{e(s["headline"])}</a></h3>'
+                  f'<p class="dek">{e(s["dek"])}</p>'
+                  f'<div class="actions"><a class="read-full" href="{url}">Read the full story <span aria-hidden="true">→</span></a>{updated_tag(s, url)}</div></div></li>')
     bg = ""
     if t.get("background"):
         bg = ('<section class="bg"><h2>Before we started following</h2><ul>' +
               "".join(f'<li><span>{e(flex_date(b["date"]))}</span>{e(b["text"])}</li>' for b in t["background"]) +
               "</ul></section>")
-    fhtml = ""
-    if rel_f:
-        fhtml = ('<section class="rail-block"><h2>Related forecasts</h2><ul class="flist">' +
-                 "".join(f'<li><a href="{prefix}forecasts/#{f["id"]}"><span class="fq">{e(f["question"])}</span>'
-                         f'<span class="fp"><span class="pct">{f["history"][-1]["p"]}%</span></span>'
-                         f'<span class="bar" aria-hidden="true"><span style="width:{f["history"][-1]["p"]}%"></span></span></a></li>'
-                         for f in rel_f) + "</ul></section>")
     return f"""
 <section class="hero hero-thread">
-  <div class="wrap">
+  <div class="wrap narrow">
     <p class="crumb"><a href="{prefix}threads/">Threads</a> / {e(t["region"])}</p>
     <h1 class="thread-title">{e(t["title"])}</h1>
     <p class="lede">{e(t["summary"])}</p>
     {status}
-    <p class="since">{e(t["started_label"])}. {len(entries)} {"update" if len(entries) == 1 else "updates"} in The Signal.</p>
-    <figure class="trace-fig trace-small">{thread_trace(entries, t["id"])}</figure>
+    <p class="since">{e(t["started_label"])}. {len(entries)} {"report" if len(entries) == 1 else "reports"} in The Signal.</p>
   </div>
 </section>
-<div class="wrap layout">
-  <div class="col-main"><ol class="timeline">{"".join(tl)}</ol>{bg}</div>
-  <aside class="col-rail">{fhtml}</aside>
-</div>
+<div class="wrap narrow"><ol class="timeline">{"".join(tl)}</ol>{bg}</div>
 """
 
 
@@ -726,9 +703,8 @@ def threads_index(threads, entries, prefix):
     groups = {}
     for t in threads.values():
         groups.setdefault(t["region"], []).append(t)
-    order = REGIONS + ["Frontiers"]
     secs = []
-    for region in order:
+    for region in REGIONS + ["Frontiers"]:
         ts = groups.get(region, [])
         if not ts:
             continue
@@ -747,72 +723,6 @@ def threads_index(threads, entries, prefix):
   <p class="lede">Every story we cover belongs to a thread: a situation we keep following until it stops changing. Each thread page shows its full timeline.</p>
 </div></section>
 <div class="wrap tgrid">{"".join(secs)}</div>
-"""
-
-
-# --------------------------------------------------------------------------- forecasts
-
-def sparkline(hist, closes):
-    W, H = 220, 56
-    if not hist:
-        return ""
-    d0 = pdate(hist[0]["date"])
-    d1 = max(pdate(closes), pdate(hist[-1]["date"]) + dt.timedelta(days=1))
-    span = max((d1 - d0).days, 1)
-    pts = []
-    for h in hist:
-        x = 4 + (W - 8) * ((pdate(h["date"]) - d0).days / span)
-        y = H - 4 - (H - 8) * h["p"] / 100
-        pts.append((x, y))
-    line = " ".join(f"{'M' if i == 0 else 'L'}{x:.1f} {y:.1f}" for i, (x, y) in enumerate(pts))
-    # step line to today
-    lx, ly = pts[-1]
-    mid = f'<line x1="4" y1="{H/2}" x2="{W-4}" y2="{H/2}" class="mid"/>'
-    return (f'<svg class="spark" viewBox="0 0 {W} {H}" aria-hidden="true">{mid}'
-            f'<path d="{line}" class="sl"/><circle cx="{lx:.1f}" cy="{ly:.1f}" r="4" class="sd"/></svg>')
-
-
-def forecasts_page(forecasts, threads, prefix):
-    open_f = [f for f in forecasts if f["status"] == "open"]
-    done = [f for f in forecasts if f["status"] == "resolved" and f.get("resolution") in ("yes", "no")]
-    cards = []
-    for f in sorted(open_f, key=lambda f: f["closes"]):
-        cur = f["history"][-1]["p"]
-        ledger = "".join(f'<tr><td>{e(short_date(h["date"]))}</td><td class="num">{h["p"]}%</td><td>{e(h["note"])}</td></tr>'
-                         for h in reversed(f["history"]))
-        tl = ", ".join(f'<a href="{prefix}threads/{tid}/">{e(threads[tid]["title"])}</a>' for tid in f.get("threads", []))
-        cards.append(f"""
-<article class="fc" id="{e(f['id'])}">
-  <div class="fc-top">
-    <div><p class="fc-cat">{e(f['category'])}, closes {e(short_date(f['closes']))}</p><h2>{e(f['question'])}</h2></div>
-    <div class="fc-num"><span class="pct">{cur}%</span>{sparkline(f['history'], f['closes']) if len(f['history']) > 1 else f'<span class="opened">Opened {e(short_date(f["opened"]))}</span>'}</div>
-  </div>
-  <p class="crit"><strong>How it resolves.</strong> {e(f['criteria'])}</p>
-  <details class="ledger"><summary>Ledger ({len(f['history'])} {'entry' if len(f['history']) == 1 else 'entries'})</summary>
-  <table><thead><tr><th scope="col">Date</th><th scope="col">Odds</th><th scope="col">Why</th></tr></thead><tbody>{ledger}</tbody></table></details>
-  {f'<p class="fc-threads">Thread: {tl}</p>' if tl else ''}
-</article>""")
-    if done:
-        brier = sum(((f["history"][-1]["p"] / 100) - (1 if f["resolution"] == "yes" else 0)) ** 2 for f in done) / len(done)
-        rows = "".join(f'<tr><td>{e(f["question"])}</td><td class="num">{f["history"][-1]["p"]}%</td>'
-                       f'<td>{"Yes" if f["resolution"] == "yes" else "No"}</td></tr>' for f in done)
-        record = (f'<p>{len(done)} resolved. Average Brier score <strong>{brier:.3f}</strong> '
-                  f'(0 is perfect; always guessing 50% scores 0.25).</p>'
-                  f'<table><thead><tr><th scope="col">Question</th><th scope="col">Final odds</th><th scope="col">Outcome</th></tr></thead><tbody>{rows}</tbody></table>')
-    else:
-        first = min(open_f, key=lambda f: f["closes"]) if open_f else None
-        record = ("<p>No forecasts have resolved yet." +
-                  (f' The first closes on {e(short_date(first["closes"]))}.' if first else "") +
-                  " Once they do, this section scores every one, including the misses.</p>")
-    return f"""
-<section class="hero hero-plain"><div class="wrap">
-  <h1 class="page-title">Forecasts</h1>
-  <p class="lede">A small set of questions with precise answers, updated each morning when the evidence moves. Old numbers are never edited; every change is logged with its reason.</p>
-</div></section>
-<div class="wrap fwrap">
-  <div class="fcs">{"".join(cards)}</div>
-  <section class="record" aria-labelledby="tr"><h2 id="tr">Track record</h2>{record}</section>
-</div>
 """
 
 
@@ -843,19 +753,21 @@ def about_page(prefix):
     return f"""
 <section class="hero hero-plain"><div class="wrap">
   <h1 class="page-title">How it works</h1>
-  <p class="lede">The Signal is a once-a-day briefing that asks one question: what changed in the world today that changes our picture of it?</p>
+  <p class="lede">The Signal is a daily briefing that asks one question: what changed in the world today that changes our picture of it?</p>
 </div></section>
 <div class="wrap prose">
-  <h2>One edition a day, and then it stops</h2>
-  <p>There is no feed and no breaking-news banner. Each morning we publish around ten world stories, a short Frontiers section on AI and science and a pulse check on every region. If nothing important happened somewhere, we say so.</p>
+  <h2>One edition a day</h2>
+  <p>There is no feed and no breaking-news banner. Each morning we publish around ten world stories and a short Frontiers section on AI and science, and each evening we add what has changed since. Every story fits in a few lines on the front page; its full report, with key facts, background, what to watch and every source, is one click away.</p>
+  <h2>Every region, every day</h2>
+  <p>The region map covers North America, Latin America, Europe, Africa, the Middle East, Asia and Oceania. Each region shows its stories from the edition plus news that did not make the main page. If nothing important happened somewhere, we say so.</p>
   <h2>Stories belong to threads</h2>
   <p>A thread is a situation we keep following: an election, a war, an outbreak. Each day's story is the latest entry in its thread, so you can see how a situation got here. Thread pages keep the whole timeline.</p>
   <h2>Change and momentum</h2>
   <p>Every story carries two labels. Change says how much today's news altered the picture:</p>
   <table class="rubric"><tbody>{rows}</tbody></table>
   <p>Momentum says which way the situation is moving: <span class="mom mom-up">{momentum_icon("up")}Intensifying</span>, <span class="mom mom-steady">{momentum_icon("steady")}Holding</span> or <span class="mom mom-down">{momentum_icon("down")}Easing</span>. We use words rather than scores on purpose; a score like 7.8 implies a precision nobody has.</p>
-  <h2>Forecasts</h2>
-  <p>We keep a small set of questions with exact resolution rules and give our odds. When evidence moves, the odds move, with the reason logged. Past numbers are never edited, and when a question resolves it is scored, so you can judge whether we are any good.</p>
+  <h2>Sources and corrections</h2>
+  <p>Every story links the reporting it is based on, and we paraphrase rather than reprint. When we get something wrong, the correction is added to the edition it fixes.</p>
 </div>
 """
 
@@ -866,7 +778,8 @@ def feed_xml(editions):
     items = []
     for ed in reversed(editions[-30:]):
         url = f"{SITE_URL}/editions/{ed['date']}/"
-        body = "<p>" + e(ed["lede"]) + "</p><ul>" + "".join(f"<li>{e(s['headline'])}</li>" for s in ed["stories"]) + "</ul>"
+        body = "<p>" + e(ed["lede"]) + "</p><ul>" + "".join(
+            f'<li><a href="{SITE_URL}/editions/{ed["date"]}/{s["thread"]}/">{e(s["headline"])}</a></li>' for s in ed["stories"]) + "</ul>"
         pub = dt.datetime.fromisoformat(ed.get("published_at", ed["date"] + "T12:00:00+00:00"))
         items.append(f"<item><title>{e(long_date(ed['date']))}</title><link>{url}</link><guid>{url}</guid>"
                      f"<pubDate>{pub.strftime('%a, %d %b %Y %H:%M:%S %z')}</pubDate>"
@@ -889,11 +802,17 @@ def write(path, text):
     p.write_text(text, encoding="utf-8")
 
 
+def redirect(to):
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{SITE_NAME}</title>'
+            f'<meta http-equiv="refresh" content="0; url={to}"><link rel="canonical" href="{to}"></head>'
+            f'<body><p><a href="{to}">Continue to The Signal →</a></p></body></html>')
+
+
 def build():
-    threads, editions, forecasts = load()
-    validate(threads, editions, forecasts)
+    threads, editions = load()
+    validate(threads, editions)
     if "--check" in sys.argv:
-        print(f"OK: {len(editions)} editions, {len(threads)} threads, {len(forecasts)} forecasts")
+        print(f"OK: {len(editions)} editions, {len(threads)} threads")
         return
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -901,38 +820,56 @@ def build():
     (OUT / "assets").mkdir()
     for f in SRC.iterdir():
         shutil.copy(f, OUT / "assets" / f.name)
+    (OUT / "assets" / "world.svg").write_text(maps.world_svg_file(), encoding="utf-8")
+    if (ROOT / "images").is_dir():
+        shutil.copytree(ROOT / "images", OUT / "images")
     (OUT / ".nojekyll").write_text("")
     paths = [""]
     latest = editions[-1]
+    entries = thread_entries(threads, editions)
     for i, ed in enumerate(editions):
         prev_ed = editions[i - 1] if i > 0 else None
         next_ed = editions[i + 1] if i + 1 < len(editions) else None
-        body = edition_body(ed, threads, forecasts, "../../", False, prev_ed, next_ed)
-        write(f"editions/{ed['date']}/index.html",
-              page(long_date(ed["date"]), body, "../../", f"editions/{ed['date']}/", active="archive",
-                   description=ed["lede"][:300]))
-        paths.append(f"editions/{ed['date']}/")
-    body = edition_body(latest, threads, forecasts, "", True, editions[-2] if len(editions) > 1 else None, None)
+        d = ed["date"]
+        body = edition_body(ed, threads, "../../", False, prev_ed, next_ed)
+        write(f"editions/{d}/index.html",
+              page(long_date(d), body, "../../", f"editions/{d}/", active="archive", description=ed["lede"][:300]))
+        paths.append(f"editions/{d}/")
+        for kind in ("stories", "frontiers"):
+            for s in ed.get(kind, []):
+                write(f"editions/{d}/{s['thread']}/index.html",
+                      page(s["headline"], story_page(s, ed, threads, entries[s["thread"]], "../../../", frontier=kind == "frontiers"),
+                           "../../../", f"editions/{d}/{s['thread']}/", description=s["dek"]))
+                paths.append(f"editions/{d}/{s['thread']}/")
+        regions = region_items(ed, threads)
+        for r in regions:
+            html_ = page(f"{r['name']}, {day_month(d)}", region_page(r, ed, threads, "../../../../", regions),
+                         "../../../../", f"editions/{d}/regions/{r['slug']}/", description=r["pulse"].get("text", "")[:300] or DESCRIPTION)
+            write(f"editions/{d}/regions/{r['slug']}/index.html", html_)
+            if ed is latest:
+                write(f"regions/{r['slug']}/index.html",
+                      page(r["name"], region_page(r, ed, threads, "../../", regions), "../../", f"regions/{r['slug']}/",
+                           description=r["pulse"].get("text", "")[:300] or DESCRIPTION))
+                paths.append(f"regions/{r['slug']}/")
+    body = edition_body(latest, threads, "", True, editions[-2] if len(editions) > 1 else None, None)
     write("index.html", page(SITE_NAME, body, "", "", active="today"))
-    entries = thread_entries(threads, editions)
     for t in threads.values():
         write(f"threads/{t['id']}/index.html",
-              page(t["title"], thread_page(t, entries[t["id"]], forecasts, "../../"), "../../",
+              page(t["title"], thread_page(t, entries[t["id"]], "../../"), "../../",
                    f"threads/{t['id']}/", active="threads", description=t["summary"]))
         paths.append(f"threads/{t['id']}/")
     write("threads/index.html", page("Threads", threads_index(threads, entries, "../"), "../", "threads/", active="threads"))
-    write("forecasts/index.html", page("Forecasts", forecasts_page(forecasts, threads, "../"), "../", "forecasts/", active="forecasts",
-                                       description="Running odds on the questions that matter, with every change logged and every result scored."))
+    write("forecasts/index.html", redirect(f"{SITE_URL}/"))
     write("archive/index.html", page("Archive", archive_page(editions, "../"), "../", "archive/", active="archive"))
     write("about/index.html", page("How it works", about_page("../"), "../", "about/", active="about"))
     write("404.html", page("Not found", '<section class="hero hero-plain"><div class="wrap"><h1 class="page-title">Nothing here</h1>'
                             f'<p class="lede">That page does not exist. <a href="{SITE_URL}/">Go to today\'s edition</a>.</p></div></section>',
                             f"{SITE_URL}/", "404.html"))
-    paths += ["threads/", "forecasts/", "archive/", "about/"]
+    paths += ["threads/", "archive/", "about/"]
     write("feed.xml", feed_xml(editions))
     write("sitemap.xml", sitemap(paths))
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
-    print(f"Built {len(editions)} editions, {len(threads)} threads, {len(forecasts)} forecasts into docs/")
+    print(f"Built {len(editions)} editions, {len(threads)} threads into docs/")
 
 
 if __name__ == "__main__":
