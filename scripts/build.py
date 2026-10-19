@@ -363,7 +363,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION):
       <a class="brand" href="{prefix}" aria-label="{SITE_NAME}, today's edition"><span>The Signal</span></a>
       <div class="m-tag"><p>What changed in the world.<br><span>Every day.</span></p><p class="m-no">Nº {e(str(MAST["number"]).zfill(3))}</p></div>
     </div>
-    <div class="m-nav"><nav class="nav" aria-label="Sections">{nav_html}</nav><a class="m-feed" href="{prefix}feed.xml">RSS feed <span aria-hidden="true">↗</span></a></div>
+    <div class="m-nav"><nav class="nav" aria-label="Sections">{nav_html}</nav></div>
   </div>
 </header>
 <main id="main">
