@@ -154,6 +154,9 @@ def validate(threads, editions):
             for b in p.get("briefs", []):
                 if not b.get("headline") or not b.get("text"):
                     errs.append(f"{where}: each brief needs a headline and text")
+                if (d >= FULL_REPORTS_FROM or "change" in b or "momentum" in b) and \
+                        (b.get("change") not in CHANGE or b.get("momentum") not in MOMENTUM):
+                    errs.append(f"{where} brief '{b.get('headline', '')[:40]}': needs change ({'/'.join(CHANGE)}) and momentum ({'/'.join(MOMENTUM)})")
                 errs += check_sources(b.get("sources", []), f"{where} brief")
     if errs:
         raise BuildError("Validation failed:\n  - " + "\n  - ".join(errs))
@@ -438,28 +441,36 @@ def markets_strip(m):
 
 
 def glance_bar(ed):
-    """An at-a-glance instrument strip: what kind of day it was."""
+    """An at-a-glance instrument strip: what kind of day it was. Counts everything in the edition,
+    including the regional briefs on the map."""
     allst = ed["stories"] + ed.get("frontiers", [])
-    n = len(allst) or 1
+    briefs = [b for p in ed.get("pulse", []) for b in p.get("briefs", [])]
+    rated = allst + [b for b in briefs if b.get("change") in CHANGE and b.get("momentum") in MOMENTUM]
+    n = len(rated) or 1
 
     def meter(parts):
         segs = "".join(f'<span class="gl-seg gl-{k}" style="width:{100 * v / n:.1f}%"></span>' for k, v in parts if v)
         return f'<span class="gl-meter" aria-hidden="true">{segs}</span>'
 
-    ch = {k: sum(1 for s in allst if s["change"] == k) for k in CHANGE}
-    mo = {k: sum(1 for s in allst if s["momentum"] == k) for k in MOMENTUM}
+    ch = {k: sum(1 for s in rated if s["change"] == k) for k in CHANGE}
+    mo = {k: sum(1 for s in rated if s["momentum"] == k) for k in MOMENTUM}
     moved = sum(1 for p in ed.get("pulse", []) if p.get("status") == "moved")
-    words = len(ed["lede"].split()) + sum(len(s["dek"].split()) + len(s["headline"].split()) for s in allst)
-    full = sum(len(x.split()) for s in allst for sec in s.get("report", []) for x in sec["paragraphs"]) or \
-        sum(len(x.split()) for s in allst for x in s.get("body", []))
+    words = len(ed["lede"].split()) + sum(len(s["dek"].split()) + len(s["headline"].split()) for s in allst) \
+        + sum(len(b["headline"].split()) for b in briefs)
+    full = (sum(len(x.split()) for s in allst for sec in s.get("report", []) for x in sec["paragraphs"]) or
+            sum(len(x.split()) for s in allst for x in s.get("body", []))) + sum(len(b["text"].split()) for b in briefs)
     when = clock(ed["updated_at"]) if ed.get("updated_at") else clock(ed["published_at"]) if ed.get("published_at") else ""
     change_txt = " · ".join(f"{v} {CHANGE[k][0].lower()}" for k, v in ch.items() if v)
+    parts = [f'{len(ed["stories"])} world', f'{len(ed.get("frontiers", []))} frontiers']
+    if briefs:
+        parts.append(f'{len(briefs)} regional')
     cells = [
-        ("Today", f'{len(ed["stories"]) + len(ed.get("frontiers", []))} stories', f'{len(ed["stories"])} world · {len(ed.get("frontiers", []))} from the frontiers'),
+        ("Today", f'{len(allst) + len(briefs)} stories', " · ".join(parts)),
         ("How much changed", meter([(k, v) for k, v in ch.items()]), change_txt),
         ("Direction", meter([("up", mo["up"]), ("steady", mo["steady"]), ("down", mo["down"])]),
          " · ".join(f'<span class="k-{k}">{mo[k]} {lbl}</span>' for k, lbl in (("up", "intensifying"), ("steady", "holding"), ("down", "easing")) if mo[k])),
-        ("Regions", f'{moved} of {len(REGIONS)} moved', '<a href="#regions">See the map ↓</a>'),
+        ("Regions", f'{moved} of {len(REGIONS)} moved',
+         f'<a href="#regions">{len(briefs)} more on the map ↓</a>' if briefs else '<a href="#regions">See the map ↓</a>'),
         ("Reading time", f'≈ {max(1, round(words / 230))} min', f'≈ {max(1, round(full / 230))} min with every full report'),
     ]
     if when:
@@ -604,7 +615,7 @@ def edition_body(ed, threads, prefix, is_today, prev_ed, next_ed):
       </div>
     </div>
     {glance_bar(ed)}
-    <div class="lede-row"><p class="lede">{e(ed["lede"])}</p>{note}</div>
+    <div class="lede-row"><p class="lede-h">The day, in view</p><p class="lede">{e(ed["lede"])}</p>{note}</div>
   </div>
 </section>
 <div class="wrap">

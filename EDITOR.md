@@ -151,7 +151,7 @@ Optional `frontier_note` (one or two sentences, shown under the section) with `f
 - `pulse`: exactly seven entries, one per region (`North America`, `Latin America`, `Europe`, `Africa`, `Middle East`, `Asia`, `Oceania`). Together they drive the front page's region map and the seven region pages.
   - `status` is `moved` or `quiet`; `text` is a two- or three-sentence summary of the region today. When nothing cleared the bar, say "No development cleared our bar today."
   - `threads` lists thread ids mentioned. A story appears under a region when its thread's `region` matches, or when its thread is listed here (use this for stories that span regions, for example a US decision about Russia).
-  - `briefs`: one to three extra developments that are not main stories, each `{"headline": "...", "text": "One or two sentences.", "sources": [...]}`. Open and read every source; prefer the last 48 hours; do not repeat a main story. Leave the list empty when nothing qualifies; the site says so. Never pad.
+  - `briefs`: one to three extra developments that are not main stories, each `{"headline": "...", "text": "One or two sentences.", "change": "new", "momentum": "steady", "sources": [...]}`. Rate `change` and `momentum` exactly as for a main story; they feed the At a glance bar, which counts every story on the map. Open and read every source; prefer the last 48 hours; do not repeat a main story. Leave the list empty when nothing qualifies; the site says so. Never pad.
   - `sources` supports any fact in `text` that is not already sourced in a story or brief.
 - `corrections`: usually empty. See section 6.
 

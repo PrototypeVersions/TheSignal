@@ -568,3 +568,8 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .gl-up { background: var(--up); } .gl-steady { background: var(--steady); } .gl-down { background: var(--down); }
 .k-up { color: var(--up); } .k-steady { color: var(--steady); } .k-down { color: var(--down); }
 @media (max-width: 600px) { .glance ul { grid-template-columns: 1fr 1fr; } .glance li { padding-right: .6rem; } .glance li:nth-child(even) { padding-left: .8rem; border-left: 1px solid var(--grid); } }
+
+/* The day, in view */
+.lede-row { gap: .45rem; }
+.lede-h { font-family: var(--sans); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--trace); margin: 0; }
+.lede-row .lede { font-size: clamp(1.05rem, .98rem + .35vw, 1.2rem); line-height: 1.55; max-width: 48rem; }

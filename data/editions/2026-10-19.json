@@ -1026,6 +1026,8 @@
         {
           "headline": "Fire at an Alberta army base kills four service members",
           "text": "A large fire during training at Canadian Forces Base Wainwright, Alberta, killed four service members and put 39 people in hospital, officials said.",
+          "change": "new",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "CBS News",
@@ -1037,6 +1039,8 @@
         {
           "headline": "US gasoline stays near $4.30 a gallon",
           "text": "The average US gasoline price is about $4.30 a gallon, up from about $3.07 a year ago, AAA says, 15 days before the midterm elections.",
+          "change": "developing",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "AAA",
@@ -1065,6 +1069,8 @@
         {
           "headline": "Hurricane Trudy brings heavy rain to Mexico's Pacific coast",
           "text": "Trudy, a Category 2 hurricane, brought heavy rain and strong winds to Mexico's Pacific coast before weakening, and warnings have been lifted.",
+          "change": "new",
+          "momentum": "up",
           "sources": [
             {
               "outlet": "AP via ABC News",
@@ -1076,6 +1082,8 @@
         {
           "headline": "Chile's president makes the first state visit to Bolivia in 71 years",
           "text": "José Antonio Kast met Bolivia's president, Rodrigo Paz, in La Paz on 16 October. The two governments set a gradual path toward restoring full diplomatic relations, broken for more than 70 years, and Paz accepted an invitation to visit Chile in 2027.",
+          "change": "new",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Emol",
@@ -1110,6 +1118,8 @@
         {
           "headline": "Lithuania tells residents to shelter from a likely drone",
           "text": "Lithuania told residents in central and northern regions to go to shelters after detecting a flying object, likely a drone, that crossed from the direction of Poland.",
+          "change": "new",
+          "momentum": "up",
           "sources": [
             {
               "outlet": "Reuters via Cyprus Mail",
@@ -1121,6 +1131,8 @@
         {
           "headline": "Albania's protests enter a sixth day",
           "text": "Student-led protests in Tirana have left 272 people injured over six days, and Prime Minister Edi Rama refuses to resign.",
+          "change": "developing",
+          "momentum": "up",
           "sources": [
             {
               "outlet": "Al Jazeera",
@@ -1132,6 +1144,8 @@
         {
           "headline": "EU leaders leave a €70bn hole in Ukraine's funding for next year",
           "text": "The 15–16 October summit in Brussels ended without a deal on the EU's long-term budget or a plan to cover the extra €70bn Ukraine has asked for in 2027. Council President António Costa called a special summit for 26 November.",
+          "change": "developing",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Euronews",
@@ -1160,6 +1174,8 @@
         {
           "headline": "RSF attack on displaced people kills at least 11 in West Darfur",
           "text": "An attack by the Rapid Support Forces on a displacement site in West Darfur killed at least 11 people, the region's health minister says.",
+          "change": "developing",
+          "momentum": "up",
           "sources": [
             {
               "outlet": "Sudan Tribune",
@@ -1171,6 +1187,8 @@
         {
           "headline": "Joseph Kabila now heads Congo's main rebel coalition",
           "text": "Congo's former president leads a new political-military coalition, the Front for the Refoundation of the Nation, announced in rebel-held Goma. It replaces the alliance that included the M23 and calls for resistance to President Félix Tshisekedi, including by force.",
+          "change": "new",
+          "momentum": "up",
           "sources": [
             {
               "outlet": "Al Jazeera",
@@ -1182,6 +1200,8 @@
         {
           "headline": "Ethiopia puts Tigray under a federal interim government",
           "text": "Prime Minister Abiy Ahmed announced on 16 October that a five-member interim administration will run Tigray for six months, with elections promised afterward, following the defeat of the TPLF uprising.",
+          "change": "new",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Al Jazeera",
@@ -1206,6 +1226,8 @@
         {
           "headline": "Israel halts commercial goods into Gaza",
           "text": "Israel stopped commercial shipments into Gaza on 14 October, citing a dispute over fees involving merchants and Hamas, which Gaza's media office denies. Residents report sharp rises in the price of flour and other staples.",
+          "change": "developing",
+          "momentum": "up",
           "sources": [
             {
               "outlet": "Al Jazeera",
@@ -1255,6 +1277,8 @@
         {
           "headline": "China's economy grows 4.5% as property investment slumps",
           "text": "China's economy grew 4.5% in the third quarter, slightly above forecasts, but property investment fell 20.6% in the first nine months of the year.",
+          "change": "developing",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Xinhua",
@@ -1271,6 +1295,8 @@
         {
           "headline": "Taiwan drives off 16 Chinese vessels",
           "text": "Taiwan says it drove away 16 Chinese vessels it accused of harassment, describing the activity as hybrid warfare.",
+          "change": "developing",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Al Jazeera",
@@ -1282,6 +1308,8 @@
         {
           "headline": "Crush at a Kolkata festival kills at least 19",
           "text": "At least 19 people were killed in a crush at a Durga Puja venue in Kolkata when crowds surged as rain began.",
+          "change": "new",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Al Jazeera",
@@ -1310,6 +1338,8 @@
         {
           "headline": "Cyclone Wati passes over the Cook Islands",
           "text": "Cyclone Wati passed over the Cook Islands, causing minor damage.",
+          "change": "new",
+          "momentum": "down",
           "sources": [
             {
               "outlet": "Islands Business",
@@ -1321,6 +1351,8 @@
         {
           "headline": "Australia will give Fiji's military long-range sea drones",
           "text": "Australia will supply Bluebottle maritime drones, which can stay at sea for more than 180 days, to Fiji's military to counter drug trafficking and organised crime, with delivery expected in early 2027.",
+          "change": "new",
+          "momentum": "steady",
           "sources": [
             {
               "outlet": "Islands Business / PACNEWS",
