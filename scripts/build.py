@@ -345,12 +345,12 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION):
 <meta property="og:type" content="website">
 <meta property="og:url" content="{e(canon)}">
 <meta property="og:site_name" content="{SITE_NAME}">
-<meta property="og:image" content="{SITE_URL}/assets/og-image.png">
+<meta property="og:image" content="{SITE_URL}/assets/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Signal. What changed in the world, every day.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{SITE_URL}/assets/og-image.png">
+<meta name="twitter:image" content="{SITE_URL}/assets/og-image.png?v=2">
 <meta name="theme-color" content="#0D1626">
 <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="{SITE_NAME}" href="{prefix}feed.xml">
