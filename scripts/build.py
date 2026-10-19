@@ -317,17 +317,21 @@ def place_caption(s):
 # --------------------------------------------------------------------------- page shell
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800"
-         "&family=Schibsted+Grotesk:wght@400..800&family=DM+Sans:wght@400;500&display=swap")
+         "&family=Schibsted+Grotesk:wght@400..800&family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap")
+
+
+MAST = {"date": "", "number": ""}  # latest edition, filled in by build()
 
 
 def page(title, body, prefix, path, active="", description=DESCRIPTION):
     full_title = f"{title} — {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME}: {TAGLINE.lower()}"
     canon = f"{SITE_URL}/{path}"
-    nav = [("Today", "", "today"), ("Regions", "#regions", "regions"), ("Threads", "threads/", "threads"),
-           ("Archive", "archive/", "archive"), ("How it works", "about/", "about")]
+    nav = [("The edition", "", "today"), ("Frontiers", "#frontiers", "frontiers"), ("Regions", "#regions", "regions"),
+           ("Threads", "threads/", "threads"), ("Archive", "archive/", "archive"), ("How it works", "about/", "about")]
     nav_html = "".join(
         f'<a href="{prefix}{href}"{" aria-current=\"page\"" if key == active else ""}>{e(lbl)}</a>'
         for lbl, href, key in nav)
+    strip_date = e(long_date(MAST["date"]).replace(" ", ", ", 1)) if MAST["date"] else ""
     return f"""<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -353,12 +357,13 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="{prefix}" aria-label="{SITE_NAME}, today's edition">
-      <svg viewBox="0 0 64 24" aria-hidden="true"><path d="M1 16 H18 L22 13 L26 20 L31 3 L36 22 L40 11 L44 16 H63" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>The Signal</span>
-    </a>
-    <div class="mast-r"><nav class="nav" aria-label="Sections">{nav_html}</nav></div>
+  <div class="wrap">
+    <div class="m-strip"><span><i class="m-dot" aria-hidden="true"></i>An independent daily briefing</span><span class="m-date">{strip_date}</span><span class="m-right">The world, in seven regions</span></div>
+    <div class="m-main">
+      <a class="brand" href="{prefix}" aria-label="{SITE_NAME}, today's edition"><span>The Signal</span></a>
+      <div class="m-tag"><p>What changed in the world.<br><span>Every day.</span></p><p class="m-no">Nº {e(str(MAST["number"]).zfill(3))}</p></div>
+    </div>
+    <div class="m-nav"><nav class="nav" aria-label="Sections">{nav_html}</nav><a class="m-feed" href="{prefix}feed.xml">RSS feed <span aria-hidden="true">↗</span></a></div>
   </div>
 </header>
 <main id="main">
@@ -458,26 +463,35 @@ def glance_bar(ed):
     ch = {k: sum(1 for s in rated if s["change"] == k) for k in CHANGE}
     mo = {k: sum(1 for s in rated if s["momentum"] == k) for k in MOMENTUM}
     moved = sum(1 for p in ed.get("pulse", []) if p.get("status") == "moved")
-    words = len(ed["lede"].split()) + sum(len(s["dek"].split()) + len(s["headline"].split()) for s in allst) \
-        + sum(len(b["headline"].split()) for b in briefs)
     full = (sum(len(x.split()) for s in allst for sec in s.get("report", []) for x in sec["paragraphs"]) or
             sum(len(x.split()) for s in allst for x in s.get("body", []))) + sum(len(b["text"].split()) for b in briefs)
-    when = clock(ed["updated_at"]) if ed.get("updated_at") else clock(ed["published_at"]) if ed.get("published_at") else ""
     parts = [f'{len(ed["stories"])} world', f'{len(ed.get("frontiers", []))} frontiers']
     if briefs:
         parts.append(f'{len(briefs)} regional')
     cells = [
-        ("Today", f'{len(allst) + len(briefs)} stories', " · ".join(parts)),
+        ("In the edition", f'{len(ed["stories"])} · {len(ed.get("frontiers", []))} · {len(briefs)}', "world · frontiers · regional"),
         ("How much changed", *split([(v, CHANGE[k][0].lower()) for k, v in ch.items()])),
         ("Direction", *split([(mo[k], lbl) for k, lbl in (("up", "intensifying"), ("steady", "holding"), ("down", "easing"))])),
         ("Regions", f'{moved} of {len(REGIONS)} moved',
          f'<a href="#regions">{len(briefs)} more on the map ↓</a>' if briefs else '<a href="#regions">See the map ↓</a>'),
-        ("Reading time", f'≈ {max(1, round(words / 230))} min', f'≈ {max(1, round(full / 230))} min with every full report'),
+        ("Full reports", f'≈ {max(1, round(full / 230))} min', "to read every story in full"),
     ]
-    if when:
-        cells.append(("Updated" if ed.get("updated_at") else "Published", when, "Updated again each evening" if not ed.get("updated_at") else "Evening update included"))
     lis = "".join(f'<li><span class="gl-k">{e(k)}</span><span class="gl-v">{v}</span><span class="gl-s">{s}</span></li>' for k, v, s in cells)
     return f'<section class="glance" aria-label="Today at a glance"><p class="gl-h">At a glance</p><ul>{lis}</ul></section>'
+
+
+def ed_facts(ed):
+    """Count, reading time and time stamp for the edition row."""
+    allst = ed["stories"] + ed.get("frontiers", [])
+    briefs = [b for p in ed.get("pulse", []) for b in p.get("briefs", [])]
+    words = len(ed["lede"].split()) + sum(len(s["dek"].split()) + len(s["headline"].split()) for s in allst) \
+        + sum(len(b["headline"].split()) for b in briefs)
+    bits = [f"{len(allst) + len(briefs)} stories", f"≈ {max(1, round(words / 230))} min read"]
+    if ed.get("updated_at"):
+        bits.append(f"Updated {clock(ed['updated_at'])}")
+    elif ed.get("published_at"):
+        bits.append(f"Published {clock(ed['published_at'])}")
+    return '<span class="dotsep" aria-hidden="true">·</span>'.join(f"<span>{e(b)}</span>" for b in bits)
 
 
 # --------------------------------------------------------------------------- regions
@@ -609,14 +623,13 @@ def edition_body(ed, threads, prefix, is_today, prev_ed, next_ed):
     return f"""
 <section class="hero hero-ed">
   <div class="wrap">
-    <div class="dateline">
-      <h1 class="bigdate"><span class="sr">The Signal, </span><span class="dow">{e(dd.strftime("%A"))}</span><span class="dm">{dd.day} {e(dd.strftime("%B"))}</span></h1>
-      <div class="ed-meta">
-        <p>Edition {ed.get("number", "")}, {dd.year}{f'. Updated {e(clock(ed["updated_at"]))}' if ed.get("updated_at") else ""}</p>
-      </div>
+    <div class="ed-row">
+      <p class="ed-label">The daily edition / {e(str(ed.get("number", "")).zfill(3))}</p>
+      <h1 class="ed-date"><span class="sr">The Signal, </span>{e(dd.strftime("%B"))} {dd.day}, {dd.year}</h1>
+      <p class="ed-facts">{ed_facts(ed)}</p>
     </div>
+    <div class="lede-row"><p class="lede-h">The day, in view</p><div><p class="lede">{e(ed["lede"])}</p>{note}</div></div>
     {glance_bar(ed)}
-    <div class="lede-row"><p class="lede-h">The day, in view</p><p class="lede">{e(ed["lede"])}</p>{note}</div>
   </div>
 </section>
 <div class="wrap">
@@ -625,7 +638,7 @@ def edition_body(ed, threads, prefix, is_today, prev_ed, next_ed):
 </div>
 {more}
 {regions_section(ed, threads, prefix, base)}
-<section class="ai-band" aria-labelledby="ai-h">
+<section class="ai-band" id="frontiers" aria-labelledby="ai-h">
   <div class="wrap">
     <header class="ai-head">
       <h2 id="ai-h">Frontiers</h2>
@@ -868,6 +881,7 @@ def build():
     (OUT / ".nojekyll").write_text("")
     paths = [""]
     latest = editions[-1]
+    MAST.update(date=latest["date"], number=latest.get("number", ""))
     entries = thread_entries(threads, editions)
     for i, ed in enumerate(editions):
         prev_ed = editions[i - 1] if i > 0 else None

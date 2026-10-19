@@ -578,3 +578,58 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .bigdate .dm { font-size: clamp(2rem, 1.5rem + 2vw, 3.2rem); }
 .story-lead h2 { font-size: clamp(1.6rem, 1.25rem + 1.2vw, 2.25rem); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; }
 .story-lead .dek { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); }
+
+/* ---------- Masthead, edition row and day in view (newspaper layout) ---------- */
+:root { --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace; }
+.mast { border-bottom: 0; background: var(--paper); }
+.m-strip { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--grid-2);
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.m-strip span { white-space: nowrap; }
+.m-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--trace); margin-right: .7rem; vertical-align: middle; position: relative; top: -1px; }
+.m-main { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem 2rem; flex-wrap: wrap; padding: 2.1rem 0 2rem; border-bottom: 1px solid var(--grid-2); }
+.mast .brand { display: block; }
+.mast .brand span { font-family: "DM Sans", var(--sans); font-weight: 400; font-size: clamp(2.6rem, 1.2rem + 5vw, 4.6rem); letter-spacing: .14em; line-height: 1; color: var(--ink); }
+.mast .brand:hover span { color: var(--trace); }
+.m-tag { display: flex; align-items: center; gap: 2.2rem; }
+.m-tag p { margin: 0; font-family: var(--mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; line-height: 1.9; color: var(--ink); }
+.m-tag p:first-child { padding-left: 1.4rem; border-left: 1px solid var(--grid-2); }
+.m-tag p:first-child span { color: var(--ink-2); }
+.m-tag .m-no { color: var(--ink-2); letter-spacing: .06em; }
+.m-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--grid-2); }
+.mast .nav { gap: 0 2.2rem; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; font-family: var(--serif); font-size: 1.2rem; font-weight: 400; }
+.mast .nav::-webkit-scrollbar { display: none; }
+.mast .nav a { color: var(--ink); padding: .85rem 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+.mast .nav a:hover { color: var(--trace); }
+.mast .nav a[aria-current="page"] { border-bottom-color: var(--trace); }
+.m-feed { font-family: var(--sans); font-size: .9rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.m-feed:hover { color: var(--trace); }
+
+.hero-ed { padding-top: 0; }
+.ed-row { display: flex; align-items: baseline; gap: .6rem 2rem; flex-wrap: wrap; padding: 1.5rem 0 1.4rem; border-bottom: 1px solid var(--grid-2); }
+.ed-label { margin: 0; font-family: var(--mono); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--trace); }
+.ed-date { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -.01em; line-height: 1.15; color: var(--ink); }
+.ed-facts { margin: 0 0 0 auto; display: flex; flex-wrap: wrap; gap: .3rem 0; font-family: var(--mono); font-size: .76rem; letter-spacing: .03em; color: var(--ink-2); }
+.ed-facts .dotsep { padding: 0 1rem; color: var(--ink-3); }
+
+.lede-row { display: grid; gap: .6rem 2rem; margin-top: 0; padding: 1.5rem 0 1.8rem; border-top: 0; }
+.lede-h { font-family: var(--mono); font-size: .78rem; font-weight: 400; letter-spacing: .14em; color: var(--trace); padding-top: .35rem; }
+.lede-row .lede { font-size: clamp(1.1rem, 1rem + .45vw, 1.35rem); line-height: 1.6; max-width: none; }
+@media (min-width: 820px) { .lede-row { grid-template-columns: 14.5rem minmax(0, 1fr); } }
+
+.glance { margin: 0 0 1.8rem; border-top: 1px solid var(--grid-2); }
+.gl-h { font-family: var(--mono); font-weight: 400; letter-spacing: .14em; font-size: .74rem; }
+.gl-k { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; }
+
+@media (max-width: 719px) {
+  .m-strip .m-right { display: none; }
+  .m-strip { font-size: .62rem; }
+  .m-main { padding: 1.5rem 0 1.3rem; }
+  .m-tag { width: 100%; justify-content: space-between; gap: 1rem; }
+  .m-tag p { font-size: .7rem; }
+  .m-tag p:first-child { padding-left: 0; border-left: 0; }
+  .mast .nav { gap: 0 1.5rem; font-size: 1.05rem; }
+  .m-feed { display: none; }
+  .ed-facts { margin-left: 0; width: 100%; }
+  .ed-facts .dotsep { padding: 0 .6rem; }
+}
+@media (max-width: 460px) { .m-strip .m-date { display: none; } }
