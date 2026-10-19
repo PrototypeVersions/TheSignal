@@ -37,7 +37,6 @@ Cover, in this order:
 4. **Frontiers — AI**: frontier labs (Anthropic, OpenAI, Google DeepMind, Meta, xAI, DeepSeek and others), model releases, safety and security research, AI science results, regulation, major money and compute deals, labor-market evidence.
 5. **Frontiers — science**: major results in science, medicine (pivotal trial results, major approvals), space, energy and climate. Check Nature, Science, NEJM, The Lancet, NASA, ESA, the FDA and EMA, and science desks (AP, Reuters, Nature News, Science News, STAT).
 6. **Regional extras**: for each region, one to three developments that matter but will not be main stories (they become that region's `briefs`, section 3).
-7. **Markets**: the latest closing values for the markets strip (section 3), plus any big moves in oil, indices, central banks or key data releases.
 
 Prefer original reporting and official sources over aggregators. When figures disagree between sources, use the most recent figure from a named, credible source and say that figures differ.
 
@@ -131,29 +130,6 @@ Same shape as world stories, but with `field`, `picture` and `image` instead of 
 On the front page Frontiers items look like the "More that changed" list: picture, labels, headline, `dek` and a "Read the full story" link. See section 4 for the illustrations.
 
 Optional `frontier_note` (one or two sentences, shown under the section) with `frontier_note_sources`.
-
-### Markets strip (`markets`)
-
-```json
-"markets": {
-  "label": "Friday's close",
-  "as_of": "YYYY-MM-DD",
-  "items": [
-    {"name": "S&P 500", "value": "7,659", "change": -1.09},
-    {"name": "Nasdaq", "value": "26,140", "change": -2.14},
-    {"name": "10-yr Treasury", "value": "5.10%", "change": null, "approx": true},
-    {"name": "Brent crude", "value": "$109.86", "change": 3.7},
-    {"name": "Gold", "value": "$4,181", "change": 0.3},
-    {"name": "Bitcoin", "value": "$81,800", "change": null}
-  ],
-  "sources": [...]
-}
-```
-
-- Use the most recent completed trading session. `label` says which (for example "Friday's close", "Monday's close"); on weekends that is Friday.
-- `change` is the percent change for that session as a number, or `null` if no reliable figure was found. Never estimate it.
-- Mark a value `"approx": true` when sources give it only roughly. Take every number from a named source and list the sources.
-- Keep the same six items every day, in the same order, so readers can compare day to day.
 
 ### Writing rules
 
@@ -251,12 +227,11 @@ The evening update keeps the morning edition current. It does **not** create a s
    - You may change a story's `momentum` if the evening's news clearly changed the direction. Leave `change` as it was.
    - Skip stories where nothing material happened. Most evenings, only a few stories get updates.
 4. If something **major and new** happened that is not in the edition, you may add up to two new stories (world or frontier) in the full normal format (including `key_facts`, `report`, and for Frontiers an illustration), and a new thread if needed. Put a world story where its importance belongs in the order; moving it to first place makes it the lead.
-5. Refresh `markets` with that day's closing values if markets traded today (set `label`, for example "Monday's close").
-6. Add a region brief (in `pulse`) for any major regional development that does not warrant a main story, and refresh a region's `text` if its picture changed.
-7. Rewrite the `lede` only if the day's picture changed; otherwise leave it.
-8. Set `"updated_at"` on the edition to the current time (ISO 8601 with offset). The site shows "Updated 5:55pm CT".
-9. Check (section 7), build, and publish with the commit message `Edition <N> evening update: <YYYY-MM-DD>`.
-10. Report: which stories got updates, any new stories, and anything left out because it could not be verified.
+5. Add a region brief (in `pulse`) for any major regional development that does not warrant a main story, and refresh a region's `text` if its picture changed.
+6. Rewrite the `lede` only if the day's picture changed; otherwise leave it.
+7. Set `"updated_at"` on the edition to the current time (ISO 8601 with offset). The site shows "Updated 5:55pm CT".
+8. Check (section 7), build, and publish with the commit message `Edition <N> evening update: <YYYY-MM-DD>`.
+9. Report: which stories got updates, any new stories, and anything left out because it could not be verified.
 
-If nothing material happened since morning, still refresh the markets and set `updated_at`, and say so in the report.
+If nothing material happened since morning, still set `updated_at`, and say so in the report.
 

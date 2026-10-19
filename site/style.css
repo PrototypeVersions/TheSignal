@@ -552,3 +552,19 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .f-art figcaption { font-family: var(--sans); font-size: .75rem; color: var(--ink-3); margin-top: .35rem; }
 .story-body > .f-art { margin: .5rem 0 1.6rem; }
 @media (max-width: 719px) { .f-grid .f-art img { aspect-ratio: 16 / 9; } }
+/* At a glance: an instrument strip in place of the markets */
+.glance { margin: .4rem 0 1.6rem; border-top: 1px solid var(--grid); border-bottom: 1px solid var(--grid); }
+.gl-h { font-family: var(--sans); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--trace); margin: .8rem 0 .2rem; }
+.glance ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.glance li { display: flex; flex-direction: column; gap: .3rem; padding: .7rem 1rem .9rem 0; }
+@media (min-width: 900px) { .glance li + li { padding-left: 1rem; border-left: 1px solid var(--grid); } }
+.gl-k { font-family: var(--sans); font-size: .74rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); }
+.gl-v { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.25; min-height: 1.45rem; display: flex; align-items: center; }
+.gl-s { font-family: var(--sans); font-size: .8rem; color: var(--ink-2); line-height: 1.4; }
+.gl-s a { color: var(--trace); text-decoration: none; }
+.gl-meter { display: flex; width: 100%; max-width: 190px; height: 10px; border-radius: 5px; overflow: hidden; background: var(--grid); gap: 2px; }
+.gl-seg { display: block; height: 100%; }
+.gl-major { background: var(--ink); } .gl-new { background: var(--trace); } .gl-developing { background: color-mix(in srgb, var(--trace) 45%, var(--grid-2)); } .gl-quiet { background: var(--grid-2); }
+.gl-up { background: var(--up); } .gl-steady { background: var(--steady); } .gl-down { background: var(--down); }
+.k-up { color: var(--up); } .k-steady { color: var(--steady); } .k-down { color: var(--down); }
+@media (max-width: 600px) { .glance ul { grid-template-columns: 1fr 1fr; } .glance li { padding-right: .6rem; } .glance li:nth-child(even) { padding-left: .8rem; border-left: 1px solid var(--grid); } }

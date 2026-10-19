@@ -437,6 +437,37 @@ def markets_strip(m):
             f'<ul>{"".join(cells)}</ul>{sources_block(m.get("sources", []))}</section>')
 
 
+def glance_bar(ed):
+    """An at-a-glance instrument strip: what kind of day it was."""
+    allst = ed["stories"] + ed.get("frontiers", [])
+    n = len(allst) or 1
+
+    def meter(parts):
+        segs = "".join(f'<span class="gl-seg gl-{k}" style="width:{100 * v / n:.1f}%"></span>' for k, v in parts if v)
+        return f'<span class="gl-meter" aria-hidden="true">{segs}</span>'
+
+    ch = {k: sum(1 for s in allst if s["change"] == k) for k in CHANGE}
+    mo = {k: sum(1 for s in allst if s["momentum"] == k) for k in MOMENTUM}
+    moved = sum(1 for p in ed.get("pulse", []) if p.get("status") == "moved")
+    words = len(ed["lede"].split()) + sum(len(s["dek"].split()) + len(s["headline"].split()) for s in allst)
+    full = sum(len(x.split()) for s in allst for sec in s.get("report", []) for x in sec["paragraphs"]) or \
+        sum(len(x.split()) for s in allst for x in s.get("body", []))
+    when = clock(ed["updated_at"]) if ed.get("updated_at") else clock(ed["published_at"]) if ed.get("published_at") else ""
+    change_txt = " · ".join(f"{v} {CHANGE[k][0].lower()}" for k, v in ch.items() if v)
+    cells = [
+        ("Today", f'{len(ed["stories"]) + len(ed.get("frontiers", []))} stories', f'{len(ed["stories"])} world · {len(ed.get("frontiers", []))} from the frontiers'),
+        ("How much changed", meter([(k, v) for k, v in ch.items()]), change_txt),
+        ("Direction", meter([("up", mo["up"]), ("steady", mo["steady"]), ("down", mo["down"])]),
+         " · ".join(f'<span class="k-{k}">{mo[k]} {lbl}</span>' for k, lbl in (("up", "intensifying"), ("steady", "holding"), ("down", "easing")) if mo[k])),
+        ("Regions", f'{moved} of {len(REGIONS)} moved', '<a href="#regions">See the map ↓</a>'),
+        ("Reading time", f'≈ {max(1, round(words / 230))} min', f'≈ {max(1, round(full / 230))} min with every full report'),
+    ]
+    if when:
+        cells.append(("Updated" if ed.get("updated_at") else "Published", when, "Updated again each evening" if not ed.get("updated_at") else "Evening update included"))
+    lis = "".join(f'<li><span class="gl-k">{e(k)}</span><span class="gl-v">{v}</span><span class="gl-s">{s}</span></li>' for k, v, s in cells)
+    return f'<section class="glance" aria-label="Today at a glance"><p class="gl-h">At a glance</p><ul>{lis}</ul></section>'
+
+
 # --------------------------------------------------------------------------- regions
 
 def region_items(ed, threads):
@@ -570,10 +601,9 @@ def edition_body(ed, threads, prefix, is_today, prev_ed, next_ed):
       <h1 class="bigdate"><span class="sr">The Signal, </span><span class="dow">{e(dd.strftime("%A"))}</span><span class="dm">{dd.day} {e(dd.strftime("%B"))}</span></h1>
       <div class="ed-meta">
         <p>Edition {ed.get("number", "")}, {dd.year}{f'. Updated {e(clock(ed["updated_at"]))}' if ed.get("updated_at") else ""}</p>
-        <p>{len(ed["stories"])} world stories, {len(ed.get("frontiers", []))} from the frontiers: {e(summary)}.</p>
       </div>
     </div>
-    {markets_strip(ed.get("markets"))}
+    {glance_bar(ed)}
     <div class="lede-row"><p class="lede">{e(ed["lede"])}</p>{note}</div>
   </div>
 </section>
