@@ -640,3 +640,14 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .ed-date { font-size: 27px; line-height: 1.2; }
 @media (max-width: 760px) { .mast .brand span { font-size: 39px; letter-spacing: .12em; } .m-main { padding: 1.6rem 0; } .ed-date { font-size: 25px; } }
 @media (max-width: 480px) { .mast .brand span { font-size: 36px; letter-spacing: .11em; } .ed-date { font-size: 24px; } }
+.hero-thread + .wrap { padding-bottom: 3.5rem; }
+.rbrief .meta { margin-bottom: .45rem; }
+@media (max-width: 719px) {
+  .ed-facts .dotsep:last-of-type { display: none; }
+  .ed-facts > span:last-child { flex-basis: 100%; margin-top: .15rem; }
+}
+@media (max-width: 520px) {
+  .mast .nav { gap: 0 1rem; font-size: 15px; }
+  .mast .nav .nav-about { display: none; }   /* still linked in the footer */
+}
+.ed-facts .dotsep { font-style: normal; }

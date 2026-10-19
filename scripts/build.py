@@ -329,7 +329,7 @@ def page(title, body, prefix, path, active="", description=DESCRIPTION):
     nav = [("The edition", "", "today"), ("Frontiers", "#frontiers", "frontiers"), ("Regions", "#regions", "regions"),
            ("Threads", "threads/", "threads"), ("Archive", "archive/", "archive"), ("How it works", "about/", "about")]
     nav_html = "".join(
-        f'<a href="{prefix}{href}"{" aria-current=\"page\"" if key == active else ""}>{e(lbl)}</a>'
+        f'<a class="nav-{key}" href="{prefix}{href}"{" aria-current=\"page\"" if key == active else ""}>{e(lbl)}</a>'
         for lbl, href, key in nav)
     strip_date = e(long_date(MAST["date"]).replace(" ", ", ", 1)) if MAST["date"] else ""
     return f"""<!doctype html>
@@ -496,7 +496,7 @@ def ed_facts(ed):
         bits.append(f"Updated {clock(ed['updated_at'])}")
     elif ed.get("published_at"):
         bits.append(f"Published {clock(ed['published_at'])}")
-    return '<span class="dotsep" aria-hidden="true">·</span>'.join(f"<span>{e(b)}</span>" for b in bits)
+    return '<i class="dotsep" aria-hidden="true">·</i>'.join(f"<span>{e(b)}</span>" for b in bits)
 
 
 # --------------------------------------------------------------------------- regions
@@ -571,7 +571,7 @@ def region_page(r, ed, threads, prefix, others):
         f'<p class="dek">{e(s["dek"])}</p><a class="read-full" href="{story_url(ed["date"], s, prefix)}">Read the full story <span aria-hidden="true">→</span></a></article>'
         for s in r["stories"]) or f'<p class="empty">No {e(r["name"])} story made this edition.</p>'
     briefs = "".join(
-        f'<article class="rbrief" id="brief-{i}"><h3>{e(b["headline"])}</h3>{paras([b["text"]])}{sources_block(b["sources"])}</article>'
+        f'<article class="rbrief" id="brief-{i}">{f"<div class=\"meta\">{badges(b)}</div>" if b.get("change") in CHANGE and b.get("momentum") in MOMENTUM else ""}<h3>{e(b["headline"])}</h3>{paras([b["text"]])}{sources_block(b["sources"])}</article>'
         for i, b in enumerate(r["briefs"], 1)) or '<p class="empty">No further development cleared our bar today.</p>'
     switch = "".join(f'<a href="../{o["slug"]}/"{" aria-current=\"page\"" if o["slug"] == r["slug"] else ""}><span>{o["n"]:02}</span>{e(o["name"])}</a>' for o in others)
     summary = f'<p class="lede">{e(r["pulse"].get("text", ""))}</p>' if r["pulse"].get("text") else ""
@@ -701,7 +701,7 @@ def story_page(s, ed, threads, entries, prefix, frontier=False):
     return f"""
 <article class="story-page">
 <section class="hero hero-plain"><div class="wrap narrow">
-  <p class="crumb"><a href="{prefix}editions/{d}/#{e(s["thread"])}">Edition {ed.get("number", "")}, {e(long_date(d))}</a> / <a href="{prefix}threads/{t["id"]}/">{e(t["title"])}</a></p>
+  <p class="crumb"><a href="{prefix}editions/{d}/#{e(s["thread"])}">Edition {ed.get("number", "")}, {e(long_date(d))}</a></p>
   {story_meta(s, threads, prefix, field=frontier)}
   <h1 class="story-title">{e(s["headline"])}</h1>
   <p class="lede">{e(s["dek"])}</p>
@@ -728,6 +728,14 @@ def thread_entries(threads, editions):
     return out
 
 
+MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
+
+
+def since_label(lbl):
+    """'24 February 2022' -> 'Began 24 February 2022'; descriptive labels are kept as written."""
+    return f"Began {lbl}" if re.fullmatch(rf"(\d{{1,2}} )?({MONTHS}) \d{{4}}", lbl.strip()) else lbl
+
+
 def thread_page(t, entries, prefix):
     latest = entries[-1][1] if entries else None
     status = ""
@@ -752,7 +760,7 @@ def thread_page(t, entries, prefix):
     <h1 class="thread-title">{e(t["title"])}</h1>
     <p class="lede">{e(t["summary"])}</p>
     {status}
-    <p class="since">{e(t["started_label"])}. {len(entries)} {"report" if len(entries) == 1 else "reports"} in The Signal.</p>
+    <p class="since">{e(since_label(t["started_label"]))}. {len(entries)} {"report" if len(entries) == 1 else "reports"} in The Signal.</p>
   </div>
 </section>
 <div class="wrap narrow"><ol class="timeline">{"".join(tl)}</ol>{bg}</div>
@@ -817,15 +825,19 @@ def about_page(prefix):
 </div></section>
 <div class="wrap prose">
   <h2>One edition a day</h2>
-  <p>There is no feed and no breaking-news banner. Each morning we publish around ten world stories and a short Frontiers section on AI and science, and each evening we add what has changed since. Every story fits in a few lines on the front page; its full report, with key facts, background, what to watch and every source, is one click away.</p>
+  <p>There is no endless feed and no breaking-news banner. Each morning we publish around ten world stories, a short Frontiers section on AI and science, and extra news for every region, and each evening we add what has changed since. Every story fits in a few lines on the front page; its full report, with key facts, background, what to watch and every source, is one click away.</p>
+  <h2>The day at a glance</h2>
+  <p>Under the day's summary, the At a glance bar counts everything in the edition, including the regional stories on the map: how many stories there are of each kind, how much changed, which way things are moving, how many regions saw news, and how long it takes to read every full report.</p>
   <h2>Every region, every day</h2>
-  <p>The region map covers North America, Latin America, Europe, Africa, the Middle East, Asia and Oceania. Each region shows its stories from the edition plus news that did not make the main page. If nothing important happened somewhere, we say so.</p>
+  <p>The region map covers North America, Latin America, Europe, Africa, the Middle East, Asia and Oceania. Choose a region to see its stories from the edition plus news that did not make the main page, each with a short summary and its sources. If nothing important happened somewhere, we say so.</p>
   <h2>Stories belong to threads</h2>
   <p>A thread is a situation we keep following: an election, a war, an outbreak. Each day's story is the latest entry in its thread, so you can see how a situation got here. Thread pages keep the whole timeline.</p>
   <h2>Change and momentum</h2>
-  <p>Every story carries two labels. Change says how much today's news altered the picture:</p>
+  <p>Every story, including the regional ones, carries two labels. Change says how much today's news altered the picture:</p>
   <table class="rubric"><tbody>{rows}</tbody></table>
   <p>Momentum says which way the situation is moving: <span class="mom mom-up">{momentum_icon("up")}Intensifying</span>, <span class="mom mom-steady">{momentum_icon("steady")}Holding</span> or <span class="mom mom-down">{momentum_icon("down")}Easing</span>. We use words rather than scores on purpose; a score like 7.8 implies a precision nobody has.</p>
+  <h2>Illustrations and maps</h2>
+  <p>Maps show where a story is happening. The pictures in Frontiers are simple original illustrations of the idea behind each story; they are not photographs and are not evidence for the reporting.</p>
   <h2>Sources and corrections</h2>
   <p>Every story links the reporting it is based on, and we paraphrase rather than reprint. When we get something wrong, the correction is added to the edition it fixes.</p>
 </div>
@@ -905,11 +917,11 @@ def build():
         regions = region_items(ed, threads)
         for r in regions:
             html_ = page(f"{r['name']}, {day_month(d)}", region_page(r, ed, threads, "../../../../", regions),
-                         "../../../../", f"editions/{d}/regions/{r['slug']}/", description=r["pulse"].get("text", "")[:300] or DESCRIPTION)
+                         "../../../../", f"editions/{d}/regions/{r['slug']}/", active="regions", description=r["pulse"].get("text", "")[:300] or DESCRIPTION)
             write(f"editions/{d}/regions/{r['slug']}/index.html", html_)
             if ed is latest:
                 write(f"regions/{r['slug']}/index.html",
-                      page(r["name"], region_page(r, ed, threads, "../../", regions), "../../", f"regions/{r['slug']}/",
+                      page(r["name"], region_page(r, ed, threads, "../../", regions), "../../", f"regions/{r['slug']}/", active="regions",
                            description=r["pulse"].get("text", "")[:300] or DESCRIPTION))
                 paths.append(f"regions/{r['slug']}/")
     body = edition_body(latest, threads, "", True, editions[-2] if len(editions) > 1 else None, None)
