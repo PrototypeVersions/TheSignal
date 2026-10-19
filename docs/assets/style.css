@@ -573,3 +573,8 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 .lede-row { gap: .45rem; }
 .lede-h { font-family: var(--sans); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--trace); margin: 0; }
 .lede-row .lede { font-size: clamp(1.05rem, .98rem + .35vw, 1.2rem); line-height: 1.55; max-width: 48rem; }
+
+/* Calmer top: smaller date, lead headline sized like the other main stories */
+.bigdate .dm { font-size: clamp(2rem, 1.5rem + 2vw, 3.2rem); }
+.story-lead h2 { font-size: clamp(1.6rem, 1.25rem + 1.2vw, 2.25rem); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; }
+.story-lead .dek { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); }
