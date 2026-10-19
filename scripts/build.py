@@ -446,11 +446,14 @@ def glance_bar(ed):
     allst = ed["stories"] + ed.get("frontiers", [])
     briefs = [b for p in ed.get("pulse", []) for b in p.get("briefs", [])]
     rated = allst + [b for b in briefs if b.get("change") in CHANGE and b.get("momentum") in MOMENTUM]
-    n = len(rated) or 1
 
-    def meter(parts):
-        segs = "".join(f'<span class="gl-seg gl-{k}" style="width:{100 * v / n:.1f}%"></span>' for k, v in parts if v)
-        return f'<span class="gl-meter" aria-hidden="true">{segs}</span>'
+    def split(parts):
+        """Largest group as the big figure, the others beneath it."""
+        parts = [(v, lbl) for v, lbl in parts if v]
+        if not parts:
+            return "—", ""
+        top = max(parts, key=lambda x: x[0])
+        return f"{top[0]} {top[1]}", " · ".join(f"{v} {lbl}" for v, lbl in parts if (v, lbl) != top)
 
     ch = {k: sum(1 for s in rated if s["change"] == k) for k in CHANGE}
     mo = {k: sum(1 for s in rated if s["momentum"] == k) for k in MOMENTUM}
@@ -460,15 +463,13 @@ def glance_bar(ed):
     full = (sum(len(x.split()) for s in allst for sec in s.get("report", []) for x in sec["paragraphs"]) or
             sum(len(x.split()) for s in allst for x in s.get("body", []))) + sum(len(b["text"].split()) for b in briefs)
     when = clock(ed["updated_at"]) if ed.get("updated_at") else clock(ed["published_at"]) if ed.get("published_at") else ""
-    change_txt = " · ".join(f"{v} {CHANGE[k][0].lower()}" for k, v in ch.items() if v)
     parts = [f'{len(ed["stories"])} world', f'{len(ed.get("frontiers", []))} frontiers']
     if briefs:
         parts.append(f'{len(briefs)} regional')
     cells = [
         ("Today", f'{len(allst) + len(briefs)} stories', " · ".join(parts)),
-        ("How much changed", meter([(k, v) for k, v in ch.items()]), change_txt),
-        ("Direction", meter([("up", mo["up"]), ("steady", mo["steady"]), ("down", mo["down"])]),
-         " · ".join(f'<span class="k-{k}">{mo[k]} {lbl}</span>' for k, lbl in (("up", "intensifying"), ("steady", "holding"), ("down", "easing")) if mo[k])),
+        ("How much changed", *split([(v, CHANGE[k][0].lower()) for k, v in ch.items()])),
+        ("Direction", *split([(mo[k], lbl) for k, lbl in (("up", "intensifying"), ("steady", "holding"), ("down", "easing"))])),
         ("Regions", f'{moved} of {len(REGIONS)} moved',
          f'<a href="#regions">{len(briefs)} more on the map ↓</a>' if briefs else '<a href="#regions">See the map ↓</a>'),
         ("Reading time", f'≈ {max(1, round(words / 230))} min', f'≈ {max(1, round(full / 230))} min with every full report'),
