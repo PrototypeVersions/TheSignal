@@ -633,3 +633,10 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
   .ed-facts .dotsep { padding: 0 .6rem; }
 }
 @media (max-width: 460px) { .m-strip .m-date { display: none; } }
+
+/* Wordmark and edition date sized to match the sister site */
+.mast .brand span { font-size: clamp(38px, 4.2vw, 58px); letter-spacing: .15em; line-height: 1.1; }
+.m-main { padding: 1.9rem 0; }
+.ed-date { font-size: 27px; line-height: 1.2; }
+@media (max-width: 760px) { .mast .brand span { font-size: 39px; letter-spacing: .12em; } .m-main { padding: 1.6rem 0; } .ed-date { font-size: 25px; } }
+@media (max-width: 480px) { .mast .brand span { font-size: 36px; letter-spacing: .11em; } .ed-date { font-size: 24px; } }
