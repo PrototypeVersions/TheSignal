@@ -664,3 +664,7 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 /* city dots on story maps stay red */
 :root { --pin: #B42318; } :root[data-theme="dark"] { --pin: #FF8B7B; }
 .map .mp, .map .mp0 { fill: var(--pin); }
+@media (max-width: 520px) {
+  .mast .nav { gap: 0 .95rem; font-size: 15px; }
+}
+@media (max-width: 360px) { .mast .nav { gap: 0 .6rem; font-size: 14px; } }

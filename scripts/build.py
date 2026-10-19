@@ -310,7 +310,7 @@ MAST = {"date": "", "number": ""}  # latest edition, filled in by build()
 def page(title, body, prefix, path, active="", description=DESCRIPTION):
     full_title = f"{title} — {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME}: {TAGLINE.lower()}"
     canon = f"{SITE_URL}/{path}"
-    nav = [("The edition", "", "today"), ("Frontiers", "#frontiers", "frontiers"), ("Regions", "#regions", "regions"),
+    nav = [("Today", "", "today"), ("Frontiers", "#frontiers", "frontiers"), ("Regions", "#regions", "regions"),
            ("Threads", "threads/", "threads"), ("Archive", "archive/", "archive"), ("How it works", "about/", "about")]
     nav_html = "".join(
         f'<a class="nav-{key}" href="{prefix}{href}"{" aria-current=\"page\"" if key == active else ""}>{e(lbl)}</a>'
