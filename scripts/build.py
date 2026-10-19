@@ -23,7 +23,7 @@ OUT = ROOT / "docs"
 SITE_NAME = "The Signal"
 SITE_URL = "https://prototypeversions.github.io/TheSignal"
 TAGLINE = "What changed in the world today"
-DESCRIPTION = ("A daily briefing on the handful of developments that changed the picture today, "
+DESCRIPTION = ("A daily briefing on developments that changed the picture today, "
                "with maps, full reports and sources.")
 
 CHANGE = {
