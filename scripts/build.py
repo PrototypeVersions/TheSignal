@@ -690,7 +690,7 @@ def story_page(s, ed, threads, entries, prefix, frontier=False):
   <p class="byline">The Signal · {e(long_date(d))}{upd}</p>
 </div></section>
 <div class="wrap narrow story-body">
-  {fig}{story_updates(s)}{full_story(s)}{assess}
+  {fig}{full_story(s)}{assess}{story_updates(s)}
   <section class="story-sources"><h2>Sources</h2>{sources_list(s["sources"])}</section>
   {hist}
   <p class="back"><a href="{prefix}editions/{d}/">← Back to the {e(day_month(d))} edition</a></p>

@@ -212,7 +212,7 @@ The evening update keeps the morning edition current. It does **not** create a s
    ```json
    "updates": [{"at": "2026-10-18T17:55:00-05:00", "text": "One to three sentences on what changed since this morning.", "sources": [{"outlet": "...", "title": "...", "url": "https://..."}]}]
    ```
-   - Do not edit the morning's headline, dek, report, why or watch, except to fix an outright error (then also add a correction, section 6). The update block is where the new information goes; the front page shows an "Updated" tag on the story and the update itself appears at the top of the story's page.
+   - Do not edit the morning's headline, dek, report, why or watch, except to fix an outright error (then also add a correction, section 6). The update block is where the new information goes; the front page shows an "Updated" tag on the story and the update itself appears on the story's page, after "Why it matters".
    - Leave `change` as it was.
    - Skip stories where nothing material happened. Most evenings, only a few stories get updates.
 4. If something **major and new** happened that is not in the edition, you may add up to two new stories (world or frontier) in the full normal format (including `key_facts`, `report`, and for Frontiers an illustration), and a new thread if needed. Put a world story where its importance belongs in the order; moving it to first place makes it the lead.

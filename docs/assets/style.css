@@ -668,3 +668,4 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
   .mast .nav { gap: 0 .95rem; font-size: 15px; }
 }
 @media (max-width: 360px) { .mast .nav { gap: 0 .6rem; font-size: 14px; } }
+.story-updates { margin: 1.6rem 0 2rem; border-left-color: var(--trace); background: color-mix(in srgb, var(--trace) 7%, transparent); }
