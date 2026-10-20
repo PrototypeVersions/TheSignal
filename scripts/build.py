@@ -129,6 +129,11 @@ def validate(threads, editions):
                     errs.append(f"{where}: body must be a list of paragraphs")
                 errs += check_sources(s.get("sources", []), where)
                 errs += maps.validate_places(s.get("places"), where)
+                # Every card below the lead needs its picture, so the two-column grids never leave a gap.
+                if d >= "2026-10-19" and group == "stories" and i > 0 and not maps.map_svg(s.get("places"), 160, 160, labels=False):
+                    errs.append(f"{where}: needs 'places' that draw a map (every world story below the lead gets one, so the card grid has no gaps)")
+                if d >= "2026-10-19" and group == "frontiers" and not s.get("image"):
+                    errs.append(f"{where}: needs an 'image' (every Frontiers item gets an illustration, so the card grid has no gaps)")
                 errs += check_updates(s, where)
         errs += check_markets(ed.get("markets"), f"edition {d} markets")
         if ed.get("updated_at"):
@@ -390,7 +395,7 @@ def story_second(s, threads, prefix, ed_date):
     url = story_url(ed_date, s, prefix)
     m = maps.map_svg(s.get("places"), 520, 250, labels=True, cls="map-second")
     fig = f'<figure class="second-map"><a href="{url}" tabindex="-1" aria-hidden="true">{m}</a></figure>' if m else ""
-    return (f'<article class="story story-second" id="{e(s["thread"])}">{fig}{story_meta(s, threads, prefix)}'
+    return (f'<article class="story story-second{"" if m else " nomap"}" id="{e(s["thread"])}">{fig}{story_meta(s, threads, prefix)}'
             f'<h2><a href="{url}">{e(s["headline"])}</a></h2><p class="dek">{e(s["dek"])}</p>'
             f'<div class="actions">{report_button(url)}{updated_tag(s, url)}</div></article>')
 
@@ -411,7 +416,7 @@ def story_compact(s, threads, prefix, ed_date, frontier=False):
     if not frontier:
         m = maps.map_svg(s.get("places"), 160, 160, labels=False, cls="map-thumb")
         thumb = f'<a class="thumb" href="{url}" tabindex="-1" aria-hidden="true">{m}</a>' if m else ""
-    return (f'<article class="story story-compact{" story-frontier" if frontier else ""}" id="{e(s["thread"])}">{thumb}<div class="c-text">'
+    return (f'<article class="story story-compact{" story-frontier" if frontier else ""}{"" if thumb else " nothumb"}" id="{e(s["thread"])}">{thumb}<div class="c-text">'
             f'{story_meta(s, threads, prefix, field=frontier)}<h2><a href="{url}">{e(s["headline"])}</a></h2><p class="dek">{e(s["dek"])}</p>'
             f'<div class="actions"><a class="read-full" href="{url}">Read the full story <span aria-hidden="true">→</span></a>{updated_tag(s, url)}</div></div></article>')
 
@@ -807,7 +812,7 @@ def about_page(prefix):
 </div></section>
 <div class="wrap prose">
   <h2>One edition a day</h2>
-  <p>There is no endless feed and no breaking-news banner. Each morning we publish around ten world stories, a short Frontiers section on AI and science, and extra news for every region, and each evening we add what has changed since. Every story fits in a few lines on the front page; its full report, with key facts, background, what to watch and every source, is one click away.</p>
+  <p>There is no endless feed and no breaking-news banner. Each morning we publish around ten world stories, a short Frontiers section on AI and science, and extra news for every region. Every story fits in a few lines on the front page; its full report, with key facts, background, what to watch and every source, is one click away.</p>
   <h2>The day at a glance</h2>
   <p>Under the day's summary, the At a glance bar counts everything in the edition, including the regional stories on the map: how many stories there are of each kind, how much changed, how many regions saw news, and how long it takes to read every full report.</p>
   <h2>Every region, every day</h2>

@@ -669,3 +669,16 @@ td.num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowr
 }
 @media (max-width: 360px) { .mast .nav { gap: 0 .6rem; font-size: 14px; } }
 .story-updates { margin: 1.6rem 0 2rem; border-left-color: var(--trace); background: color-mix(in srgb, var(--trace) 7%, transparent); }
+/* No gaps when a card has no picture: a text-only card takes the full row instead of sitting beside a tall picture, and a list item without a thumbnail uses the full width */
+.second-wrap:has(.second-map) .story-second.nomap { grid-column: 1 / -1; }
+.second-wrap:has(.second-map) .story-second.nomap .dek { max-width: 46rem; }
+.f-grid { grid-auto-flow: row dense; }
+.f-grid:has(.f-art) .story-frontier.nothumb { grid-column: 1 / -1; }
+.f-grid:has(.f-art) .story-frontier.nothumb .dek { max-width: 46rem; }
+.more-wrap .story-compact.nothumb { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) {
+  .second-wrap:has(.nomap) .story-second:not(.nomap) { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0 3.5rem; align-content: start; }
+  .second-wrap:has(.nomap) .story-second:not(.nomap) > .second-map { grid-row: 1 / span 6; margin: 0; }
+  .second-wrap:has(.nomap) .story-second:not(.nomap) > :not(.second-map) { grid-column: 2; }
+  .second-wrap:has(.nomap) .story-second + .story-second { border-top: 1px solid var(--grid); }
+}

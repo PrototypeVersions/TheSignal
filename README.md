@@ -12,7 +12,7 @@ Live site: https://prototypeversions.github.io/TheSignal/
 - **Build** (`scripts/build.py`): standard-library Python that validates the data and writes the static site to `docs/`, which GitHub Pages serves. It creates the front page, a page per story (`editions/<date>/<thread>/`), a page per region (`regions/<region>/`), thread pages, the archive and the feed.
 - **Design** (`site/`): stylesheet, script and favicon, copied into `docs/assets/`.
 
-Each morning a scheduled Claude task follows [`EDITOR.md`](EDITOR.md): research, write the edition, update threads, validate, build, and push. Each evening a second task adds updates to that day's edition.
+Each morning a scheduled Claude task follows [`EDITOR.md`](EDITOR.md): research, write the edition, update threads, validate, build, and push.
 
 ## Running locally
 

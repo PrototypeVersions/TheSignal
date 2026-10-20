@@ -1,9 +1,10 @@
 # The Signal — daily editor's runbook
 
-This file is the complete instruction set for The Signal. Two scheduled tasks follow it each day:
+This file is the complete instruction set for The Signal. One scheduled task follows it each day:
 
 - **Morning edition** (about 5:53am Central): sections 0–9 below, producing the day's edition.
-- **Evening update** (about 5:52pm Central): section 10, which updates that same edition with what changed since morning.
+
+The evening update task (section 10) is currently switched off; news from later in the day goes into the next morning's edition. Section 10 stays here in case an evening run is switched back on.
 
 A person can follow it too.
 
@@ -92,7 +93,7 @@ The front page is short on purpose. Each story shows its labels, headline and `d
 
 **`report` is the full story** and is required for every world and Frontiers item. Write two to five sections, about 300–500 words in total (shorter only when the sourced facts genuinely run out; never pad). Typical headings: what happened, the response, background or context, what comes next. Do not add a section called "Why it matters"; `why` already appears beside the report. Every sentence must be supported by a listed source, so research enough to write it properly: open the main articles and at least one background source.
 
-**`places` draws the story's locator map. Every world story should have one.**
+**`places` draws the story's locator map. Every world story must have one** (the only exception is a Frontier story leading the edition, see section 2). The build refuses a world story below the lead without a map, because a card without its picture would leave a gap in the two-column grid.
 - `countries`: the main country or countries, as ISO 3166 alpha-3 codes (FRA, UKR, USA, KEN…). Drawn highlighted.
 - `related`: optional, other countries directly involved, drawn lighter (for example RUS on a story about strikes inside Ukraine, IRN behind the Houthis).
 - `points`: two to four key cities or sites with accurate coordinates. The first point is drawn largest. Avoid two points so close that their labels overlap.
@@ -148,7 +149,7 @@ Save as `data/editions/<YYYY-MM-DD>.json`.
 
 ## 4. Illustrations for Frontiers
 
-Every Frontiers item gets a simple original illustration, saved as `images/<YYYY-MM-DD>/<thread-id>.svg` and referenced in its `image` field.
+Every Frontiers item must have a simple original illustration (the build refuses one without an `image`, because a card without its picture would leave a gap in the grid), saved as `images/<YYYY-MM-DD>/<thread-id>.svg` and referenced in its `image` field.
 
 - Before drawing, write down in one sentence the concrete thing from the story the picture shows: an object, place, mechanism or action a reader would recognise from the headline (a chip and a falling price line for chip stocks sliding; a pie with one slice lifted toward a hard hat for a share fund for displaced workers; a path going around a barrier for AI agents getting past their controls). If you cannot name one, use a different concrete element of the story; never a generic robot, brain or abstract swirl.
 - Hand-write a self-contained SVG, 1200×800 (`viewBox="0 0 1200 800"`), with shapes and paths only: no text, logos, real people, scripts, external images or fonts. Keep it under 50 KB.
