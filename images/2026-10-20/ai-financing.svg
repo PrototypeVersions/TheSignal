@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs><radialGradient id="g" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#16243D"/><stop offset="1" stop-color="#0B1422"/></radialGradient></defs><rect width="1200" height="800" fill="url(#g)"/>
+<g stroke="#1F2C44" stroke-width="1"><path d="M0 200H1200M0 330H1200M0 460H1200M0 590H1200"/></g>
+<polyline points="560,230 640,280 710,270 780,360 850,350 920,450 990,470 1060,440 1130,390" fill="none" stroke="#FF8B7B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M990 470 L1130 390" stroke="#86A2FF" stroke-width="11" stroke-linecap="round"/>
+<circle cx="1130" cy="390" r="15" fill="#86A2FF"/>
+<g fill="#E9B44C" stroke="#0B1422" stroke-width="5">
+<ellipse cx="330" cy="650" rx="150" ry="34"/><rect x="180" y="633" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="616" rx="150" ry="34"/><rect x="180" y="599" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="582" rx="150" ry="34"/><rect x="180" y="565" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="548" rx="150" ry="34"/><rect x="180" y="531" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="514" rx="150" ry="34"/><rect x="180" y="497" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="480" rx="150" ry="34"/><rect x="180" y="463" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="446" rx="150" ry="34"/><rect x="180" y="429" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="412" rx="150" ry="34"/><rect x="180" y="395" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="378" rx="150" ry="34"/><rect x="180" y="361" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="344" rx="150" ry="34"/><rect x="180" y="327" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="310" rx="150" ry="34"/><rect x="180" y="293" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="276" rx="150" ry="34"/><rect x="180" y="259" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="242" rx="150" ry="34"/><rect x="180" y="225" width="300" height="17" stroke="none"/>
+<ellipse cx="330" cy="208" rx="150" ry="34"/><rect x="180" y="191" width="300" height="17" stroke="none"/>
+</g>
+<ellipse cx="330" cy="208" rx="150" ry="34" fill="#F2C86A" stroke="#0B1422" stroke-width="5"/>
+<ellipse cx="330" cy="208" rx="90" ry="18" fill="none" stroke="#B88A2E" stroke-width="5"/>
+<rect x="100" y="684" width="460" height="10" rx="5" fill="#2F4163"/>
+</svg>

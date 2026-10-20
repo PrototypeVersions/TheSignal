@@ -1,0 +1,17 @@
+{
+  "id": "rectal-cancer-immunotherapy",
+  "title": "Immunotherapy instead of surgery",
+  "short": "Rectal cancer",
+  "section": "frontier",
+  "region": "Frontiers",
+  "started": "2026-10-19",
+  "started_label": "Following since 19 October 2026",
+  "status": "active",
+  "summary": "The FDA has given accelerated approval to dostarlimab alone for dMMR/MSI-high locally advanced rectal cancer, letting many patients avoid chemotherapy, radiation and surgery; longer follow-up must confirm the responses last.",
+  "background": [
+    {
+      "date": "2022-06",
+      "text": "A Memorial Sloan Kettering study reported that every patient in a small dostarlimab trial had no detectable cancer after treatment."
+    }
+  ]
+}

@@ -1,0 +1,1468 @@
+{
+ "date": "2026-10-20",
+ "number": 3,
+ "published_at": "2026-10-20T06:15:47-05:00",
+ "lede": "Albertans voted by about three to one to stay in Canada, turning down a path toward a separation referendum. Oil climbed toward $112 as Iran claimed mine strikes on tankers in Hormuz and Saudi Arabia shot down a Houthi missile aimed at Riyadh. President Trump said it was time for someone else to negotiate for Ukraine, hours after a Russian drone killed six people in a park. France had its first calm night under curfews, a man was charged over the attack on Australian MP Helen Haines, and Super Typhoon Champi is now forecast to turn away from Taiwan. In Frontiers: a hacker who used AI agents to break into more than 100 company websites, and an FDA approval that can spare some cancer patients surgery.",
+ "stories": [
+  {
+   "thread": "alberta-referendum",
+   "change": "major",
+   "momentum": "down",
+   "headline": "Albertans reject a path to separation by about three to one",
+   "dek": "About 76% voted to stay in Canada rather than start a process toward a binding vote on leaving, CTV and CBC projected, a far wider margin than separatists had hoped for.",
+   "key_facts": [
+    "On question 10, about 76% chose to remain in Canada and about 24% backed a process toward a binding separation vote, by early counts.",
+    "More than 1.35 million ballots were cast in advance or by mail, against about 810,000 that way in the 2023 provincial election.",
+    "Central Peace-Notley was the only riding where a majority backed a second referendum, with 51.1% at last count.",
+    "Results for the nine other questions are partial; official results are due on Wednesday 21 October."
+   ],
+   "report": [
+    {
+     "heading": "The result",
+     "paragraphs": [
+      "Albertans voted on Monday to stay in Canada, and by a wide margin. On the tenth and last question on the ballot, which asked whether the province should begin the legal process toward a binding referendum on leaving the country, about 76% chose to remain, CTV News and CBC projected on the night. CTV's live count early on Tuesday stood at 76.4% to 23.6%; Al Jazeera, with more than a million votes counted, put it at about 77% to 23%.",
+      "The vote was not close anywhere in the big cities. No riding in Edmonton or Calgary fell below 75% for staying, according to CTV's count. Many rural ridings in the north, centre and south were in the high 50s or low 60s for remaining, and only one, Central Peace-Notley in the northwest, had a majority for a second referendum, at 51.1%."
+     ]
+    },
+    {
+     "heading": "Turnout and the other questions",
+     "paragraphs": [
+      "Interest was high. More than 1.35 million ballots were cast in advance polls or by special mail-in ballot, Global News reports, compared with about 810,000 cast those ways in the 2023 provincial election; about 519,000 mail-in ballots alone arrived before the cut-off. More than 100 polling stations opened late, delaying results by over three hours. No official turnout figure has been published yet.",
+      "The other nine questions, on immigration, social supports and the constitution, were counted after the separation question and remain partial. Early figures show questions on more provincial control of immigration and a 12-month residency rule for social supports passing comfortably, while questions on choosing judges and putting provincial laws ahead of federal ones were close to tied. Official results are expected on Wednesday."
+     ]
+    },
+    {
+     "heading": "The reaction",
+     "paragraphs": [
+      "Premier Danielle Smith, who called the vote but backed staying in Canada, said Albertans had voted for a stronger Alberta in a united Canada. Prime Minister Mark Carney said Albertans chose unity. Thomas Lukaszuk, who led the Forever Canadian campaign, said the message had been sent, while arguing that the roughly $130 million vote need not have been held.",
+      "Separatists say they are not finished. Jeffrey Rath of the Alberta Prosperity Project said the movement was not going anywhere, and he wants a special meeting of Smith's United Conservative Party to test the base's confidence in her. Before the vote his colleague Mitch Sylvestre had said support above 40% would put independence in play; it came in well short."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Smith addresses the province on Tuesday evening at 6:45pm Mountain time. She has promised that there will be no follow-up separation referendum during her government's mandate, which runs to the election due in October 2027. A future government or a new citizen petition could still bring the question back."
+     ]
+    }
+   ],
+   "why": "The largest test of separatist feeling in Western Canada since the movement revived has produced a decisive no. It takes a formal route out of Canada off the table for now, though the closer results in rural ridings show the grievances behind it remain.",
+   "watch": "Smith's televised address on Tuesday evening; official results for all ten questions on Wednesday 21 October; whether separatists force a UCP leadership review before the party's November meeting.",
+   "sources": [
+    {
+     "outlet": "CTV News",
+     "title": "Albertans vote yes to unity, no to separation referendum in historic vote",
+     "url": "https://www.ctvnews.ca/edmonton/alberta-referendum/article/albertans-vote-to-reject-a-referendum-on-separation/"
+    },
+    {
+     "outlet": "CP24/CTV News",
+     "title": "Alberta referendum results: Separation rejected. Live updates.",
+     "url": "https://www.cp24.com/news/canada/2026/10/20/albertans-reject-separation-in-historic-vote-ctv-news-projects-live-updates/"
+    },
+    {
+     "outlet": "Global News",
+     "title": "Alberta referendum voters reject separatism, choose to stay in Canada",
+     "url": "https://globalnews.ca/news/12108827/alberta-referendum-result/"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Alberta voters reject separation from Canada, early results show",
+     "url": "https://www.aljazeera.com/news/2026/10/20/alberta-voters-reject-separation-from-canada-early-results-show"
+    },
+    {
+     "outlet": "BNN Bloomberg",
+     "title": "Alberta referendum results 2026: Province rejects separation",
+     "url": "https://www.bnnbloomberg.ca/business/politics/2026/10/20/albertans-vote-to-reject-a-referendum-on-separation/"
+    }
+   ],
+   "places": {
+    "countries": [
+     "CAN"
+    ],
+    "points": [
+     {
+      "name": "Edmonton",
+      "lat": 53.55,
+      "lon": -113.49
+     },
+     {
+      "name": "Calgary",
+      "lat": 51.05,
+      "lon": -114.07
+     },
+     {
+      "name": "Peace River",
+      "lat": 56.23,
+      "lon": -117.29
+     }
+    ],
+    "view": [
+     -126,
+     46,
+     -102,
+     61
+    ]
+   }
+  },
+  {
+   "thread": "gulf-war",
+   "change": "developing",
+   "momentum": "up",
+   "headline": "Oil climbs toward $112 as Iran claims tanker mine strikes and Houthis aim at Riyadh",
+   "dek": "Brent reached a five-month high on Tuesday after Iran's Revolutionary Guards said tankers hit mines in Hormuz, and Saudi Arabia intercepted a Houthi missile fired at its capital.",
+   "key_facts": [
+    "Brent crude was about $111.6 a barrel early on Tuesday, its highest in roughly five months.",
+    "The death toll from Monday's Houthi missile strike on a Yemeni army training camp in Shabwa has risen to 60, AP reports.",
+    "Iran's Revolutionary Guards say tankers hit mines in the Strait of Hormuz on Sunday and Monday; the claims are not independently confirmed.",
+    "Russia's foreign minister, Sergey Lavrov, visited Tehran on Monday, his first trip there since the war began."
+   ],
+   "report": [
+    {
+     "heading": "Hormuz and oil",
+     "paragraphs": [
+      "Iran's Revolutionary Guards say two tankers struck mines and caught fire in the Strait of Hormuz on Sunday and another on Monday, in the southern part of the waterway. Iran says the ships were using a route endorsed by the United States that Tehran does not recognise, with their transponders off, and its naval commander said such ships will be treated as hostile. The claims have not been independently confirmed. The UK's maritime security agency says October is already the worst month for attacks on shipping in the strait since March, according to CBS News.",
+      "Early on Tuesday the Guards also said they had shot down a US MQ-9 Reaper drone over the strait; there was no US confirmation. Brent crude, which had slipped on Monday after Washington eased sanctions on Russian fuel, rose about 1.9% to around $111.6 a barrel on Tuesday, its highest level in about five months, according to Trading Economics."
+     ]
+    },
+    {
+     "heading": "The Houthi front",
+     "paragraphs": [
+      "The death toll from Monday's Houthi ballistic missile strike on the al-Alam training camp in Shabwa province has risen to 60, most of them new recruits, with more than 200 wounded, AP reports, making it the deadliest attack in months. Provincial officials say three missiles hit recruits lining up for training. The Houthis claimed the attack.",
+      "On Tuesday Saudi Arabia said it intercepted a Houthi ballistic missile aimed at Riyadh, where an explosion was reported in the north of the city near King Khalid International Airport. Egypt's parliament, meanwhile, put off until 26 October a vote that would let President Abdel Fattah el-Sisi send forces to help defend Saudi Arabia, Al Jazeera reports."
+     ]
+    },
+    {
+     "heading": "Diplomacy and the next round",
+     "paragraphs": [
+      "Iran's offer to reopen the strait is still on the table without a US answer. Foreign Minister Abbas Araghchi said on Sunday that Tehran was reviewing US comments on a plan under which the strait would reopen on day six if the US lifts its naval blockade and oil sanctions, with talks starting on day seven. Lavrov's visit to Tehran on Monday, where Araghchi said ties had never been closer, cut against President Trump's claim that Russia is doing little to help Iran.",
+      "US Defence Secretary Pete Hegseth made an unannounced visit to Israel on Monday and met Prime Minister Benjamin Netanyahu. Axios has reported, according to Al Jazeera, that Trump and Netanyahu discussed a major new operation against Iran, though Trump has said he will not attack before the 3 November midterms. The US mission for Iran urged Americans in the region to be vigilant."
+     ]
+    }
+   ],
+   "why": "Both chokepoints of the war, Hormuz and the Saudi–Houthi front, are getting worse at once, and oil is back near its spring peak two weeks before US elections fought partly over fuel prices.",
+   "watch": "Pakistan's army chief in Tehran on Tuesday; any US reply to Iran's six-day plan; Egypt's parliamentary vote on 26 October; whether strikes on Iran resume around Israel's 27 October election or after 3 November.",
+   "sources": [
+    {
+     "outlet": "CBS News",
+     "title": "Live Updates: Iran lauds ties with Russia, contradicting Trump's claim of little Russian support for Tehran",
+     "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/"
+    },
+    {
+     "outlet": "AP via WOKV",
+     "title": "Death toll rises to 60 in Houthi strike on Yemen training camp in deadliest attack in months",
+     "url": "https://www.wokv.com/news/world/death-toll-rises-60/N4ET5AYWR46YVBTKAAGYFYIDQI/"
+    },
+    {
+     "outlet": "Middle East Eye",
+     "title": "IRGC says it downed US MQ-9 drone over Hormuz Strait",
+     "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irgc-says-it-downed-us-mq-9-drone-over-hormuz-strait"
+    },
+    {
+     "outlet": "Gulf News",
+     "title": "US-Israel-Iran war: Hormuz deal unresolved as US issues new warning to Americans",
+     "url": "https://gulfnews.com/world/mena/us-israel-iran-war-hormuz-deal-unresolved-us-renews-warning-to-americans-1.500715439"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Trump backs Netanyahu: Is the US planning a new Iran attack with Israel?",
+     "url": "https://www.aljazeera.com/news/2026/10/19/trump-backs-netanyahu-is-the-us-planning-a-new-iran-attack-with-israel"
+    },
+    {
+     "outlet": "Trading Economics",
+     "title": "Brent crude oil",
+     "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Egyptian parliament delays vote on military support for Saudi Arabia",
+     "url": "https://www.aljazeera.com/news/2026/10/19/egyptian-parliament-delays-vote-on-military-support-for-saudi-arabia"
+    }
+   ],
+   "places": {
+    "countries": [
+     "IRN"
+    ],
+    "related": [
+     "SAU",
+     "YEM"
+    ],
+    "points": [
+     {
+      "name": "Strait of Hormuz",
+      "lat": 26.57,
+      "lon": 56.25
+     },
+     {
+      "name": "Riyadh",
+      "lat": 24.71,
+      "lon": 46.68
+     },
+     {
+      "name": "Shabwa",
+      "lat": 14.55,
+      "lon": 46.83
+     }
+    ],
+    "view": [
+     38,
+     10,
+     62,
+     33
+    ]
+   }
+  },
+  {
+   "thread": "ukraine-war",
+   "change": "developing",
+   "momentum": "up",
+   "headline": "Trump says someone else should negotiate for Ukraine as a drone kills six in a park",
+   "dek": "Trump said on Monday it was time for somebody else to negotiate on Ukraine's behalf, hours after a Russian drone hit a park in Kharkiv region, killing six people, three of them children.",
+   "key_facts": [
+    "A drone hit the central park of Nova Vodolaha, Kharkiv region, on Monday afternoon, killing six, including three children, and injuring at least 15.",
+    "Russia launched 165 drones overnight into Tuesday; Ukraine's air force says 115 were downed and hits were recorded at 30 locations.",
+    "Monday's strike on the grid damaged 28 substations and other energy sites, Zelenskyy says.",
+    "A Trump–Putin–Xi meeting has been floated for the APEC summit in Shenzhen on 18–19 November, without Ukraine."
+   ],
+   "report": [
+    {
+     "heading": "A new low with Washington",
+     "paragraphs": [
+      "Relations between Washington and Kyiv sank further on Monday. Speaking before a campaign stop in Kansas, President Trump said it was time for somebody else to negotiate on behalf of Ukraine, AP reports. Over the weekend he defended his Friday order waiving the broad new Russia sanctions required by a law Congress passed overwhelmingly, saying he did not want to push Moscow away from talks, and he accused President Volodymyr Zelenskyy of targeting Russian diesel refineries and of not wanting the war to end.",
+      "Zelenskyy says Ukraine has accepted every ceasefire proposal. He also said Ukraine again had no early warning from partners before Monday's strike, while Trump and Secretary of State Marco Rubio say US intelligence sharing never stopped. Zelenskyy described a critical shortage of Patriot interceptors, blaming agreements not carried out at working level."
+     ]
+    },
+    {
+     "heading": "The strikes",
+     "paragraphs": [
+      "On Monday afternoon a Russian drone hit the central park of Nova Vodolaha in Kharkiv region, killing six people, among them three children including an infant, and injuring at least 15, seven of them children, according to the regional governor, Oleh Syniehubov. Prosecutors have opened a war crimes investigation.",
+      "The overnight attack on the grid that began the week was, Zelenskyy said, aimed mainly at Kyiv and its region and damaged 28 substations and other energy facilities. Overnight into Tuesday Russia sent 165 more drones; the air force says 115 were downed and that hits were recorded at 30 locations. Russia's Defence Ministry says it has been striking military industry and logistics."
+     ]
+    },
+    {
+     "heading": "A summit without Kyiv",
+     "paragraphs": [
+      "Putin floated a three-way meeting with Trump and Xi Jinping in a call with Trump on 9 October, the Wall Street Journal reported, according to investingLive. It would take place on the sidelines of the APEC summit in Shenzhen on 18–19 November, without Ukraine. The Kremlin's spokesman, Dmitry Peskov, confirmed discussions but said there was no clear understanding yet, and a US official said Trump had not agreed."
+     ]
+    }
+   ],
+   "why": "The main pressure on Moscow is paused and the US president is now openly distancing himself from Kyiv's diplomacy, while Russia keeps up daily strikes on the grid and on towns. Ukraine faces winter with fewer air defences and a less certain ally.",
+   "watch": "Whether Washington names a different channel for talks; the fate of the 60-day sanctions review; Patriot deliveries; whether the Shenzhen meeting on 18–19 November takes shape.",
+   "sources": [
+    {
+     "outlet": "AP via ABC News",
+     "title": "US ties with Ukraine hit new low as Trump slights Zelenskyy and eases up on Russia",
+     "url": "https://abcnews.com/US/wireStory/us-ties-ukraine-hit-new-low-trump-slights-137397527"
+    },
+    {
+     "outlet": "AFP via Al Arabiya",
+     "title": "Trump bashes Zelenskyy, defends waiving Russia sanctions",
+     "url": "https://english.alarabiya.net/News/world/2026/10/19/trump-bashes-zelenskyy-defends-waiving-russia-sanctions"
+    },
+    {
+     "outlet": "Kyiv Independent",
+     "title": "Russian drone strike on park in Kharkiv Oblast kills children and infant",
+     "url": "https://kyivindependent.com/russian-drone-strike-on-park-in-kharkiv-oblast-kills-children-and-infant/"
+    },
+    {
+     "outlet": "Interfax-Ukraine",
+     "title": "Russia attacks Ukraine overnight with 165 drones; air defense shoot down 115 targets – Air Force",
+     "url": "https://en.interfax.com.ua/news/general/1223005.html"
+    },
+    {
+     "outlet": "Kyiv Independent",
+     "title": "Russia strikes 28 critical energy facilities across Ukraine in latest wave of attacks, Zelensky says",
+     "url": "https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/"
+    },
+    {
+     "outlet": "AP via PBS NewsHour",
+     "title": "Zelenskyy says Ukraine got no early warning from partners as Russia hits the power grid again",
+     "url": "https://www.pbs.org/newshour/world/zelenskyy-says-ukraine-got-no-early-warning-from-partners-as-russia-hits-the-power-grid-again"
+    },
+    {
+     "outlet": "investingLive",
+     "title": "Putin floats Trump-Xi summit on Ukraine at APEC, leaving Kyiv out of the room",
+     "url": "https://investinglive.com/commodities/putin-floats-trump-xi-summit-on-ukraine-at-apec-leaving-kyiv-out-of-the-room/"
+    }
+   ],
+   "places": {
+    "countries": [
+     "UKR"
+    ],
+    "related": [
+     "RUS"
+    ],
+    "points": [
+     {
+      "name": "Nova Vodolaha",
+      "lat": 49.72,
+      "lon": 35.87
+     },
+     {
+      "name": "Kyiv",
+      "lat": 50.45,
+      "lon": 30.52
+     }
+    ],
+    "view": [
+     20,
+     43,
+     42,
+     54
+    ]
+   }
+  },
+  {
+   "thread": "australia-haines-attack",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "Man charged over attack on MP Helen Haines, who has lost a leg",
+   "dek": "Victoria Police charged a 43-year-old local man with three offences, including harming a Commonwealth official; Haines remains in critical condition after losing a leg.",
+   "key_facts": [
+    "Brendan Nugent, 43, of Tarrawingee, Victoria, is due before Wangaratta Magistrates' Court on Wednesday 21 October.",
+    "He faces charges of dangerous driving causing serious injury, intentionally causing serious injury and causing harm to a Commonwealth public official.",
+    "Haines, 65, lost a leg and doctors were fighting to save the other; she remains critical at The Alfred hospital in Melbourne.",
+    "Police say the attack was targeted but the motive is unclear; the national terrorism threat level stays at 'probable'."
+   ],
+   "report": [
+    {
+     "heading": "The charges",
+     "paragraphs": [
+      "Victoria Police on Tuesday evening, Australian time, charged Brendan Nugent, 43, of Tarrawingee near Wangaratta, over Monday's attack on the independent MP for Indi, Helen Haines. He faces three charges: dangerous driving causing serious injury, intentionally causing serious injury, and the Commonwealth offence of causing harm to a Commonwealth public official, which carries up to ten years in prison. He was held overnight and is due in Wangaratta Magistrates' Court on Wednesday, the ABC reports.",
+      "Police say a white Toyota LandCruiser hit Haines outside her electorate office on Murphy Street in Wangaratta at about 3:35pm on Monday. Home Affairs Minister Tony Burke and witnesses say she was hit twice after the vehicle made a U-turn."
+     ]
+    },
+    {
+     "heading": "Her condition and the investigation",
+     "paragraphs": [
+      "Haines, 65, lost a leg, and doctors were fighting to save the other after surgery at The Alfred in Melbourne. She remains in critical condition, and the hospital's next update is due on Wednesday morning.",
+      "Victoria Police are leading the investigation with the joint counterterrorism team. Police allege the attack was targeted but say the motive, including whether it was political, is unclear. The Australian Federal Police commissioner, Krissy Barrett, said it is being treated as an isolated incident with no known connected threats."
+     ]
+    },
+    {
+     "heading": "The political response",
+     "paragraphs": [
+      "Prime Minister Anthony Albanese, who had called the attack deliberate, urged Australians to turn the political temperature down. The head of ASIO, Mike Burgess, said polarisation had created a permissive environment for violence, and Opposition Leader Angus Taylor warned against crossing from robust debate into incitement. Campaigning for Victoria's 28 November state election paused on Tuesday."
+     ]
+    }
+   ],
+   "why": "An attack that left a sitting federal MP critically hurt has become a test of how Australia handles rising hostility toward politicians, with the security agency chief now publicly linking polarisation to violence.",
+   "watch": "Nugent's first court appearance and any police statement on motive on Wednesday; the hospital's update on Haines; whether parliament changes security for MPs' electorate offices.",
+   "sources": [
+    {
+     "outlet": "ABC News (Australia)",
+     "title": "Helen Haines attack live updates: Victorian man Brendan Nugent charged over attack on MP",
+     "url": "https://www.abc.net.au/news/2026-10-20/live-blog-victoria-indi-mp-helen-haines-attacked-wangaratta/107285252"
+    }
+   ],
+   "places": {
+    "countries": [
+     "AUS"
+    ],
+    "points": [
+     {
+      "name": "Wangaratta",
+      "lat": -36.36,
+      "lon": 146.31
+     },
+     {
+      "name": "Melbourne",
+      "lat": -37.81,
+      "lon": 144.96
+     }
+    ],
+    "view": [
+     139,
+     -40,
+     151,
+     -33
+    ]
+   }
+  },
+  {
+   "thread": "france-unrest",
+   "change": "developing",
+   "momentum": "down",
+   "headline": "France has a calm night under its first curfews as Macron tours the Gulf",
+   "dek": "Prime Minister Sébastien Lecornu said targeted curfews in Paris, Lille, Nice and Lyon helped bring a quiet night, while critics accused Macron of being away during the crisis.",
+   "key_facts": [
+    "Paris imposed an 11pm–6am curfew around Place de la République and Les Halles on Monday night and banned gatherings citywide from 8pm.",
+    "Interior Minister Laurent Nuñez says 2,513 people have been taken into custody and 67 jailed since the unrest began.",
+    "In Milan, more than 200 people have been arrested since Saturday after two days of clashes.",
+    "Macron is on a Gulf tour from 19 to 21 October seeking oil and diesel supplies."
+   ],
+   "report": [
+    {
+     "heading": "The first night of curfews",
+     "paragraphs": [
+      "France had its first quiet night since the weekend's rioting. Prime Minister Sébastien Lecornu gave mayors and prefects power on Monday to impose local curfews, saying a curfew for all of Paris was out of the question and that a state of emergency was possible but not yet needed. Paris barred people from the areas around Place de la République and Les Halles from 11pm to 6am and banned gatherings across the city from 8pm. Lille and nearby towns, Nice and Lyon imposed curfews, some for minors only.",
+      "On Tuesday morning Lecornu wrote that the targeted curfews had contributed to the calm of the night, and said prefects and mayors would set more where needed, ABC News reports. No overnight arrest figure has been published."
+     ]
+    },
+    {
+     "heading": "The toll so far",
+     "paragraphs": [
+      "Interior Minister Laurent Nuñez said on Monday that 2,513 people had been taken into custody and 67 jailed. Almost 1,000 police and gendarmes were injured on Saturday alone, and at least 3,000 businesses have been damaged or looted, AP reports. Nuñez offered to resign on Sunday, saying police had lost control; Macron refused and ordered an account of planning and intelligence failures.",
+      "The trouble has spread beyond France. In Milan, more than 200 people have been arrested since Saturday after clashes around the cathedral square, with similar trouble in Bologna and Turin, Euronews reports. Prime Minister Giorgia Meloni said protest is a right but laying waste to cities is not."
+     ]
+    },
+    {
+     "heading": "Macron abroad",
+     "paragraphs": [
+      "President Emmanuel Macron left on Monday for a tour of Kuwait, the United Arab Emirates, Bahrain and Qatar, running to 21 October, with energy executives, to secure oil and diesel supplies disrupted by the Iran war, The New Arab reports. Former prime ministers Édouard Philippe and Gabriel Attal say he has lost authority and responded too late, and the far-right leader Jordan Bardella said the government was collapsing, according to Euronews."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Curfews for minors in the Lille area run through Wednesday night. Al Jazeera reports, citing France 24, that protesters have called a new round of demonstrations for Saturday 24 October."
+     ]
+    }
+   ],
+   "why": "The curfews appear to have broken the cycle of nightly rioting for now, but the political cost is landing on a president whose term ends next spring, ahead of an April 2027 election in which the far right leads in polls.",
+   "watch": "Whether calm holds through Wednesday; Macron's return after 21 October; Saturday's planned protests; whether Italy's unrest grows.",
+   "sources": [
+    {
+     "outlet": "ABC News",
+     "title": "France protests cool after overnight curfews in Paris, major cities, PM says",
+     "url": "https://abcnews.com/International/france-protests-cool-after-overnight-curfews-paris-major/story?id=137403836"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "France announces curfews in aftermath of violent protests",
+     "url": "https://www.aljazeera.com/news/2026/10/19/frances-macron-declines-ministers-resignation-after-violent-protests"
+    },
+    {
+     "outlet": "AP via ABC News",
+     "title": "Paris police issue overnight curfew in 2 areas of French capital to try to prevent further disorder",
+     "url": "https://abcnews.com/amp/International/wireStory/macron-rejects-interior-ministers-resignation-rioting-looting-expose-137372032"
+    },
+    {
+     "outlet": "Euronews",
+     "title": "Pressure mounts on Macron as France reels from unrest",
+     "url": "https://www.euronews.com/2026/10/20/pressure-mounts-on-macron-as-france-reels-from-unrest"
+    },
+    {
+     "outlet": "The New Arab",
+     "title": "Macron opens tour of Gulf states amid violent protests in France",
+     "url": "https://www.newarab.com/news/macron-opens-gulf-tour-amid-violent-protests-france"
+    },
+    {
+     "outlet": "Euronews",
+     "title": "More than 200 arrested in second day of street clashes against cost of living in Milan",
+     "url": "https://www.euronews.com/2026/10/19/more-than-200-arrested-in-second-day-of-street-clashes-against-cost-of-living-in-milan"
+    }
+   ],
+   "places": {
+    "countries": [
+     "FRA"
+    ],
+    "related": [
+     "ITA"
+    ],
+    "points": [
+     {
+      "name": "Paris",
+      "lat": 48.86,
+      "lon": 2.35
+     },
+     {
+      "name": "Lille",
+      "lat": 50.63,
+      "lon": 3.06
+     },
+     {
+      "name": "Milan",
+      "lat": 45.46,
+      "lon": 9.19
+     }
+    ],
+    "view": [
+     -5,
+     41.5,
+     13,
+     51.5
+    ]
+   }
+  },
+  {
+   "thread": "us-midterms",
+   "change": "developing",
+   "momentum": "up",
+   "headline": "Trump's approval falls to 31% as early voting opens in record numbers",
+   "dek": "A Reuters/Ipsos poll puts Democrats 12 points ahead on the generic ballot, the widest gap of the cycle, two weeks before the 3 November midterms.",
+   "key_facts": [
+    "Trump's approval is 31% in the Reuters/Ipsos poll ending Monday, the lowest of either of his terms.",
+    "Registered voters prefer Democrats for Congress by 47% to 35%, up from 44% to 37% two weeks earlier.",
+    "An ABC News/Washington Post/Ipsos poll has Democrats ahead 52% to 44% among likely voters.",
+    "Harris County, Texas, cast 104,201 ballots on the first day of early voting, against about 63,000 on day one in 2018."
+   ],
+   "report": [
+    {
+     "heading": "The polls",
+     "paragraphs": [
+      "President Trump's approval has fallen to 31% in a Reuters/Ipsos poll completed on Monday, down from 32% two weeks earlier and the lowest of either of his terms. Sixty-eight percent of respondents disapprove of his handling of the economy, including 37% of Republicans. Among registered voters, Democrats lead the generic congressional ballot by 47% to 35%, the widest margin of the campaign, and voters now rate Democrats better on the economy by 40% to 33%.",
+      "An ABC News/Washington Post/Ipsos poll released on Sunday, taken from 9 to 13 October, found the same pattern: approval at 33%, a record low in that series, and Democrats ahead by 52% to 44% among likely voters, up from three points in July. About seven in ten said gasoline is unaffordable, up from 28% in February, before the Iran war began."
+     ]
+    },
+    {
+     "heading": "Early voting",
+     "paragraphs": [
+      "Early voting began on Monday in Texas and several other states. Harris County, which includes Houston, recorded 104,201 ballots by 6pm on the first day, far above its 2018 first-day record of about 63,000, the county clerk's figures show."
+     ]
+    },
+    {
+     "heading": "The campaign",
+     "paragraphs": [
+      "Trump rallied on Monday near Wichita, Kansas, for Senator Roger Marshall, whose race against Democrat Adam Hamilton Cook rates a toss-up. He told the crowd to look at France to see what is at stake and asked supporters to act as if he were on the ballot, Newsweek and Fox News report. He holds rallies in Texas on Tuesday for Ken Paxton's Senate campaign. Vice President JD Vance announced $858 million in additional Hurricane Helene relief in North Carolina."
+     ]
+    }
+   ],
+   "why": "With fuel prices tied to the Iran war and approval at a historic low, the polls point to a sizeable swing against the president's party; record early turnout suggests the election will not be decided on enthusiasm alone.",
+   "watch": "Further early-vote totals; whether Trump acts on fuel prices before 3 November; Obama's rally in Atlanta on 28 October; any US move on Iran before polling day.",
+   "sources": [
+    {
+     "outlet": "Reuters via bdnews24",
+     "title": "Trump approval falls to record low of 31% as midterms near, Reuters/Ipsos poll finds",
+     "url": "https://bdnews24.com/world/americas/3z29atb62e"
+    },
+    {
+     "outlet": "ABC News",
+     "title": "Democrats lead Republicans in House vote choice as Trump's approval rating hits record low: ABC/Post/Ipsos poll",
+     "url": "https://abcnews.com/Politics/democrats-lead-republicans-house-vote-choice-trumps-approval/story?id=137322849"
+    },
+    {
+     "outlet": "KPRC Click2Houston",
+     "title": "Harris County shatters early voting record on Day 1 with at least 100,000 ballots cast",
+     "url": "https://www.click2houston.com/news/local/2026/10/19/harris-county-shatters-2018-early-voting-record-with-at-least-98-200-ballots-cast-on-day-1/"
+    },
+    {
+     "outlet": "Fox News",
+     "title": "2026 Midterm Elections: Trump Campaigns in Kansas",
+     "url": "https://www.foxnews.com/live-news/midterm-elections-2026-trump-kansas-latino-voters-october-19"
+    },
+    {
+     "outlet": "Newsweek",
+     "title": "Trump Warns France's Turmoil Could Come to America if Democrats Win",
+     "url": "https://www.newsweek.com/trump-says-america-could-mirror-france-if-republicans-lose-midterms-12591198"
+    }
+   ],
+   "places": {
+    "countries": [
+     "USA"
+    ],
+    "points": [
+     {
+      "name": "Washington",
+      "lat": 38.9,
+      "lon": -77.04
+     },
+     {
+      "name": "Houston",
+      "lat": 29.76,
+      "lon": -95.37
+     },
+     {
+      "name": "Wichita",
+      "lat": 37.69,
+      "lon": -97.34
+     }
+    ],
+    "view": [
+     -125,
+     24,
+     -66,
+     50
+    ]
+   }
+  },
+  {
+   "thread": "israel-election",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "A week before Israel votes, Hegseth visits and the polls stay tied",
+   "dek": "The latest polls give Netanyahu's bloc and the opposition about 51 seats each, short of 61, as the US defence secretary paid an unannounced visit and Benny Gantz dropped out.",
+   "key_facts": [
+    "A Jerusalem Post average of four polls gives Netanyahu's bloc 51 seats and the opposition 51.25, with Arab parties at 13.75.",
+    "Gadi Eisenkot's Yashar! averages 21.5 seats against 19 for Netanyahu's Likud.",
+    "US Defence Secretary Pete Hegseth met Netanyahu in Israel on Monday, eight days before the vote.",
+    "Benny Gantz has dropped out; his Kahol Lavan party was polling about 1%."
+   ],
+   "report": [
+    {
+     "heading": "The numbers",
+     "paragraphs": [
+      "Israel's election on 27 October remains deadlocked. Four polls published at the weekend, averaged by the Jerusalem Post, give Prime Minister Benjamin Netanyahu's bloc 51 seats and the opposition led by former army chief Gadi Eisenkot 51.25, with Arab parties at 13.75; neither reaches the 61 needed to govern. Eisenkot's Yashar! averages 21.5 seats and Likud 19.",
+      "Individual polls vary. Channel 12 had the opposition ahead by 54 to 49, while the public broadcaster Kan's poll, reported by Haaretz, put it at 52 to 51. In Kan's poll a new far-right party led by Ofer Winter fell just below the 3.25% threshold, with Bezalel Smotrich's Religious Zionism gaining. The opposition only passes 61 with Arab parties, which parts of it refuse to work with."
+     ]
+    },
+    {
+     "heading": "Washington in the campaign",
+     "paragraphs": [
+      "President Trump gave Netanyahu his full endorsement on Sunday, warning that if Israel picked the wrong leader the US would face Iran alone. Netanyahu's office released a call in which Trump predicted a tremendous victory. On Monday Defence Secretary Pete Hegseth made an unannounced visit and met Netanyahu. Eisenkot replied that Israelis, not Trump, choose their prime minister, TIME reports.",
+      "Analysts at Chatham House and King's College London called the endorsement significant but said its effect on votes should not be overstated. Benny Gantz, once the opposition's leading figure, has left the race."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Israeli law bars publishing polls in the final days before the vote, so the last surveys are expected around Friday. Talk of military action against Iran before polling day hangs over the final week."
+     ]
+    }
+   ],
+   "why": "Neither camp has a path to a majority, so the result will likely be decided by small parties near the threshold and by coalition bargaining, with US backing now an open part of Netanyahu's pitch.",
+   "watch": "The last polls around 23 October; whether Winter's party clears the threshold; any US or Israeli military move before 27 October.",
+   "sources": [
+    {
+     "outlet": "Jerusalem Post",
+     "title": "Eisenkot leads Netanyahu in four polls, but neither bloc secures Knesset majority - poll",
+     "url": "https://www.jpost.com/israel-election-2026/article-912004"
+    },
+    {
+     "outlet": "Haaretz",
+     "title": "Israeli Election Poll: New Far-Right Party Sinks Under Threshold, Smotrich Gains",
+     "url": "https://www.haaretz.com/israel-news/elections/2026-10-18/ty-article/israeli-election-poll-new-far-right-party-sinks-under-threshold-smotrich-gains/000001a1-505c-da7f-a7a5-dcffffe30000"
+    },
+    {
+     "outlet": "TIME",
+     "title": "Trump Endorses Netanyahu Days Before Israeli Election as Iran War Tests Friendship",
+     "url": "https://time.com/article/2026/10/19/trump-netanyahu-israel-election-endorsement/"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Trump backs Netanyahu: Is the US planning a new Iran attack with Israel?",
+     "url": "https://www.aljazeera.com/news/2026/10/19/trump-backs-netanyahu-is-the-us-planning-a-new-iran-attack-with-israel"
+    },
+    {
+     "outlet": "CBS News",
+     "title": "Live Updates: Iran lauds ties with Russia, contradicting Trump's claim of little Russian support for Tehran",
+     "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/"
+    }
+   ],
+   "places": {
+    "countries": [
+     "ISR"
+    ],
+    "points": [
+     {
+      "name": "Jerusalem",
+      "lat": 31.78,
+      "lon": 35.22
+     },
+     {
+      "name": "Tel Aviv",
+      "lat": 32.08,
+      "lon": 34.78
+     }
+    ],
+    "view": [
+     33.5,
+     29.3,
+     36.5,
+     33.5
+    ]
+   }
+  },
+  {
+   "thread": "typhoon-champi",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "Super Typhoon Champi is now forecast to turn away from Taiwan and Luzon",
+   "dek": "Forecasters in Taiwan and the Philippines now expect no direct hit, but heavy rain in northern Taiwan on Friday and Saturday and strong winds in Luzon's far north.",
+   "key_facts": [
+    "Champi, called Rosal in the Philippines, had sustained winds of 195 km/h and gusts of 240 km/h on Tuesday afternoon, PAGASA says.",
+    "Signal No. 1 is up for Batanes, the Babuyan Islands and parts of northern Luzon; the highest expected is No. 2 or 3.",
+    "Taiwan's weather agency expects the storm to turn north near Ishigaki from Thursday, sparing the island a direct hit.",
+    "Its effects on Taiwan are forecast to be strongest on Friday and Saturday, 23–24 October."
+   ],
+   "report": [
+    {
+     "heading": "Where the storm is",
+     "paragraphs": [
+      "Super Typhoon Champi entered the Philippine area of responsibility at 10:40am on Tuesday, local time, and was named Rosal. By the afternoon it was about 1,270 km east of central Luzon with sustained winds of 195 km/h and gusts of 240 km/h, moving west-northwest at 25 km/h and slightly strengthening, the weather agency PAGASA said.",
+      "PAGASA does not expect landfall. The storm's closest approach to the far north of Luzon is forecast for Thursday and Friday, passing several hundred kilometres east of Batanes. Signal No. 1 is in force for Batanes, the Babuyan Islands and parts of Cagayan, Isabela, Ilocos Norte and Catanduanes, and the highest signal expected is No. 2 or 3."
+     ]
+    },
+    {
+     "heading": "Taiwan",
+     "paragraphs": [
+      "Taiwan's Central Weather Administration now expects Champi to turn north earlier, from Thursday near Japan's Ishigaki Island, because the Pacific high-pressure system is weakening, sparing Taiwan a direct hit, the Taipei Times reports. It still forecasts heavy to extremely heavy rain in the north and in Yilan and Hualien, with the strongest effects on Friday and Saturday. A sea warning could come late on Wednesday or on Thursday, and a land warning on Thursday night or Friday."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "PAGASA expects the storm to weaken to a typhoon by late Thursday and to leave the Philippine area by Friday evening or early Saturday. Track forecasts beyond Thursday differ between agencies, so Taiwan, Japan's southern islands and the Chinese coast are all watching the turn."
+     ]
+    }
+   ],
+   "why": "Until this week the storm was heading toward the northern Philippines and Taiwan. The forecast turn lowers that risk sharply, though the rain on Taiwan's mountainous north and east can still be dangerous.",
+   "watch": "Whether the northward turn happens on Thursday as forecast; Taiwan's sea and land warnings; rainfall totals in Yilan and Hualien on 23–24 October.",
+   "sources": [
+    {
+     "outlet": "Philstar",
+     "title": "'Rosal' slightly intensifies in approach; Signal No. 1 still up in Luzon",
+     "url": "https://www.philstar.com/headlines/weather/2026/10/20/2564566/rosal-slightly-intensifies-approach-signal-no-1-still-luzon"
+    },
+    {
+     "outlet": "Inquirer",
+     "title": "Pagasa: Northern portions of PH to be most affected by Rosal",
+     "url": "https://newsinfo.inquirer.net/2327002/pagasa-northern-portions-of-ph-to-be-most-affected-by-rosal"
+    },
+    {
+     "outlet": "Manila Times",
+     "title": "Signal No. 1 up in parts of Northern, Southern Luzon",
+     "url": "https://www.manilatimes.net/2026/10/20/news/national/signal-no-1-up-in-parts-of-northern-southern-luzon/2449350"
+    },
+    {
+     "outlet": "Taipei Times",
+     "title": "Typhoon to turn away from Taiwan; heavy rain still forecast",
+     "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/10/20/2003866289"
+    },
+    {
+     "outlet": "Focus Taiwan (CNA)",
+     "title": "Typhoon Champi's effect on Taiwan to be strongest Friday, Saturday: CWA",
+     "url": "https://focustaiwan.tw/society/202610200007"
+    }
+   ],
+   "places": {
+    "countries": [
+     "PHL",
+     "TWN"
+    ],
+    "related": [
+     "JPN"
+    ],
+    "points": [
+     {
+      "name": "Batanes",
+      "lat": 20.45,
+      "lon": 121.97
+     },
+     {
+      "name": "Taipei",
+      "lat": 25.03,
+      "lon": 121.56
+     },
+     {
+      "name": "Ishigaki",
+      "lat": 24.34,
+      "lon": 124.16
+     }
+    ],
+    "view": [
+     114,
+     12,
+     132,
+     29
+    ]
+   }
+  },
+  {
+   "thread": "west-bank",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "Israeli police arrest 10 after settlers attack diplomats and a journalist",
+   "dek": "The arrests followed weekend attacks on a Washington Post photographer and on European diplomats visiting the village of Taybeh, which the US ambassador called terror.",
+   "key_facts": [
+    "Police arrested 10 people on Monday in an operation with the Shin Bet, Border Police and army; suspects were not named.",
+    "Washington Post photographer Heidi Levine suffered broken ribs and vertebrae when settlers attacked her on 16 October.",
+    "Masked settlers attacked Belgian, French and Polish diplomats in Taybeh on 17 October.",
+    "Palestinian health officials say at least four Palestinians have been killed and more than 100 injured since the olive harvest began."
+   ],
+   "report": [
+    {
+     "heading": "The arrests",
+     "paragraphs": [
+      "Israeli police said on Monday they had arrested 10 people over the wave of settler violence in the occupied West Bank, in an operation with the Shin Bet security service, the Border Police and the army. The suspects were not identified. Police said the operation also targeted breaches of closed military zone orders and illegal construction, and that several vehicles were seized, AP reports. US Ambassador Mike Huckabee called the arrests a very positive development, according to Al Jazeera."
+     ]
+    },
+    {
+     "heading": "The attacks",
+     "paragraphs": [
+      "On Friday a group of young settlers attacked Heidi Levine, a photographer for the Washington Post, in the village of Abu Falah northeast of Ramallah. She suffered broken ribs and vertebrae and a nearly severed finger. From hospital she criticised Netanyahu for describing the attack as alleged.",
+      "A day later, masked settlers attacked a group visiting the Christian village of Taybeh that included Belgium's consul general, French and Polish diplomats and Catholic representatives. Huckabee called it a despicable act of terror. Belgium's foreign minister, Maxime Prévot, said impunity for violent settlers must end."
+     ]
+    },
+    {
+     "heading": "The harvest season",
+     "paragraphs": [
+      "The attacks came during the olive harvest, on which about 110,000 Palestinian families depend. The Palestinian Health Ministry says at least four Palestinians have been killed and more than 100 injured since the harvest began in early October, and the UN humanitarian office counted more than 1,600 settler attacks from January to August. Rights groups say attackers are rarely charged."
+     ]
+    }
+   ],
+   "why": "Attacks on foreign diplomats and a US journalist have drawn rare public pressure from Washington, and the arrests are the first sign of an Israeli response. Whether anyone is charged will show if it marks a change.",
+   "watch": "Whether the 10 are charged or released; diplomatic steps by Belgium, France, Poland and the EU; further attacks as the harvest runs into November.",
+   "sources": [
+    {
+     "outlet": "AP via PBS NewsHour",
+     "title": "Israeli police arrest 10 following weekend attacks by West Bank settlers on journalist and diplomats",
+     "url": "https://www.pbs.org/newshour/world/israeli-police-arrest-10-following-weekend-attacks-by-west-bank-settlers-on-journalist-and-diplomats"
+    },
+    {
+     "outlet": "AP via PBS NewsHour",
+     "title": "Israeli settlers attack Palestinians during West Bank olive harvest and beat U.S. photojournalist",
+     "url": "https://www.pbs.org/newshour/world/israeli-settlers-attack-palestinians-during-west-bank-olive-harvest-and-beat-u-s-photojournalist"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Israeli police arrest 10 after settler attacks on journalist, diplomats",
+     "url": "https://www.aljazeera.com/news/2026/10/19/israeli-police-arrest-10-after-settler-attacks-on-journalist-diplomats"
+    }
+   ],
+   "places": {
+    "countries": [
+     "PSE"
+    ],
+    "related": [
+     "ISR"
+    ],
+    "points": [
+     {
+      "name": "Taybeh",
+      "lat": 31.95,
+      "lon": 35.3
+     },
+     {
+      "name": "Jerusalem",
+      "lat": 31.78,
+      "lon": 35.22
+     }
+    ],
+    "view": [
+     34.2,
+     31.0,
+     36.0,
+     32.7
+    ]
+   }
+  }
+ ],
+ "frontiers": [
+  {
+   "thread": "ai-cyber-misuse",
+   "field": "AI",
+   "change": "new",
+   "momentum": "up",
+   "headline": "One hacker used AI agents and about $5,000 to break into more than 100 company sites",
+   "dek": "Reuters traced a campaign in which brief instructions set AI agents loose on more than 1,200 websites; victims named include Deere, SharkNinja and Cummins.",
+   "key_facts": [
+    "The agents tried more than 1,200 sites from 25 September and broke into more than 100, Reuters found.",
+    "The campaign cost about $5,000 in AI usage, roughly $50 per successful break-in.",
+    "Instructions were under 100 Chinese characters; a typical break-in then took about 23 hours with no further human help.",
+    "The researcher who found it, Snorre Fagerland of NorForge, believes it used a mix of DeepSeek and Anthropic's Claude Code."
+   ],
+   "report": [
+    {
+     "heading": "What Reuters found",
+     "paragraphs": [
+      "A Chinese-speaking hacker used autonomous AI agents to break into the websites of more than 100 companies, Reuters reported on Monday. The campaign was found by Snorre Fagerland, a threat researcher at NorForge, who was scanning the internet for exposed copies of Cairn, an open-source platform for running teams of AI agents. From early October he found about two dozen copies being used for malicious work, and Reuters identified victims including Deere, SharkNinja and Cummins by reviewing the hacker's activity logs.",
+      "From 25 September the agents went after e-commerce sites in the US, Canada, Australia and Japan, trying more than 1,200 of them. The hacker's instructions ran to under 100 Chinese characters; the agents then worked alone, typically taking about 23 hours per successful break-in. The whole effort cost roughly $5,000 in AI usage, or about $50 per hack."
+     ]
+    },
+    {
+     "heading": "How capable it was",
+     "paragraphs": [
+      "In one case described by Reuters, when a large company's public app showed no weakness, the agents found related infrastructure and an exposed control panel, then used a subtle data-processing flaw to make the server run their commands. Fagerland said it was not script-kiddie work. He believes the campaign used a mix of DeepSeek models and Anthropic's Claude Code; that attribution is his and has not been confirmed by either company. Reuters could not determine how much data was taken."
+     ]
+    },
+    {
+     "heading": "The response",
+     "paragraphs": [
+      "Deere said it had taken remediation steps and saw no sign that sensitive information was accessed. SharkNinja said a standalone product-support site was hit and the threat was contained, and Cummins said it was investigating a site run by a third-party vendor. The author of Cairn said on X that it was not designed for hacking. The same logs showed other actors using agents to steal card data and to try to rob a crypto exchange.",
+      "The case lands days after Anthropic warned, as CBS reported, that small AI models may soon be able to copy themselves across connected devices. It shows that today's agents can already run a long, multi-step intrusion campaign cheaply with almost no human direction."
+     ]
+    }
+   ],
+   "picture": "This is among the clearest public evidence that off-the-shelf AI agents can carry out a broad hacking campaign for a few thousand dollars, lowering the cost and skill needed for intrusion at scale. It rests on one researcher's logs and one news investigation, so the full scale and the models involved are not yet confirmed.",
+   "image": {
+    "asset": "images/2026-10-20/ai-cyber-misuse.svg",
+    "alt": "A single dotted path branching out to a grid of website windows, most of whose padlocks have been opened.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "Reuters via Lufkin Daily News",
+     "title": "Exclusive-How one hacker used AI agents and a few thousand dollars to break into scores of sites",
+     "url": "https://lufkindailynews.com/news_reuters/business/exclusive-how-one-hacker-used-ai-agents-and-a-few-thousand-dollars-to-break-into/article_8177f03a-75fc-56b1-87a8-1d644bca8d5e.html"
+    },
+    {
+     "outlet": "The Neuron",
+     "title": "Everything That Happened in AI Today Tuesday, October 20",
+     "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-october-20-2026/"
+    },
+    {
+     "outlet": "CBS News",
+     "title": "'AI worms' may soon be able to self-replicate and infect smart devices, Anthropic says",
+     "url": "https://www.cbsnews.com/news/ai-worms-smart-devices-anthropic/"
+    }
+   ]
+  },
+  {
+   "thread": "ai-us-china",
+   "field": "AI",
+   "change": "new",
+   "momentum": "up",
+   "headline": "US orders DeepSeek out of federal systems, including tools built on its models",
+   "dek": "A Homeland Security order made public on Monday bars the Chinese lab's products from civilian agencies and requires removal of third-party products built on them.",
+   "key_facts": [
+    "The order, under the Federal Acquisition Supply Chain Security Act of 2018, was filed for public inspection on 19 October.",
+    "It covers DeepSeek products and third-party products built using DeepSeek implementations; national security systems are excluded.",
+    "It takes effect immediately; agencies have 60 days to ask in writing for an exception.",
+    "DeepSeek released an updated open-weights model, V4.1-Flash, under the MIT licence on 17 October."
+   ],
+   "report": [
+    {
+     "heading": "The order",
+     "paragraphs": [
+      "The Department of Homeland Security has ordered federal civilian agencies to stop buying and to remove products and services from Hangzhou DeepSeek Artificial Intelligence and its affiliates, IBTimes reports. The exclusion and removal order, dated 24 July, was filed for public inspection on Monday 19 October under the Federal Acquisition Supply Chain Security Act of 2018, on the recommendation of the Federal Acquisition Security Council.",
+      "Its reach goes beyond DeepSeek's own apps. It also requires removal of third-party products built using DeepSeek implementations, which could cover vendors that embed its openly released models. National security systems are excluded because they fall under separate rules. The order takes effect immediately, and agencies have 60 days to request an exception in writing."
+     ]
+    },
+    {
+     "heading": "The reasons given",
+     "paragraphs": [
+      "DHS cites DeepSeek's base in China and its servers there, Chinese laws that allow state access to company data, the collection of personal data, the risk that prompts could send sensitive information to China, and research that found serious flaws in its iPhone app. DeepSeek did not comment, and the Chinese Embassy did not immediately respond. The Commerce Department, the Navy and several states had already restricted the company's apps on government devices."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "The order arrived days after DeepSeek released V4.1-Flash, an updated model with open weights under the permissive MIT licence that it says scores markedly higher on agentic coding tests. The practical question now is how agencies and contractors read the clause on products built on DeepSeek, since its open models can be downloaded and run without any connection to the company."
+     ]
+    }
+   ],
+   "picture": "The order reaches past a Chinese AI company's own apps to the products built on its open models. How widely that clause is applied will shape whether US contractors can use Chinese open-weights models at all.",
+   "image": {
+    "asset": "images/2026-10-20/ai-us-china.svg",
+    "alt": "A server rack with one module pulled out and marked with a red cross, beside a columned government building.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "IBTimes UK",
+     "title": "US Orders DeepSeek Off Government Systems — Including Third-Party Tools Built on It",
+     "url": "https://www.ibtimes.co.uk/us-agencies-remove-deepseek-products-government-systems-1826567"
+    },
+    {
+     "outlet": "MindStudio",
+     "title": "DeepSeek V4.1-Flash-1017: What's New in the Benchmark Update",
+     "url": "https://www.mindstudio.ai/blog/deepseek-v4-1-flash-1017-release"
+    },
+    {
+     "outlet": "The Neuron",
+     "title": "Everything That Happened in AI Today Monday, October 19",
+     "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-monday-october-19-2026/"
+    }
+   ]
+  },
+  {
+   "thread": "ai-financing",
+   "field": "AI",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "OpenAI seeks about $30 billion as chip stocks snap their eight-day slide",
+   "dek": "Reuters reports OpenAI is racing to raise money at a valuation above $1.4 trillion before Anthropic's planned listing next month; chip stocks rose 1.6% on Monday.",
+   "key_facts": [
+    "OpenAI is in talks to raise about $30 billion at a valuation that could exceed $1.4 trillion, Reuters reports.",
+    "Existing backers SoftBank and Abu Dhabi's MGX are among investors in talks.",
+    "The Philadelphia semiconductor index rose 1.6% on Monday, ending eight straight losing sessions.",
+    "Asian chip shares fell again on Tuesday: SK Hynix was down 3.6% and SoftBank about 3.3% by midday."
+   ],
+   "report": [
+    {
+     "heading": "The fundraising",
+     "paragraphs": [
+      "OpenAI is moving unusually fast to raise about $30 billion at a valuation that could top $1.4 trillion, Reuters reported on Monday, citing two people familiar with the matter, according to PYMNTS. Existing investors SoftBank and Abu Dhabi's MGX are in talks, and the company met long-only funds and sovereign wealth funds last week.",
+      "Investors cited three reasons: to cash in on growth after new model launches, including GPT-6 on 7 October; to secure money for its infrastructure commitments in case a weaker market delays its own planned listing; and to take capital that might otherwise go to Anthropic, which plans to go public next month. The talks are not a closed deal."
+     ]
+    },
+    {
+     "heading": "The markets",
+     "paragraphs": [
+      "Chip stocks bounced on Monday. The Philadelphia semiconductor index rose 1.6%, ending eight straight losing sessions, its longest streak since October 2008. Intel rose after a JPMorgan upgrade and Micron also gained, and a 60-stock chip basket was regaining nearly $250 billion of value by mid-morning, Yahoo Finance reported, even as most of the S&P 500 fell. CoreWeave rose as much as 7.4% after a Goldman Sachs upgrade but ended slightly lower amid worries about financing its build-out.",
+      "The relief did not carry into Asia. On Tuesday South Korea's KOSPI was down more than 2% by late morning, with SK Hynix off 3.6%, and SoftBank fell about 3.3% in Tokyo on doubts about AI funding, Invezz reports."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Meta and Tesla report results on Wednesday, the first big look this earnings season at how much the largest buyers still plan to spend on AI computing."
+     ]
+    }
+   ],
+   "picture": "The biggest AI labs are competing for the same pool of capital at the same time, just as investors have started to charge more for the risk. Monday's rebound was modest; the earnings of the big spenders this week matter more.",
+   "image": {
+    "asset": "images/2026-10-20/ai-financing.svg",
+    "alt": "A tall stack of gold coins beside a red price line that falls and then ticks up in blue at the end.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "PYMNTS",
+     "title": "OpenAI Racing to Raise $30 Billion Ahead of Anthropic Listing",
+     "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openai-racing-to-raise-30-billion-ahead-of-anthropic-listing/"
+    },
+    {
+     "outlet": "TokenPost",
+     "title": "PHLX Semiconductor Sector Index Ends Eight-Session Slide With 1.6% Gain",
+     "url": "https://www.tokenpost.com/news/investing/35501"
+    },
+    {
+     "outlet": "Yahoo Finance",
+     "title": "Micron, Intel lead chip recovery, adding nearly $250B as most of Wall Street falls: Chart of the Day",
+     "url": "https://finance.yahoo.com/markets/article/micron-intel-lead-chip-recovery-adding-nearly-250b-as-most-of-wall-street-falls-chart-of-the-day-144315957.html"
+    },
+    {
+     "outlet": "Invezz",
+     "title": "Here's why KOSPI and Nikkei 225 are falling sharply on October 20",
+     "url": "https://invezz.com/news/2026/10/20/heres-why-kospi-and-nikkei-225-are-falling-sharply-on-october-20/"
+    }
+   ]
+  },
+  {
+   "thread": "rectal-cancer-immunotherapy",
+   "field": "Medicine",
+   "change": "new",
+   "momentum": "up",
+   "headline": "FDA approves an immunotherapy that can spare some rectal cancer patients surgery",
+   "dek": "Dostarlimab alone won accelerated approval for a genetic subtype of locally advanced rectal cancer, after trials in which many patients' tumours vanished without chemotherapy, radiation or surgery.",
+   "key_facts": [
+    "The FDA granted GSK's Jemperli (dostarlimab) accelerated approval on 19 October, nearly four months ahead of schedule.",
+    "It covers previously untreated stage II or III rectal cancer that is mismatch repair deficient (dMMR) or MSI-high, about 3% of such cancers.",
+    "In the 154-patient AZUR-1 trial, almost three-quarters of patients did not need surgery, radiotherapy or chemotherapy, the FDA says.",
+    "In an earlier 50-patient Memorial Sloan Kettering study, 93% stayed cancer-free for at least 12 months."
+   ],
+   "report": [
+    {
+     "heading": "The approval",
+     "paragraphs": [
+      "The US Food and Drug Administration on Monday granted accelerated approval to GSK's dostarlimab, sold as Jemperli, as the sole treatment for adults with previously untreated stage II or III rectal cancer whose tumours are mismatch repair deficient or microsatellite instability-high, as found by an approved test. The FDA says about 3% of locally advanced rectal cancers fall into this group. Dostarlimab blocks PD-1, a switch that tumours use to hide from the immune system.",
+      "The review finished nearly four months early under the commissioner's national priority voucher pilot. The usual treatment for these patients is chemotherapy, radiation and surgery, which the new approach may let some avoid."
+     ]
+    },
+    {
+     "heading": "The evidence",
+     "paragraphs": [
+      "The approval rests on interim results from AZUR-1, a single-arm trial of 154 patients who received up to nine doses every three weeks. After more than two years' median follow-up, almost three-quarters did not need surgery, radiotherapy or chemotherapy, the FDA says. According to The ASCO Post, 47% of evaluable patients had no detectable tumour sustained for 12 months by independent review, and none of the responders had seen their cancer progress.",
+      "It is supported by the earlier Memorial Sloan Kettering study of 50 patients, in which no patient had detectable cancer after treatment and 93% stayed cancer-free for at least a year; of 27 followed for three years or more, one had a recurrence."
+     ]
+    },
+    {
+     "heading": "The caveats",
+     "paragraphs": [
+      "Accelerated approval is conditional. Because the evidence comes from single-arm studies, GSK must keep following patients to show the responses last, and the FDA says longer follow-up is needed to know how often cancer returns. Like other immunotherapies, dostarlimab can cause the immune system to attack healthy organs, sometimes severely."
+     ]
+    }
+   ],
+   "picture": "It is the first immunotherapy approved for locally advanced rectal cancer, and one that can let some patients skip chemotherapy, radiation and surgery entirely; it is also a model for organ-sparing care in other tumours with the same genetic profile. It applies to a small group, and how durable the responses are is still being measured.",
+   "image": {
+    "asset": "images/2026-10-20/rectal-cancer-immunotherapy.svg",
+    "alt": "An infusion bag whose line leads to a shrunken tumour cell ringed by Y-shaped antibodies, with a dashed outline showing its former size.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "US Food and Drug Administration",
+     "title": "FDA Approves Immunotherapy That May Allow Certain Patients with Rectal Cancer to Avoid Chemotherapy, Radiation and Surgery",
+     "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and"
+    },
+    {
+     "outlet": "The ASCO Post",
+     "title": "FDA Approves Dostarlimab for MSI-H/dMMR Locally Advanced Rectal Cancer",
+     "url": "https://ascopost.com/news/october-2026/fda-approves-dostarlimab-for-msi-hdmmr-locally-advanced-rectal-cancer"
+    }
+   ]
+  }
+ ],
+ "frontier_note": "Watch the ESMO cancer congress in Madrid from 23 October, where Moderna and Merck present the phase 3 INTerpath-001 results for their personalised mRNA melanoma vaccine on 24 October.",
+ "frontier_note_sources": [
+  {
+   "outlet": "CURE",
+   "title": "ESMO 2026 Preview: 5 Late-Breaking Trials Patients Should Watch",
+   "url": "https://www.curetoday.com/view/esmo-2026-preview-5-late-breaking-trials-patients-should-watch"
+  }
+ ],
+ "pulse": [
+  {
+   "region": "North America",
+   "status": "moved",
+   "text": "Albertans rejected a path toward separation by about three to one. Trump's approval fell to 31% in a Reuters/Ipsos poll as early voting opened in record numbers, two weeks before the midterms.",
+   "threads": [
+    "alberta-referendum",
+    "us-midterms"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Florida issues a murder warrant for Raúl Castro",
+     "text": "Florida's attorney general announced a state arrest warrant for Cuba's former leader, 95, over the 1996 shootdown of two Brothers to the Rescue planes that killed four men. Castro already faces a federal indictment over the same incident.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "CBS Miami",
+       "title": "Former Cuban leader Raúl Castro faces new arrest warrant for Brothers to the Rescue shootdown, officials announce",
+       "url": "https://www.cbsnews.com/miami/news/raul-castro-new-arrest-warrant-brothers-to-the-rescue-shootdown/"
+      }
+     ]
+    },
+    {
+     "headline": "Mexico to file complaint after 18th Mexican death in ICE custody",
+     "text": "A 56-year-old Mexican man was found unresponsive at a detention centre in Laredo, Texas, on 17 October. Mexico says he is the 18th Mexican to die in US immigration custody or operations since January 2025, and President Sheinbaum says it will file a complaint.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Mexico News Daily",
+       "title": "Sheinbaum government files new complaint in US after 18th Mexican death in ICE custody: Monday's mañanera recapped",
+       "url": "https://mexiconewsdaily.com/politics/sheinbaum-files-complaint-us-mexican-death-ice-mananera-monday/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Latin America",
+   "status": "moved",
+   "text": "Brazil's runoff on 25 October stays close: an AtlasIntel poll has Flávio Bolsonaro at 49.8% and Lula at 47.6%, within reach of either. In Haiti, four Salvadoran troops are missing after the biggest gang attack yet on the new international force.",
+   "threads": [
+    "brazil-election"
+   ],
+   "sources": [
+    {
+     "outlet": "Gazeta do Povo",
+     "title": "O que mostra a pesquisa AtlasIntel para presidente no 2º turno",
+     "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-outubro-2026-segundo-turno-2/"
+    }
+   ],
+   "briefs": [
+    {
+     "headline": "Four Salvadoran troops missing after gang attack in Haiti",
+     "text": "Gangs attacked an armoured vehicle of the UN-backed Gang Suppression Force near Port-au-Prince with explosives and set it on fire; the four Salvadoran airmen escaped but are unaccounted for. It is the biggest attack on the force since it began operations.",
+     "change": "new",
+     "momentum": "up",
+     "sources": [
+      {
+       "outlet": "Reuters via Investing.com",
+       "title": "Four Salvadoran air force members missing after gang ambush in Haiti",
+       "url": "https://www.investing.com/news/world-news/four-salvadoran-air-force-members-missing-after-gang-ambush-in-haiti-4958010"
+      },
+      {
+       "outlet": "AP via Miami Times",
+       "title": "Gangs in Haiti target foreign troops in the biggest attack since a new force began operations",
+       "url": "https://www.miamitimesonline.com/news/world_national/gangs-in-haiti-target-foreign-troops-in-the-biggest-attack-since-a-new-force-began/article_f797edbd-6f4f-4a62-a12f-82a2923b31c0.html"
+      }
+     ]
+    },
+    {
+     "headline": "Illegal gold mine collapse kills 14 in Colombia",
+     "text": "A collapse at an informal mine in Santa Bárbara de Iscuandé, Nariño, killed 14 people and injured seven. The governor urged faster formalisation of small-scale mining.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Jerusalem Post",
+       "title": "14 dead, 7 injured in Colombia illegal gold mine collapse",
+       "url": "https://www.jpost.com/international/article-912222"
+      }
+     ]
+    },
+    {
+     "headline": "Venezuela's opposition reaffirms Machado as leader",
+     "text": "The opposition alliance recognised the exiled Nobel laureate María Corina Machado as its leader and set out 14 demands, including an election roadmap and release of political prisoners, during US-backed talks with the interim government.",
+     "change": "developing",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "AFP via Jamaica Observer",
+       "title": "Venezuela opposition alliance reaffirms Nobel laureate Machado as leader",
+       "url": "https://www.jamaicaobserver.com/2026/10/18/venezuela-opposition-alliance-reaffirms-nobel-laureate-machado-leader/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Europe",
+   "status": "moved",
+   "text": "France had a calm night under its first curfews, while Trump said someone else should negotiate for Ukraine and Russian strikes continued. Hoax bomb threats hit hundreds of schools from Northern Ireland to Serbia.",
+   "threads": [
+    "france-unrest",
+    "ukraine-war"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Hoax bomb threats hit hundreds of European schools",
+     "text": "Up to 300 schools in Northern Ireland, more than 100 in Serbia and more than 70 in Hungary received emailed bomb threats on Monday; some were evacuated, and police treated them as hoaxes. It is not known whether the incidents are linked.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "AFP via The Standard",
+       "title": "Schools in UK, Hungary, Serbia sent hoax bomb warnings",
+       "url": "https://www.thestandard.com.hk/world/article/345889/Schools-in-UK-Hungary-Serbia-sent-hoax-bomb-warnings"
+      }
+     ]
+    },
+    {
+     "headline": "Albania's protests reach a seventh day",
+     "text": "Protesters threw stones and petrol bombs at the Interior Ministry in Tirana and damaged the Court of Appeal; police used tear gas and water cannon and arrested five. Prime Minister Edi Rama offered talks but refuses to resign.",
+     "change": "developing",
+     "momentum": "up",
+     "sources": [
+      {
+       "outlet": "A News",
+       "title": "Albanian protests enter seventh day as Rama renews dialogue offer",
+       "url": "https://www.anews.com.tr/europe/2026/10/20/albanian-protests-enter-seventh-day-as-rama-renews-dialogue-offer"
+      },
+      {
+       "outlet": "Parapolitika",
+       "title": "Tirana erupts for 7th day: clashes, arrests, and blacklist plan",
+       "url": "https://en.parapolitika.gr/world/309591/tirana-erupts-for-7th-day-clashes-arrests-and-blacklist-plan/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Africa",
+   "status": "moved",
+   "text": "Congo's Ebola outbreak has passed 9,400 cases and 4,500 deaths, and North Kivu has barred entry from Ituri, the worst-hit province, for a week. No development elsewhere cleared our bar for a main story.",
+   "threads": [
+    "ebola-east-africa"
+   ],
+   "sources": [
+    {
+     "outlet": "Al Jazeera",
+     "title": "Kenya confirms eighth Ebola case amid widening regional outbreak",
+     "url": "https://aljazeera.com/news/2026/10/19/kenya-confirms-eighth-ebola-case-amid-widening-regional-outbreak"
+    }
+   ],
+   "briefs": [
+    {
+     "headline": "North Kivu bars entry from Ebola-hit Ituri",
+     "text": "Congo's North Kivu province has banned entry from neighbouring Ituri for a week from 19 October, limited vehicle passengers and suspended large gatherings. Ituri has nearly three-quarters of confirmed cases.",
+     "change": "developing",
+     "momentum": "up",
+     "sources": [
+      {
+       "outlet": "allAfrica",
+       "title": "Africa: All of Africa Today - October 19, 2026",
+       "url": "https://allafrica.com/stories/202610190087.html"
+      }
+     ]
+    },
+    {
+     "headline": "Army drone strike kills four civilians in West Kordofan",
+     "text": "A Sudanese army drone hit a vehicle carrying patients near Ankoush, West Kordofan, on 17 October, killing four civilians, according to a local monitoring group.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Sudan Tribune",
+       "title": "Sudanese army drone strike kills four civilians in West Kordofan",
+       "url": "https://sudantribune.com/article/320076"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Middle East",
+   "status": "moved",
+   "text": "Oil neared $112 as Iran claimed tanker mine strikes and Saudi Arabia intercepted a Houthi missile aimed at Riyadh; the toll from Monday's strike in Yemen reached 60. Israel's election remains tied a week out, and police arrested 10 over settler attacks.",
+   "threads": [
+    "gulf-war",
+    "israel-election",
+    "west-bank"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Egypt delays vote on sending forces to defend Saudi Arabia",
+     "text": "Egypt's parliament postponed to 26 October a vote that would let President el-Sisi send forces to help Saudi Arabia against the Houthis; an opposition party told members to abstain, citing a lack of detail.",
+     "change": "new",
+     "momentum": "up",
+     "sources": [
+      {
+       "outlet": "Al Jazeera",
+       "title": "Egyptian parliament delays vote on military support for Saudi Arabia",
+       "url": "https://www.aljazeera.com/news/2026/10/19/egyptian-parliament-delays-vote-on-military-support-for-saudi-arabia"
+      }
+     ]
+    },
+    {
+     "headline": "WFP cuts food aid in Gaza by about a third",
+     "text": "Funding shortfalls have forced the World Food Programme to cut the number of people it feeds in Gaza from 1.6 million to 1.1 million and to halve rations, Anadolu reports, days after Israel halted commercial goods into the strip.",
+     "change": "developing",
+     "momentum": "up",
+     "sources": [
+      {
+       "outlet": "Anadolu",
+       "title": "Morning Briefing: Oct. 20, 2026",
+       "url": "https://www.aa.com.tr/en/world/morning-briefing-oct-20-2026/4094091"
+      },
+      {
+       "outlet": "AP via Daily Sabah",
+       "title": "Israel halts commercial shipments into Gaza as winter shortages loom",
+       "url": "https://www.dailysabah.com/world/mid-east/israel-halts-commercial-shipments-into-gaza-as-winter-shortages-loom"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Asia",
+   "status": "moved",
+   "text": "Super Typhoon Champi is now forecast to turn north before reaching Taiwan or Luzon, though heavy rain is expected in northern Taiwan this weekend. China protested Japanese Prime Minister Sanae Takaichi's offerings to the Yasukuni Shrine.",
+   "threads": [
+    "typhoon-champi",
+    "pakistan-afghanistan"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "China protests Takaichi's Yasukuni offerings",
+     "text": "Japan's prime minister sent a ritual offering to the Yasukuni Shrine on 17 October and a cash offering on 19 October; China's foreign ministry said it firmly opposes and strongly condemns them and lodged a formal protest.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "China Daily",
+       "title": "China protests Japanese leader's Yasukuni Shrine offerings",
+       "url": "https://www.chinadaily.com.cn/a/202610/19/WS6ad5d644e4b06d4aa0563946.html"
+      }
+     ]
+    },
+    {
+     "headline": "Pakistani court takes up challenge to Khyber Pakhtunkhwa emergency",
+     "text": "The Peshawar High Court sent notice to the attorney general over petitions by Imran Khan's PTI against governor's rule and the emergency imposed on 11 October, and set the next hearing for 10 November. Border clashes with Afghan Taliban forces continued last week.",
+     "change": "developing",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Geo News",
+       "title": "PHC takes up PTI's petitions challenging KP governor's rule, emergency",
+       "url": "https://geo.tv/latest/687396-phc-takes-up-ptis-petitions-challenging-kp-governors-rule-emergency"
+      },
+      {
+       "outlet": "FDD's Long War Journal",
+       "title": "Pakistan-Taliban border clashes continue amid diplomatic efforts",
+       "url": "https://www.longwarjournal.org/archives/2026/10/pakistan-taliban-border-clashes-continue-amid-diplomatic-efforts.php"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Oceania",
+   "status": "moved",
+   "text": "A 43-year-old man was charged over the attack on MP Helen Haines, who has lost a leg and remains critical. National Australia Bank plans to cut up to 2,500 jobs.",
+   "threads": [
+    "australia-haines-attack"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "NAB plans to cut up to 2,500 jobs",
+     "text": "National Australia Bank said it will cut up to 2,500 jobs, about 6% of staff, by mid-2027. Its announcement did not mention AI, though senators are pressing the bank on whether automation is a factor.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "ABC News (Australia)",
+       "title": "NAB shares drop as it plans to cut 2,500 job by mid-2027, NextDC in trading halt — as it happened",
+       "url": "https://abc.net.au/news/2026-10-20/asx-markets-business-live-news-october-20-2026/107283924"
+      }
+     ]
+    },
+    {
+     "headline": "Cyclone Wati damages a new wharf in the Cook Islands",
+     "text": "The cyclone passed over Aitutaki on 18 October as a Category 2 storm, causing major damage to the $7 million Arutanga wharf; no injuries were reported, and it weakened as it moved toward French Polynesia.",
+     "change": "developing",
+     "momentum": "down",
+     "sources": [
+      {
+       "outlet": "Cook Islands News",
+       "title": "'Major damage' to $7 million Arutanga wharf as Cyclone Wati hits Aitutaki",
+       "url": "https://www.cookislandsnews.com/internal/national/outer-islands/weather/major-damage-to-7-million-arutanga-wharf-as-cyclone-wati-hits-aitutaki/"
+      },
+      {
+       "outlet": "WeatherWatch",
+       "title": "Cyclone Wati: Cook Islands today, Austral Islands tomorrow",
+       "url": "https://www.weatherwatch.co.nz/content/cyclone-wati-cook-islands-today-austral-islands-tomorrow"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "markets": {
+  "label": "Monday's close",
+  "as_of": "2026-10-19",
+  "items": [
+   {
+    "name": "S&P 500",
+    "value": "7,691",
+    "change": 0.41
+   },
+   {
+    "name": "Nasdaq",
+    "value": "26,431",
+    "change": 1.11
+   },
+   {
+    "name": "10-yr Treasury",
+    "value": "5.13%",
+    "change": null,
+    "approx": true
+   },
+   {
+    "name": "Brent crude",
+    "value": "$111.6",
+    "change": null,
+    "approx": true
+   },
+   {
+    "name": "Gold",
+    "value": "$4,138",
+    "change": null,
+    "approx": true
+   },
+   {
+    "name": "Bitcoin",
+    "value": "$81,600",
+    "change": null,
+    "approx": true
+   }
+  ],
+  "sources": [
+   {
+    "outlet": "AP via Yahoo Finance",
+    "title": "How major US stock indexes fared Monday 10/19/2026",
+    "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202016557.html"
+   },
+   {
+    "outlet": "Trading Economics",
+    "title": "United States 10-Year Bond Yield",
+    "url": "https://tradingeconomics.com/united-states/government-bond-yield"
+   },
+   {
+    "outlet": "Trading Economics",
+    "title": "Brent crude oil",
+    "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+   },
+   {
+    "outlet": "Mitrade",
+    "title": "Gold Price Analysis Today, October 20, 2026",
+    "url": "https://www.mitrade.com/insights/commodity-analysis/gold/gold-dips-yields-metals-focus-long"
+   },
+   {
+    "outlet": "crypto.news",
+    "title": "Why is Bitcoin price going down today, October 20?",
+    "url": "https://crypto.news/why-is-bitcoin-price-going-down-today-october-20/"
+   }
+  ]
+ }
+}

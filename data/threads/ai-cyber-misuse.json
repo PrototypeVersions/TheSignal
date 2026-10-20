@@ -1,0 +1,17 @@
+{
+  "id": "ai-cyber-misuse",
+  "title": "AI in cyberattacks",
+  "short": "AI hacking",
+  "section": "frontier",
+  "region": "Frontiers",
+  "started": "2026-10-20",
+  "started_label": "Following since 20 October 2026",
+  "status": "active",
+  "summary": "Evidence of criminals using AI agents to run intrusion campaigns. Reuters found one hacker used agents and about $5,000 to break into more than 100 company websites.",
+  "background": [
+    {
+      "date": "2026-09",
+      "text": "Gambit Security reported AI-agent breaches at 25 companies, with at least 600,000 card records stolen."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs><radialGradient id="g" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#16243D"/><stop offset="1" stop-color="#0B1422"/></radialGradient></defs><rect width="1200" height="800" fill="url(#g)"/>
+<g fill="#1A2943" stroke="#2F4163" stroke-width="4">
+<rect x="110" y="140" width="250" height="180" rx="14"/><rect x="475" y="140" width="250" height="180" rx="14"/><rect x="840" y="140" width="250" height="180" rx="14"/>
+<rect x="110" y="480" width="250" height="180" rx="14"/><rect x="475" y="480" width="250" height="180" rx="14"/><rect x="840" y="480" width="250" height="180" rx="14"/>
+</g>
+<g fill="#23365A"><rect x="110" y="140" width="250" height="34" rx="14"/><rect x="475" y="140" width="250" height="34" rx="14"/><rect x="840" y="140" width="250" height="34" rx="14"/><rect x="110" y="480" width="250" height="34" rx="14"/><rect x="475" y="480" width="250" height="34" rx="14"/><rect x="840" y="480" width="250" height="34" rx="14"/></g>
+<path d="M60 400 H1140" stroke="#86A2FF" stroke-width="6" stroke-dasharray="4 18" stroke-linecap="round" opacity=".7"/>
+<g stroke="#86A2FF" stroke-width="6" fill="none" stroke-linecap="round"><path d="M235 400V320M600 400V320M965 400V320M235 400V480M600 400V480M965 400V480"/></g>
+<g fill="#86A2FF"><circle cx="60" cy="400" r="22"/><circle cx="235" cy="400" r="12"/><circle cx="600" cy="400" r="12"/><circle cx="965" cy="400" r="12"/></g>
+<!-- padlocks: open (coral) and closed (blue) -->
+<g stroke-width="9" fill="none" stroke-linecap="round">
+<path d="M205 240 v-26 a30 30 0 0 1 60 0" stroke="#FF8B7B" transform="rotate(-25 265 240)"/>
+<path d="M570 240 v-26 a30 30 0 0 1 60 0 v26" stroke="#86A2FF"/>
+<path d="M935 240 v-26 a30 30 0 0 1 60 0" stroke="#FF8B7B" transform="rotate(-25 995 240)"/>
+<path d="M205 580 v-26 a30 30 0 0 1 60 0" stroke="#FF8B7B" transform="rotate(-25 265 580)"/>
+<path d="M570 580 v-26 a30 30 0 0 1 60 0" stroke="#FF8B7B" transform="rotate(-25 630 580)"/>
+<path d="M935 580 v-26 a30 30 0 0 1 60 0 v26" stroke="#86A2FF"/>
+</g>
+<g><rect x="195" y="238" width="80" height="62" rx="10" fill="#FF8B7B"/><rect x="560" y="238" width="80" height="62" rx="10" fill="#86A2FF"/><rect x="925" y="238" width="80" height="62" rx="10" fill="#FF8B7B"/><rect x="195" y="578" width="80" height="62" rx="10" fill="#FF8B7B"/><rect x="560" y="578" width="80" height="62" rx="10" fill="#FF8B7B"/><rect x="925" y="578" width="80" height="62" rx="10" fill="#86A2FF"/></g>
+<circle cx="60" cy="400" r="40" fill="none" stroke="#E9B44C" stroke-width="5"/>
+</svg>

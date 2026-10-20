@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs><radialGradient id="g" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#16243D"/><stop offset="1" stop-color="#0B1422"/></radialGradient></defs><rect width="1200" height="800" fill="url(#g)"/>
+<path d="M300 90 V120" stroke="#2F4163" stroke-width="8"/>
+<rect x="210" y="120" width="180" height="250" rx="40" fill="#1A2943" stroke="#86A2FF" stroke-width="6"/>
+<rect x="225" y="220" width="150" height="135" rx="30" fill="#86A2FF" opacity=".45"/>
+<path d="M300 370 V420" stroke="#86A2FF" stroke-width="10"/>
+<path d="M300 420 C300 560 460 560 560 470" fill="none" stroke="#86A2FF" stroke-width="6"/>
+<path d="M300 440 c-10 16 -10 28 0 34 c10 -6 10 -18 0 -34z" fill="#86A2FF"/>
+<circle cx="800" cy="420" r="210" fill="none" stroke="#FF8B7B" stroke-width="5" stroke-dasharray="14 16" opacity=".55"/>
+<circle cx="800" cy="420" r="90" fill="#FF8B7B" opacity=".85"/>
+<g stroke="#86A2FF" stroke-width="12" stroke-linecap="round" fill="none">
+<g transform="rotate(0 800 420)"><path d="M800 290 V250 M800 290 L775 320 M800 290 L825 320"/></g>
+<g transform="rotate(60 800 420)"><path d="M800 290 V250 M800 290 L775 320 M800 290 L825 320"/></g>
+<g transform="rotate(120 800 420)"><path d="M800 290 V250 M800 290 L775 320 M800 290 L825 320"/></g>
+<g transform="rotate(180 800 420)"><path d="M800 290 V250 M800 290 L775 320 M800 290 L825 320"/></g>
+<g transform="rotate(240 800 420)"><path d="M800 290 V250 M800 290 L775 320 M800 290 L825 320"/></g>
+<g transform="rotate(300 800 420)"><path d="M800 290 V250 M800 290 L775 320 M800 290 L825 320"/></g>
+</g>
+<circle cx="800" cy="420" r="30" fill="#E9B44C"/>
+</svg>
