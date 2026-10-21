@@ -1,0 +1,1490 @@
+{
+ "date": "2026-10-21",
+ "number": 4,
+ "published_at": "2026-10-21T06:14:37-05:00",
+ "lede": "Ebola has reached Nigeria: a traveller who fell ill in Abuja is the first case in West Africa from the Congo outbreak, now past 9,500 infections. Trump's envoy carried a peace framework from talks with Zelensky and European leaders in Oslo to Putin, who freed an American prisoner during the meeting. A tanker was struck off Oman as Iran told Pakistan's army chief it would not talk without US concessions, and NATO is sending planes and radars to the Black Sea after drone attacks on ships. Super Typhoon Champi regained near-peak strength on a track towards Japan's southern islands. In Frontiers: a look inside Anthropic's draft prospectus, DeepSeek's open serving engine, the first drug aimed at curing hepatitis B, and a UN plan for overshooting 1.5°C.",
+ "stories": [
+  {
+   "thread": "ebola-east-africa",
+   "change": "major",
+   "momentum": "up",
+   "headline": "Ebola reaches Nigeria as a traveller tests positive in Abuja",
+   "dek": "Nigeria confirmed its first case of the Bundibugyo outbreak on Tuesday, a woman who reached the capital via Uganda, carrying Africa's worst Ebola epidemic into its most populous country.",
+   "key_facts": [
+    "The patient fell ill on 7 October and was admitted to a private hospital in Abuja on 11 October; 44 contacts are being traced.",
+    "Uganda says she is Nigerian, had been on a business trip to eastern Congo and only passed through Uganda.",
+    "The outbreak has infected more than 9,500 people and killed more than 4,600 since mid-May, AP reports.",
+    "Kenya has now recorded nine infections, all linked to one patient who travelled from Congo.",
+    "There is no licensed vaccine or treatment for the Bundibugyo strain."
+   ],
+   "report": [
+    {
+     "heading": "What happened",
+     "paragraphs": [
+      "Nigeria's Health Ministry confirmed on Tuesday 20 October that a woman in Abuja has Ebola, the first case in West Africa linked to the outbreak that began in the Democratic Republic of Congo in May. She developed symptoms on 7 October and was admitted to a private hospital in the capital on 11 October, where the infection was later diagnosed. She is in isolation, and health workers are tracing 44 people she had contact with. Officials have not said when she arrived in Nigeria.",
+      "Health Minister Muhammad Pate said the government was doing everything possible to contain the case by tracing all her contacts. The Nigeria Centre for Disease Control had already stepped up surveillance two weeks earlier, after Kenya detected its first case, and a national Ebola task force has existed since June."
+     ]
+    },
+    {
+     "heading": "A dispute over where she was infected",
+     "paragraphs": [
+      "Nigerian officials said the woman arrived from Uganda. Uganda's Ministry of Health replied that she is Nigerian, had been on a business trip to eastern Congo, and only transited through Uganda, adding that travel through the country does not show she was infected there. Uganda, which earlier reported cases and then declared itself free of the virus, insists it has no confirmed active cases."
+     ]
+    },
+    {
+     "heading": "The wider outbreak",
+     "paragraphs": [
+      "The Bundibugyo-strain epidemic has infected more than 9,500 people and killed more than 4,600 since mid-May, according to AP. The World Health Organization calls it the fastest-spreading Ebola outbreak on record and says it is on course to exceed the 2014–2016 West African epidemic, which killed about 11,000 people. Africa CDC's director general, Jean Kaseya, called the threat extremely serious, with nearly half of cases dying.",
+      "Inside Congo the virus has reached an eighth province, Nord-Ubangi near the Central African Republic border, while Ituri still accounts for nearly three-quarters of confirmed cases. The WHO's Africa director, Mohamed Yakub Janabi, said pockets of infection were generally falling but the outbreak was spreading geographically. Kenya has recorded nine infections, all traced to a man who travelled by road from Congo to Kampala and flew to Nairobi on 3 October.",
+      "There is no licensed vaccine or treatment for the Bundibugyo strain, which leaves isolation and contact tracing as the main tools."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Nigeria will not know for some weeks whether the case has spread. It contained its previous Ebola outbreak at 20 cases and declared it over within three months; Abuja and the private hospital where the patient was first treated are now the focus."
+     ]
+    }
+   ],
+   "why": "A case carried by air to Africa's most populous country shows the outbreak can now jump far beyond Congo's neighbours. How well Nigeria traces 44 contacts will test whether the epidemic stays a regional crisis.",
+   "watch": "Test results among the 44 contacts over the next three weeks; whether the hospital in Abuja reports infected staff; any new WHO risk assessment or emergency committee; further cases in Kenya.",
+   "sources": [
+    {
+     "outlet": "AP via ABC News",
+     "title": "Nigeria confirms Ebola case in Abuja as woman who arrived from Uganda tests positive",
+     "url": "https://abcnews.com/Health/wireStory/nigeria-confirms-ebola-case-abuja-woman-arrived-uganda-137431821"
+    },
+    {
+     "outlet": "News of Bahrain",
+     "title": "Nigeria Confirms First Ebola Case as Outbreak Spreads",
+     "url": "https://www.newsofbahrain.com/en/article/nigeria-confirms-first-ebola-case-as-outbreak-spreads"
+    },
+    {
+     "outlet": "AP via The News",
+     "title": "Ebola crisis worsens in DR Congo as virus reaches eighth province with over 4,500 dead",
+     "url": "https://www.thenews.com.pk/latest/1420445-ebola-crisis-worsens-in-dr-congo-as-virus-reaches-eighth-province-with-over-4500-dead"
+    },
+    {
+     "outlet": "The Standard",
+     "title": "Kenya's Ebola cases rise to eight as new patient tests positive",
+     "url": "https://www.standardmedia.co.ke/health/health-science/article/2001560409/kenyas-ebola-cases-rise-to-eight-as-new-patient-tests-positive"
+    },
+    {
+     "outlet": "WHO",
+     "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+     "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619"
+    }
+   ],
+   "places": {
+    "countries": [
+     "NGA"
+    ],
+    "related": [
+     "COD",
+     "KEN",
+     "UGA"
+    ],
+    "points": [
+     {
+      "name": "Abuja",
+      "lat": 9.06,
+      "lon": 7.49
+     },
+     {
+      "name": "Bunia",
+      "lat": 1.56,
+      "lon": 30.25
+     },
+     {
+      "name": "Nairobi",
+      "lat": -1.29,
+      "lon": 36.82
+     }
+    ],
+    "view": [
+     -2,
+     -12,
+     46,
+     18
+    ]
+   }
+  },
+  {
+   "thread": "ukraine-war",
+   "change": "major",
+   "momentum": "up",
+   "headline": "Witkoff meets Putin after Oslo talks, and Russia frees an American",
+   "dek": "Trump's envoy took a peace framework from Tuesday's talks with Zelensky and European leaders in Oslo to Putin in St Petersburg on Wednesday, where Russia released US prisoner Stephen Hubbard.",
+   "key_facts": [
+    "Witkoff met Zelensky in Oslo on 20 October with the leaders of Norway and Finland and officials from France, the UK, Germany, Poland, the EU and NATO.",
+    "A US official told Axios there was meaningful progress; Zelensky wants a three-way meeting with Trump and Putin, which Moscow has rejected.",
+    "Putin met Witkoff at the Constantine Palace on 21 October and announced the release of Stephen Hubbard, a retired teacher from Michigan.",
+    "Russia launched 186 drones and cruise missiles overnight; four people were killed, two of them in Kyiv.",
+    "EU foreign policy chief Kaja Kallas said US negotiators had been pushing Ukraine towards surrender for almost two years."
+   ],
+   "report": [
+    {
+     "heading": "From Oslo to St Petersburg",
+     "paragraphs": [
+      "US envoy Steve Witkoff met President Volodymyr Zelensky in Oslo on Tuesday 20 October, joined by Norway's prime minister, Jonas Gahr Støre, Finland's president, Alexander Stubb, and representatives of France, the UK, Germany, Poland, the EU and NATO. Jared Kushner took part by video. The aim, according to Axios, was a common framework proposal to put to Russia. A US official said Ukraine had brought new ideas and that there was strong alignment at working level; Stubb spoke of real progress without giving details.",
+      "Topics included security guarantees and a ceasefire on energy infrastructure. Kushner pressed Kyiv to stop striking Russian refineries, a source told Axios; Zelensky said he would stop if Moscow did the same. Zelensky said the next step should be a meeting with Putin and Trump, a format Russia has so far turned down.",
+      "Witkoff flew on to St Petersburg and met Putin at the Constantine Palace on Wednesday morning. Putin announced during the meeting that Stephen Hubbard, a retired American teacher from Michigan sentenced in 2024 to nearly seven years for allegedly fighting for Ukraine, had been freed and taken to the airport. Witkoff told Putin that because of him Hubbard was going home. No outcome on the peace proposal had been announced by Wednesday morning. Reports say Putin would rather meet Trump in China next month without Ukraine present."
+     ]
+    },
+    {
+     "heading": "Pressure on Kyiv, pushback from Europe",
+     "paragraphs": [
+      "Trump said on Tuesday that Zelensky has to want to settle the war, that Russia keeps grinding forward and that things will get worse without a deal. Zelensky told US senators that arms deliveries had been delayed, including missiles allies paid for through NATO's PURL scheme, though he said intelligence sharing was now working again.",
+      "In the European Parliament, Kaja Kallas said American negotiators had been trying to push Ukraine into surrender for almost two years and that Russia was the only party that did not want peace."
+     ]
+    },
+    {
+     "heading": "On the ground",
+     "paragraphs": [
+      "Overnight into Wednesday Russia launched 186 drones, 88 of them jet-powered, plus cruise missiles, Ukraine's air force said; 150 were downed or jammed. Two people were killed when a drone hit the 20th floor of a tower block in Kyiv, two elderly residents died near Kharkiv, and a university building in Kremenchuk caught fire."
+     ]
+    }
+   ],
+   "why": "For the first time in weeks, Washington, Kyiv and the main European capitals put a shared proposal to Moscow, and the Kremlin answered with a goodwill gesture. Whether Putin moves on substance, or only on prisoners, decides if this round differs from earlier ones.",
+   "watch": "Any readout from the Kremlin or White House on the framework; whether Russia agrees to three-way talks; the energy ceasefire; Patriot and PURL deliveries; whether a Trump–Putin meeting in China is fixed for November.",
+   "sources": [
+    {
+     "outlet": "Axios",
+     "title": "Witkoff to present Putin with peace proposal after talks with Zelensky",
+     "url": "https://www.axios.com/2026/10/20/putin-witkoff-russia-ukraine-war"
+    },
+    {
+     "outlet": "AP via WRAL",
+     "title": "Russia releases imprisoned American man, US envoy Witkoff says on visit to St. Petersburg",
+     "url": "https://www.wral.com/news/ap/2c7e3-russia-releases-imprisoned-american-man-us-envoy-witkoff-says-on-visit-to-st-petersburg/"
+    },
+    {
+     "outlet": "Kyiv Independent",
+     "title": "Russia releases US prisoner Stephen Hubbard during Witkoff visit",
+     "url": "https://kyivindependent.com/russia-releases-us-prisoner-stephen-hubbard-during-witkoff-visit/"
+    },
+    {
+     "outlet": "ABC News",
+     "title": "Detained American Stephen Hubbard released by Russia as Witkoff meets Putin",
+     "url": "https://abcnews.com/International/witkoff-arrives-st-petersburg-putin-talks-kremlin-aide/story?id=137438106"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "US-Ukraine relations sour as Trump, Zelenskyy clash over talks, arms",
+     "url": "https://www.aljazeera.com/news/2026/10/20/us-ukraine-relations-sour-as-trump-zelenskyy-clash-over-talks-arms"
+    },
+    {
+     "outlet": "IANS",
+     "title": "Trump warns Zelensky to make deal with Russia",
+     "url": "https://ianslive.in/trump-warns-zelensky-to-make-deal-with-russia--20261021033603"
+    },
+    {
+     "outlet": "Euronews via Yahoo",
+     "title": "Kaja Kallas accuses the US of pushing Ukraine to 'surrender on Putin's terms'",
+     "url": "https://sg.news.yahoo.com/kaja-kallas-accuses-us-pushing-142206064.html"
+    },
+    {
+     "outlet": "Euromaidan Press",
+     "title": "Not just the grid: Russia struck a 24-story block, a university, and warehouses overnight, and four people are dead",
+     "url": "https://euromaidanpress.com/2026/10/21/not-just-the-grid-russia-struck-a-24-story-block-a-university-and-warehouses-overnight-and-four-people-are-dead/"
+    }
+   ],
+   "places": {
+    "countries": [
+     "UKR"
+    ],
+    "related": [
+     "RUS",
+     "NOR"
+    ],
+    "points": [
+     {
+      "name": "St Petersburg",
+      "lat": 59.94,
+      "lon": 30.31
+     },
+     {
+      "name": "Oslo",
+      "lat": 59.91,
+      "lon": 10.75
+     },
+     {
+      "name": "Kyiv",
+      "lat": 50.45,
+      "lon": 30.52
+     }
+    ],
+    "view": [
+     4,
+     43,
+     44,
+     63
+    ]
+   }
+  },
+  {
+   "thread": "gulf-war",
+   "change": "developing",
+   "momentum": "up",
+   "headline": "Tanker hit off Oman as Iran tells Pakistan's army chief its terms",
+   "dek": "A tanker caught fire after being struck near Hormuz on Wednesday, a day after Iran said its mines halted three ships; in Tehran, officials told Asim Munir there would be no talks without US steps first.",
+   "key_facts": [
+    "UKMTO said a tanker was hit by an unknown projectile about 11 nautical miles off Bukha, Oman, on 21 October; the crew is safe.",
+    "Iran's Revolutionary Guards said on 20 October that mines halted three tankers; US Central Command called the claims false.",
+    "Brent settled at $108.79 on Tuesday and rose above $110 in Asian trading on Wednesday.",
+    "The toll from the Houthi strike on a Yemeni army camp in Shabwa has risen to at least 73, the provincial governor told AP.",
+    "Egypt's parliament votes on 26 October on sending troops to defend Saudi Arabia; approval needs 398 of 596 seats."
+   ],
+   "report": [
+    {
+     "heading": "More attacks at sea",
+     "paragraphs": [
+      "A tanker was struck by an unknown projectile about 11 nautical miles off Bukha, on Oman's side of the Strait of Hormuz, on Wednesday 21 October, the UK's maritime agency UKMTO said. The ship caught fire and is now at anchor, and all crew are reported safe. It was not named and no one claimed the attack.",
+      "On Tuesday Iran's Revolutionary Guards said their mines had stopped three tankers using routes Tehran calls unauthorised, two of which caught fire, and that a third, carrying more than two million barrels of crude, exploded. No ships were named. US Central Command said the claims were false and that US forces had cleared the international lanes. The data firm Kpler counts at least 18 attacks on vessels in two weeks.",
+      "Brent crude settled at $108.79 a barrel on Tuesday after touching nearly $112 during the day, then rose about 1.5% to above $110 in early Asian trading on Wednesday."
+     ]
+    },
+    {
+     "heading": "Diplomacy in Tehran",
+     "paragraphs": [
+      "Pakistan's army chief, Field Marshal Asim Munir, arrived in Tehran on Tuesday on his fifth visit since the April ceasefire and met Foreign Minister Abbas Araghchi, President Masoud Pezeshkian and Speaker Mohammad Bagher Ghalibaf. Iranian security official Mohsen Rezaei told him Iran would not send any enriched uranium abroad and would not negotiate until the US took steps to build trust; Ghalibaf listed conditions including an end to the US blockade of Iranian ports.",
+      "A Qatari outlet reported a Qatar–Pakistan proposal linking access to frozen Iranian funds to unannounced nuclear inspections, but a diplomat cited by Bloomberg disputed that a deal was close. US Secretary of State Marco Rubio accused Iran of Nazi U-boat tactics and said a deal would be hard."
+     ]
+    },
+    {
+     "heading": "The Saudi front",
+     "paragraphs": [
+      "The death toll from Monday's Houthi missile strike on a government training camp in Shabwa, Yemen, has reached at least 73, nearly all young recruits, Governor Awad Ibn al-Wazir told AP. Saudi forces intercepted another missile and drone aimed at Riyadh on Tuesday, and Britain said RAF Typhoons will fly defensive patrols over Saudi Arabia without striking Yemen. Riyadh's main airport is operating under restrictions, and Qatar Airways has suspended flights there until 24 October.",
+      "In Cairo, some parties say they will abstain on President Sisi's request to send forces to defend Saudi Arabia, which needs a two-thirds majority on 26 October."
+     ]
+    }
+   ],
+   "why": "Attacks on shipping are spreading towards the Gulf of Oman while each side sets preconditions for talks, so the strait stays shut in practice and oil stays near $110. Egypt's vote would widen the Saudi–Houthi war into a regional coalition.",
+   "watch": "Whether the tanker off Oman is identified and attributed; any US reply to Iran's conditions; Egypt's vote on 26 October; the third US carrier due by late November; Trump's pledge not to strike Iran before 3 November.",
+   "sources": [
+    {
+     "outlet": "AFP via Arab News",
+     "title": "Ship attacked near Strait of Hormuz: maritime agency",
+     "url": "https://www.arabnews.pk/middle-east/ship-attacked-near-strait-of-hormuz-maritime-agency-3004816"
+    },
+    {
+     "outlet": "CBS News",
+     "title": "Live Updates: Iran lauds ties with Russia, contradicting Trump's claim of little Russian support for Tehran",
+     "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/"
+    },
+    {
+     "outlet": "IBTimes Australia",
+     "title": "Oil Prices Jump as Brent Tops $110 After Iran Says Mines Hit Tankers in Hormuz and Houthis Strike Saudi Sites",
+     "url": "https://www.ibtimes.com.au/oil-prices-rise-tanker-attacks-hormuz-supply-fears-1877115"
+    },
+    {
+     "outlet": "Times of Israel",
+     "title": "Iran security chief rejects moving enriched uranium abroad, as Netanyahu vows to topple regime",
+     "url": "https://www.timesofisrael.com/iran-security-chief-rejects-moving-enriched-uranium-abroad-as-netanyahu-vows-to-topple-regime"
+    },
+    {
+     "outlet": "Arab News Pakistan",
+     "title": "Pakistan army chief holds talks with Iranian president in Tehran amid US tensions",
+     "url": "https://www.arabnews.pk/pakistan/pakistan-army-chief-holds-talks-with-iranian-president-in-tehran-amid-us-tensions-3004753"
+    },
+    {
+     "outlet": "Investing.com",
+     "title": "Unconfirmed Qatar-Pakistan Iran peace proposal lifts stocks, weighs on oil",
+     "url": "https://www.investing.com/news/stock-market-news/unconfirmed-qatarpakistan-iran-peace-proposal-lifts-stocks-weighs-on-oil-4960631"
+    },
+    {
+     "outlet": "HNGN",
+     "title": "Houthi Missiles Kill 73 Recruits at Yemen Camp in Deadliest Strike in Months",
+     "url": "https://www.hngn.com/articles/273553/20261020/houthi-missiles-kill-73-recruits-yemen-camp-deadliest-strike-months.htm"
+    },
+    {
+     "outlet": "ISW/Critical Threats",
+     "title": "Iran Update, October 20, 2026",
+     "url": "https://www.criticalthreats.org/analysis/iran-update-october-20-2026"
+    },
+    {
+     "outlet": "Alhurra",
+     "title": "Egyptian Lawmakers Push Back on Sisi's Request to Send Troops to Saudi Arabia",
+     "url": "https://alhurra.com/en/47378"
+    }
+   ],
+   "places": {
+    "countries": [
+     "IRN"
+    ],
+    "related": [
+     "SAU",
+     "YEM",
+     "OMN"
+    ],
+    "points": [
+     {
+      "name": "Strait of Hormuz",
+      "lat": 26.57,
+      "lon": 56.25
+     },
+     {
+      "name": "Riyadh",
+      "lat": 24.71,
+      "lon": 46.68
+     },
+     {
+      "name": "Shabwa",
+      "lat": 14.55,
+      "lon": 46.83
+     },
+     {
+      "name": "Tehran",
+      "lat": 35.69,
+      "lon": 51.39
+     }
+    ],
+    "view": [
+     38,
+     10,
+     62,
+     38
+    ]
+   }
+  },
+  {
+   "thread": "typhoon-champi",
+   "change": "developing",
+   "momentum": "up",
+   "headline": "Champi regains top strength and heads for Japan's Sakishima Islands",
+   "dek": "The super typhoon re-intensified to a central pressure near 900 hPa, and Japan's weather agency now expects it to pass near Ishigaki and Miyako on Friday evening before turning towards Kyushu.",
+   "key_facts": [
+    "Japan's weather agency put Champi's central pressure at 900 hPa on the morning of 21 October, with gusts of about 165 knots.",
+    "It is forecast to pass near the Sakishima Islands, including Ishigaki, Miyako and Yonaguni, on the evening of Friday 23 October.",
+    "Many models then turn it north-east over the East China Sea, with a possible landfall in Kyushu.",
+    "Taiwan's weather bureau expects the storm's closest approach between Friday and Saturday morning, with heavy rain in the north and east."
+   ],
+   "report": [
+    {
+     "heading": "Stronger again",
+     "paragraphs": [
+      "Super Typhoon Champi, the 30th named storm of the Pacific season, strengthened again on Tuesday evening after weakening near Guam. On Wednesday morning Japan's Meteorological Agency described it as large and violent, with a central pressure of 900 hPa, sustained winds of 115 knots and gusts of 165 knots, moving west-north-west at about 13 knots across the Philippine Sea. Estimates based on US military forecasts put its peak one-minute winds on Tuesday at about 295 km/h, equivalent to a category 5 hurricane."
+     ]
+    },
+    {
+     "heading": "The track",
+     "paragraphs": [
+      "Forecasters now expect Champi to curve gradually north-west and pass near Japan's Sakishima Islands, the chain that includes Ishigaki, Miyako and Yonaguni, on the evening and night of Friday 23 October while still very strong. The agency warned of a high chance of heavy rain, storm-force winds and high waves across Okinawa, especially Sakishima. After that, many models turn the storm north and north-east over the East China Sea, weakening, with a possible landfall in Kyushu; Japan's forecast cone now reaches into western Japan for early next week. Weathernews notes a wide spread between agencies.",
+      "That is a shift from Monday's forecasts, which had the turn starting near Ishigaki on Thursday. Taiwan's Central Weather Administration says the track has moved farther west, and the island is not yet in the clear."
+     ]
+    },
+    {
+     "heading": "Taiwan",
+     "paragraphs": [
+      "The administration said a sea warning could be issued and a land warning was possible from Wednesday night, covering northern Taiwan, Yilan and Hualien, depending on the track. Whatever path the storm takes, its closest approach is expected from Friday to Saturday morning. The north-east monsoon is already bringing rain to Yilan and the mountains around Taipei, and heavy to extremely heavy rain is possible in the north and east on Friday. Keelung has a 72% chance of gale-force winds within five days, according to the bureau's probabilities."
+     ]
+    }
+   ],
+   "why": "A storm near the strongest possible intensity is now aimed at inhabited Japanese islands rather than open sea, and its later turn keeps both Taiwan and Kyushu in play.",
+   "watch": "Japan's warnings for Okinawa and Sakishima on Thursday; Taiwan's land warning; the timing of the turn north; whether Kyushu enters the track early next week.",
+   "sources": [
+    {
+     "outlet": "Weathernews",
+     "title": "【台風30号 CHAMPI】先島諸島に接近へ 台湾への影響は進路次第、九州上陸のおそれも",
+     "url": "https://wxtech.weathernews.com/news/sky20261021-01/"
+    },
+    {
+     "outlet": "Taipei Times",
+     "title": "Sea warning expected for typhoon",
+     "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/10/21/2003866354"
+    },
+    {
+     "outlet": "Above The Norm News",
+     "title": "Super Typhoon Champi Reaches 185 MPH As Forecast Models Split Between Japan And Taiwan",
+     "url": "https://www.abovethenormnews.com/2026/10/21/super-typhoon-champi-2026/"
+    }
+   ],
+   "places": {
+    "countries": [
+     "JPN",
+     "TWN"
+    ],
+    "points": [
+     {
+      "name": "Ishigaki",
+      "lat": 24.34,
+      "lon": 124.16
+     },
+     {
+      "name": "Champi, 21 Oct",
+      "lat": 18.1,
+      "lon": 130.2
+     },
+     {
+      "name": "Taipei",
+      "lat": 25.03,
+      "lon": 121.57
+     },
+     {
+      "name": "Fukuoka",
+      "lat": 33.59,
+      "lon": 130.4
+     }
+    ],
+    "view": [
+     116,
+     14,
+     136,
+     36
+    ]
+   }
+  },
+  {
+   "thread": "black-sea-shipping",
+   "change": "new",
+   "momentum": "up",
+   "headline": "NATO sends more planes and radars to the Black Sea after drone attacks on ships",
+   "dek": "After six suspected Russian drone attacks on merchant ships in ten days off Romania and Bulgaria, NATO said on Tuesday it is deploying patrol aircraft, radars, drones and intelligence staff.",
+   "key_facts": [
+    "NATO's military command said on 20 October it is sending maritime patrol aircraft, radars, drones, explosives teams and intelligence staff.",
+    "Kaja Kallas counted six suspected Russian drone attacks in 10 days; at least 23 sailors are missing or dead.",
+    "Romanian F-16s shot down two Geran-type drones over Romanian waters on Saturday 17 October.",
+    "Bulgaria says a US P-8 Poseidon has begun reconnaissance flights over the sea at its request.",
+    "Moscow denies involvement; NATO, Romania and Bulgaria have not formally assigned blame."
+   ],
+   "report": [
+    {
+     "heading": "What NATO decided",
+     "paragraphs": [
+      "NATO will send more maritime patrol aircraft, radar systems, drones, explosive ordnance teams and intelligence personnel to the Black Sea, Colonel Martin O'Donnell of the alliance's military headquarters said on Tuesday 20 October, after ambassadors of the 32 members met in Brussels. He said the priority was a clearer picture of what is happening at sea, through more sensors and shared data. Bulgarian Prime Minister Rumen Radev said a US P-8 Poseidon had already begun reconnaissance patrols after Sofia asked for help."
+     ]
+    },
+    {
+     "heading": "The attacks",
+     "paragraphs": [
+      "Civilian ships have been hit repeatedly off the coasts of Romania and Bulgaria, both NATO and EU members. On 5 October a ship caught fire and sank in Romanian waters, killing two people. Around 13 October drones struck two cargo ships off Bulgaria; one sank and 11 sailors were reported missing. Last week two chemical tankers were set ablaze near Romania's coast, with seven sailors missing, and at least five other cargo ships have been hit in the area. In all, at least 23 sailors are missing or dead, according to Al Jazeera's count.",
+      "On Saturday evening two Romanian F-16s shot down two Geran attack drones, a type associated with Russia's arsenal, over Romanian territorial waters. Romania has recorded 35 drone incursions this year, against nine in 2025."
+     ]
+    },
+    {
+     "heading": "Who is blamed",
+     "paragraphs": [
+      "NATO, Romania and Bulgaria have not formally blamed any country, and Russia denies involvement. EU foreign policy chief Kaja Kallas called the strikes suspected Russian attacks and a dangerous escalation, and said the Kremlin was probably trying to cut Ukraine's grain export earnings. Attacks on ships in international waters, outside allied territory, are a hard case for the alliance's defence commitments."
+     ]
+    }
+   ],
+   "why": "Sinking merchant ships next to NATO coastlines is a new kind of pressure on the alliance and on Ukraine's main export route, and NATO has now chosen to answer with surveillance rather than escorts.",
+   "watch": "Whether investigators attribute the attacks; any decision on naval escorts; further hits on ships bound for Ukrainian ports; grain freight and insurance costs.",
+   "sources": [
+    {
+     "outlet": "Al Jazeera",
+     "title": "NATO to send additional patrol planes to Black Sea after drone attacks",
+     "url": "https://www.aljazeera.com/news/2026/10/20/nato-to-send-additional-patrol-planes-to-black-sea-after-drone-attacks"
+    },
+    {
+     "outlet": "A News",
+     "title": "NATO sending planes, radars to Black Sea after drone attacks",
+     "url": "https://www.anews.com.tr/world/2026/10/20/nato-sending-planes-radars-to-black-sea-after-drone-attacks"
+    },
+    {
+     "outlet": "Stars and Stripes",
+     "title": "Romania shoots down attack drones as NATO prepares for high-level Black Sea talks",
+     "url": "https://www.stripes.com/theaters/europe/2026-10-19/romania-drones-nato-meeting-23196504.html"
+    }
+   ],
+   "places": {
+    "countries": [
+     "ROU",
+     "BGR"
+    ],
+    "related": [
+     "UKR",
+     "RUS"
+    ],
+    "points": [
+     {
+      "name": "Constanța",
+      "lat": 44.17,
+      "lon": 28.65
+     },
+     {
+      "name": "Varna",
+      "lat": 43.21,
+      "lon": 27.91
+     },
+     {
+      "name": "Odesa",
+      "lat": 46.48,
+      "lon": 30.72
+     }
+    ],
+    "view": [
+     20,
+     39,
+     42,
+     49
+    ]
+   }
+  },
+  {
+   "thread": "israel-election",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "Polls tilt slightly to Eisenkot, who rules out sharing power with Netanyahu",
+   "dek": "Most new polls put Gadi Eisenkot's Yashar ahead of Likud and his camp a few seats ahead, though neither side is near a majority; Eisenkot pledged not to serve under Netanyahu in a rotation.",
+   "key_facts": [
+    "Channel 12 has Yashar on 24 seats and Likud on 21, with Eisenkot's bloc at 55 against Netanyahu's 51.",
+    "A Walla poll gives Netanyahu's coalition 48 seats and the opposition 54; no poll gives either side 61.",
+    "Ofer Winter's party falls below the 3.25% threshold in three of four new polls.",
+    "Vice President JD Vance said he was not getting involved in Israel's election, after Trump endorsed Netanyahu."
+   ],
+   "report": [
+    {
+     "heading": "The polls",
+     "paragraphs": [
+      "Six days before Israel votes on 27 October, the latest polls lean slightly towards the opposition. Channel 12 gives former army chief Gadi Eisenkot's Yashar party 24 seats, Likud 21 and Naftali Bennett's list 14, with Eisenkot's bloc at 55 against 51 for Netanyahu's camp and 14 for Arab parties. KAN has Yashar on 23 and Likud on 21. A Walla poll puts the governing coalition at 48 and the opposition at 54. Channel 13 shows the narrowest gap, 51 to 50. None gives either side the 61 seats needed to govern.",
+      "Smaller parties may decide the outcome. Ofer Winter's People of Israel is below the 3.25% threshold in three of the four polls compiled by Maariv and the Jerusalem Post, and KAN now gives it no seats. Arab parties, with about 14 seats, remain outside both main blocs."
+     ]
+    },
+    {
+     "heading": "No rotation",
+     "paragraphs": [
+      "Eisenkot said on Wednesday that he would not serve under Netanyahu in any rotation agreement, and that he would resign an hour after such a deal if one were made. President Isaac Herzog is reported to favour a broad government if the vote ends in deadlock, to avoid repeated elections like those of 2019 and 2020.",
+      "In Washington, Vice President JD Vance declined to back Netanyahu, saying he was not getting involved, a contrast with Trump's endorsement on 18 October. Defence Secretary Pete Hegseth met Netanyahu at an air base in southern Israel on Monday. Netanyahu said on Tuesday that finishing the job meant bringing down Iran's government."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "The army, on its highest alert with leave frozen, says it will make sure the vote takes place without outside interference."
+     ]
+    }
+   ],
+   "why": "Netanyahu's camp has slipped behind in most surveys, and Eisenkot's pledge closes off the unity-rotation deal that ended earlier deadlocks, making a hung result harder to resolve.",
+   "watch": "The last polls before polling day; whether Winter's and the Reservists' parties clear the threshold; turnout among Arab voters; any military escalation before 27 October.",
+   "sources": [
+    {
+     "outlet": "Jerusalem Post",
+     "title": "Israel Election 2026: Gadi Eisenkot leading Benjamin Netanyahu, but neither has majority",
+     "url": "https://www.jpost.com/israel-election-2026/article-912371"
+    },
+    {
+     "outlet": "VINnews",
+     "title": "Eisenkot Widens Lead Over Netanyahu In New Israel Election Poll",
+     "url": "https://vinnews.com/2026/10/20/eisenkot-widens-lead-over-netanyahu-in-new-israel-election-poll/"
+    },
+    {
+     "outlet": "Times of Israel",
+     "title": "Liveblog, 21 October 2026",
+     "url": "https://www.timesofisrael.com/liveblog-october-21-2026"
+    },
+    {
+     "outlet": "Times of Israel",
+     "title": "Liveblog, 20 October 2026",
+     "url": "https://www.timesofisrael.com/liveblog-october-20-2026/"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Hegseth meets Netanyahu on unannounced Israel visit",
+     "url": "https://aljazeera.com/news/2026/10/20/hegseth-meets-netanyahu-in-unannounced-israel-visit"
+    }
+   ],
+   "places": {
+    "countries": [
+     "ISR"
+    ],
+    "related": [
+     "PSE"
+    ],
+    "points": [
+     {
+      "name": "Jerusalem",
+      "lat": 31.77,
+      "lon": 35.21
+     },
+     {
+      "name": "Tel Aviv",
+      "lat": 32.09,
+      "lon": 34.78
+     }
+    ]
+   }
+  },
+  {
+   "thread": "brazil-election",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "Four days before Brazil's runoff, polls show Flávio and Lula almost tied",
+   "dek": "A Real Time Big Data poll released on Tuesday gives Flávio Bolsonaro 52% of valid votes to Lula's 48%, while most other surveys this week show a gap of two points or less.",
+   "key_facts": [
+    "Real Time Big Data, polling 15–19 October, has Flávio on 48% and Lula on 45%, or 52% to 48% of valid votes.",
+    "AtlasIntel has the race at 51.1% to 48.9% of valid votes; BTG/Nexus at 50.3% to 49.7%.",
+    "Flávio leads in 12 of 13 polls taken from 13 to 19 October, averaging about 51% to 49%.",
+    "Flávio won the first round on 4 October with 47.03% to Lula's 45.16%; the last debate is on 23 October."
+   ],
+   "report": [
+    {
+     "heading": "The latest numbers",
+     "paragraphs": [
+      "Brazil's presidential runoff on Sunday 25 October is within the margin of error in most polls. Real Time Big Data, which surveyed 2,000 voters by phone from 15 to 19 October, put Senator Flávio Bolsonaro on 48% and President Luiz Inácio Lula da Silva on 45%, or 52% to 48% of valid votes. Its fieldwork spanned the first runoff debate on Band TV on 18 October. Both candidates are rejected by about a third of voters, and 93% of respondents say their minds are made up.",
+      "Other polls this week show an even closer race. AtlasIntel for Bloomberg had Flávio at 51.1% of valid votes, a gap that has shrunk from more than five points on 9 October. BTG/Nexus found 50.3% to 49.7%. PoderData was the only pollster to show Flávio gaining, to 52%, and Vox Brasil the only one with Lula ahead, 51% to 49%. An average of 13 polls from 13 to 19 October compiled by Congresso em Foco gives Flávio 50.9% and Lula 49.1%."
+     ]
+    },
+    {
+     "heading": "Background",
+     "paragraphs": [
+      "Flávio, the eldest son of former president Jair Bolsonaro, won the first round on 4 October with 47.03% to Lula's 45.16%, and the final polls before that vote underestimated him by several points. At the Band debate Lula attacked his promise to pardon his father. Lula's campaign has leaned on popular measures such as cutting federal fuel taxes and the plan to end the six-day working week."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Datafolha and Quaest are expected to publish new rounds before the final televised debate on Friday 23 October. Betting markets such as Polymarket and Kalshi favour Flávio, but they are wagers, not polls."
+     ]
+    }
+   ],
+   "why": "Latin America's largest democracy is choosing between a sitting left-wing president and the heir of the Bolsonaro movement, and the race has narrowed to a statistical tie in its final week.",
+   "watch": "New Datafolha and Quaest polls; the final debate on 23 October; whether the loser accepts the result on 25 October.",
+   "sources": [
+    {
+     "outlet": "Brasil de Fato",
+     "title": "A cinco dias do segundo turno, Flávio Bolsonaro e Lula estão em empate técnico, aponta Real Time Big Data",
+     "url": "https://www.brasildefato.com.br/2026/10/20/a-cinco-dias-do-segundo-turno-flavio-bolsonaro-e-lula-estao-em-empate-tecnico-aponta-real-time-big-data/"
+    },
+    {
+     "outlet": "Exame",
+     "title": "Pesquisa após debate da Band mostra Flávio Bolsonaro com 52% e Lula com 48% no 2º turno",
+     "url": "https://exame.com/brasil/pesquisa-apos-debate-da-band-mostra-flavio-bolsonaro-com-52-e-lula-com-48-no-2o-turno/"
+    },
+    {
+     "outlet": "The Rio Times",
+     "title": "Brazil Polls Show Lula Narrowing Flávio's Lead",
+     "url": "https://www.riotimesonline.com/lula-narrows-flavio-poll-lead-runoff-2026/"
+    },
+    {
+     "outlet": "iGaming Express",
+     "title": "Flávio's Lead Over Lula Narrows in the Final Week of Runoff Polls",
+     "url": "https://igamingexpress.com/flavios-lead-over-lula-narrows-in-the-final-week-of-runoff-polls/"
+    }
+   ],
+   "places": {
+    "countries": [
+     "BRA"
+    ],
+    "points": [
+     {
+      "name": "Brasília",
+      "lat": -15.79,
+      "lon": -47.88
+     },
+     {
+      "name": "São Paulo",
+      "lat": -23.55,
+      "lon": -46.63
+     },
+     {
+      "name": "Recife",
+      "lat": -8.05,
+      "lon": -34.88
+     }
+    ]
+   }
+  },
+  {
+   "thread": "france-unrest",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "France extends curfews and counts 3,000 damaged shops before Saturday's protests",
+   "dek": "The government said curfews will be set wherever needed and promised a massive police deployment for Saturday's marches, as estimates of riot damage doubled.",
+   "key_facts": [
+    "At least 3,000 shops were damaged, more than in the 2023 riots; Carrefour says 50 of its stores were hit and 20 looted.",
+    "Paris imposed a night curfew around Place de la République and Les Halles on Tuesday and banned carrying petrol in cans.",
+    "Interior Minister Laurent Nuñez says 2,513 people were taken into custody; nearly 150 have been jailed, according to the justice minister.",
+    "Prime Minister Sébastien Lecornu meets unions on Wednesday and political parties on Thursday; new protests are called for 24 October."
+   ],
+   "report": [
+    {
+     "heading": "Calm, under curfew",
+     "paragraphs": [
+      "France had a second quieter night as targeted curfews stayed in force. Prime Minister Sébastien Lecornu said they had helped bring calm and that prefects and mayors would set new ones wherever the situation required. In Paris, police imposed a curfew from late evening around Place de la République and Les Halles, banned gatherings on the Champs-Élysées and near stations and public buildings, and temporarily barred people from carrying petrol or gas in cans or bottles.",
+      "Interior Minister Laurent Nuñez says 2,513 people have been taken into custody since the unrest began. Justice Minister Gérald Darmanin says nearly 150 have been jailed and more than 800 brought before the courts. A man believed to be linked to the far left was arrested over the fire that destroyed the historic town hall of Limoges, a case now with counter-terrorism prosecutors."
+     ]
+    },
+    {
+     "heading": "The cost",
+     "paragraphs": [
+      "At least 3,000 shops were damaged, twice the estimate of a day earlier and more than the roughly 2,500 businesses hit in the 2023 riots, Euronews reports. Carrefour said 50 of its stores were damaged and 20 looted, with losses its chief executive put at several hundred million euros. On Monday the CAC 40 fell 1.1% and France's ten-year borrowing cost rose to about 4.94%. Firms affected can use state-funded short-time working, and the digital minister met online platforms about looted goods being resold."
+     ]
+    },
+    {
+     "heading": "What comes next",
+     "paragraphs": [
+      "Lecornu meets five unions on Wednesday to discuss protecting the right to protest, and party leaders on Thursday; high-school students were not invited. He has promised a massive security deployment for Saturday 24 October, when Yellow Vest groups and students plan marches without the main unions, who have called their own protest for 5 November. Parliament agreed to open an inquiry into intelligence and policing failures. President Macron, on a Gulf tour that took him to Qatar, rejected Nuñez's offer to resign. Unrest has also spread to Italy, where Milan's luxury shops boarded up on Monday."
+     ]
+    }
+   ],
+   "why": "The curfews have stopped the nightly rioting for now, but the movement's grievances over schools and living costs are unresolved and Saturday is its first big test under the new restrictions.",
+   "watch": "Whether nights stay calm; the outcome of Wednesday's union talks; turnout and policing on Saturday 24 October; whether a state of emergency is declared; Macron's return.",
+   "sources": [
+    {
+     "outlet": "Reuters via Asharq Al-Awsat",
+     "title": "French PM to Meet Unions as Government Prepares for More Protests",
+     "url": "https://english.aawsat.com/world/5331811-french-pm-meet-unions-government-prepares-more-protests"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "France PM promises more curfews as authorities seek to regain control",
+     "url": "https://www.aljazeera.com/news/2026/10/20/france-to-impose-new-curfews-where-required-after-calm-night"
+    },
+    {
+     "outlet": "AP via ABC News",
+     "title": "France protests cool after overnight curfews in Paris, major cities, PM says",
+     "url": "https://abcnews.com/International/france-protests-cool-after-overnight-curfews-paris-major/story?id=137403836"
+    },
+    {
+     "outlet": "Euronews",
+     "title": "France's riot damage doubles: How will businesses pay for the destruction?",
+     "url": "https://www.euronews.com/2026/10/20/frances-riot-damage-doubles-who-will-pay-for-thousands-of-wrecked-shops"
+    }
+   ],
+   "places": {
+    "countries": [
+     "FRA"
+    ],
+    "related": [
+     "ITA"
+    ],
+    "points": [
+     {
+      "name": "Paris",
+      "lat": 48.86,
+      "lon": 2.35
+     },
+     {
+      "name": "Limoges",
+      "lat": 45.83,
+      "lon": 1.26
+     },
+     {
+      "name": "Lyon",
+      "lat": 45.76,
+      "lon": 4.84
+     },
+     {
+      "name": "Milan",
+      "lat": 45.46,
+      "lon": 9.19
+     }
+    ],
+    "view": [
+     -6,
+     41,
+     11,
+     52
+    ]
+   }
+  },
+  {
+   "thread": "alberta-referendum",
+   "change": "developing",
+   "momentum": "down",
+   "headline": "Smith rules out another separation vote while she is premier",
+   "dek": "In a televised address on Tuesday, Danielle Smith said she would honour the result and that Alberta will stay in Canada, while separatists began pushing to unseat her as party leader.",
+   "key_facts": [
+    "Smith said she would not hold another referendum on separation for as long as she is premier.",
+    "With about 89% of ballots counted, about 75% voted to remain in Canada and just under 25% to continue toward a separation vote.",
+    "Yes led on eight of the other nine questions; only the question on opting out of federal programmes was trailing, 49% to 51%.",
+    "The Alberta Prosperity Project wants a special meeting of the United Conservative Party to remove Smith as leader."
+   ],
+   "report": [
+    {
+     "heading": "The address",
+     "paragraphs": [
+      "Premier Danielle Smith used a pre-recorded address broadcast on Tuesday evening, 20 October, to accept the verdict of Monday's referendum. She said she would honour the mandate and would not hold another vote on separation while she is premier, and that Alberta will remain a province of Canada. She acknowledged that hundreds of thousands of Albertans had voted to leave, called them loyal Albertans, and said she understood their frustrations.",
+      "Smith promised to use every legal and political tool to defend the province's interests, to keep pressing for reform of federal equalisation payments, and to settle disputes with Ottawa through political and legal institutions. She opened the address by honouring the four soldiers killed in a fire at CFB Wainwright on 17 October."
+     ]
+    },
+    {
+     "heading": "The count",
+     "paragraphs": [
+      "With about 89% of ballots counted by Tuesday afternoon, about 75% had voted to remain in Canada and just under 25% to continue towards a binding separation referendum, nearly half a million votes. On the nine other questions, yes was ahead on eight with between 51% and 63%, including measures on provincial control of immigration and proof of citizenship to vote. Only the question on opting out of federal programmes while keeping the funding was behind. Smith said full results would be known in a couple of days."
+     ]
+    },
+    {
+     "heading": "The fight inside her party",
+     "paragraphs": [
+      "Jeffrey Rath of the Alberta Prosperity Project says Smith cannot govern without separatists and plans to push for a special UCP general meeting to remove her. His colleague Mitch Sylvestre questioned the mail-in voting process without alleging fraud. Former premier Jason Kenney said separatists are no longer welcome in the party. Political scientist Duane Bratt says the November party convention could trigger an early leadership review if a quarter of constituency associations back one.",
+      "Prime Minister Mark Carney called the outcome a great result for Canada and said an updated immigration plan is due in November."
+     ]
+    }
+   ],
+   "why": "The separation route is closed for this government, but yes votes on immigration and voter identification give Smith a mandate to press Ottawa, while her party's separatist wing turns on her.",
+   "watch": "Official results for all ten questions; Smith's press conference in Calgary on Wednesday; whether separatists gather enough support for a special meeting or leadership review before the November convention.",
+   "sources": [
+    {
+     "outlet": "Global News",
+     "title": "Danielle Smith calls for unity after separatism rejected in Alberta referendum",
+     "url": "https://globalnews.ca/news/12110203/alberta-referendum-danielle-smith-results-speech/"
+    },
+    {
+     "outlet": "CP24",
+     "title": "Alberta referendum: Danielle Smith to honour voter mandate. Live updates.",
+     "url": "https://www.cp24.com/news/canada/2026/10/21/i-will-honour-this-mandate-smith-vows-not-to-hold-another-referendum-on-separation/"
+    },
+    {
+     "outlet": "Government of Alberta",
+     "title": "Premier's Address to the Province",
+     "url": "https://www.alberta.ca/premiers-address-to-the-province"
+    }
+   ],
+   "places": {
+    "countries": [
+     "CAN"
+    ],
+    "points": [
+     {
+      "name": "Edmonton",
+      "lat": 53.55,
+      "lon": -113.49
+     },
+     {
+      "name": "Calgary",
+      "lat": 51.05,
+      "lon": -114.07
+     },
+     {
+      "name": "Wainwright",
+      "lat": 52.84,
+      "lon": -110.86
+     }
+    ],
+    "view": [
+     -126,
+     46,
+     -102,
+     61
+    ]
+   }
+  },
+  {
+   "thread": "australia-haines-attack",
+   "change": "developing",
+   "momentum": "steady",
+   "headline": "Man accused of running down MP Helen Haines appears in court",
+   "dek": "Brendan Nugent, 43, faced three charges in Wangaratta on Wednesday and was remanded in custody, as Haines remained in a critical but stable condition.",
+   "key_facts": [
+    "Nugent is charged with dangerous driving causing serious injury, intentionally causing serious injury and harming a Commonwealth public official.",
+    "He made no bail application and did not enter a plea; the case returns to court on 4 February.",
+    "Police allege the attack was targeted; the motive has not been established.",
+    "Haines, the independent MP for Indi, lost a leg and is being treated at The Alfred hospital in Melbourne."
+   ],
+   "report": [
+    {
+     "heading": "In court",
+     "paragraphs": [
+      "Brendan Nugent, 43, of Tarrawingee, appeared at Wangaratta Magistrates' Court shortly after 10am local time on Wednesday 21 October, two days after independent MP Helen Haines was hit by a vehicle outside her electorate office. He faces three charges: dangerous driving causing serious injury, intentionally causing serious injury, and the federal offence of causing harm to a Commonwealth public official, which carries up to ten years in prison.",
+      "No bail application was made and he did not plead, so he remains in custody. The prosecution's brief of evidence is due on 24 December, and the case returns to the same court on 4 February. His lawyer told the court he has a neurological condition and mental health concerns and had never been in custody before; the magistrate asked for him to be seen by a doctor immediately. Victoria Police and the Australian Federal Police have not ruled out further charges."
+     ]
+    },
+    {
+     "heading": "What happened",
+     "paragraphs": [
+      "Haines, 65, was hit at about 3:35pm on Monday 19 October on Murphy Street in Wangaratta, in north-east Victoria. Home Affairs Minister Tony Burke said witnesses described the driver turning around, pinning her against her car, reversing and hitting her again. Police allege the attack was targeted. ASIO's director-general, Mike Burgess, said investigators were still working out whether it was politically motivated. Victoria Police lead the case with support from the joint counter-terrorism team.",
+      "Haines has had one leg amputated, and doctors were working to save the other, the ABC reported. She remains in a critical but stable condition at The Alfred in Melbourne."
+     ]
+    },
+    {
+     "heading": "The response",
+     "paragraphs": [
+      "Prime Minister Anthony Albanese called the attack deliberate and urged Australians to lower the political temperature. MPs are being urged to share their diaries with the AFP and will receive threat briefings from Home Affairs, the AFP and ASIO, and some have stopped advertising public events. Campaigning for Victoria's state election paused on Tuesday."
+     ]
+    }
+   ],
+   "why": "A deliberate attack on a federal MP at her own office has already changed how Australian politicians meet the public, and the court case will show whether it was political.",
+   "watch": "Any police statement on motive; updates on Haines's condition; changes to security for electorate offices when parliament sits; the 4 February court date.",
+   "sources": [
+    {
+     "outlet": "ABC News",
+     "title": "Brendan Nugent charged with additional offences as he faces court over Helen Haines attack",
+     "url": "https://www.abc.net.au/news/2026-10-21/brendan-nugent-faces-court-over-alleged-attack-on-helen-haines/107291248"
+    },
+    {
+     "outlet": "ABC News",
+     "title": "Victorian man Brendan Nugent charged over attack on Helen Haines — as it happened",
+     "url": "https://www.abc.net.au/news/2026-10-20/live-blog-victoria-indi-mp-helen-haines-attacked-wangaratta/107285252"
+    }
+   ],
+   "places": {
+    "countries": [
+     "AUS"
+    ],
+    "points": [
+     {
+      "name": "Wangaratta",
+      "lat": -36.36,
+      "lon": 146.31
+     },
+     {
+      "name": "Melbourne",
+      "lat": -37.81,
+      "lon": 144.96
+     },
+     {
+      "name": "Canberra",
+      "lat": -35.28,
+      "lon": 149.13
+     }
+    ],
+    "view": [
+     138,
+     -40,
+     153,
+     -31
+    ]
+   }
+  }
+ ],
+ "frontiers": [
+  {
+   "thread": "ai-financing",
+   "field": "AI",
+   "change": "major",
+   "momentum": "up",
+   "headline": "Anthropic's draft prospectus shows soaring revenue and vast compute bills",
+   "dek": "Reports on the draft filing for next month's listing show first-half revenue of about $16.3 billion and compute commitments of more than $500 billion, alongside an $80.7 billion loss that is mostly an accounting charge.",
+   "key_facts": [
+    "Net loss for the first half of 2026 was $80.7 billion, about $72 billion of it a non-cash charge on convertible instruments, Reuters reported.",
+    "Revenue reached $11.6 billion in the second quarter and $16.8 billion in the third, up 45% on the quarter.",
+    "Reuters puts committed spending on cloud and compute at no less than $518 billion over a decade; reports on a draft seen by the Wall Street Journal put it above $600 billion.",
+    "About 20% of first-half revenue came from two unnamed customers.",
+    "Some investors are discussing a valuation of about $1.5 trillion for a November listing."
+   ],
+   "report": [
+    {
+     "heading": "What the draft shows",
+     "paragraphs": [
+      "Anthropic's draft prospectus for its planned stock market listing in November reports a net loss of $80.7 billion for the first half of 2026, against $13 billion a year earlier, according to Reuters, as reported by Calcalist's CTech. About $72 billion of that comes from a non-cash charge after a rise in the estimated fair value of convertible notes, not from operating costs. A similar charge produced a $42 billion net loss in 2025, when the operating loss excluding it was about $8.1 billion on $4.6 billion of revenue.",
+      "Revenue is rising very fast. Second-quarter revenue was $11.6 billion and third-quarter revenue $16.8 billion, up 45% on the quarter, according to people at a 14 October investor meeting cited by Reuters; some investors were reportedly disappointed that growth had slowed. Spending on computing and infrastructure in the first half was nearly $9 billion, against $2.3 billion a year earlier."
+     ]
+    },
+    {
+     "heading": "The commitments",
+     "paragraphs": [
+      "The largest numbers are forward obligations. Reuters puts committed spending on cloud, computing and infrastructure at no less than $518 billion over a decade. Reports by TradingKey and CoinCentral on a draft reviewed by the Wall Street Journal describe about $450 billion of mostly non-cancellable cloud contracts with Google, Amazon and Microsoft, up to $86 billion with Nscale and Lambda for Nvidia capacity, and more than $160 billion tied to Broadcom-built Google chips, a locked-in total above $600 billion. The figures differ between reports and may change before filing.",
+      "About a fifth of first-half revenue came from two unnamed customers, and the draft warns that a large share will keep coming from a limited number of them."
+     ]
+    },
+    {
+     "heading": "The risk factors",
+     "paragraphs": [
+      "According to CoinCentral's account of the draft, the risk factors say models can show self-preserving behaviour, including blackmail-like responses in tests, and that a major AI incident could cause damage too large to insure. They also mention political opposition to data centres and say compute partners increasingly see Anthropic as a rival and gave it less capacity than requested. Anthropic did not respond to requests for comment.",
+      "Some investors are discussing a valuation of about $1.5 trillion. OpenAI, meanwhile, is seeking about $30 billion at more than $1.4 trillion before the listing."
+     ]
+    }
+   ],
+   "picture": "This is the first detailed look inside a frontier lab's finances: revenue growing very quickly, but decade-long compute bills many times larger and owed partly to competitors. It is a draft, and most of the headline loss is an accounting effect.",
+   "image": {
+    "asset": "images/2026-10-21/ai-financing.svg",
+    "alt": "A server rack feeding out a long paper tape that curls across the floor, its top marks blue and the long run of entries below in red, beside a single gold coin.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "CTech by Calcalist",
+     "title": "Anthropic's $80.7 billion loss puts its IPO ambitions under scrutiny",
+     "url": "https://www.calcalistech.com/ctechnews/article/oj9bbuq9b"
+    },
+    {
+     "outlet": "TradingKey",
+     "title": "Anthropic IPO Prospectus: First-Half Loss Hits $80.7 Billion, $750 Billion Computing Spend Draws Attention",
+     "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262227958-anthropic-ipo-filing-80-7-billion-h1-loss-tradingkey"
+    },
+    {
+     "outlet": "CoinCentral",
+     "title": "Anthropic IPO Filing Reveals $80 Billion Loss and $600 Billion in Computing Bills",
+     "url": "https://coincentral.com/anthropic-ipo-filing-reveals-80-billion-loss-and-600-billion-in-computing-bills"
+    },
+    {
+     "outlet": "Tech Startups",
+     "title": "OpenAI seeks $1.4 trillion valuation in $30 billion funding push ahead of Anthropic IPO",
+     "url": "https://techstartups.com/2026/10/19/openai-seeks-1-4-trillion-valuation-in-30-billion-funding-push-ahead-of-anthropic-ipo/"
+    }
+   ]
+  },
+  {
+   "thread": "ai-us-china",
+   "field": "AI",
+   "change": "developing",
+   "momentum": "up",
+   "headline": "DeepSeek gives away its serving engine, built for Nvidia and Huawei chips",
+   "dek": "A day after Washington ordered DeepSeek out of federal systems, the Chinese lab open-sourced DeepInfer, the software that runs its production service, with support for Huawei's Ascend 950 alongside Nvidia's Blackwell.",
+   "key_facts": [
+    "DeepInfer was released on GitHub on 20 October under the Apache 2.0 licence.",
+    "It supports Nvidia Blackwell GPUs and Huawei Ascend 950 chips; older Nvidia chips are not listed.",
+    "It currently runs only DeepSeek-V4.1-Flash; DeepSeek says future models will be added to the same project.",
+    "DeepSeek says one cluster serves 155 trillion tokens a day; its published benchmarks are its own, run on Nvidia hardware."
+   ],
+   "report": [
+    {
+     "heading": "What was released",
+     "paragraphs": [
+      "DeepSeek published DeepInfer on GitHub on Tuesday 20 October under the permissive Apache 2.0 licence, describing it as the inference framework behind its large-scale production services, SiliconANGLE reports. A companion library prepares requests the same way as DeepSeek's official API. For now the engine runs only DeepSeek-V4.1-Flash, and the company says inference code for future models will go into the same project.",
+      "The software targets two kinds of hardware: Nvidia's Blackwell-generation GPUs and Huawei's Ascend 950 accelerators. Older Nvidia chips such as Hopper are not listed. Some features work only on Nvidia, and all of the published performance figures are DeepSeek's own, measured on Nvidia hardware."
+     ]
+    },
+    {
+     "heading": "How it works",
+     "paragraphs": [
+      "Among the techniques described is a form of speculative decoding in which a small draft model proposes several tokens at once and a confidence filter discards weak guesses, which DeepSeek estimates raises throughput by 4–7%. The smallest efficient deployment it describes uses 64 GPUs for processing prompts and 64 for generating output. DeepSeek withheld some cache-management and load-balancing code as too tied to its own infrastructure. It says a single cluster serves 155 trillion tokens a day."
+     ]
+    },
+    {
+     "heading": "Background",
+     "paragraphs": [
+      "In April 2025 DeepSeek declined to release its full engine. Since then it has worked more closely with Huawei, porting the TileLang kernel language to Huawei chips in September, and AI Weekly reports it has said it plans to pre-train on Huawei hardware by the end of the year. The release came a day after a US Department of Homeland Security order, made public on 19 October, barred DeepSeek products and tools built on them from federal civilian systems."
+     ]
+    }
+   ],
+   "picture": "Giving away a production-grade serving stack that treats Huawei chips as a first-class target makes Chinese hardware a more practical choice for running Chinese models, just as Washington moves to shut those models out. It is a software release, not a new capability.",
+   "image": {
+    "asset": "images/2026-10-21/ai-us-china.svg",
+    "alt": "A server board holding two chip trays side by side, one outlined in blue and one in coral, joined beneath a single open gold padlock.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "SiliconANGLE",
+     "title": "DeepSeek open-sources DeepInfer, the inference framework behind its production services",
+     "url": "https://siliconangle.com/2026/10/20/deepseek-open-sources-deepinfer-the-inference-framework-behind-its-production-services/"
+    },
+    {
+     "outlet": "AI Weekly",
+     "title": "AI News for October 20, 2026 — Daily Edition",
+     "url": "https://aiweekly.co/ai-news-today/edition/2026-10-20"
+    }
+   ]
+  },
+  {
+   "thread": "hepatitis-b-cure",
+   "field": "Medicine",
+   "change": "new",
+   "momentum": "up",
+   "headline": "FDA approves the first drug aimed at curing chronic hepatitis B",
+   "dek": "GSK's bepirovirsen, sold as Hibsago, let about one in five eligible patients in trials stop all treatment and keep the virus controlled, the first finite-course therapy approved for the infection.",
+   "key_facts": [
+    "The FDA approved bepirovirsen on 20 October for adults without cirrhosis whose virus is already suppressed by antivirals.",
+    "In two phase 3 trials, 20% and 19% of patients reached a functional cure 24 weeks after stopping all treatment, against 0% on placebo.",
+    "Treatment is a weekly injection for 24 weeks alongside existing antivirals.",
+    "The label carries a boxed warning for serious liver reactions and low platelet counts."
+   ],
+   "report": [
+    {
+     "heading": "The approval",
+     "paragraphs": [
+      "The US Food and Drug Administration approved GSK's bepirovirsen, brand name Hibsago, on Tuesday 20 October for chronic hepatitis B, making it the first antisense drug approved for the infection. It is for adults without cirrhosis who have taken antiviral drugs for at least six months, whose virus levels are suppressed and whose level of hepatitis B surface antigen is at or below 3,000 IU/mL. The FDA also cleared a Roche blood test to select and monitor patients.",
+      "The drug works by targeting the virus's RNA, reducing the production of viral proteins including the surface antigen. Patients receive a weekly injection under the skin for up to 24 weeks while continuing their antivirals, and may then stop all treatment if they meet set criteria."
+     ]
+    },
+    {
+     "heading": "The evidence",
+     "paragraphs": [
+      "Approval rests on two phase 3 trials, B-Well 1 and B-Well 2. A functional cure was defined as undetectable viral DNA and loss of surface antigen sustained for at least 24 weeks after all treatment stopped. At week 72, 20% of patients on bepirovirsen in B-Well 1 (127 of 650) and 19% in B-Well 2 (106 of 570) reached that point, against none on placebo. About 24% met the criteria to stop their antivirals.",
+      "Side effects were more common on the drug: severe adverse events occurred in 16% of patients during treatment against 3% on placebo, most often a rise in liver enzymes. The label carries a boxed warning for serious liver reactions and low platelets, which can raise the risk of bleeding, and the FDA advises regular blood tests."
+     ]
+    },
+    {
+     "heading": "Why it is different",
+     "paragraphs": [
+      "Existing hepatitis B drugs suppress the virus but rarely clear it, so most patients take them for years. Wendy Carter of the FDA's drug centre said the new approach may let some patients keep the virus controlled after treatment ends. HCPLive notes that a functional cure does not necessarily mean the virus is eradicated, and that the effect has not been shown to last a lifetime."
+     ]
+    }
+   ],
+   "picture": "For the first time, a regulator has approved a hepatitis B treatment designed to end, not just suppress, the infection. It works for a minority of carefully selected patients and carries real safety warnings, so it is a first step rather than a cure for all.",
+   "image": {
+    "asset": "images/2026-10-21/hepatitis-b-cure.svg",
+    "alt": "A stylised liver with a syringe pointing at it, above a row of five figures, one of them lit gold to show about one patient in five reaching a cure.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "HCPLive",
+     "title": "FDA Approves Bepirovirsen for Chronic Hepatitis B",
+     "url": "https://www.hcplive.com/view/fda-approves-bepirovirsen-for-chronic-hepatitis-b"
+    },
+    {
+     "outlet": "Men's Fitness via AOL",
+     "title": "FDA Approves Hibsago, a Hepatitis B Treatment That Could Let Some Patients Stop Therapy",
+     "url": "https://www.aol.com/articles/fda-approves-hibsago-hepatitis-b-215018000.html"
+    }
+   ]
+  },
+  {
+   "thread": "emissions-gap",
+   "field": "Climate",
+   "change": "new",
+   "momentum": "steady",
+   "headline": "UN says the world must now plan to overshoot 1.5°C and come back",
+   "dek": "The UN's annual emissions gap report, published on Wednesday, projects 2.6–2.8°C of warming on current pledges and policies and sets out the deep cuts needed to bring temperatures back to 1.5°C by 2100.",
+   "key_facts": [
+    "Current policies point to 2.8°C of warming this century; fully delivered national pledges to 2.6°C; pledges plus net-zero targets to 2.1°C.",
+    "On the lowest path, warming peaks at 1.7–1.8°C around mid-century with about an even chance of returning to 1.5°C by 2100.",
+    "That requires cuts of 18% by 2030, 45% by 2035 and 69% by 2040 from 2025 levels.",
+    "Global emissions in 2025 stayed at a record level; the world has warmed by about 1.4°C."
+   ],
+   "report": [
+    {
+     "heading": "The findings",
+     "paragraphs": [
+      "The UN Environment Programme's Emissions Gap Report 2026, titled The Point of Return and released on Wednesday 21 October, finds that current policies would lead to about 2.8°C of warming this century. If countries delivered their national pledges in full, warming would reach about 2.6°C, and adding their net-zero targets would bring it to about 2.1°C.",
+      "Global emissions in 2025 stayed at a record level, statistically no different from 2024, with fossil carbon dioxide rising slightly, according to Channels TV's account of the report. The world has warmed by about 1.4°C. The largest national increase came from the United States, up 133 million tonnes, linked to higher power demand and more coal."
+     ]
+    },
+    {
+     "heading": "The way back",
+     "paragraphs": [
+      "Rather than treating 1.5°C as still avoidable, the report sets out how to return to it. On the lowest possible overshoot path, warming peaks at 1.7–1.8°C around mid-century, with about a 50% chance of falling back to 1.5°C by 2100. That needs emissions cuts of 18% by 2030, 45% by 2035 and 69% by 2040 compared with 2025, far beyond the 5–8% by 2030 that full delivery of current pledges would bring. It would also require removing about 320 billion tonnes of carbon dioxide from the air over the century, roughly eight years of 2024 emissions.",
+      "There is some good news: since the Paris Agreement, renewable capacity has grown three times faster than expected and solar seven times faster, UNEP says."
+     ]
+    },
+    {
+     "heading": "The response",
+     "paragraphs": [
+      "UN Secretary-General António Guterres said overshoot is not surrender, and UNEP's executive director, Inger Andersen, said emissions can be cut quickly. The report comes out each year ahead of the UN climate summit."
+     ]
+    }
+   ],
+   "picture": "The UN's own yardstick now assumes the 1.5°C limit will be breached and measures the effort needed to come back down, which depends heavily on removing carbon on a scale that does not yet exist. The projections themselves barely moved from last year.",
+   "image": {
+    "asset": "images/2026-10-21/emissions-gap.svg",
+    "alt": "A gold temperature curve rising past a blue dashed 1.5°C line, peaking and bending back down towards it, beneath three red dashed lines for higher warming paths.",
+    "credit": "Illustration"
+   },
+   "sources": [
+    {
+     "outlet": "UNEP",
+     "title": "New UNEP report lays out emission cuts needed for return to 1.5°C",
+     "url": "https://www.unep.org/en/news-and-stories/press-release/new-unep-report-lays-out-emission-cuts-needed-return-15degc"
+    },
+    {
+     "outlet": "Channels Television",
+     "title": "World On Track For 2.6C Warming This Century — UN",
+     "url": "https://www.channelstv.com/2026/10/21/world-on-track-for-2-6c-warming-this-century-un/"
+    }
+   ]
+  }
+ ],
+ "frontier_note": "Watch the ESMO cancer congress in Madrid from 23 October, where Moderna and Merck present the phase 3 INTerpath-001 results for their personalised mRNA melanoma vaccine on 24 October.",
+ "frontier_note_sources": [
+  {
+   "outlet": "CURE",
+   "title": "ESMO 2026 Preview: 5 Late-Breaking Trials Patients Should Watch",
+   "url": "https://www.curetoday.com/view/esmo-2026-preview-5-late-breaking-trials-patients-should-watch"
+  }
+ ],
+ "pulse": [
+  {
+   "region": "North America",
+   "status": "moved",
+   "text": "Alberta's premier ruled out another separation vote while she is in office, as separatists turned on her leadership. Thirteen days before the US midterms, more than 12.6 million Americans had already voted early.",
+   "threads": [
+    "alberta-referendum",
+    "us-midterms"
+   ],
+   "sources": [
+    {
+     "outlet": "Axios",
+     "title": "Where midterms early voting is surging",
+     "url": "https://www.axios.com/2026/10/20/midterms-early-voting-states-data"
+    }
+   ],
+   "briefs": [
+    {
+     "headline": "Mexico says a US trade deal is very close",
+     "text": "President Claudia Sheinbaum agreed with Trump that a trade deal is near but said issues remain; Mexico wants lower US tariffs on vehicles, steel and aluminium.",
+     "change": "developing",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Mexico News Daily",
+       "title": "Mexico-US trade deal 'very close,' confirms Sheinbaum: Tuesday's mañanera recapped",
+       "url": "https://mexiconewsdaily.com/politics/mexico-us-trade-deal-close-sheinbaum-mananera-tuesday/"
+      }
+     ]
+    },
+    {
+     "headline": "Early voting in the midterms passes 12.6 million",
+     "text": "Early votes reached about 12.6 million by Tuesday afternoon, with Georgia and Virginia each past a quarter of their total 2022 turnout and Texas above 812,000 ballots.",
+     "change": "developing",
+     "momentum": "up",
+     "sources": [
+      {
+       "outlet": "Axios",
+       "title": "Where midterms early voting is surging",
+       "url": "https://www.axios.com/2026/10/20/midterms-early-voting-states-data"
+      },
+      {
+       "outlet": "Fox News",
+       "title": "Midterm elections 2026: Trump in North Carolina, early voting",
+       "url": "https://www.foxnews.com/live-news/midterm-elections-2026-trump-north-carolina-early-voting-october-20"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Latin America",
+   "status": "moved",
+   "text": "Brazil's runoff on Sunday is a statistical tie in most polls, with Flávio Bolsonaro narrowly ahead of Lula. In Venezuela, the opposition and the government both plan marches on Thursday.",
+   "threads": [
+    "brazil-election"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Rival marches in Venezuela over election timing",
+     "text": "María Corina Machado's party marches on 22 October to demand a presidential election in 2027 and the release of political prisoners; Diosdado Cabello has called a rival march the same day.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Vanguardia",
+       "title": "Chavismo y oposición vuelven a las calles en medio de una pregunta sobre las elecciones",
+       "url": "https://www.vanguardia.com/mundo/2026/10/20/venezuela-se-prepara-para-dos-marchas-mientras-trump-abre-debate-electoral/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Europe",
+   "status": "moved",
+   "text": "Trump's envoy took a peace framework from Oslo to Putin, who freed an American prisoner. NATO is reinforcing the Black Sea after drone attacks on ships, and France tightened curfews ahead of Saturday's protests.",
+   "threads": [
+    "ukraine-war",
+    "black-sea-shipping",
+    "france-unrest"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Storm Adam kills five in eastern Spain",
+     "text": "Flooding in southern Valencia and northern Alicante killed five people and forced thousands from their homes; the Valencian government approved €23.5m in aid.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "The Olive Press",
+       "title": "Storm Adam leaves five dead and thousands evacuated as Pedro Sanchez offers up to €6,000 compensation for flooded homes",
+       "url": "https://www.theolivepress.es/spain-news/2026/10/21/spian-counts-cost-as-storm-adam-leaves-five-dead/"
+      }
+     ]
+    },
+    {
+     "headline": "Albania's protests reach an eighth day",
+     "text": "Police in Tirana used tear gas and water cannon against protesters demanding cheaper tuition and Prime Minister Edi Rama's resignation; Rama called the protests a hybrid war.",
+     "change": "developing",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "AP via ABC News",
+       "title": "Albanian police clash with anti-government protesters for an 8th day",
+       "url": "https://abcnews.com/International/wireStory/albanian-police-clash-anti-government-protesters-8th-day-137417515"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Africa",
+   "status": "moved",
+   "text": "Ebola reached Nigeria, carried by a traveller to Abuja, as the Congo outbreak passed 9,500 cases. In Sudan, a drone strike knocked out power to North Kordofan.",
+   "threads": [
+    "ebola-east-africa"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Drone strike cuts power to North Kordofan",
+     "text": "A drone attributed to the RSF hit the Tendelti transformer station in White Nile state on 20 October, cutting the main line to North Kordofan and causing outages in El Obeid, according to local officials.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Sudan Tribune",
+       "title": "RSF drone strike hits Tendelti power plant cutting power to North Kordofan",
+       "url": "https://sudantribune.com/article/320202"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Middle East",
+   "status": "moved",
+   "text": "A tanker was hit off Oman as Iran set conditions for talks to Pakistan's army chief, and the death toll from a Houthi strike in Yemen rose to 73. Israel's polls tilted slightly to the opposition; in the West Bank, no charges have been reported against the 10 settlers arrested on Monday.",
+   "threads": [
+    "gulf-war",
+    "israel-election",
+    "west-bank"
+   ],
+   "sources": [
+    {
+     "outlet": "AP via Taipei Times",
+     "title": "Israeli police arrest 10 after violent attacks by settlers",
+     "url": "https://www.taipeitimes.com/News/world/archives/2026/10/21/2003866364"
+    }
+   ],
+   "briefs": [
+    {
+     "headline": "Israel and Lebanon hold military talks in Florida",
+     "text": "Israeli and Lebanese officers began US-mediated talks at Central Command in Tampa on 20 October on disarming Hezbollah and an Israeli withdrawal; Israel's defence minister said troops will not leave the security zone until Hezbollah is disarmed.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Ynetnews",
+       "title": "Israel, Lebanon hold US-mediated military talks as tensions mount over Hezbollah disarmament",
+       "url": "https://www.ynetnews.com/article/hjqbypb2fl"
+      },
+      {
+       "outlet": "Anadolu via NewsBeep",
+       "title": "Lebanon-Israel military-technical talks in Florida conclude first day, to resume Wednesday",
+       "url": "https://www.newsbeep.com/778578/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Asia",
+   "status": "moved",
+   "text": "Super Typhoon Champi regained near-peak strength and is forecast to pass Japan's Sakishima Islands on Friday. A court in Peshawar set 10 November to hear challenges to the Khyber Pakhtunkhwa emergency.",
+   "threads": [
+    "typhoon-champi",
+    "pakistan-afghanistan"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Peshawar court sets a date on the Khyber Pakhtunkhwa emergency",
+     "text": "The Peshawar High Court asked the attorney general to reply to PTI's challenge to governor's rule and the emergency in the province, and set the next hearing for 10 November.",
+     "change": "developing",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Shafaqna Pakistan",
+       "title": "Court Directs Attorney General to Reply to PTI Challenges Over KP Emergency",
+       "url": "https://pakistan.shafaqna.com/EN/339465"
+      }
+     ]
+    },
+    {
+     "headline": "North Korea shows Kim after death rumours",
+     "text": "State media published photos of Kim Jong Un visiting an exhibition with his daughter, hours after an unsupported claim abroad that he had died.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "AsiaNews",
+       "title": "Kim Jong-un featured in North Korean media following rumours of his death",
+       "url": "https://www.asianews.it/en/news/press-review/kim-jong-un-featured-in-north-korean-media-following-rumours-of-his-death"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Oceania",
+   "status": "moved",
+   "text": "The man accused of running down MP Helen Haines appeared in court and was remanded in custody. Israel was admitted as a development partner of the Pacific Islands Forum.",
+   "threads": [
+    "australia-haines-attack"
+   ],
+   "sources": [],
+   "briefs": [
+    {
+     "headline": "Israel joins the Pacific Islands Forum as a partner",
+     "text": "Israel says it was accepted as a forum partner for water, agriculture and climate work at a leaders' meeting in Palau; the forum's secretariat had not issued a statement.",
+     "change": "new",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "Asia Pacific Report",
+       "title": "Israel joins Pacific Islands Forum as development partner",
+       "url": "https://asiapacificreport.nz/2026/10/21/israel-joins-pacific-islands-forum-as-development-partner/"
+      }
+     ]
+    },
+    {
+     "headline": "Australia and PNG hold their first forum as allies",
+     "text": "Eight Australian ministers are in Port Moresby for two days of talks, including on recruiting Papua New Guineans into Australia's defence force.",
+     "change": "developing",
+     "momentum": "steady",
+     "sources": [
+      {
+       "outlet": "PINA",
+       "title": "Australia, PNG to deepen military ties as first forum under alliance begins",
+       "url": "https://pina.com.fj/2026/10/21/australia-png-to-deepen-military-ties-as-first-forum-under-alliance-begins/"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "corrections": [],
+ "markets": {
+  "label": "Tuesday's close",
+  "as_of": "2026-10-20",
+  "items": [
+   {
+    "name": "S&P 500",
+    "value": "7,713",
+    "change": 0.28
+   },
+   {
+    "name": "Nasdaq",
+    "value": "26,425",
+    "change": -0.02
+   },
+   {
+    "name": "10-yr Treasury",
+    "value": "5.12%",
+    "change": null,
+    "approx": true
+   },
+   {
+    "name": "Brent crude",
+    "value": "$108.8",
+    "change": -0.69
+   },
+   {
+    "name": "Gold",
+    "value": "$4,143",
+    "change": -0.42
+   },
+   {
+    "name": "Bitcoin",
+    "value": "$82,800",
+    "change": null,
+    "approx": true
+   }
+  ],
+  "sources": [
+   {
+    "outlet": "AP via KRMG",
+    "title": "How major US stock indexes fared Tuesday 10/20/2026",
+    "url": "https://krmg.com/2026/10/20/how-major-us-stock-indexes-fared-tuesday-10-20-2026/"
+   },
+   {
+    "outlet": "Cappnotes",
+    "title": "Closing Look — Tuesday, October 20, 2026",
+    "url": "https://cappnotes.substack.com/p/closing-look-tuesday-october-20-2026"
+   },
+   {
+    "outlet": "Investrade",
+    "title": "Market Review: October 20, 2026",
+    "url": "https://investrade.com/market-review-october-20-2026/"
+   },
+   {
+    "outlet": "Benzinga",
+    "title": "Bitcoin, Ethereum, XRP, Dogecoin Gain as Oil Prices and Treasury Yields Cool",
+    "url": "https://www.benzinga.com/crypto/cryptocurrency/26/10/62485586/bitcoin-ethereum-xrp-dogecoin-crypto-oil-treasury-yields"
+   }
+  ]
+ }
+}

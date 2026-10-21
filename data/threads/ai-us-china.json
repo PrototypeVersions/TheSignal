@@ -7,6 +7,6 @@
   "started": "2026-10-20",
   "started_label": "Following since 20 October 2026",
   "status": "active",
-  "summary": "Government moves on Chinese AI companies and models. The US has ordered DeepSeek's products, and third-party products built on them, out of federal civilian systems.",
+  "summary": "Government moves on Chinese AI companies and models, and China's push for its own stack. The US has ordered DeepSeek products out of federal civilian systems; DeepSeek has open-sourced its serving engine with support for Huawei's Ascend chips.",
   "background": []
 }

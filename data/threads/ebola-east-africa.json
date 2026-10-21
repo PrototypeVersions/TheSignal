@@ -1,13 +1,13 @@
 {
   "id": "ebola-east-africa",
-  "title": "Ebola in East Africa",
+  "title": "Ebola outbreak in Africa",
   "short": "Ebola",
   "section": "world",
   "region": "Africa",
   "started": "2026-05",
   "started_label": "May 2026",
   "status": "active",
-  "summary": "A Bundibugyo-strain outbreak in the Democratic Republic of Congo, with no approved vaccine or treatment, has passed 9,400 cases and 4,500 deaths across eight provinces; North Kivu has barred entry from Ituri. Kenya has eight cases, all linked to one imported patient.",
+  "summary": "A Bundibugyo-strain outbreak that began in the Democratic Republic of Congo in May, with no licensed vaccine or treatment, has passed 9,500 cases and 4,600 deaths. Kenya has nine cases linked to one imported patient, and on 20 October Nigeria confirmed its first case, a traveller in Abuja with 44 contacts under watch.",
   "background": [
     {
       "date": "2026-05",

@@ -1,0 +1,17 @@
+{
+  "id": "black-sea-shipping",
+  "title": "Drone attacks on Black Sea shipping",
+  "short": "Black Sea",
+  "section": "world",
+  "region": "Europe",
+  "started": "2026-10",
+  "started_label": "October 2026",
+  "status": "active",
+  "summary": "Suspected Russian drones have hit merchant ships off Romania and Bulgaria at least six times in ten days, leaving at least 23 sailors missing or dead. Moscow denies involvement; NATO is sending patrol aircraft, radars and intelligence staff but has not assigned blame.",
+  "background": [
+    {
+      "date": "2026-10-05",
+      "text": "A ship catches fire and sinks in Romanian waters, killing two people."
+    }
+  ]
+}
